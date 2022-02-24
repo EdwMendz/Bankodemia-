@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="kodemia_purple">#7B78EA</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="kodemia_blue">#00CCCC</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="kodemia_black">#161616</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>
