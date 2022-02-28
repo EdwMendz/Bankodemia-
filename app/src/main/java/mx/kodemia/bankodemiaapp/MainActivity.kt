@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
 
     binding.btnBienvenidaInisiarSesion.setOnClickListener {
-
+        lanzarActivity()
     }
     }
 
@@ -25,8 +25,9 @@ class MainActivity : AppCompatActivity() {
 
 
 
-//    fun lanzarActivity(){
-//        val intent = Intent(this, )
-//
-//    }
+    fun lanzarActivity(){
+        val intent = Intent(this, IniciarSesion::class.java)
+        startActivity(intent)
+        finish()
+    }
 }
