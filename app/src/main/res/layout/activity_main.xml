@@ -10,8 +10,8 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_bienvenida_inisiarSesion"
         android:layout_width="297dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="80dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="45dp"
         android:backgroundTint="@color/kodemia_black"
         android:text="@string/iniciar_sesion"
         android:textColor="@color/kodemia_blue"
@@ -26,10 +26,10 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_bienvenida_crearCuenta"
         android:layout_width="297dp"
-        android:layout_height="50dp"
+        android:layout_height="42dp"
         android:backgroundTint="@color/kodemia_blue"
         android:fontFamily="@font/poppins_400"
-        android:text="@string/crear_cuenta"
+        android:text="Crear Cuenta"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_bienvenida_inisiarSesion"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
@@ -101,8 +101,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="138dp"
-        android:layout_height="198dp"
+        android:layout_width="205dp"
+        android:layout_height="254dp"
         android:layout_marginTop="88dp"
         app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
         app:layout_constraintHorizontal_bias="0.489"
@@ -112,10 +112,10 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="314dp"
+        android:layout_height="75dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="75dp"
         android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"

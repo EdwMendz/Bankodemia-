@@ -15,19 +15,27 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-    binding.btnBienvenidaInisiarSesion.setOnClickListener {
-        lanzarActivity()
+
+
+        binding.btnBienvenidaInisiarSesion.setOnClickListener {
+            lanzarActivityIniciarSesion()
+        }
+        binding.btnBienvenidaCrearCuenta.setOnClickListener {
+            lanzarActivityCrearCuenta()
+        }
     }
-    }
 
 
-
-
-
-
-    fun lanzarActivity(){
+    fun lanzarActivityIniciarSesion() {
         val intent = Intent(this, IniciarSesion::class.java)
         startActivity(intent)
         finish()
     }
+
+    fun lanzarActivityCrearCuenta() {
+        val intent = Intent(this, CrearCuenta::class.java)
+        startActivity(intent)
+        finish()
+    }
+
 }

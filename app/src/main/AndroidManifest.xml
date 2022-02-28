@@ -11,13 +11,15 @@
         android:theme="@style/Theme.BankodemiaApp">
         <activity
             android:name=".IniciarSesion"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".VerificacionIdentidadActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Bienvenida"
-            android:exported="false" />
+            android:exported="true" />
+
+        <activity android:name=".CrearCuenta"
+            android:exported="true"/>
+        <activity android:name=".IngresaTusDatos"
+            android:exported="true"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
