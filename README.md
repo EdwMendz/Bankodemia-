@@ -29,9 +29,7 @@ inicio de Sesión, crear cuenta, registro, verificación etc.
 
 Hecho con ❤ por
 
-
 - Fabian Godinez https://github.com/FabianGC0610
-
 - lizz Cortes https://github.com/lizthami700gmailcom
 - Sael Aceves https://github.com/Sael0501
 - Edwin Mendez https://github.com/EdwMendzttps://github.com/EdwMendz
