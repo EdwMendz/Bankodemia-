@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">BankodemiaApp</string>
     <string name="adios_a_las_complicaciones">!Adiós a las complicaciones!</string>
+    <string name="title_activity_home">HomeActivity</string>
+
+    <!--Textos del Navigation Bar del Home-->
+    <string name="title_home">INICIO</string>
+    <string name="title_dashboard">TARJETA</string>
+    <string name="title_notifications">SERVICIOS</string>
 </resources>
