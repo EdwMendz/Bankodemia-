@@ -7,12 +7,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import mx.kodemia.bankodemiaapp.databinding.FragmentNotificationsBinding
-import mx.kodemia.bankodemiaapp.ui.home.viewmodel.NotificationsFragmentViewModel
+import mx.kodemia.bankodemiaapp.databinding.FragmentInicioBinding
+import mx.kodemia.bankodemiaapp.ui.home.viewmodel.InicioFragmentViewModel
 
-class NotificationsFragment : Fragment() {
+class InicioFragment : Fragment() {
 
-    private var _binding: FragmentNotificationsBinding? = null
+    private var _binding: FragmentInicioBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -23,14 +23,14 @@ class NotificationsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val notificationsViewModel =
-            ViewModelProvider(this).get(NotificationsFragmentViewModel::class.java)
+        val homeViewModel =
+            ViewModelProvider(this).get(InicioFragmentViewModel::class.java)
 
-        _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
+        _binding = FragmentInicioBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textNotifications
-        notificationsViewModel.text.observe(viewLifecycleOwner) {
+        val textView: TextView = binding.textHome
+        homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root

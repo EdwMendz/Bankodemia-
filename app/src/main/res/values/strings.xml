@@ -7,4 +7,9 @@
     <string name="title_home">INICIO</string>
     <string name="title_dashboard">TARJETA</string>
     <string name="title_notifications">SERVICIOS</string>
+
+    <!--Textos del Menu-->
+    <string name="dinero_disponible">DINERO DISPONIBLE</string>
+    <string name="enviar">Enviar</string>
+    <string name="recibir">Recibir</string>
 </resources>

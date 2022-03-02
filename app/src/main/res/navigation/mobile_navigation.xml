@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="mx.kodemia.bankodemiaapp.ui.home.view.fragments.HomeFragment"
+        android:name="mx.kodemia.bankodemiaapp.ui.home.view.fragments.InicioFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_inicio" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="mx.kodemia.bankodemiaapp.ui.home.view.fragments.DashboardFragment"
+        android:name="mx.kodemia.bankodemiaapp.ui.home.view.fragments.TarjetaFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_tarjeta" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="mx.kodemia.bankodemiaapp.ui.home.view.fragments.NotificationsFragment"
+        android:name="mx.kodemia.bankodemiaapp.ui.home.view.fragments.ServiciosFragment"
         android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_servicios" />
 </navigation>

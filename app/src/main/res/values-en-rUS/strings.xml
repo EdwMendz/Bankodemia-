@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BankodemiaApp</string>
+    <string name="title_home">HOME</string>
+    <string name="title_dashboard">CARD</string>
+    <string name="title_notifications">SERVICES</string>
+    <string name="enviar">Send</string>
+    <string name="recibir">Recieve</string>
+    <string name="dinero_disponible">AVAILABLE MONEY</string>
+    <string name="adios_a_las_complicaciones">!Adiós a las complicaciones!</string>
+    <string name="title_activity_home">Homejaja</string>
+</resources>

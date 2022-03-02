@@ -3,10 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Proyectos_Android_Kodemia/Proyecto_Final/Bankodemia-/app/src/main/res/drawable/ic_icono_info.xml" value="0.1665" />
+        <entry key="..\:/Proyectos_Android_Kodemia/Proyecto_Final/Bankodemia-/app/src/main/res/drawable/ic_icono_kodemia.xml" value="0.2595" />
+        <entry key="..\:/Proyectos_Android_Kodemia/Proyecto_Final/Bankodemia-/app/src/main/res/drawable/ic_icono_kodemia_barra.xml" value="0.1665" />
+        <entry key="..\:/Proyectos_Android_Kodemia/Proyecto_Final/Bankodemia-/app/src/main/res/drawable/ic_icono_usuario.xml" value="0.1665" />
         <entry key="..\:/Proyectos_Android_Kodemia/Proyecto_Final/Bankodemia-/app/src/main/res/layout/activity_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Proyectos_Android_Kodemia/Proyecto_Final/Bankodemia-/app/src/main/res/layout/activity_home_details_transaction.xml" value="0.25416666666666665" />
         <entry key="..\:/Proyectos_Android_Kodemia/Proyecto_Final/Bankodemia-/app/src/main/res/layout/fragment_dashboard.xml" value="0.25416666666666665" />
         <entry key="..\:/Proyectos_Android_Kodemia/Proyecto_Final/Bankodemia-/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Proyectos_Android_Kodemia/Proyecto_Final/Bankodemia-/app/src/main/res/layout/fragment_inicio.xml" value="0.2" />
         <entry key="..\:/Proyectos_Android_Kodemia/Proyecto_Final/Bankodemia-/app/src/main/res/layout/fragment_notifications.xml" value="0.25416666666666665" />
+        <entry key="..\:/Proyectos_Android_Kodemia/Proyecto_Final/Bankodemia-/app/src/main/res/layout/fragment_servicios.xml" value="0.25416666666666665" />
+        <entry key="..\:/Proyectos_Android_Kodemia/Proyecto_Final/Bankodemia-/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/HP/BankodemiaApp/app/src/main/res/layout/activity_main.xml" value="0.18461538461538463" />
         <entry key="..\:/Users/HP/BankodemiaApp/app/src/main/res/layout/main_fragment.xml" value="0.16944444444444445" />
         <entry key="..\:/Users/saela/OneDrive/Escritorio/Desafio Final/Bankodemia-/app/src/main/res/layout/activity_verificacion_identidad.xml" value="0.1" />
