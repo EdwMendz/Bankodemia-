@@ -1,11 +1,10 @@
-package mx.kodemia.bankodemiaapp.ui.home.view
+package mx.kodemia.bankodemiaapp.modules.home.view
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.databinding.ActivityHomeBinding

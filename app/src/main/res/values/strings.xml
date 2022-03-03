@@ -12,4 +12,8 @@
     <string name="dinero_disponible">DINERO DISPONIBLE</string>
     <string name="enviar">Enviar</string>
     <string name="recibir">Recibir</string>
+    <string name="tarjeta">TARJETA</string>
+    <string name="No_tarjeta">No. de Tarjeta</string>
+    <string name="vigencia">Vigencia</string>
+    <string name="cvv">CVV</string>
 </resources>

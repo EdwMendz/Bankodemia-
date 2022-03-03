@@ -10,11 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BankodemiaApp">
         <activity
-            android:name=".ui.home.view.HomeDetailsTransactionActivity"
+            android:name=".modules.home.view.HomeDetailsTransactionActivity"
             android:exported="false" />
         <!-- _______________ACTIVITY HOME________________ -->
         <activity
-            android:name=".ui.home.view.HomeActivity"
+            android:name=".modules.home.view.HomeActivity"
             android:exported="true"
             android:label="@string/title_activity_home">
             <intent-filter>

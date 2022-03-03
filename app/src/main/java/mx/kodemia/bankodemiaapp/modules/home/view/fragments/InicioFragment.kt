@@ -1,4 +1,4 @@
-package mx.kodemia.bankodemiaapp.ui.home.view.fragments
+package mx.kodemia.bankodemiaapp.modules.home.view.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import mx.kodemia.bankodemiaapp.databinding.FragmentInicioBinding
-import mx.kodemia.bankodemiaapp.ui.home.viewmodel.InicioFragmentViewModel
+import mx.kodemia.bankodemiaapp.modules.home.viewmodel.InicioFragmentViewModel
 
 class InicioFragment : Fragment() {
 

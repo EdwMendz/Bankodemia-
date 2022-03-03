@@ -7,6 +7,7 @@
     <string name="enviar">Send</string>
     <string name="recibir">Recieve</string>
     <string name="dinero_disponible">AVAILABLE MONEY</string>
-    <string name="adios_a_las_complicaciones">!Adiós a las complicaciones!</string>
-    <string name="title_activity_home">Homejaja</string>
+    <string name="adios_a_las_complicaciones">!Goodbye complications!</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="tarjeta">CARD</string>
 </resources>
