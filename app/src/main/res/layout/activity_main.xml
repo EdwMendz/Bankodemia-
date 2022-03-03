@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/kodemia_black"
+    android:background="@color/blanco"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     >
@@ -13,7 +13,7 @@
         android:layout_width="297dp"
         android:layout_height="42dp"
         android:layout_marginBottom="88dp"
-        android:backgroundTint="@color/kodemia_blue"
+        android:backgroundTint="@color/negro"
         android:text="Button"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -37,7 +37,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.141"
-        android:textColor="@color/white"
+        android:textColor="@color/blanco"
         />
 
 
