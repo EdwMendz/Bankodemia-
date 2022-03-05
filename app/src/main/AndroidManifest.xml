@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="mx.kodemia.bankodemiaapp">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,18 +14,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BankodemiaApp">
         <activity
-            android:name=".modules.home.view.HomeDetailsTransactionActivity"
-            android:exported="false" />
-        <!-- _______________ACTIVITY HOME________________ -->
-        <activity
-            android:name=".modules.home.view.HomeActivity"
-            android:exported="true"
-            android:label="@string/title_activity_home">
+            android:name=".PruebasActivity"
+            android:exported="true" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".modules.home.view.HomeDetailsTransactionActivity"
+            android:exported="false" /> <!-- _______________ACTIVITY HOME________________ -->
+        <activity
+            android:name=".modules.home.view.HomeActivity"
+            android:exported="true"
+            android:label="@string/title_activity_home">
+
         </activity>
         <activity
             android:name=".VerificacionIdentidadActivity"

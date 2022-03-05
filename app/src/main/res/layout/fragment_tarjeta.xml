@@ -111,7 +111,7 @@
                 android:layout_height="31.5dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
-                android:src="@drawable/icono_tipo_tarjeta"
+                android:src="@drawable/icono_tipo_tarjeta_pro"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 

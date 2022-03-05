@@ -8,11 +8,13 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import mx.kodemia.bankodemiaapp.databinding.FragmentInicioBinding
+import mx.kodemia.bankodemiaapp.modules.home.view.adapter.TransaccionesAdapter
 import mx.kodemia.bankodemiaapp.modules.home.viewmodel.InicioFragmentViewModel
 
 class InicioFragment : Fragment() {
 
     private var _binding: FragmentInicioBinding? = null
+    //lateinit var adaptador = TransaccionesAdapter(requireActivity(),)
 
     // This property is only valid between onCreateView and
     // onDestroyView.
