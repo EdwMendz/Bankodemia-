@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".verificacionIdentidad.VerificacionIdentidad2">
+
+    <ImageView
+        android:id="@+id/imageViewIdentidad2"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="26dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bk" />
+
+    <TextView
+        android:id="@+id/textViewIdentidad2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="19dp"
+        android:text="@string/identidad"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewIdentidad2" />
+
+    <TextView
+        android:id="@+id/textViewTipoDocumento"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="10dp"
+        android:lineSpacingExtra="5sp"
+        android:text="@string/textViewIdentidad3"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewIdentidad2" />
+
+    <TextView
+        android:id="@+id/textViewIne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="28dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/ine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTipoDocumento" />
+
+    <TextView
+        android:id="@+id/textViewDocMigratorio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/documentoMigratorio"
+        app:layout_constraintStart_toStartOf="@+id/textViewIne"
+        app:layout_constraintTop_toBottomOf="@+id/textViewIne" />
+
+    <TextView
+        android:id="@+id/textViewPasaporte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/pasaporte"
+        app:layout_constraintStart_toStartOf="@+id/textViewDocMigratorio"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDocMigratorio" />
+
+    <TextView
+        android:id="@+id/textViewProteccionDoc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginEnd="15dp"
+        android:text="@string/textViewIdentidad4"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPasaporte" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
