@@ -1,6 +1,6 @@
 package mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones
 
-data class ListaTransacciones(
+data class ListaTransaccionesResponse(
     val success: Boolean,
     val data: Transacciones
 )

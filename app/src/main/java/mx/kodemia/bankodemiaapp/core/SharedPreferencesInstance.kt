@@ -4,7 +4,11 @@ import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
 import android.util.Log
+import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.ListaTransaccionesResponse
+import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.Transaccion
+import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.Transacciones
 import mx.kodemia.bankodemiaapp.data.model.response.logIn.LoginResponse
+import mx.kodemia.bankodemiaapp.data.model.response.makeTransaction.MakeTransactionResponse
 import mx.kodemia.bankodemiaapp.data.model.response.signUp.SignUpResponse
 
 object SharedPreferencesInstance {
@@ -39,6 +43,42 @@ object SharedPreferencesInstance {
             apply()
         }
     }
+
+    fun guardarConceptoDeTransaccion(transaccion: MakeTransactionResponse){
+        with(editor){
+            putString("concepto",transaccion.data.transaction.concept)
+            putString("exitoso",transaccion.success.toString())
+            apply()
+        }
+    }
+
+    fun guardarListaTransacciones(listTransacciones: ListaTransaccionesResponse){
+        with(editor){
+            putString("hora1",listTransacciones.data.transactions[0].created_at)
+            putString("amount1",listTransacciones.data.transactions[0].amount.toString())
+            putString("concept1",listTransacciones.data.transactions[0].concept)
+            apply()
+        }
+    }
+
+    fun guardarElementoListaTransacciones(transacciones: ListaTransaccionesResponse, posicion: Int){
+        with(editor){
+            putString("hora",transacciones.data.transactions[posicion].created_at)
+            putString("amount",transacciones.data.transactions[posicion].amount.toString())
+            putString("concept",transacciones.data.transactions[posicion].concept)
+            apply()
+        }
+    }
+
+    /*
+    fun obtenerElementoListaTransacciones(): Transaccion {
+        return Transaccion(
+            sharedPreferences.getString("hora",null),
+            sharedPreferences.getString("amount",null),
+
+        )
+    }*/
+
 
     fun obtenerSesion(): LoginResponse{
         return LoginResponse(

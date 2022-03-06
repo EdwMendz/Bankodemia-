@@ -8,8 +8,12 @@ import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.data.model.request.LogInRequest
+import mx.kodemia.bankodemiaapp.data.model.request.MakeTransactionRequest
 import mx.kodemia.bankodemiaapp.data.model.request.SignUpResquest
+import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.ListaTransaccionesResponse
 import mx.kodemia.bankodemiaapp.data.model.response.logIn.LoginResponse
+import mx.kodemia.bankodemiaapp.data.model.response.makeTransaction.MakeTransactionResponse
+import mx.kodemia.bankodemiaapp.data.model.response.makeTransaction.Type
 import mx.kodemia.bankodemiaapp.data.model.response.signUp.SignUpResponse
 import mx.kodemia.bankodemiaapp.databinding.ActivityPruebasBinding
 
@@ -51,6 +55,20 @@ class PruebasActivity : AppCompatActivity() {
                 mandarDatosLogIn("1h",logIn)
             }
 
+            btnTestMakeTrans.setOnClickListener {
+                val makeTransaction = MakeTransactionRequest(
+                    10000.00,
+                    Type.DEPOSIT.toString(), //Si se quiere hacer un deposito a otra cuenta se pone PAYMENT
+                    null, // Si es deposito no se pone Usuario de Destino
+                    "De mi para mi x3 xD"
+                )
+                mandarDatosMakeTransaction(makeTransaction)
+            }
+
+            btnTestListTrans.setOnClickListener {
+                traerDatosListTransacciones()
+            }
+
         }
 
         observers()
@@ -86,6 +104,26 @@ class PruebasActivity : AppCompatActivity() {
             }
 
         }
+
+        viewModel.makeTransactionResponse.observe(this){ transaction: MakeTransactionResponse ->
+            shared.guardarConceptoDeTransaccion(transaction)
+            lifecycleScope.launch {
+                transaction.apply {
+                    Log.e(TAG,this.data.transaction.concept)
+                    Log.e(TAG,this.success.toString())
+                }
+            }
+        }
+
+        viewModel.listTransactionResponse.observe(this){ listTransaccion: ListaTransaccionesResponse ->
+            shared.guardarListaTransacciones(listTransaccion)
+            lifecycleScope.launch {
+                listTransaccion.apply {
+                    Log.e(TAG,this.data.transactions[5].concept)
+                    Log.e(TAG,this.success.toString())
+                }
+            }
+        }
     }
 
     private fun mandarDatosSignUp(signUpResquest: SignUpResquest) {
@@ -94,6 +132,14 @@ class PruebasActivity : AppCompatActivity() {
 
     private fun mandarDatosLogIn(expires_in: String, logInRequest: LogInRequest) {
         viewModel.logIn(expires_in,logInRequest)
+    }
+
+    private fun mandarDatosMakeTransaction(makeTransactionRequest: MakeTransactionRequest){
+        viewModel.makeTransaction(makeTransactionRequest)
+    }
+
+    private fun traerDatosListTransacciones(){
+        viewModel.listTransacciones()
     }
 
 }
