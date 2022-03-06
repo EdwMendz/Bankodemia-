@@ -30,9 +30,6 @@ class InicioFragment : Fragment() {
     //viewModel
     val viewModel: InicioFragmentViewModel by viewModels()
 
-    //Adaptador del recyclerView
-    lateinit var adaptador : TransaccionesAdapter
-
     //SharedPreferences
     lateinit var shared : SharedPreferencesInstance
 
@@ -83,7 +80,6 @@ class InicioFragment : Fragment() {
         }
 
         viewModel.listTransactionResponse.observe(requireActivity()){ listTransaccion: ListaTransaccionesResponse ->
-            shared.guardarListaTransacciones(listTransaccion)
             lifecycleScope.launch {
                 listTransaccion.apply {
                     Log.e(TAG,this.data.transactions[5].concept)

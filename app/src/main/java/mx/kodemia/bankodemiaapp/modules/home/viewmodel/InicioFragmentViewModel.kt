@@ -21,6 +21,7 @@ class InicioFragmentViewModel : ViewModel() {
     //LiveDatas
     val listTransactionResponse = MutableLiveData<ListaTransaccionesResponse>()
 
+    //Se lanza el servicio a la vista del Activity o Fragment
     fun onCreate(context: Context){
         //TEMPORAL
         serviceLogin = LogInService(context)

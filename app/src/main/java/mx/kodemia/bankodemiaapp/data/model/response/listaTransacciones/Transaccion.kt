@@ -9,5 +9,6 @@ data class Transaccion(
     val created_at: String,
     val issuer: User,
     val destinationUser: User,
-    val isIncome: Boolean
+    val isIncome: Boolean,
+    val _id: String
 )

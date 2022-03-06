@@ -38,7 +38,7 @@ class TransaccionesAdapter(val activity: Activity, val transacciones: MutableLis
             cardView.setOnClickListener {
                 val intent = Intent(activity,HomeDetailsTransactionActivity::class.java)
                 shared = SharedPreferencesInstance.obtenerInstancia(activity)
-                //shared.guardarElementoListaTransacciones(transacciones,position)
+                shared.guardarElementoListaTransacciones(transacciones,position)
                 activity.startActivity(intent)
             }
             //Dar el concepto

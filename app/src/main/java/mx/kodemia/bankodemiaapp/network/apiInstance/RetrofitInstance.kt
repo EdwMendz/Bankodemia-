@@ -1,4 +1,4 @@
-package mx.kodemia.bankodemiaapp.data.apiInstance
+package mx.kodemia.bankodemiaapp.network.apiInstance
 
 import android.content.Context
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance

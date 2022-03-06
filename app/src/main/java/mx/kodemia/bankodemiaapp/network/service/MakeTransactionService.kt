@@ -3,10 +3,8 @@ package mx.kodemia.bankodemiaapp.network.service
 import android.content.Context
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import mx.kodemia.bankodemiaapp.data.apiInstance.RetrofitInstance
-import mx.kodemia.bankodemiaapp.data.model.request.LogInRequest
+import mx.kodemia.bankodemiaapp.network.apiInstance.RetrofitInstance
 import mx.kodemia.bankodemiaapp.data.model.request.MakeTransactionRequest
-import mx.kodemia.bankodemiaapp.data.model.response.logIn.LoginResponse
 import mx.kodemia.bankodemiaapp.data.model.response.makeTransaction.MakeTransactionResponse
 import mx.kodemia.bankodemiaapp.network.api.MakeTransaction
 import retrofit2.Response

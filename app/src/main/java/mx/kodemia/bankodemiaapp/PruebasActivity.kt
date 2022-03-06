@@ -87,7 +87,7 @@ class PruebasActivity : AppCompatActivity() {
 
     private fun observers(){
         viewModel.signUpResponse.observe(this){signUp: SignUpResponse ->
-            shared.guardarSesionSigUp(signUp)
+            shared.guardarRespuestaSigUp(signUp)
             lifecycleScope.launch {
                 signUp.success.let {  }
             }
@@ -116,7 +116,6 @@ class PruebasActivity : AppCompatActivity() {
         }
 
         viewModel.listTransactionResponse.observe(this){ listTransaccion: ListaTransaccionesResponse ->
-            shared.guardarListaTransacciones(listTransaccion)
             lifecycleScope.launch {
                 listTransaccion.apply {
                     Log.e(TAG,this.data.transactions[5].concept)

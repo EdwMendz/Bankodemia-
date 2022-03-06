@@ -10,5 +10,6 @@ data class User(
     val phone: String,
     val isPhoneVerified: Boolean,
     val identityImage: String,
-    val identityImageType: String
+    val identityImageType: String,
+    val _id: String
 )
