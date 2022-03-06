@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">BankodemiaApp</string>
 
+
     //Uso general
     <string name="textVArrastrar">Arrastra tu archivo aquí o subelo desde tu ORDENADOR</string>
     <string name="btnSubir">Subir Información</string>
@@ -48,5 +49,8 @@
     <string name="tietPasswordConfirm">Confirmar tu contraseña</string>
 
 
+</resources>
+
+    <string name="adios_a_las_complicaciones">!Adiós a las complicaciones!</string>
 </resources>
 

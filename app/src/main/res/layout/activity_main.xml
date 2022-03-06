@@ -8,23 +8,37 @@
     tools:context=".MainActivity"
     >
 
-
-
     <Button
         android:id="@+id/btn_bienvenida2"
         android:layout_width="297dp"
         android:layout_height="42dp"
+        android:layout_marginBottom="88dp"
         android:backgroundTint="@color/kodemia_blue"
         android:text="Button"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.412"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginTop="75dp"
+        android:textSize="25sp"
+        android:fontFamily="@font/poppins_600"
+        android:text="@string/adios_a_las_complicaciones"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="0.44" />
-
-
-
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.141"
+        android:textColor="@color/white"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
