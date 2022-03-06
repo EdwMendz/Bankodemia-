@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_inicio"
+        android:icon="@drawable/ic_icono_kodemia_nav"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_tarjeta"
+        android:icon="@drawable/ic_icono_tarjeta_nav"
+        android:title="@string/title_dashboard" />
+
+    <item
+        android:id="@+id/navigation_servicios"
+        android:icon="@drawable/ic_icono_servicios_nav"
+        android:title="@string/title_notifications" />
+
+</menu>

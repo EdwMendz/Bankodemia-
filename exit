@@ -1,0 +1,82 @@
+[33mcommit a7dc4ed83fac42d694ce5ab96439caadd6e452f6[m[33m ([m[1;36mHEAD -> [m[1;32mlocal_develop[m[33m)[m
+Author: FabianGC0610 <fabian.god06@gmail.com>
+Date:   Tue Mar 1 23:52:20 2022 -0600
+
+    Pantalla Home con Recycler Hecha
+
+[33mcommit f625c9f0d231ccd9242d6a3c18e9ff01df65ecf2[m
+Author: FabianGC0610 <fabian.god06@gmail.com>
+Date:   Tue Mar 1 15:24:41 2022 -0600
+
+    Creacion de Vistas de Home y, Paquetes y Acomodo de Arquitectura
+
+[33mcommit 06e27d389b590bdd533a5a1367fbffa2254fd6f5[m[33m ([m[1;32mmain[m[33m)[m
+Merge: b0be064 cf29fd8
+Author: FabianGC0610 <fabian.god06@gmail.com>
+Date:   Mon Feb 28 15:44:43 2022 -0600
+
+    Resolucion de conflicto en el README
+
+[33mcommit b0be064938b97a9d6e483e8a058254512e5a65f4[m
+Author: FabianGC0610 <fabian.god06@gmail.com>
+Date:   Mon Feb 28 15:35:03 2022 -0600
+
+    Upgrape del Plugin de Gradle
+
+[33mcommit cf29fd82342a662769c70b23a31312dffcabc67e[m[33m ([m[1;31morigin/develop[m[33m)[m
+Author: EdwMendz <92043069+EdwMendz@users.noreply.github.com>
+Date:   Fri Feb 25 14:35:47 2022 -0600
+
+    Update README.md
+
+[33mcommit b2f18efcfa17e39ac7796bc0f488bc4c3897285b[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: EdwMendz <92043069+EdwMendz@users.noreply.github.com>
+Date:   Fri Feb 25 14:34:22 2022 -0600
+
+    Update README.md
+
+[33mcommit 236c2a0602b2696e10f11750f764b65975137378[m
+Author: EdwMendz <92043069+EdwMendz@users.noreply.github.com>
+Date:   Fri Feb 25 14:32:33 2022 -0600
+
+    Update README.md
+
+[33mcommit be1811aeb7250dd2fd42a0d64fe069ef6f8adfa3[m
+Merge: 40b61db af5889b
+Author: edwin mendez <edwin.mendez.an@gmail.com>
+Date:   Fri Feb 25 14:21:49 2022 -0600
+
+    Merge branch 'develop' into pruebas/Edwin
+
+[33mcommit af5889bb85478a0de5cbaf8e10c70bf5daf48d74[m
+Merge: 293aed5 3df26f2
+Author: EdwMendz <92043069+EdwMendz@users.noreply.github.com>
+Date:   Fri Feb 25 13:24:00 2022 -0600
+
+    Merge pull request #1 from EdwMendz/sael-develop
+    
+    Activity Verificacion de identidad 1
+
+[33mcommit 40b61db965246ab528ae72884c71df4de10b1ec8[m
+Author: edwin mendez <edwin.mendez.an@gmail.com>
+Date:   Fri Feb 25 13:20:49 2022 -0600
+
+    Se agregan fontFamili Poppins
+
+[33mcommit 3df26f2c7a0b9d2743896e328c393a990fec150b[m[33m ([m[1;31morigin/sael-develop[m[33m)[m
+Author: Sael0501 <saelaceves117@gmail.com>
+Date:   Thu Feb 24 16:01:21 2022 -0600
+
+    Activity Verificacion de identidad 1
+
+[33mcommit 293aed5472f9e7c44aac8d75e0a7c0c3963fac70[m[33m ([m[1;31morigin/Lizz-develop[m[33m, [m[1;31morigin/Edwin-develop[m[33m)[m
+Author: EdwMendz <92043069+EdwMendz@users.noreply.github.com>
+Date:   Thu Feb 24 14:57:23 2022 -0600
+
+    Create README.md
+
+[33mcommit e953767e6a4619709c7b260dd5844fc9cb471bd6[m
+Author: edwin mendez <edwin.mendez.an@gmail.com>
+Date:   Thu Feb 24 14:52:52 2022 -0600
+
+    Iniciando el proyecto con las dependencias
