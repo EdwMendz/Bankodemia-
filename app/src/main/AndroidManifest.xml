@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="mx.kodemia.bankodemiaapp">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,17 +13,71 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BankodemiaApp">
+        
+      <activity
+            android:name=".PruebasActivity"
+            android:exported="true" >
+
+
+
+        </activity>
         <activity
-            android:name=".Bienvenida"
+            android:name=".Telefono"
+            android:exported="false" />
+        <activity
+            android:name=".IniciarSesion"
+            android:exported="true" />
+        <activity
+            android:name=".CrearCuenta"
+            android:exported="true" />
+        <activity
+            android:name=".IngresaTusDatos"
+            android:exported="true" />
+        <activity
+            android:name=".modules.home.view.HomeDetailsTransactionActivity"
+            android:exported="false" />
+        <!-- _______________ACTIVITY HOME________________ -->
+        <activity
+            android:name=".modules.home.view.HomeActivity"
+            android:exported="true"
+            android:label="@string/title_activity_home"/>
+
+            <activity
+            android:name=".verificacionIdentidad.confirmacion.Confirmacion"
+            android:exported="false" />
+        <activity
+            android:name=".verificacionIdentidad.enviarDatos.EnviarDatos"
+            android:exported="false" />
+        <activity
+            android:name=".verificacionIdentidad.contrasena.Contrasena"
+            android:exported="false" />
+        <activity
+            android:name=".verificacionIdentidad.pasaporte.Pasaporte"
+            android:exported="false" />
+        <activity
+            android:name=".verificacionIdentidad.documentoMigratorio.DocMigratorio"
+            android:exported="false" />
+        <activity
+            android:name=".verificacionIdentidad.ine.Ine"
+            android:exported="false" />
+        <activity
+            android:name=".verificacionIdentidad.VerificacionIdentidad2"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
+            android:exported="false" />
+        <!--<activity
+            android:name=".Bienvenida"
+            android:exported="false" />-->
+        <activity
+            android:name=".verificacionIdentidad.VerificacionIdentidadActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
 
