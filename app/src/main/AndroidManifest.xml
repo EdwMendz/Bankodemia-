@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BankodemiaApp">
-        <activity
+        
+      <activity
             android:name=".PruebasActivity"
             android:exported="true" >
 
@@ -28,6 +29,35 @@
             android:exported="true"
             android:label="@string/title_activity_home">
 
+            android:name=".verificacionIdentidad.confirmacion.Confirmacion"
+            android:exported="false" />
+        <activity
+            android:name=".verificacionIdentidad.enviarDatos.EnviarDatos"
+            android:exported="false" />
+        <activity
+            android:name=".verificacionIdentidad.contrasena.Contrasena"
+            android:exported="false" />
+        <activity
+            android:name=".verificacionIdentidad.pasaporte.Pasaporte"
+            android:exported="false" />
+        <activity
+            android:name=".verificacionIdentidad.documentoMigratorio.DocMigratorio"
+            android:exported="false" />
+        <activity
+            android:name=".verificacionIdentidad.ine.Ine"
+            android:exported="false" />
+        <activity
+            android:name=".verificacionIdentidad.VerificacionIdentidad2"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <!--<activity
+            android:name=".Bienvenida"
+            android:exported="false" />-->
+        <activity
+            android:name=".verificacionIdentidad.VerificacionIdentidadActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
