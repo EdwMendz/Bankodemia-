@@ -51,7 +51,7 @@
                     app:layout_constraintBottom_toBottomOf="@+id/textView7"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/textView7"
-                    app:srcCompat="@drawable/logo_kodemia1" />
+                    android:src="@drawable/logo_kodemia1"/>
 
                 <com.google.android.material.divider.MaterialDivider
                     android:layout_width="18dp"
@@ -152,7 +152,8 @@
                 app:layout_constraintEnd_toEndOf="@+id/textView9"
                 app:layout_constraintStart_toStartOf="@+id/textView9"
                 app:layout_constraintTop_toBottomOf="@+id/textView9"
-                app:prefixTextColor="@color/kodemia_blue">
+                app:prefixTextColor="@color/kodemia_blue"
+                app:boxStrokeColor="@color/kodemia_blue">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"

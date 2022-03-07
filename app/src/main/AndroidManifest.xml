@@ -10,16 +10,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BankodemiaApp">
         <activity
+            android:name=".Telefono"
+            android:exported="false" />
+        <activity
             android:name=".IniciarSesion"
             android:exported="true" />
         <activity
             android:name=".VerificacionIdentidadActivity"
             android:exported="true" />
-
-        <activity android:name=".CrearCuenta"
-            android:exported="true"/>
-        <activity android:name=".IngresaTusDatos"
-            android:exported="true"/>
+        <activity
+            android:name=".CrearCuenta"
+            android:exported="true" />
+        <activity
+            android:name=".IngresaTusDatos"
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

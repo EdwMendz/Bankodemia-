@@ -144,7 +144,8 @@
                 app:layout_constraintEnd_toEndOf="@+id/textView9"
                 app:layout_constraintStart_toStartOf="@+id/textView9"
                 app:layout_constraintTop_toBottomOf="@+id/textView9"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:boxStrokeColor="@color/kodemia_blue">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -162,6 +163,7 @@
                 app:layout_constraintEnd_toEndOf="@+id/til_itd_nombre"
                 app:layout_constraintStart_toStartOf="@+id/til_itd_nombre"
                 app:layout_constraintTop_toBottomOf="@+id/til_itd_nombre"
+                app:boxStrokeColor="@color/kodemia_blue"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
