@@ -3,6 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< HEAD
+        <entry key="..\:/Users/HP/BankodemiaApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/HP/BankodemiaApp/app/src/main/res/drawable/default_outlined_button_style.xml" value="0.1" />
+        <entry key="..\:/Users/HP/BankodemiaApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/HP/BankodemiaApp/app/src/main/res/layout/activity_crear_cuenta.xml" value="0.2830269345874305" />
+        <entry key="..\:/Users/HP/BankodemiaApp/app/src/main/res/layout/activity_ingresa_tus_datos.xml" value="0.2830269345874305" />
+        <entry key="..\:/Users/HP/BankodemiaApp/app/src/main/res/layout/activity_iniciar_sesion.xml" value="0.25" />
+        <entry key="..\:/Users/HP/BankodemiaApp/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/HP/BankodemiaApp/app/src/main/res/layout/activity_telefono.xml" value="0.33" />
+        <entry key="..\:/Users/HP/BankodemiaApp/app/src/main/res/layout/activity_verificacion_identidad.xml" value="0.16770833333333332" />
+        <entry key="..\:/Users/HP/BankodemiaApp/app/src/main/res/layout/dropdown_item.xml" value="0.25" />
+        <entry key="..\:/Users/HP/BankodemiaApp/app/src/main/res/layout/main_fragment.xml" value="0.16944444444444445" />
+=======
         <entry key="..\:/Proyectos_Android_Kodemia/Proyecto_Final/Bankodemia-/app/src/main/res/drawable/ic_icono_info.xml" value="0.1665" />
         <entry key="..\:/Proyectos_Android_Kodemia/Proyecto_Final/Bankodemia-/app/src/main/res/drawable/ic_icono_kodemia.xml" value="0.2595" />
         <entry key="..\:/Proyectos_Android_Kodemia/Proyecto_Final/Bankodemia-/app/src/main/res/drawable/ic_icono_kodemia_barra.xml" value="0.1665" />
@@ -34,6 +47,7 @@
         <entry key="..\:/Users/saela/OneDrive/Escritorio/Desafio Final/Bankodemia-/app/src/main/res/layout/activity_verificacion_identidad.xml" value="0.16" />
         <entry key="..\:/Users/saela/OneDrive/Escritorio/Desafio Final/Bankodemia-/app/src/main/res/layout/activity_verificacion_identidad2.xml" value="0.2" />
         <entry key="..\:/Users/saela/OneDrive/Escritorio/Desafio Final/Bankodemia-/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1225" />
+>>>>>>> pruebas/Edwin
       </map>
     </option>
   </component>

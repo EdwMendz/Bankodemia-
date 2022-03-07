@@ -22,13 +22,27 @@
 
         </activity>
         <activity
+            android:name=".Telefono"
+            android:exported="false" />
+        <activity
+            android:name=".IniciarSesion"
+            android:exported="true" />
+        <activity
+            android:name=".CrearCuenta"
+            android:exported="true" />
+        <activity
+            android:name=".IngresaTusDatos"
+            android:exported="true" />
+        <activity
             android:name=".modules.home.view.HomeDetailsTransactionActivity"
-            android:exported="false" /> <!-- _______________ACTIVITY HOME________________ -->
+            android:exported="false" />
+        <!-- _______________ACTIVITY HOME________________ -->
         <activity
             android:name=".modules.home.view.HomeActivity"
             android:exported="true"
-            android:label="@string/title_activity_home">
+            android:label="@string/title_activity_home"/>
 
+            <activity
             android:name=".verificacionIdentidad.confirmacion.Confirmacion"
             android:exported="false" />
         <activity
@@ -65,12 +79,6 @@
             </intent-filter>
 
         </activity>
-        <activity
-            android:name=".VerificacionIdentidadActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true" />
     </application>
 
 </manifest>
