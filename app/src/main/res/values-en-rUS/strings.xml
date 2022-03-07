@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BankodemiaApp</string>
+    <string name="textVArrastrar">Drag your file here or upload it from your COMPUTER</string>
+    <string name="btnSubir">Upload Information</string>
+    <string name="textViewPermisoCamara">Give Bankodemia permission to use the camera. Make sure you have good light and focus well on your document from the front.</string>
+    <string name="identidad">IDENTITY</string>
+    <string name="textViewIdentidad1">Now, we will verify your identity to protect your account.</string>
+    <string name="textViewIdentidad2">You will need to upload a photo of your INE or valid passport and take a selfie. If you are a foreigner you will need a picture of your immigration document (FM3).</string>
+    <string name="back">BACK</string>
+    <string name="btnIdentidad">Understood</string>
+    <string name="textViewIdentidad3">Selected the type of document to be photographed</string>
+    <string name="textViewIdentidadIne">INE</string>
+    <string name="textViewIdentidadDocumentosMigratorios">Migratory Documents</string>
+    <string name="textViewIdentidadPasaporte">Passport</string>
+    <string name="textViewIdentidad4">Learn how we protect your documents</string>
+    <string name="ine">INE</string>
+    <string name="pasaporte">PASSPORT</string>
+    <string name="contrasena">PASSWORD</string>
+    <string name="documentoMigratorio">MIGRATORY DOCUMENT</string>
+    <string name="textViewContrasena1">Create a secure password</string>
+    <string name="textViewContrasena2">You will use it to log in to the app and confirm your transactions.</string>
+    <string name="textViewContrasena3">Use at least 6 alphanumeric characters, not consecutive or repeated.</string>
+    <string name="btnContrasena">Create Password</string>
+    <string name="textViewEnviarDatos">Wait a moment, we are sending your data</string>
+    <string name="textViewConfirmacion1">You\'re done! We received your information. It usually takes a few minutes to verify, but if you have any problems, we will contact you.</string>
+    <string name="textViewGracias">THANK YOU FOR USING BANKODEMIA!</string>
+    <string name="btnConfirmacionVolverInicio">Back to top</string>
+    <string name="tiet_password_login">Password</string>
+    <string name="tietPasswordConfirm">Confirm your password</string>
+</resources>
