@@ -12,10 +12,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.launch
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
+import mx.kodemia.bankodemiaapp.core.formatos.darFormatoDinero
 import mx.kodemia.bankodemiaapp.data.model.request.LogInRequest
 import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.ListaTransaccionesResponse
 import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.Transaccion
 import mx.kodemia.bankodemiaapp.data.model.response.logIn.LoginResponse
+import mx.kodemia.bankodemiaapp.data.model.response.user.GetUserFullResponse
 import mx.kodemia.bankodemiaapp.databinding.FragmentInicioBinding
 import mx.kodemia.bankodemiaapp.modules.home.view.adapter.TransaccionesAdapter
 import mx.kodemia.bankodemiaapp.modules.home.viewmodel.InicioFragmentViewModel
@@ -50,9 +52,6 @@ class InicioFragment : Fragment() {
         )
         mandarDatosLogIn("1h",logIn)
 
-        //Se trae la lista de las Transacciones
-        traerDatosListTransacciones()
-
         binding.apply {
             observers(recyclerViewHome)
         }
@@ -79,6 +78,7 @@ class InicioFragment : Fragment() {
             }
         }
 
+        viewModel.listTransacciones()
         viewModel.listTransactionResponse.observe(requireActivity()){ listTransaccion: ListaTransaccionesResponse ->
             lifecycleScope.launch {
                 listTransaccion.apply {
@@ -89,10 +89,15 @@ class InicioFragment : Fragment() {
             }
         }
 
-    }
+        viewModel.getUserFullProfile()
+        viewModel.getUserInformationResponse.observe(requireActivity()){ getUserFull: GetUserFullResponse ->
+            lifecycleScope.launch{
+                getUserFull.apply {
+                    binding.textViewDineroDisponible.text = darFormatoDinero(this.data.balance)
+                }
+            }
+        }
 
-    private fun traerDatosListTransacciones(){
-        viewModel.listTransacciones()
     }
 
     private fun mandarDatosLogIn(expires_in: String, logInRequest: LogInRequest) {

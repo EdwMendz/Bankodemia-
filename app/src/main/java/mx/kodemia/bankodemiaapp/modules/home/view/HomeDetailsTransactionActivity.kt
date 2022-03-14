@@ -41,6 +41,7 @@ class HomeDetailsTransactionActivity : AppCompatActivity() {
 
         //binding
         binding = ActivityHomeDetailsTransactionBinding.inflate(layoutInflater)
+        supportActionBar?.hide()
         setContentView(binding.root)
     }
 }

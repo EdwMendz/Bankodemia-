@@ -10,6 +10,8 @@ import kotlinx.coroutines.launch
 import mx.kodemia.bankodemiaapp.data.model.request.LogInRequest
 import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.ListaTransaccionesResponse
 import mx.kodemia.bankodemiaapp.data.model.response.logIn.LoginResponse
+import mx.kodemia.bankodemiaapp.data.model.response.user.GetUserFullResponse
+import mx.kodemia.bankodemiaapp.network.service.GetUserInformationService
 import mx.kodemia.bankodemiaapp.network.service.ListTransactionService
 import mx.kodemia.bankodemiaapp.network.service.LogInService
 
@@ -17,9 +19,11 @@ class InicioFragmentViewModel : ViewModel() {
 
     //Service
     lateinit var serviceListTransaction: ListTransactionService
+    lateinit var serviceGetUserInformation: GetUserInformationService
 
     //LiveDatas
     val listTransactionResponse = MutableLiveData<ListaTransaccionesResponse>()
+    val getUserInformationResponse = MutableLiveData<GetUserFullResponse>()
 
     //Se lanza el servicio a la vista del Activity o Fragment
     fun onCreate(context: Context){
@@ -27,6 +31,7 @@ class InicioFragmentViewModel : ViewModel() {
         serviceLogin = LogInService(context)
 
         serviceListTransaction = ListTransactionService(context)
+        serviceGetUserInformation = GetUserInformationService(context)
     }
 
     /*
@@ -40,6 +45,17 @@ class InicioFragmentViewModel : ViewModel() {
                 listTransactionResponse.postValue(response.body())
             }else {
                 Log.e("LISTTRANSERROR",response.code().toString())
+            }
+        }
+    }
+
+    fun getUserFullProfile(){
+        viewModelScope.launch {
+            val response = serviceGetUserInformation.getUserFull()
+            if(response.isSuccessful){
+                getUserInformationResponse.postValue(response.body())
+            }else{
+                Log.e("USERSERROR",response.code().toString())
             }
         }
     }
