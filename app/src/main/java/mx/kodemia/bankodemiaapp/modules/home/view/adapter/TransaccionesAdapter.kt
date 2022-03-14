@@ -2,6 +2,7 @@ package mx.kodemia.bankodemiaapp.modules.home.view.adapter
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.view.LayoutInflater
@@ -63,6 +64,11 @@ class TransaccionesAdapter(val activity: Activity, val transacciones: MutableLis
             }else{
                 tv_monto_movimiento.text = "- $" + transaccion.amount.toString()
                 tv_monto_movimiento.setTextColor(Color.RED)
+            }
+
+            //Dar color de fondo alternado
+            if((position+1)%2 == 0){
+                cardView.setBackgroundColor(ContextCompat.getColor(activity,R.color.gris_recycler))
             }
 
         }

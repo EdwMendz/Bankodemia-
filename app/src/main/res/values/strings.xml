@@ -34,4 +34,5 @@
     <string name="concepto">CONCEPTO</string>
     <string name="cuenta_emisora">CUENTA EMISORA</string>
     <string name="no_cuenta">Número de Cuenta</string>
+    <string name="gris_items_recycler" translatable="false">#48D2D3D5</string>
 </resources>

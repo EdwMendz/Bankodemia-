@@ -14,6 +14,6 @@ fun cambiarNumeroAMes(numeroMes: Int): String{
         10 -> "octubre"
         11 -> "noviembre"
         12 -> "diciembre"
-        else -> "id de fecha desconocido"
+        else -> "mes_$numeroMes"
     }
 }
