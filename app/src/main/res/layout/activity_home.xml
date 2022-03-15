@@ -10,6 +10,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="?attr/colorSecondaryVariant"
+        app:itemTextColor="@color/text_color_bottom_navigation_view"
         app:itemIconTint="@color/blanco"
         app:itemTextAppearanceActive="?attr/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
