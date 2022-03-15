@@ -35,4 +35,9 @@
     <string name="cuenta_emisora">CUENTA EMISORA</string>
     <string name="no_cuenta">Número de Cuenta</string>
     <string name="gris_items_recycler" translatable="false">#48D2D3D5</string>
+    <string name="numero_tarjeta">5439 2464 7664 2003</string>
+    <string name="vigencia_tarjeta">11/26</string>
+    <string name="cvv_tarjeta">125</string>
+    <string name="_0000_2052_14">0000 2052 14</string>
+    <string name="dinero_defecto">$0.00</string>
 </resources>

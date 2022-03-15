@@ -1,4 +1,4 @@
-package mx.kodemia.bankodemiaapp.core
+package mx.kodemia.bankodemiaapp.formatos
 
 fun cambiarNumeroAMes(numeroMes: Int): String{
     return when (numeroMes) {

@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.launch
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
-import mx.kodemia.bankodemiaapp.core.formatos.darFormatoDinero
+import mx.kodemia.bankodemiaapp.formatos.darFormatoDinero
 import mx.kodemia.bankodemiaapp.data.model.request.LogInRequest
 import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.ListaTransaccionesResponse
 import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.Transaccion

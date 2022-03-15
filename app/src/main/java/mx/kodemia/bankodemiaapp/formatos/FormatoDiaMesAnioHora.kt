@@ -1,8 +1,4 @@
-package mx.kodemia.bankodemiaapp.core.formatos
-
-import mx.kodemia.bankodemiaapp.core.cambiarNumeroAMes
-import java.text.SimpleDateFormat
-import java.util.*
+package mx.kodemia.bankodemiaapp.formatos
 
 fun darFormatoDiaMesAnioHora(fecha: String): String{
 

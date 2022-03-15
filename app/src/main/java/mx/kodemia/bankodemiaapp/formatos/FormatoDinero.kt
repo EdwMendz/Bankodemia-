@@ -1,4 +1,4 @@
-package mx.kodemia.bankodemiaapp.core.formatos
+package mx.kodemia.bankodemiaapp.formatos
 
 import java.text.NumberFormat
 

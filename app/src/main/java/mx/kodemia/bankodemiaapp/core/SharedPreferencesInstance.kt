@@ -5,11 +5,9 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.util.Log
 import android.widget.TextView
-import mx.kodemia.bankodemiaapp.core.formatos.darFormatoDiaMesAnioHora
-import mx.kodemia.bankodemiaapp.core.formatos.darFormatoDinero
-import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.ListaTransaccionesResponse
+import mx.kodemia.bankodemiaapp.formatos.darFormatoDiaMesAnioHora
+import mx.kodemia.bankodemiaapp.formatos.darFormatoDinero
 import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.Transaccion
-import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.Transacciones
 import mx.kodemia.bankodemiaapp.data.model.response.logIn.LoginResponse
 import mx.kodemia.bankodemiaapp.data.model.response.makeTransaction.MakeTransactionResponse
 import mx.kodemia.bankodemiaapp.data.model.response.signUp.SignUpResponse
