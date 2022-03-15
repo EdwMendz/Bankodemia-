@@ -1,14 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">BankodemiaApp</string>
     <string name="adios_a_las_complicaciones">!Adiós a las complicaciones!</string>
     <string name="title_activity_home">HomeActivity</string>
-
-    <!--Textos del Navigation Bar del Home-->
     <string name="title_home">INICIO</string>
     <string name="title_dashboard">TARJETA</string>
     <string name="title_notifications">SERVICIOS</string>
-
-    <!--Textos del Menu-->
     <string name="dinero_disponible">DINERO DISPONIBLE</string>
     <string name="enviar">Enviar</string>
     <string name="recibir">Recibir</string>
@@ -34,12 +31,6 @@
     <string name="concepto">CONCEPTO</string>
     <string name="cuenta_emisora">CUENTA EMISORA</string>
     <string name="no_cuenta">Número de Cuenta</string>
-    <string name="gris_items_recycler" translatable="false">#48D2D3D5</string>
-    <string name="numero_tarjeta" translatable="false">5439 2464 7664 2003</string>
-    <string name="vigencia_tarjeta" translatable="false">11/26</string>
-    <string name="cvv_tarjeta" translatable="false">125</string>
-    <string name="_0000_2052_14" translatable="false">0000 2052 14</string>
-    <string name="dinero_defecto" translatable="false">$0.00</string>
     <string name="enero">enero</string>
     <string name="febrero">febrero</string>
     <string name="marzo">marzo</string>

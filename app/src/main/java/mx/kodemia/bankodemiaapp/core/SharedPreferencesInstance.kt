@@ -82,13 +82,14 @@ object SharedPreferencesInstance {
         tv_concepto2: TextView,
         tv_fecha: TextView,
         tv_cuenta_emisora: TextView,
-        tv_id_transaccion: TextView
+        tv_id_transaccion: TextView,
+        context: Context
     ){
 
         tv_monto.text = darFormatoDinero(sharedPreferences.getString("amount","0.00")!!.toDouble())
         tv_concepto.text = sharedPreferences.getString("concept",null)
         tv_concepto2.text = sharedPreferences.getString("concept",null)
-        tv_fecha.text = darFormatoDiaMesAnioHora(sharedPreferences.getString("fecha",null).toString())
+        tv_fecha.text = darFormatoDiaMesAnioHora(sharedPreferences.getString("fecha",null).toString(), context)
         tv_cuenta_emisora.text = sharedPreferences.getString("cuenta_emisora",null)
         tv_id_transaccion.text = sharedPreferences.getString("id_transaccion",null)
     }

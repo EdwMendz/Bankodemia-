@@ -31,4 +31,16 @@
     <string name="cuenta_emisora">ISSUER ACCOUNT</string>
     <string name="no_cuenta">Account number</string>
     <string name="recarga_celular">Phone recharge</string>
+    <string name="enero">january</string>
+    <string name="febrero">february</string>
+    <string name="marzo">march</string>
+    <string name="abril">april</string>
+    <string name="mayo">may</string>
+    <string name="junio">june</string>
+    <string name="julio">july</string>
+    <string name="agosto">august</string>
+    <string name="septiembre">september</string>
+    <string name="octubre">october</string>
+    <string name="noviembre">november</string>
+    <string name="diciembre">december</string>
 </resources>

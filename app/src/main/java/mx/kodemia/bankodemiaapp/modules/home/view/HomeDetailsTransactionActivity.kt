@@ -30,7 +30,8 @@ class HomeDetailsTransactionActivity : AppCompatActivity() {
                 textViewConcepto2Home,
                 textViewFechaHome,
                 textViewCuentaEmisoraHome,
-                textViewIdTransaccionHome
+                textViewIdTransaccionHome,
+                applicationContext
             )
         }
     }

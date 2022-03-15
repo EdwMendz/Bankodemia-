@@ -23,7 +23,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/guidelineLeft"
                 app:layout_constraintHorizontal_bias="0.25"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/imageView3" />
+                app:layout_constraintTop_toTopOf="@+id/imageView_logo_kodemia" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guidelineCenter"
@@ -55,15 +55,16 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.75"
                 app:layout_constraintStart_toStartOf="@+id/guidelineRight"
-                app:layout_constraintTop_toTopOf="@+id/imageView3" />
+                app:layout_constraintTop_toTopOf="@+id/imageView_logo_kodemia" />
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/imageView_logo_kodemia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:src="@drawable/ic_icono_kodemia"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -78,7 +79,7 @@
                 android:textColor="@color/gris"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView_logo_kodemia" />
 
             <TextView
                 android:id="@+id/textView_dinero_disponible"
@@ -159,6 +160,17 @@
                     app:layout_constraintTop_toTopOf="parent"
                     tools:text="25 ENERO 2022" />
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/imageView_guion_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_icono_kodemia_barra"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView_logo_kodemia"
+                app:layout_constraintEnd_toEndOf="@+id/imageView_logo_kodemia"
+                app:layout_constraintStart_toStartOf="@+id/imageView_logo_kodemia"
+                app:layout_constraintTop_toTopOf="@+id/imageView_logo_kodemia"
+                app:tint="?attr/colorPrimary"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -1,9 +1,11 @@
 package mx.kodemia.bankodemiaapp.formatos
 
-fun darFormatoDiaMesAnioHora(fecha: String): String{
+import android.content.Context
 
-    val dia = fecha.substring(8,10)
-    val mes = cambiarNumeroAMes(fecha.substring(5,7).toInt())
+fun darFormatoDiaMesAnioHora(fecha: String, context: Context): String{
+
+    val dia = fecha.substring(8,10).toInt()
+    val mes = cambiarNumeroAMes(fecha.substring(5,7).toInt(), context)
     val anio = fecha.substring(0,4)
     var hora = fecha.substring(11,13)
     val minutos = fecha.substring(13,16)
@@ -19,5 +21,5 @@ fun darFormatoDiaMesAnioHora(fecha: String): String{
         }
     }
 
-    return "$dia de $mes de $anio, $hora"
+    return "$dia $mes $anio, $hora"
 }

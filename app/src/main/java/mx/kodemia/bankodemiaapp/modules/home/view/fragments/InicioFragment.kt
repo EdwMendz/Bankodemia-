@@ -11,6 +11,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.launch
+import mx.kodemia.bankodemiaapp.animations.initParpadeoGuionLogo
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.formatos.darFormatoDinero
 import mx.kodemia.bankodemiaapp.data.model.request.LogInRequest
@@ -19,6 +20,7 @@ import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.Transacci
 import mx.kodemia.bankodemiaapp.data.model.response.logIn.LoginResponse
 import mx.kodemia.bankodemiaapp.data.model.response.user.GetUserFullResponse
 import mx.kodemia.bankodemiaapp.databinding.FragmentInicioBinding
+import mx.kodemia.bankodemiaapp.formatos.darFormatoFechaActual
 import mx.kodemia.bankodemiaapp.modules.home.view.adapter.TransaccionesAdapter
 import mx.kodemia.bankodemiaapp.modules.home.viewmodel.InicioFragmentViewModel
 
@@ -53,6 +55,8 @@ class InicioFragment : Fragment() {
         mandarDatosLogIn("1h",logIn)
 
         binding.apply {
+            textViewFecha.text = darFormatoFechaActual()
+            initParpadeoGuionLogo(requireContext(),imageViewGuionLogo)
             observers(recyclerViewHome)
         }
 
