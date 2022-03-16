@@ -29,7 +29,7 @@ class InicioFragment : Fragment() {
     val TAG = "LOGIN"
 
     //binding
-    lateinit var binding: FragmentInicioBinding
+    private var binding: FragmentInicioBinding? = null
 
     //viewModel
     val viewModel: InicioFragmentViewModel by viewModels()
@@ -43,7 +43,6 @@ class InicioFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentInicioBinding.inflate(inflater, container, false)
-        val root: View = binding.root
 
         init()
 
@@ -54,13 +53,13 @@ class InicioFragment : Fragment() {
         )
         mandarDatosLogIn("1h",logIn)
 
-        binding.apply {
+        binding?.apply {
             textViewFecha.text = darFormatoFechaActual()
             initParpadeoGuionLogo(requireContext(),imageViewGuionLogo)
             observers(recyclerViewHome)
         }
 
-        return root
+        return binding!!.root
     }
 
     //Inicializacion de SharedPreferences
@@ -97,7 +96,7 @@ class InicioFragment : Fragment() {
         viewModel.getUserInformationResponse.observe(requireActivity()){ getUserFull: GetUserFullResponse ->
             lifecycleScope.launch{
                 getUserFull.apply {
-                    binding.textViewDineroDisponible.text = darFormatoDinero(this.data.balance)
+                    binding?.textViewDineroDisponible?.text  = darFormatoDinero(this.data.balance)
                 }
             }
         }
@@ -116,10 +115,8 @@ class InicioFragment : Fragment() {
         }
     }
 
-    /*
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null
     }
-    */
 }

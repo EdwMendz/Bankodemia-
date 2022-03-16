@@ -60,6 +60,8 @@ class PruebasActivityViewModel: ViewModel() {
                 logInResponse.postValue(response.body())
             }else if(response.code() == 401){
                 Log.e("LOGINERROR","Unauthorized")
+            }else{
+                Log.e("MiError",response.code().toString())
             }
         }
     }
