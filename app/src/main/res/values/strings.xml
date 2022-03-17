@@ -97,7 +97,7 @@
     <string name="concepto">CONCEPTO</string>
     <string name="cuenta_emisora">CUENTA EMISORA</string>
     <string name="no_cuenta">Número de Cuenta</string>
-<<<<<<< HEAD
+
     <string name="gris_items_recycler" translatable="false">#48D2D3D5</string>
     <string name="numero_tarjeta" translatable="false">5439 2464 7664 2003</string>
     <string name="vigencia_tarjeta" translatable="false">11/26</string>
@@ -116,8 +116,34 @@
     <string name="octubre">octubre</string>
     <string name="noviembre">noviembre</string>
     <string name="diciembre">diciembre</string>
-=======
 
->>>>>>> pruebas/Edwin
->>>>>>> main
-</resources>
+        <string name="app_name">parte_proyecto</string>
+        <string name="TV_usuario_uno">Pedro Pacheco Montiel</string>
+        <string name="TV_no_cuenta">2345 6512 2653 8811</string>
+        <string name="barra">/</string>
+        <string name="no_cuenta_uno">BANORTE</string>
+        <string name="usuario_dos">Antionio Contreras Chavez</string>
+        <string name="no_cuenta_dos">4567 2345 7892 0045</string>
+        <string name="barrauno">/</string>
+        <string name="banco_dos">BANORTE</string>
+        <string name="Img_AgregarContacto">IMG</string>
+        <string name="textodialogo">¿Estas Seguro(o) que quieres realizar esta transacciòn?</string>
+        <string name="clabe">CLABE</string>
+        <string name="tarjeta">Tarjeta</string>
+        <string name="no_de_tarjeta">No. de Tarjeta</string>
+        <string name="nombre">Nombre</string>
+        <string name="correo_de_ntoficacion">Correo de Ntoficacion</string>
+        <string name="button">Button</string>
+        <string name="tu_contacto_fue_agregado_con_xito">Tu contacto fue agregado con éxito</string>
+        <string name="title_activity_enviar_transferencia">EnviarTransferencia</string>
+        <!-- Strings used for fragments for navigation -->
+        <string name="first_fragment_label">First Fragment</string>
+        <string name="second_fragment_label">Second Fragment</string>
+        <string name="next">Next</string>
+        <string name="previous">Previous</string>
+
+        <string name="hello_first_fragment">Hello first fragment</string>
+        <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    </resources>
+
