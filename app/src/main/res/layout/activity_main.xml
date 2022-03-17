@@ -9,9 +9,9 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_bienvenida_inisiarSesion"
-        android:layout_width="297dp"
-        android:layout_height="42dp"
-        android:layout_marginBottom="45dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="68dp"
         android:backgroundTint="@color/kodemia_black"
         android:text="@string/iniciar_sesion"
         android:textColor="@color/kodemia_blue"
@@ -25,18 +25,20 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_bienvenida_crearCuenta"
-        android:layout_width="297dp"
-        android:layout_height="42dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:backgroundTint="@color/kodemia_blue"
         android:fontFamily="@font/poppins_400"
-        android:text="Crear Cuenta"
+        android:text="@string/crear_cuenta"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_bienvenida_inisiarSesion"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.509"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.8" />
+        app:layout_constraintVertical_bias="0.733" />
 
     <TextView
         android:id="@+id/textView"
@@ -101,21 +103,22 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="205dp"
-        android:layout_height="254dp"
+        android:layout_width="232dp"
+        android:layout_height="290dp"
         android:layout_marginTop="88dp"
+        android:contentDescription="@string/iv_inicio"
         app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
         app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="@+id/constraintLayout"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        app:srcCompat="@drawable/movil_" />
+        app:srcCompat="@drawable/iv_inicio" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
         android:layout_width="314dp"
         android:layout_height="75dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
@@ -142,7 +145,9 @@
             app:layout_constraintEnd_toStartOf="@+id/textView5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/logo_kodemia1" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/logo_kodemia1"
+            android:contentDescription="@string/logokodemia" />
 
         <com.google.android.material.divider.MaterialDivider
             android:layout_width="18dp"

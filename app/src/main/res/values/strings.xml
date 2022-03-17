@@ -97,6 +97,12 @@
     <string name="concepto">CONCEPTO</string>
     <string name="cuenta_emisora">CUENTA EMISORA</string>
     <string name="no_cuenta">Número de Cuenta</string>
+    <string name="escribe_tu_telefono">ESCRIBE TU TELEFONO</string>
+    <string name="lo_usaras_para_inciar_sesi_n">Lo usaras para inciar sesión</string>
+    <string name="continuar">Continuar</string>
+    <string name="tu_n_mero_de_celular">Tu número de celular</string>
+    <string name="logokodemia">LogoKodemia</string>
+    <string name="iv_inicio">iv_incio</string>
 
->>>>>>> pruebas/Edwin
+
 </resources>
