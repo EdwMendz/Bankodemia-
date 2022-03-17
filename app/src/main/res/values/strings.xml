@@ -97,6 +97,54 @@
     <string name="concepto">CONCEPTO</string>
     <string name="cuenta_emisora">CUENTA EMISORA</string>
     <string name="no_cuenta">Número de Cuenta</string>
+
+
+    //Uso general
+    <string name="textVArrastrar">Arrastra tu archivo aquí o subelo desde tu ORDENADOR</string>
+    <string name="btnSubir">Subir Información</string>
+    <string name="back">REGRESAR</string>
+    <string name="textViewPermisoCamara">Dale permiso a Bankodemia para utilizar la cámara. Asegúrate de tener buena luz y enfocar bien tu documento de frente.</string>
+
+
+    //Vista 1 Verificacion de identidad 1
+    <string name="identidad">IDENTIDAD</string>
+    <string name="textViewIdentidad1">Ahora, vamos a verificar tu identidad para proteger tu cuenta.</string>
+    <string name="textViewIdentidad2">Deberás subir una fotografía de tu INE o pasaporte vigente y tomarte una selfie. Si eres extranjero necesitarás una fotografía de tu documento migratorio (FM3)</string>
+    <string name="btnIdentidad">Entendido</string>
+
+    //Vista 2 Verificacion de identidad 2
+    <string name="textViewIdentidad3">Seleccionado el tipo de documento que deseas fotografiar</string>
+    <string name="textViewIdentidadIne">INE</string>
+    <string name="textViewIdentidadDocumentosMigratorios">Documentos Migratorios</string>
+    <string name="textViewIdentidadPasaporte">Pasaporte</string>
+    <string name="textViewIdentidad4">Conoce cómo protegemos tus documentos</string>
+
+    //Vista INE
+    <string name="ine">INE</string>
+
+    //Documento Migratorio
+    <string name="documentoMigratorio">DOCUMENTO MIGRATORIO</string>
+
+    //Pasaporte
+    <string name="pasaporte">PASAPORTE</string>
+
+    //Contrasena
+    <string name="contrasena">CONTRASEÑA</string>
+    <string name="textViewContrasena1">Crea una contraseña segura</string>
+    <string name="textViewContrasena2">La usarás para entrar a la app y confirmar tus transacciones.</string>
+    <string name="textViewContrasena3">Usa al menos 6 caracteres alfanuméricos, no consecutivos ni repetidos.</string>
+    <string name="btnContrasena">Crear Contraseña</string>
+
+    //Enviar Datos
+    <string name="textViewEnviarDatos">Espera un momento, estamos enviando tus datos</string>
+
+    //Confirmacion
+    <string name="textViewConfirmacion1">¡Listo! Recibimos tu información. Usualmente tardamos unos minutos en verificar, pero en caso de tener algún problema, nos comunicaremos contigo.</string>
+    <string name="textViewGracias">¡GRACIAS POR USAR BANKODEMIA!</string>
+    <string name="btnConfirmacionVolverInicio">Volver al Inicio</string>
+    <string name="tiet_password_login">Contraseña</string>
+    <string name="tietPasswordConfirm">Confirmar tu contraseña</string>
+
     <string name="escribe_tu_telefono">ESCRIBE TU TELEFONO</string>
     <string name="lo_usaras_para_inciar_sesi_n">Lo usaras para inciar sesión</string>
     <string name="continuar">Continuar</string>
@@ -106,8 +154,6 @@
     <string name="numero_tarjeta">numero_tarjeta</string>
     <string name="vigencia_tarjeta">vigencia_tarjeta</string>
     <string name="cvv_tarjeta">cvv_tarjeta</string>
-
-
 
 
     <string name="gris_items_recycler" translatable="false">#48D2D3D5</string>
@@ -128,6 +174,34 @@
     <string name="octubre">octubre</string>
     <string name="noviembre">noviembre</string>
     <string name="diciembre">diciembre</string>
+
+    <string name="app_name">parte_proyecto</string>
+    <string name="TV_usuario_uno">Pedro Pacheco Montiel</string>
+    <string name="TV_no_cuenta">2345 6512 2653 8811</string>
+    <string name="barra">/</string>
+    <string name="no_cuenta_uno">BANORTE</string>
+    <string name="usuario_dos">Antionio Contreras Chavez</string>
+    <string name="no_cuenta_dos">4567 2345 7892 0045</string>
+    <string name="barrauno">/</string>
+    <string name="banco_dos">BANORTE</string>
+    <string name="Img_AgregarContacto">IMG</string>
+    <string name="textodialogo">¿Estas Seguro(o) que quieres realizar esta transacciòn?</string>
+    <string name="clabe">CLABE</string>
+    <string name="tarjeta">Tarjeta</string>
+    <string name="no_de_tarjeta">No. de Tarjeta</string>
+    <string name="nombre">Nombre</string>
+    <string name="correo_de_ntoficacion">Correo de Ntoficacion</string>
+    <string name="button">Button</string>
+    <string name="tu_contacto_fue_agregado_con_xito">Tu contacto fue agregado con éxito</string>
+    <string name="title_activity_enviar_transferencia">EnviarTransferencia</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
         <string name="app_name">parte_proyecto</string>
         <string name="TV_usuario_uno">Pedro Pacheco Montiel</string>
@@ -158,5 +232,6 @@
         <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
     </resources>
+
 
 

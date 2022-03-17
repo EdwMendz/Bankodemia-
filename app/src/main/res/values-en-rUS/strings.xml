@@ -31,7 +31,6 @@
     <string name="cuenta_emisora">ISSUER ACCOUNT</string>
     <string name="no_cuenta">Account number</string>
     <string name="recarga_celular">Phone recharge</string>
-<<<<<<< HEAD
     <string name="enero">january</string>
     <string name="febrero">february</string>
     <string name="marzo">march</string>
@@ -44,7 +43,7 @@
     <string name="octubre">october</string>
     <string name="noviembre">november</string>
     <string name="diciembre">december</string>
-=======
+
     <string name="textVArrastrar">Drag your file here or upload it from your COMPUTER</string>
     <string name="btnSubir">Upload Information</string>
     <string name="textViewPermisoCamara">Give Bankodemia permission to use the camera. Make sure you have good light and focus well on your document from the front.</string>
@@ -72,5 +71,5 @@
     <string name="btnConfirmacionVolverInicio">Back to top</string>
     <string name="tiet_password_login">Password</string>
     <string name="tietPasswordConfirm">Confirm your password</string>
->>>>>>> main
+
 </resources>
