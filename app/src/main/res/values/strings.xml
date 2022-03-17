@@ -1,6 +1,69 @@
 <resources>
     <string name="app_name">BankodemiaApp</string>
+
+
+    //Uso general
+    <string name="textVArrastrar">Arrastra tu archivo aquí o subelo desde tu ORDENADOR</string>
+    <string name="btnSubir">Subir Información</string>
+    <string name="back">REGRESAR</string>
+    <string name="textViewPermisoCamara">Dale permiso a Bankodemia para utilizar la cámara. Asegúrate de tener buena luz y enfocar bien tu documento de frente.</string>
+
+
+    //Vista 1 Verificacion de identidad 1
+    <string name="identidad">IDENTIDAD</string>
+    <string name="textViewIdentidad1">Ahora, vamos a verificar tu identidad para proteger tu cuenta.</string>
+    <string name="textViewIdentidad2">Deberás subir una fotografía de tu INE o pasaporte vigente y tomarte una selfie. Si eres extranjero necesitarás una fotografía de tu documento migratorio (FM3)</string>
+    <string name="btnIdentidad">Entendido</string>
+
+    //Vista 2 Verificacion de identidad 2
+    <string name="textViewIdentidad3">Seleccionado el tipo de documento que deseas fotografiar</string>
+    <string name="textViewIdentidadIne">INE</string>
+    <string name="textViewIdentidadDocumentosMigratorios">Documentos Migratorios</string>
+    <string name="textViewIdentidadPasaporte">Pasaporte</string>
+    <string name="textViewIdentidad4">Conoce cómo protegemos tus documentos</string>
+
+    //Vista INE
+    <string name="ine">INE</string>
+
+    //Documento Migratorio
+    <string name="documentoMigratorio">DOCUMENTO MIGRATORIO</string>
+
+    //Pasaporte
+    <string name="pasaporte">PASAPORTE</string>
+
+    //Contrasena
+    <string name="contrasena">CONTRASEÑA</string>
+    <string name="textViewContrasena1">Crea una contraseña segura</string>
+    <string name="textViewContrasena2">La usarás para entrar a la app y confirmar tus transacciones.</string>
+    <string name="textViewContrasena3">Usa al menos 6 caracteres alfanuméricos, no consecutivos ni repetidos.</string>
+    <string name="btnContrasena">Crear Contraseña</string>
+
+    //Enviar Datos
+    <string name="textViewEnviarDatos">Espera un momento, estamos enviando tus datos</string>
+
+    //Confirmacion
+    <string name="textViewConfirmacion1">¡Listo! Recibimos tu información. Usualmente tardamos unos minutos en verificar, pero en caso de tener algún problema, nos comunicaremos contigo.</string>
+    <string name="textViewGracias">¡GRACIAS POR USAR BANKODEMIA!</string>
+    <string name="btnConfirmacionVolverInicio">Volver al Inicio</string>
+    <string name="tiet_password_login">Contraseña</string>
+    <string name="tietPasswordConfirm">Confirmar tu contraseña</string>
+
     <string name="adios_a_las_complicaciones">!Adiós a las complicaciones!</string>
+
+    <string name="iniciar_sesion">Iniciar Sesión</string>
+    <string name="crear_cuenta">Crear Cuenta</string>
+    <string name="usa_el_dinero_a">"Usa el dinero a "</string>
+    <string name="escribe_el_correo_y_telefono_con_el_que_n_te_registraste_a_trav_s_de_estos_nte_enciaremos_el_acceso">Escribe el correo y telefono con el que te \nregistraste, a través de estos te \nenciaremos el acceso</string>
+    <string name="bk">bk</string>
+    <string name="usa_el_dinero_a1">Usa el dinero a</string>
+    <string name="manera">Manera</string>
+    <string name="tu">"TU"</string>
+    <string name="todo">TODO</string>
+    <string name="necesitas_ayuda_escribenos_a">¿Necesitas ayuda? Escribenos a</string>
+    <string name="escribe_tu_correo">Escribe tu correo</string>
+    <string name="escribe_tu_contrase_a">Escribe tu contraseña</string>
+    <string name="bankodemia_com_mx">bankodemia@com.mx</string>
+    <string name="bankodemia">bankodemia</string>
     <string name="title_activity_home">HomeActivity</string>
 
     <!--Textos del Navigation Bar del Home-->
@@ -34,6 +97,7 @@
     <string name="concepto">CONCEPTO</string>
     <string name="cuenta_emisora">CUENTA EMISORA</string>
     <string name="no_cuenta">Número de Cuenta</string>
+<<<<<<< HEAD
     <string name="gris_items_recycler" translatable="false">#48D2D3D5</string>
     <string name="numero_tarjeta" translatable="false">5439 2464 7664 2003</string>
     <string name="vigencia_tarjeta" translatable="false">11/26</string>
@@ -52,4 +116,8 @@
     <string name="octubre">octubre</string>
     <string name="noviembre">noviembre</string>
     <string name="diciembre">diciembre</string>
+=======
+
+>>>>>>> pruebas/Edwin
+>>>>>>> main
 </resources>
