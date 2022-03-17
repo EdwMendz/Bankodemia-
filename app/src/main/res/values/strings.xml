@@ -97,6 +97,18 @@
     <string name="concepto">CONCEPTO</string>
     <string name="cuenta_emisora">CUENTA EMISORA</string>
     <string name="no_cuenta">Número de Cuenta</string>
+    <string name="escribe_tu_telefono">ESCRIBE TU TELEFONO</string>
+    <string name="lo_usaras_para_inciar_sesi_n">Lo usaras para inciar sesión</string>
+    <string name="continuar">Continuar</string>
+    <string name="tu_n_mero_de_celular">Tu número de celular</string>
+    <string name="logokodemia">LogoKodemia</string>
+    <string name="iv_inicio">iv_incio</string>
+    <string name="numero_tarjeta">numero_tarjeta</string>
+    <string name="vigencia_tarjeta">vigencia_tarjeta</string>
+    <string name="cvv_tarjeta">cvv_tarjeta</string>
+
+
+
 
     <string name="gris_items_recycler" translatable="false">#48D2D3D5</string>
     <string name="numero_tarjeta" translatable="false">5439 2464 7664 2003</string>
@@ -146,4 +158,5 @@
         <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
     </resources>
+
 
