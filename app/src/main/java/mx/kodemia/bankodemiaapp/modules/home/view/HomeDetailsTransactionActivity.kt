@@ -3,6 +3,7 @@ package mx.kodemia.bankodemiaapp.modules.home.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import mx.kodemia.bankodemiaapp.animations.initParpadeoGuionLogo
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.databinding.ActivityHomeDetailsTransactionBinding
 import mx.kodemia.bankodemiaapp.modules.home.viewmodel.HomeDetailsTransactionViewModel
@@ -30,8 +31,10 @@ class HomeDetailsTransactionActivity : AppCompatActivity() {
                 textViewConcepto2Home,
                 textViewFechaHome,
                 textViewCuentaEmisoraHome,
-                textViewIdTransaccionHome
+                textViewIdTransaccionHome,
+                applicationContext
             )
+            initParpadeoGuionLogo(applicationContext,imageViewGuionLogo)
         }
     }
 
@@ -41,6 +44,7 @@ class HomeDetailsTransactionActivity : AppCompatActivity() {
 
         //binding
         binding = ActivityHomeDetailsTransactionBinding.inflate(layoutInflater)
+        supportActionBar?.hide()
         setContentView(binding.root)
     }
 }
