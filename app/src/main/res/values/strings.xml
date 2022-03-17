@@ -98,6 +98,24 @@
     <string name="cuenta_emisora">CUENTA EMISORA</string>
     <string name="no_cuenta">Número de Cuenta</string>
 
+    <string name="gris_items_recycler" translatable="false">#48D2D3D5</string>
+    <string name="numero_tarjeta" translatable="false">5439 2464 7664 2003</string>
+    <string name="vigencia_tarjeta" translatable="false">11/26</string>
+    <string name="cvv_tarjeta" translatable="false">125</string>
+    <string name="_0000_2052_14" translatable="false">0000 2052 14</string>
+    <string name="dinero_defecto" translatable="false">$0.00</string>
+    <string name="enero">enero</string>
+    <string name="febrero">febrero</string>
+    <string name="marzo">marzo</string>
+    <string name="abril">abril</string>
+    <string name="mayo">mayo</string>
+    <string name="junio">junio</string>
+    <string name="julio">julio</string>
+    <string name="agosto">agosto</string>
+    <string name="septiembre">septiembre</string>
+    <string name="octubre">octubre</string>
+    <string name="noviembre">noviembre</string>
+    <string name="diciembre">diciembre</string>
 
         <string name="app_name">parte_proyecto</string>
         <string name="TV_usuario_uno">Pedro Pacheco Montiel</string>
@@ -128,3 +146,4 @@
         <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
     </resources>
+
