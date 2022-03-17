@@ -5,9 +5,9 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.util.Log
 import android.widget.TextView
-import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.ListaTransaccionesResponse
+import mx.kodemia.bankodemiaapp.formatos.darFormatoDiaMesAnioHora
+import mx.kodemia.bankodemiaapp.formatos.darFormatoDinero
 import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.Transaccion
-import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.Transacciones
 import mx.kodemia.bankodemiaapp.data.model.response.logIn.LoginResponse
 import mx.kodemia.bankodemiaapp.data.model.response.makeTransaction.MakeTransactionResponse
 import mx.kodemia.bankodemiaapp.data.model.response.signUp.SignUpResponse
@@ -82,13 +82,14 @@ object SharedPreferencesInstance {
         tv_concepto2: TextView,
         tv_fecha: TextView,
         tv_cuenta_emisora: TextView,
-        tv_id_transaccion: TextView
+        tv_id_transaccion: TextView,
+        context: Context
     ){
 
-        tv_monto.text = sharedPreferences.getString("amount",null)
+        tv_monto.text = darFormatoDinero(sharedPreferences.getString("amount","0.00")!!.toDouble())
         tv_concepto.text = sharedPreferences.getString("concept",null)
         tv_concepto2.text = sharedPreferences.getString("concept",null)
-        tv_fecha.text = sharedPreferences.getString("fecha",null)
+        tv_fecha.text = darFormatoDiaMesAnioHora(sharedPreferences.getString("fecha",null).toString(), context)
         tv_cuenta_emisora.text = sharedPreferences.getString("cuenta_emisora",null)
         tv_id_transaccion.text = sharedPreferences.getString("id_transaccion",null)
     }

@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BankodemiaApp">
-        <activity
+        
+      <activity
             android:name=".PruebasActivity"
             android:exported="true" >
         </activity>
@@ -42,12 +43,31 @@
             android:name=".verificacionIdentidad.VerificacionIdentidadActivitySael"
             android:exported="false" />
         <activity
+            android:name=".Telefono"
+            android:exported="false" />
+        <activity
+            android:name=".IniciarSesion"
+            android:exported="true" />
+        <activity
+            android:name=".CrearCuenta"
+            android:exported="true" />
+        <activity
+            android:name=".IngresaTusDatos"
+            android:exported="true" />
+        <activity
             android:name=".modules.home.view.HomeDetailsTransactionActivity"
-            android:exported="false" /> <!-- _______________ACTIVITY HOME________________ -->
+            android:exported="false" />
+        <!-- _______________ACTIVITY HOME________________ -->
         <activity
             android:name=".modules.home.view.HomeActivity"
             android:exported="true"
-            android:label="@string/title_activity_home">
+            android:label="@string/title_activity_home"/>
+        <!--<activity
+            android:name=".Bienvenida"
+            android:exported="false" />-->
+        <activity
+            android:name=".verificacionIdentidad.VerificacionIdentidadActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -57,6 +77,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true" />
+
     </application>
 
 </manifest>
