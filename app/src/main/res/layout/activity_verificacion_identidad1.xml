@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".verificacionIdentidad.VerificacionIdentidadActivity">
+    tools:context=".verificacionIdentidad.VerificacionIdentidadActivitySael">
 
     <ImageView
         android:id="@+id/imageViewIdentidad1"
@@ -23,7 +23,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="19dp"
         android:text="@string/identidad"
-        android:textColor="@color/otherblack"
+        android:textColor="@color/gris"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewIdentidad1" />
 
@@ -36,7 +36,7 @@
         android:layout_marginEnd="10dp"
         android:lineSpacingExtra="5sp"
         android:text="@string/textViewIdentidad1"
-        android:textColor="@color/kodemia_black"
+        android:textColor="@color/negro"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,7 +51,7 @@
         android:layout_marginEnd="20dp"
         android:lineSpacingExtra="5sp"
         android:text="@string/textViewIdentidad2"
-        android:textColor="@color/otherblack"
+        android:textColor="@color/gris"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewVerificarIdentidad" />

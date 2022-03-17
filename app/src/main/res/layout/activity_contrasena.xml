@@ -108,7 +108,7 @@
         android:layout_marginTop="200dp"
         android:text="@string/btnContrasena"
         app:cornerRadius="10dp"
-        app:strokeColor="@color/kodemia_blue"
+        app:strokeColor="@color/celeste"
         app:layout_constraintEnd_toEndOf="@+id/tilPasswordConfirm"
         app:layout_constraintStart_toStartOf="@+id/tilPasswordConfirm"
         app:layout_constraintTop_toBottomOf="@+id/tilPasswordConfirm"
