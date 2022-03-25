@@ -68,7 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="36dp"
-            android:text="Para proteger tu cuenta, te enviaremos un\ncódigo via SMS. "
+            android:text="@string/para_proteger_tu_cuenta_te_enviaremos_un_nc_digo_via_sms"
             android:textColor="@color/kodemia_black"
             app:layout_constraintBottom_toTopOf="@+id/btn_iniciarSesion_iniciarSesion"
             app:layout_constraintEnd_toEndOf="@+id/constraintLayout3"

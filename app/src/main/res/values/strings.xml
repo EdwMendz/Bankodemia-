@@ -48,22 +48,54 @@
     <string name="tiet_password_login">Contraseña</string>
     <string name="tietPasswordConfirm">Confirmar tu contraseña</string>
 
-    <string name="adios_a_las_complicaciones">!Adiós a las complicaciones!</string>
+    <!--***************** INICIO TEXTOS EDWIN ***************-->
 
+    <!-- Textos de Pagina de inicio  -->
+    <string name="adios_a_las_complicaciones">!Adiós a las complicaciones!</string>
     <string name="iniciar_sesion">Iniciar Sesión</string>
     <string name="crear_cuenta">Crear Cuenta</string>
-    <string name="usa_el_dinero_a">"Usa el dinero a "</string>
-    <string name="escribe_el_correo_y_telefono_con_el_que_n_te_registraste_a_trav_s_de_estos_nte_enciaremos_el_acceso">Escribe el correo y telefono con el que te \nregistraste, a través de estos te \nenciaremos el acceso</string>
-    <string name="bk">bk</string>
-    <string name="usa_el_dinero_a1">Usa el dinero a</string>
+    <string name="bankodemia">bankodemia</string>
+    <string name="usa_el_diner_a">usa el diner a</string>
     <string name="manera">Manera</string>
-    <string name="tu">"TU"</string>
-    <string name="todo">TODO</string>
-    <string name="necesitas_ayuda_escribenos_a">¿Necesitas ayuda? Escribenos a</string>
+
+    <!--Activity Iniciar Sesion-->
+
+    <string name="escribe_el_correo_y_telefono_con_el_que_n_te_registraste_a_trav_s_de_estos_nte_enciaremos_el_acceso">Escribe el correo y telefono con el que te \nregistraste, a través de estos te \nenviaremos el acceso</string>
     <string name="escribe_tu_correo">Escribe tu correo</string>
     <string name="escribe_tu_contrase_a">Escribe tu contraseña</string>
+    <string name="necesitas_ayuda_escribenos_a">¿Necesitas ayuda? Escribenos a</string>
     <string name="bankodemia_com_mx">bankodemia@com.mx</string>
-    <string name="bankodemia">bankodemia</string>
+
+    <!--Activity Crear Cuenta -->
+
+    <string name="correo">correo</string>
+    <string name="aqu_recibir_s_comprobantes_de_tus_nmovimientos_en_informaci_n_sobre_tu_ncuenta">Aquí recibirás comprobantes de tus \nmovimientos en información sobre tu\ncuenta</string>
+    <string name="al_tocar_continuar_aceptas_nuestro">Al tocar continuar aceptas nuestro</string>
+    <string name="aviso_de_privacidad">Aviso de privacidad</string>
+
+    <!--Activity Telefono-->
+    <string name="escribe_tu_telefono">ESCRIBE TU TELEFONO</string>
+    <string name="lo_usaras_para_inciar_sesi_n">Lo usaras para inciar sesión</string>
+    <string name="para_proteger_tu_cuenta_te_enviaremos_un_nc_digo_via_sms">Para proteger tu cuenta, te enviaremos un\ncódigo via SMS.</string>
+    <string name="continuar">Continuar</string>
+
+
+    <!--Activity Ingresa tus datos -->
+    <string name="ingresa_tus_datos">INGRESA TUS DATOS</string>
+    <string name="escribe_tal_como_aparece_en_tu_nidentificacion_oficial_sin_abreviaturas">Escribe tal como aparece en tu\nidentificacion oficial sin abreviaturas</string>
+    <string name="nombre_s">Nombre(s)</string>
+    <string name="apellido_s">Apellido(s)</string>
+    <string name="ocupacion">Ocupacion</string>
+    <string name="fecha_de_nacimiento">Fecha de Nacimiento</string>
+    <string name="nunca_la_usaremos_sin_tu_n_consentimiento">Nunca la usaremos sin tu\n consentimiento</string>
+    <string name="esta_informaci_n_es_necesaria_para_verificar_tu_nidentidad_n">Esta información es necesaria para verificar tu\nidentidad\n</string>
+    <string name="flechaatras">flechaAtras</string>
+
+
+
+    <!--************* FIN TEXTOS EDWIN *************-->
+
+
     <string name="title_activity_home">HomeActivity</string>
 
     <!--Textos del Navigation Bar del Home-->
@@ -97,17 +129,12 @@
     <string name="concepto">CONCEPTO</string>
     <string name="cuenta_emisora">CUENTA EMISORA</string>
     <string name="no_cuenta">Número de Cuenta</string>
-    <string name="escribe_tu_telefono">ESCRIBE TU TELEFONO</string>
-    <string name="lo_usaras_para_inciar_sesi_n">Lo usaras para inciar sesión</string>
-    <string name="continuar">Continuar</string>
     <string name="tu_n_mero_de_celular">Tu número de celular</string>
     <string name="logokodemia">LogoKodemia</string>
     <string name="iv_inicio">iv_incio</string>
     <string name="numero_tarjeta">numero_tarjeta</string>
     <string name="vigencia_tarjeta">vigencia_tarjeta</string>
     <string name="cvv_tarjeta">cvv_tarjeta</string>
-
-
 
 
     <string name="gris_items_recycler" translatable="false">#48D2D3D5</string>
@@ -129,34 +156,34 @@
     <string name="noviembre">noviembre</string>
     <string name="diciembre">diciembre</string>
 
-        <string name="app_name">parte_proyecto</string>
-        <string name="TV_usuario_uno">Pedro Pacheco Montiel</string>
-        <string name="TV_no_cuenta">2345 6512 2653 8811</string>
-        <string name="barra">/</string>
-        <string name="no_cuenta_uno">BANORTE</string>
-        <string name="usuario_dos">Antionio Contreras Chavez</string>
-        <string name="no_cuenta_dos">4567 2345 7892 0045</string>
-        <string name="barrauno">/</string>
-        <string name="banco_dos">BANORTE</string>
-        <string name="Img_AgregarContacto">IMG</string>
-        <string name="textodialogo">¿Estas Seguro(o) que quieres realizar esta transacciòn?</string>
-        <string name="clabe">CLABE</string>
-        <string name="tarjeta">Tarjeta</string>
-        <string name="no_de_tarjeta">No. de Tarjeta</string>
-        <string name="nombre">Nombre</string>
-        <string name="correo_de_ntoficacion">Correo de Ntoficacion</string>
-        <string name="button">Button</string>
-        <string name="tu_contacto_fue_agregado_con_xito">Tu contacto fue agregado con éxito</string>
-        <string name="title_activity_enviar_transferencia">EnviarTransferencia</string>
-        <!-- Strings used for fragments for navigation -->
-        <string name="first_fragment_label">First Fragment</string>
-        <string name="second_fragment_label">Second Fragment</string>
-        <string name="next">Next</string>
-        <string name="previous">Previous</string>
+    <string name="app_name">parte_proyecto</string>
+    <string name="TV_usuario_uno">Pedro Pacheco Montiel</string>
+    <string name="TV_no_cuenta">2345 6512 2653 8811</string>
+    <string name="barra">/</string>
+    <string name="no_cuenta_uno">BANORTE</string>
+    <string name="usuario_dos">Antionio Contreras Chavez</string>
+    <string name="no_cuenta_dos">4567 2345 7892 0045</string>
+    <string name="barrauno">/</string>
+    <string name="banco_dos">BANORTE</string>
+    <string name="Img_AgregarContacto">IMG</string>
+    <string name="textodialogo">¿Estas Seguro(o) que quieres realizar esta transacciòn?</string>
+    <string name="clabe">CLABE</string>
+    <string name="tarjeta">Tarjeta</string>
+    <string name="no_de_tarjeta">No. de Tarjeta</string>
+    <string name="nombre">Nombre</string>
+    <string name="correo_de_ntoficacion">Correo de Ntoficacion</string>
+    <string name="button">Button</string>
+    <string name="tu_contacto_fue_agregado_con_xito">Tu contacto fue agregado con éxito</string>
+    <string name="title_activity_enviar_transferencia">EnviarTransferencia</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
 
-        <string name="hello_first_fragment">Hello first fragment</string>
-        <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
-    </resources>
+</resources>
 
 

@@ -46,7 +46,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/poppins_400"
-        android:text="ESCRIBE TU CORREO"
+        android:text="@string/escribe_tu_correo"
         app:layout_constraintBottom_toBottomOf="@+id/iv_iniciarSesion_Regresar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.037"
@@ -61,7 +61,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:fontFamily="@font/poppins_500"
-        android:text="Aquí recibirás comprobantes de tus \nmovimientos en información sobre tu\ncuenta"
+        android:text="@string/aqu_recibir_s_comprobantes_de_tus_nmovimientos_en_informaci_n_sobre_tu_ncuenta"
         android:textColor="@color/kodemia_black"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -74,7 +74,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="600dp"
-        android:text="Al tocar continuar aceptas nuestro"
+        android:text="@string/al_tocar_continuar_aceptas_nuestro"
         android:textColor="@color/kodemia_black"
         app:layout_constraintEnd_toEndOf="@+id/til_itd_nombre"
         app:layout_constraintStart_toStartOf="@+id/til_itd_nombre"
@@ -88,7 +88,7 @@
 
         android:autoLink="email"
         android:minHeight="48dp"
-        android:text="Aviso de privacidad"
+        android:text="@string/aviso_de_privacidad"
         android:textColor="#00838F"
         app:layout_constraintEnd_toEndOf="@+id/textView10"
         app:layout_constraintStart_toStartOf="@+id/textView10"
@@ -137,7 +137,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="correo" />
+            android:hint="@string/correo" />
     </com.google.android.material.textfield.TextInputLayout>
     <!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
     <!--    </ScrollView>-->

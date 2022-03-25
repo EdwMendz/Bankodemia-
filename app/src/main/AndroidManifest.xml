@@ -22,7 +22,7 @@
             android:name=".Telefono"
             android:exported="false" />
         <activity
-            android:name=".IniciarSesion"
+            android:name=".modules.home.view.IniciarSesionView"
             android:exported="true" />
         <activity
             android:name=".CrearCuenta"

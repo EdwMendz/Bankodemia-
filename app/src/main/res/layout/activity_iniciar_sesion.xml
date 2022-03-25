@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".IniciarSesion">
+    tools:context=".modules.home.view.IniciarSesionView">
 
 
 
@@ -151,7 +151,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Escribe tu correo" />
+                    android:hint="@string/escribe_tu_correo" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -170,7 +170,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Escribe tu contraseña"
+                    android:hint="@string/escribe_tu_contrase_a"
                     android:inputType="textPassword"/>
             </com.google.android.material.textfield.TextInputLayout>
 
