@@ -126,7 +126,7 @@
                 android:contentDescription="@string/flechaatras" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/til_itd_nombre"
+                android:id="@+id/til_IniciarSesison_Correo"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -147,14 +147,14 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayout4"
+                android:id="@+id/til_IniciarSesion_contrasenia"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                app:layout_constraintEnd_toEndOf="@+id/til_itd_nombre"
-                app:layout_constraintStart_toStartOf="@+id/til_itd_nombre"
-                app:layout_constraintTop_toBottomOf="@+id/til_itd_nombre"
+                app:layout_constraintEnd_toEndOf="@+id/til_IniciarSesison_Correo"
+                app:layout_constraintStart_toStartOf="@+id/til_IniciarSesison_Correo"
+                app:layout_constraintTop_toBottomOf="@+id/til_IniciarSesison_Correo"
                 app:boxStrokeColor="@color/kodemia_blue">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -170,9 +170,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
-                app:layout_constraintEnd_toEndOf="@+id/textInputLayout4"
-                app:layout_constraintStart_toStartOf="@+id/textInputLayout4"
-                app:layout_constraintTop_toBottomOf="@+id/textInputLayout4"
+                app:layout_constraintEnd_toEndOf="@+id/til_IniciarSesion_contrasenia"
+                app:layout_constraintStart_toStartOf="@+id/til_IniciarSesion_contrasenia"
+                app:layout_constraintTop_toBottomOf="@+id/til_IniciarSesion_contrasenia"
                 app:boxStrokeColor="@color/kodemia_blue">
 
                 <com.google.android.material.textfield.TextInputEditText

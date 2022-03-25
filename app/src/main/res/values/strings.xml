@@ -65,6 +65,9 @@
     <string name="escribe_tu_contrase_a">Escribe tu contraseña</string>
     <string name="necesitas_ayuda_escribenos_a">¿Necesitas ayuda? Escribenos a</string>
     <string name="bankodemia_com_mx">bankodemia@com.mx</string>
+    <!-- Validaciones-->
+    <string name="campo_vacio">campo vacio</string>
+    <string name="correo_no_valido">correo no valido</string>
 
     <!--Activity Crear Cuenta -->
 

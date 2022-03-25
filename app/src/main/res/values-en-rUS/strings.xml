@@ -91,6 +91,9 @@
     <string name="escribe_tu_contrase_a">write your password</string>
     <string name="necesitas_ayuda_escribenos_a">Need help? write us to</string>
     <string name="bankodemia_com_mx">bankodemia@com.mx</string>
+    <!-- Validaciones-->
+    <string name="campo_vacio">empty field</string>
+    <string name="correo_no_valido">invalid email</string>
 
     <!--Activity Crear Cuenta -->
 

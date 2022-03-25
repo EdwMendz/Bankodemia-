@@ -76,8 +76,8 @@
         android:layout_marginTop="600dp"
         android:text="@string/al_tocar_continuar_aceptas_nuestro"
         android:textColor="@color/kodemia_black"
-        app:layout_constraintEnd_toEndOf="@+id/til_itd_nombre"
-        app:layout_constraintStart_toStartOf="@+id/til_itd_nombre"
+        app:layout_constraintEnd_toEndOf="@+id/til_IniciarSesison_Correo"
+        app:layout_constraintStart_toStartOf="@+id/til_IniciarSesison_Correo"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -122,7 +122,7 @@
         app:srcCompat="@drawable/regresar" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_itd_nombre"
+        android:id="@+id/til_IniciarSesison_Correo"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

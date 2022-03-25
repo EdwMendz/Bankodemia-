@@ -92,10 +92,10 @@
                 android:layout_marginTop="224dp"
                 android:text="@string/necesitas_ayuda_escribenos_a"
                 android:textColor="@color/kodemia_black"
-                app:layout_constraintEnd_toEndOf="@+id/textInputLayout4"
+                app:layout_constraintEnd_toEndOf="@+id/til_IniciarSesion_contrasenia"
                 app:layout_constraintHorizontal_bias="0.505"
-                app:layout_constraintStart_toStartOf="@+id/textInputLayout4"
-                app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
+                app:layout_constraintStart_toStartOf="@+id/til_IniciarSesion_contrasenia"
+                app:layout_constraintTop_toBottomOf="@+id/til_IniciarSesion_contrasenia" />
 
             <TextView
                 android:id="@+id/textView11"
@@ -121,8 +121,8 @@
         android:text="@string/iniciar_sesion"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textInputLayout4"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayout4"
+        app:layout_constraintEnd_toEndOf="@+id/til_IniciarSesion_contrasenia"
+        app:layout_constraintStart_toStartOf="@+id/til_IniciarSesion_contrasenia"
         app:layout_constraintTop_toBottomOf="@+id/textView11"
         app:layout_constraintVertical_bias="0.405" />
 
@@ -136,7 +136,7 @@
                 app:srcCompat="@drawable/regresar"/>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/til_itd_nombre"
+                android:id="@+id/til_IniciarSesison_Correo"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
@@ -149,25 +149,27 @@
                 app:boxStrokeColor="@color/kodemia_blue">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiet_IniciarSesison_Correo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/escribe_tu_correo" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayout4"
+                android:id="@+id/til_IniciarSesion_contrasenia"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="44dp"
                 app:prefixTextColor="@color/kodemia_blue"
                 app:endIconMode="password_toggle"
-                app:layout_constraintEnd_toEndOf="@+id/til_itd_nombre"
-                app:layout_constraintStart_toStartOf="@+id/til_itd_nombre"
-                app:layout_constraintTop_toBottomOf="@+id/til_itd_nombre"
+                app:layout_constraintEnd_toEndOf="@+id/til_IniciarSesison_Correo"
+                app:layout_constraintStart_toStartOf="@+id/til_IniciarSesison_Correo"
+                app:layout_constraintTop_toBottomOf="@+id/til_IniciarSesison_Correo"
                 app:boxStrokeColor="@color/kodemia_blue"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiet_IniciarSesion_contrasenia"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/escribe_tu_contrase_a"

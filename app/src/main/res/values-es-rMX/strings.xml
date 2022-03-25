@@ -49,15 +49,17 @@
     <!--***************** INICIO TEXTOS EDWIN ***************-->
 
     <!-- Textos de Pagina de inicio  -->
-
     <string name="iniciar_sesion">Iniciar Sesión</string>
     <string name="crear_cuenta">Crear Cuenta</string>
     <string name="bankodemia">bankodemia</string>
     <string name="usa_el_diner_a">usa el diner a</string>
     <string name="manera">Manera</string>
+    <!-- Validaciones-->
+    <string name="campo_vacio">campo vacio</string>
+    <string name="correo_no_valido">correo no valido</string>
+
 
     <!--Activity Iniciar Sesion-->
-
     <string name="escribe_el_correo_y_telefono_con_el_que_n_te_registraste_a_trav_s_de_estos_nte_enciaremos_el_acceso">Escribe el correo y telefono con el que te \nregistraste, a través de estos te \nenciaremos el acceso</string>
     <string name="escribe_tu_correo">Escribe tu correo</string>
     <string name="escribe_tu_contrase_a">Escribe tu contraseña</string>
