@@ -28,9 +28,7 @@ import mx.kodemia.bankodemiaapp.modules.home.viewmodel.InicioFragmentViewModel
 
 class InicioFragment : Fragment() {
 
-    val TAG = "LOGIN"
-
-    //binding
+    //View Binding
     private var binding: FragmentInicioBinding? = null
 
     //viewModel
@@ -39,6 +37,7 @@ class InicioFragment : Fragment() {
     //SharedPreferences
     lateinit var shared : SharedPreferencesInstance
 
+    //Alertas por medio de Toast o SnackBar
     private val alert = Alerts
 
     override fun onCreateView(
@@ -50,12 +49,13 @@ class InicioFragment : Fragment() {
 
         init()
 
-        //TEMPORAL (Login Automatico)
+        //TEMPORAL (Login Automatico)-----Inicio del bloque
         val logIn = LogInRequest(
             "federico123@kodemia.com",
             "FedericoGonza123"
         )
         mandarDatosLogIn("1h",logIn)
+        //TEMPORAL--------Final del bloque
 
         binding?.apply {
             textViewFecha.text = darFormatoFechaActual()
@@ -67,16 +67,19 @@ class InicioFragment : Fragment() {
         return binding!!.root
     }
 
-    //Inicializacion de SharedPreferences y Dar el contexto a ViewModel
+    //Inicializacion de SharedPreferences y dar el contexto a ViewModel para recibir el servicio
     fun init(){
         shared = SharedPreferencesInstance.obtenerInstancia(requireActivity())
 
         viewModel.onCreate(context = requireActivity())
     }
 
+    //Observers pendientes a cambios en los datos por parte de MVVM
     private fun observers(){
 
+        //TEMPORAL-----------Inicio del bloque
         viewModel.logInResponse.observe(viewLifecycleOwner,::guardarLogin)
+        //TEMPORAL----------Final del bloque
 
         viewModel.errorTrans.observe(viewLifecycleOwner,::errorTrans)
         viewModel.cargandoTrans.observe(viewLifecycleOwner,::cargandoTrans)
@@ -84,20 +87,17 @@ class InicioFragment : Fragment() {
         viewModel.listTransactionResponse.observe(viewLifecycleOwner,::mostrarTransacciones)
 
         viewModel.getUserFullProfile()
-        viewModel.getUserInformationResponse.observe(requireActivity()){ getUserFull: GetUserFullResponse ->
-            lifecycleScope.launch{
-                getUserFull.apply {
-                    binding?.textViewDineroDisponible?.text  = darFormatoDinero(this.data.balance)
-                }
-            }
-        }
+        viewModel.getUserInformationResponse.observe(viewLifecycleOwner,::mostrarInfoUsuario)
 
     }
 
+    //TEMPORAL--------Inicio del bloque
     private fun mandarDatosLogIn(expires_in: String, logInRequest: LogInRequest) {
         viewModel.logIn(expires_in,logInRequest)
     }
+    //TEMPORAL---------Final del bloque
 
+    //Inicializacion de RecyclerView que contiene la informacion de las transacciones
     private fun initRecycler(lista: MutableList<Transaccion>, recyclerView: RecyclerView){
         val adaptador = TransaccionesAdapter(requireActivity(),lista)
         recyclerView.apply {
@@ -106,21 +106,30 @@ class InicioFragment : Fragment() {
         }
     }
 
+    //Funcion para observer de carga cuando se esta haciendo la solicitud a la API
     private fun cargandoTrans(b: Boolean){
 
     }
 
+    //Funcion para observer de muestra de error en caso de fallo con la API
     private fun errorTrans(error: String){
         alert.showSnackbar(error, activity = requireActivity())
     }
 
+    //Funcion para observer para llenar el RecyclerView con la informacion obtenida de la API
     private fun mostrarTransacciones(transacciones: ListaTransaccionesResponse){
         binding?.let { initRecycler(transacciones.data.transactions, it.recyclerViewHome) }
     }
 
+    private fun mostrarInfoUsuario(userFull: GetUserFullResponse){
+        binding?.textViewDineroDisponible?.text  = darFormatoDinero(userFull.data.balance)
+    }
+
+    //TEMPORAL (Con esta funcion guardamos el Token y tiempo de vencimiento del LOGIN)------Inicio del Bloque
     private fun guardarLogin(login: LoginResponse){
         shared.guardarSesionLogin(login)
     }
+    //TEMPORAL------------Final del bloque
 
     override fun onDestroyView() {
         super.onDestroyView()

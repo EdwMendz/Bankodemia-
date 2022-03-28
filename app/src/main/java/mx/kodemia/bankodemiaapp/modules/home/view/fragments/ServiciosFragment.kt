@@ -13,11 +13,8 @@ import mx.kodemia.bankodemiaapp.modules.home.viewmodel.ServiciosFragmentViewMode
 
 class ServiciosFragment : Fragment() {
 
+    //View Binding
     private var binding: FragmentServiciosBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-
 
     override fun onCreateView(
         inflater: LayoutInflater,

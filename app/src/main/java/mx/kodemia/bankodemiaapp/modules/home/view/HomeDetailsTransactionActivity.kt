@@ -2,22 +2,17 @@ package mx.kodemia.bankodemiaapp.modules.home.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.activity.viewModels
 import mx.kodemia.bankodemiaapp.animations.initParpadeoGuionLogo
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.databinding.ActivityHomeDetailsTransactionBinding
-import mx.kodemia.bankodemiaapp.modules.home.viewmodel.HomeDetailsTransactionViewModel
 
 class HomeDetailsTransactionActivity : AppCompatActivity() {
 
-    //Binding
+    //View Binding
     lateinit var binding: ActivityHomeDetailsTransactionBinding
 
-    //Shared
+    //SharedPrerences
     lateinit var shared : SharedPreferencesInstance
-
-    //ViewModel
-    val viewModel: HomeDetailsTransactionViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,12 +34,12 @@ class HomeDetailsTransactionActivity : AppCompatActivity() {
     }
 
     private fun init(){
-        //Shared
+        //SharedPreferencesIntance
         shared = SharedPreferencesInstance.obtenerInstancia(this)
 
-        //binding
+        //View Binding
         binding = ActivityHomeDetailsTransactionBinding.inflate(layoutInflater)
-        supportActionBar?.hide()
+        supportActionBar?.hide() // Por temas de diseño se oculta El ActionBar de la parte superior del Activity
         setContentView(binding.root)
     }
 }
