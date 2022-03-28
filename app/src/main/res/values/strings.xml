@@ -122,4 +122,6 @@
     <!--Home Inicio-->
     <string name="error_trans">Ha ocurrido un error con la lista de transacciones</string>
     <string name="tu_contacto_fue_agregado_con_xito">Tu contacto fue agregado con exito</string>
+    <string name="si_internet">Conexión reestablecida</string>
+    <string name="no_internet">Se perdió la conexión a internet</string>
 </resources>
