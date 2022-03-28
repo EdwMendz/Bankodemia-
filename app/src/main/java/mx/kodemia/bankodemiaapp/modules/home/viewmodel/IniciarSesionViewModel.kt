@@ -16,16 +16,15 @@ import mx.kodemia.bankodemiaapp.network.service.LogInService
 
 class IniciarSesionViewModel(context: Context) : ViewModel() {
     // Servicicio
-    private val serviceLogin = LogInService(context)
-
+     val serviceLogin = LogInService(context)
     //LoginResponse
-    private val logInResponse = MutableLiveData<LoginResponse>()
-
+     val logInResponse = MutableLiveData<LoginResponse>()
+    //LoginRequest
+    val logInRequest = MutableLiveData<LogInRequest>()
     //errores
     val error = MutableLiveData<ErrorMessageResponse>()
-
     //Cargando
-    private val cargando = MutableLiveData<Boolean>()
+     val cargando = MutableLiveData<Boolean>()
 
     fun logIn(expires_in: String, logInRequest: LogInRequest, activity: Activity) {
         //Se lanza la corrutina

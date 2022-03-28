@@ -3,6 +3,7 @@ package mx.kodemia.bankodemiaapp.modules.home.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.activity.viewModels
 import kotlinx.android.synthetic.main.activity_iniciar_sesion.*
 import mx.kodemia.bankodemiaapp.MainActivity
@@ -18,13 +19,25 @@ class IniciarSesionView : AppCompatActivity() {
 
     //Union ViewModel con View
     val viewmodel: IniciarSesionViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //Infla el binding
         inicializarBinding()
         realizarPeticion()
+        observadores()
     }
 
+
+    //Observadores
+    private fun observadores() {
+        //Observamos el progresbar
+        viewmodel.cargando.observe(this) {cargando ->
+            cargando(cargando)
+        }
+    }
+
+    //Realizar Peticion
     private fun realizarPeticion() {
         if (checkForInternet(applicationContext))
             binding.apply {
@@ -33,13 +46,13 @@ class IniciarSesionView : AppCompatActivity() {
                 btnIniciarSesionIniciarSesion.setOnClickListener {
                     validarCorreoYContrasenia()
                     val logIng = LogInRequest(correo, pass)
-
                     viewmodel.logIn("1h", logIng, this@IniciarSesionView)
                 }
             }
     }
 
-    //Validar Correo y contraseña
+
+    //Validar Correo
     private fun validarCorreo(): Boolean {
         binding.apply {
 
@@ -59,6 +72,8 @@ class IniciarSesionView : AppCompatActivity() {
             }
         }
     }
+
+    //Validar contrasenia
     private fun validarContrasenia(): Boolean {
         binding.apply {
             return if (tietIniciarSesionContrasenia.text.toString().isEmpty()) {
@@ -70,6 +85,7 @@ class IniciarSesionView : AppCompatActivity() {
             }
         }
     }
+
     //Valida Correo y contrasenia juntos
     private fun validarCorreoYContrasenia() {
         val result = arrayOf(validarCorreo(), validarContrasenia())
@@ -81,5 +97,17 @@ class IniciarSesionView : AppCompatActivity() {
     private fun inicializarBinding() {
         binding = ActivityIniciarSesionBinding.inflate(layoutInflater)
         setContentView(binding.root)
+    }
+
+    //Mostrar progresbar
+    private fun cargando(cargando: Boolean) {
+        binding.apply {
+            if (cargando) {
+                progressBar.visibility = View.VISIBLE
+            } else {
+                progressBar.visibility = View.GONE
+            }
+        }
+
     }
 }
