@@ -40,8 +40,14 @@
         <activity
             android:name=".modules.home.view.HomeActivity"
             android:exported="true"
-            android:label="@string/title_activity_home"/>
+            android:label="@string/title_activity_home">
 
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
             <activity
             android:name=".verificacionIdentidad.confirmacion.Confirmacion"
             android:exported="false" />
@@ -72,12 +78,6 @@
         <activity
             android:name=".verificacionIdentidad.VerificacionIdentidadActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
         </activity>
     </application>
 

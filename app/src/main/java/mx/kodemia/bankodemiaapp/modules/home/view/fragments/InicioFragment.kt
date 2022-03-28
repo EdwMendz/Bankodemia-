@@ -11,7 +11,9 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.launch
+import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.animations.initParpadeoGuionLogo
+import mx.kodemia.bankodemiaapp.core.Alerts
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.formatos.darFormatoDinero
 import mx.kodemia.bankodemiaapp.data.model.request.LogInRequest
@@ -37,6 +39,8 @@ class InicioFragment : Fragment() {
     //SharedPreferences
     lateinit var shared : SharedPreferencesInstance
 
+    private val alert = Alerts
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -56,41 +60,28 @@ class InicioFragment : Fragment() {
         binding?.apply {
             textViewFecha.text = darFormatoFechaActual()
             initParpadeoGuionLogo(requireContext(),imageViewGuionLogo)
-            observers(recyclerViewHome)
         }
+
+        observers()
 
         return binding!!.root
     }
 
-    //Inicializacion de SharedPreferences
+    //Inicializacion de SharedPreferences y Dar el contexto a ViewModel
     fun init(){
         shared = SharedPreferencesInstance.obtenerInstancia(requireActivity())
 
         viewModel.onCreate(context = requireActivity())
     }
 
-    private fun observers(recyclerView: RecyclerView){
+    private fun observers(){
 
-        viewModel.logInResponse.observe(requireActivity()) {logIn: LoginResponse ->
-            shared.guardarSesionLogin(logIn)
-            lifecycleScope.launch {
-                logIn.apply {
-                    Log.e(TAG,this.token.toString())
-                    Log.e(TAG,this.expiresIn.toString())
-                }
-            }
-        }
+        viewModel.logInResponse.observe(viewLifecycleOwner,::guardarLogin)
 
+        viewModel.errorTrans.observe(viewLifecycleOwner,::errorTrans)
+        viewModel.cargandoTrans.observe(viewLifecycleOwner,::cargandoTrans)
         viewModel.listTransacciones()
-        viewModel.listTransactionResponse.observe(requireActivity()){ listTransaccion: ListaTransaccionesResponse ->
-            lifecycleScope.launch {
-                listTransaccion.apply {
-                    Log.e(TAG,this.data.transactions[5].concept)
-                    Log.e(TAG,this.success.toString())
-                    initRecycler(this.data.transactions,recyclerView)
-                }
-            }
-        }
+        viewModel.listTransactionResponse.observe(viewLifecycleOwner,::mostrarTransacciones)
 
         viewModel.getUserFullProfile()
         viewModel.getUserInformationResponse.observe(requireActivity()){ getUserFull: GetUserFullResponse ->
@@ -113,6 +104,22 @@ class InicioFragment : Fragment() {
             layoutManager = LinearLayoutManager(requireActivity())
             adapter = adaptador
         }
+    }
+
+    private fun cargandoTrans(b: Boolean){
+
+    }
+
+    private fun errorTrans(error: String){
+        alert.showSnackbar(error, activity = requireActivity())
+    }
+
+    private fun mostrarTransacciones(transacciones: ListaTransaccionesResponse){
+        binding?.let { initRecycler(transacciones.data.transactions, it.recyclerViewHome) }
+    }
+
+    private fun guardarLogin(login: LoginResponse){
+        shared.guardarSesionLogin(login)
     }
 
     override fun onDestroyView() {
