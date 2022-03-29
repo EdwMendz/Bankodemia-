@@ -34,7 +34,7 @@
         android:layout_width="353dp"
         android:layout_height="27dp"
         android:scrollbarSize="16dp"
-        android:text="@string/tu_contacto_fue_agregado_con_xito"
+        android:text="@string/textoAgregarContancto"
         android:textColorHint="#0C0C0C"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView3"
@@ -43,11 +43,14 @@
 
     <Button
         android:id="@+id/btn_VolverInicio"
+        app:strokeColor="@color/kodemia_blue"
+        tools:ignore="TextContrastCheck"
         android:layout_width="342dp"
         android:layout_height="48dp"
         android:layout_marginTop="110dp"
-        android:text="Volver a inicio"
+        android:text="@string/Volver_Inicio"
         app:layout_constraintEnd_toEndOf="@+id/textView2"
         app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -23,6 +23,16 @@
         <entry key="..\:/Proyectos_Android_Kodemia/Proyecto_Final/Bankodemia-/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.173" />
         <entry key="..\:/Users/HP/BankodemiaApp/app/src/main/res/layout/activity_main.xml" value="0.18461538461538463" />
         <entry key="..\:/Users/HP/BankodemiaApp/app/src/main/res/layout/main_fragment.xml" value="0.16944444444444445" />
+        <entry key="..\:/Users/lizth/OneDrive/Escritorio/Nueva carpeta/Bankodemia-/app/src/main/res/layout/activity_confirmacion_transferencia.xml" value="0.1359375" />
+        <entry key="..\:/Users/lizth/OneDrive/Escritorio/Nueva carpeta/Bankodemia-/app/src/main/res/layout/activity_enviar_dinero.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/lizth/OneDrive/Escritorio/Nueva carpeta/Bankodemia-/app/src/main/res/layout/activity_home.xml" value="0.22418478260869565" />
+        <entry key="..\:/Users/lizth/OneDrive/Escritorio/Nueva carpeta/Bankodemia-/app/src/main/res/layout/activity_home_details_transaction.xml" value="0.22418478260869565" />
+        <entry key="..\:/Users/lizth/OneDrive/Escritorio/Nueva carpeta/Bankodemia-/app/src/main/res/layout/activity_verificacion_identidad.xml" value="0.22418478260869565" />
+        <entry key="..\:/Users/lizth/OneDrive/Escritorio/Nueva carpeta/Bankodemia-/app/src/main/res/layout/enviar_dinero.xml" value="0.22418478260869565" />
+        <entry key="..\:/Users/lizth/OneDrive/Escritorio/Nueva carpeta/Bankodemia-/app/src/main/res/layout/enviar_dineros.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/lizth/OneDrive/Escritorio/Nueva carpeta/Bankodemia-/app/src/main/res/layout/fragment_servicios.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/lizth/OneDrive/Escritorio/Nueva carpeta/Bankodemia-/app/src/main/res/layout/fragment_tarjeta.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/lizth/OneDrive/Escritorio/Nueva carpeta/Bankodemia-/app/src/main/res/layout/item_cardview_home.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/saela/OneDrive/Escritorio/Desafio Final/Bankodemia-/app/src/main/res/layout/activity_verificacion_identidad.xml" value="0.1" />
       </map>
     </option>
