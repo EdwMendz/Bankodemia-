@@ -23,7 +23,8 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="19dp"
         android:text="@string/identidad"
-        android:textColor="@color/otherblack"
+        android:fontFamily="@font/poppins_500"
+        android:textColor="@color/gris"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewIdentidad1" />
 
@@ -36,7 +37,8 @@
         android:layout_marginEnd="10dp"
         android:lineSpacingExtra="5sp"
         android:text="@string/textViewIdentidad1"
-        android:textColor="@color/kodemia_black"
+        android:fontFamily="@font/poppins_500"
+        android:textColor="@color/negro"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,7 +53,8 @@
         android:layout_marginEnd="20dp"
         android:lineSpacingExtra="5sp"
         android:text="@string/textViewIdentidad2"
-        android:textColor="@color/otherblack"
+        android:fontFamily="@font/poppins_400"
+        android:textColor="@color/gris"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewVerificarIdentidad" />
@@ -61,9 +64,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="350dp"
         android:layout_marginEnd="32dp"
         android:text="@string/btnIdentidad"
+        android:fontFamily="@font/poppins_500"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewInstrucciones" />
