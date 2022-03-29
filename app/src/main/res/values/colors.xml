@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ed5fafecf4b2fa80c6a9d321aff75ce15233d78c
 
     <!--_____________COLORES PRINCIPALES_____________-->
     <color name="negro">#161616</color>
@@ -11,7 +14,20 @@
 
     <!--_____________COLOR DE RECYCLERVIEW HOME_____________-->
     <color name="gris_recycler">#48D2D3D5</color>
+  
+     <!--_____________COLOR DE SAEL_____________-->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="kodemia_purple">#7B78EA</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="kodemia_blue">#00CCCC</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="kodemia_black">#161616</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="red">#ED0C0C</color>
 
+    <color name="otherblack">#4D4D4D</color>
+
+<<<<<<< HEAD
 =======
     <color name="purple_200">#FFBB86FC</color>
     <color name="kodemia_purple">#7B78EA</color>
@@ -22,4 +38,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="otherblack">#4D4D4D</color>
 >>>>>>> 637e0df1d59016c67377006be78339c28472b8da
+=======
+>>>>>>> ed5fafecf4b2fa80c6a9d321aff75ce15233d78c
 </resources>

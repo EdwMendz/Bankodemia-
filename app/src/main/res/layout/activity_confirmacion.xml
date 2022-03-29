@@ -46,10 +46,14 @@
         android:text="@string/textViewGracias"
         android:textAlignment="center"
 <<<<<<< HEAD
+<<<<<<< HEAD
         android:textColor="@color/lila"
 =======
         android:textColor="@color/kodemia_purple"
 >>>>>>> 637e0df1d59016c67377006be78339c28472b8da
+=======
+        android:textColor="@color/lila"
+>>>>>>> ed5fafecf4b2fa80c6a9d321aff75ce15233d78c
         app:layout_constraintEnd_toEndOf="@+id/textView4"
         app:layout_constraintStart_toStartOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
@@ -70,6 +74,9 @@
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <!--    style="?attr/materialButtonOutlinedStyle"-->
 >>>>>>> 637e0df1d59016c67377006be78339c28472b8da
+=======
+>>>>>>> ed5fafecf4b2fa80c6a9d321aff75ce15233d78c

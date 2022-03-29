@@ -40,6 +40,9 @@
             android:name=".verificacionIdentidad.VerificacionIdentidad2"
             android:exported="false" />
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ed5fafecf4b2fa80c6a9d321aff75ce15233d78c
         <activity
             android:name=".verificacionIdentidad.VerificacionIdentidadActivitySael"
             android:exported="false" />
@@ -63,10 +66,12 @@
             android:name=".modules.home.view.HomeActivity"
             android:exported="true"
             android:label="@string/title_activity_home"/>
+
         <!--<activity
             android:name=".Bienvenida"
             android:exported="false" />-->
         <activity
+<<<<<<< HEAD
 =======
         <activity
             android:name=".MainActivity"
@@ -76,6 +81,8 @@
             android:exported="false" />-->
         <activity
 >>>>>>> 637e0df1d59016c67377006be78339c28472b8da
+=======
+>>>>>>> ed5fafecf4b2fa80c6a9d321aff75ce15233d78c
             android:name=".verificacionIdentidad.VerificacionIdentidadActivity"
             android:exported="true">
             <intent-filter>
@@ -84,6 +91,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".MainActivity"
             android:exported="true" />
