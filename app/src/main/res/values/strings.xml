@@ -162,6 +162,8 @@
     <string name="cvv_tarjeta" translatable="false">125</string>
     <string name="_0000_2052_14" translatable="false">0000 2052 14</string>
     <string name="dinero_defecto" translatable="false">$0.00</string>
+
+    <!--Meses del Año-->
     <string name="enero">enero</string>
     <string name="febrero">febrero</string>
     <string name="marzo">marzo</string>
@@ -174,6 +176,12 @@
     <string name="octubre">octubre</string>
     <string name="noviembre">noviembre</string>
     <string name="diciembre">diciembre</string>
+
+    <!--Home Inicio-->
+    <string name="error_trans">Ha ocurrido un error con la lista de transacciones</string>
+    <string name="tu_contacto_fue_agregado_con_xito">Tu contacto fue agregado con exito</string>
+    <string name="si_internet">Conexión reestablecida</string>
+    <string name="no_internet">Se perdió la conexión a internet</string>
 
     <string name="app_name">parte_proyecto</string>
     <string name="TV_usuario_uno">Pedro Pacheco Montiel</string>
@@ -232,6 +240,3 @@
         <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
     </resources>
-
-
-

@@ -102,4 +102,13 @@ object SharedPreferencesInstance {
         )
     }
 
+    fun guardarEstadoRed(estado: Boolean){
+        with(editor){
+            putBoolean("estado",estado)
+            apply()
+        }
+    }
+
+    fun obtenerEstadoRed(): Boolean = sharedPreferences.getBoolean("estado",false)
+
 }

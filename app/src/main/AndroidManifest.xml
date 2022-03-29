@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="mx.kodemia.bankodemiaapp">
+    package="mx.kodemia.bankodemiaapp" >
 
+    <!--______________________PERMISOS______________________-->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -12,6 +12,58 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:theme="@style/Theme.BankodemiaApp" >
+
+
+        <!-- _____________ACTIVITIES DE PRUEBA (Inicio del Bloque)________________ -->
+        <activity
+            android:name=".PruebasActivity"
+            android:exported="true" />
+        <activity
+            android:name=".PruebasActivity2"
+            android:exported="false" />
+        <!-- _____________ACTIVITIES DE PRUEBA (Final del Bloque)________________-->
+
+
+        <!--_____________ACTIVITIES DE REGISTRO (Inicio del Bloque)________________ -->
+        <activity
+            android:name=".Telefono"
+            android:exported="false" />
+        <activity
+            android:name=".CrearCuenta"
+            android:exported="true" />
+        <activity
+            android:name=".IngresaTusDatos"
+            android:exported="true" />
+        <!--_____________ACTIVITIES DE REGISTRO (Final del Bloque)________________ -->
+
+
+        <!--_____________ACTIVITIES DE INICIO DE SESION (Inicio del Bloque)________________ -->
+        <activity
+            android:name=".IniciarSesion"
+            android:exported="true" />
+        <!--_____________ACTIVITIES DE INICIO DE SESION (Final del Bloque)________________ -->
+
+
+        <!-- _____________ACTIVITIES DE HOME (Inicio del Bloque)________________ -->
+        <activity
+            android:name=".modules.home.view.HomeActivity"
+            android:exported="true"
+            android:label="@string/title_activity_home" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".modules.home.view.HomeDetailsTransactionActivity"
+            android:exported="false" />
+        <!-- _____________ACTIVITIES DE HOME (Final del Bloque)________________ -->
+
+
+        <!-- _____________ACTIVITIES DE VERIFICACION DE IDENTIDAD (Inicio del Bloque)________________ -->
+        <activity
         android:theme="@style/Theme.BankodemiaApp">
         
       <activity
@@ -56,29 +108,22 @@
             android:exported="true" />
         <activity
             android:name=".modules.home.view.HomeDetailsTransactionActivity"
-            android:exported="false" />
-        <!-- _______________ACTIVITY HOME________________ -->
-        <activity
-            android:name=".modules.home.view.HomeActivity"
-            android:exported="true"
-            android:label="@string/title_activity_home"/>
-
-        <!--<activity
-            android:name=".Bienvenida"
-            android:exported="false" />-->
+            android:exported="false" /> 
         <activity
             android:name=".verificacionIdentidad.VerificacionIdentidadActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="true" />
+        <!-- _____________ACTIVITIES DE VERIFICACION DE IDENTIDAD (Final del Bloque)________________ -->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
 
+
+        <!-- _____________PRIMERA ACTIVITY DE SELECCION DE LOGIN O SINGUP (Inicio del Bloque)________________ -->
         <activity
             android:name=".MainActivity"
-            android:exported="true" />
+            android:exported="false" />
+        <!-- _____________PRIMERA ACTIVITY DE SELECCION DE LOGIN O SINGUP (Final del Bloque)________________ -->
+
+     
+
 
     </application>
 
