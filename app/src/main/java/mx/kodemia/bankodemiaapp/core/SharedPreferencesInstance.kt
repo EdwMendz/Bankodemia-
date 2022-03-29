@@ -112,7 +112,16 @@ object SharedPreferencesInstance {
         )
     }
 
-    //Cambio de nombre de documento en subida de foto
+    fun guardarEstadoRed(estado: Boolean){
+        with(editor){
+            putBoolean("estado",estado)
+            apply()
+        }
+    }
+    
+     fun obtenerEstadoRed(): Boolean = sharedPreferences.getBoolean("estado",false)
+     
+     //Cambio de nombre de documento en subida de foto
     fun guardarTipoDocumento(tipo:String){
         with(editor){
             putString("tipoDocumento", tipo)
@@ -124,5 +133,6 @@ object SharedPreferencesInstance {
     fun obtenerTipoDocumento():String?{
         return sharedPreferences.getString("tipoDocumento", null)
     }
+   
 
 }
