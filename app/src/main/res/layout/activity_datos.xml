@@ -61,8 +61,8 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="24dp"
                 android:fontFamily="@font/poppins_500"
-                android:text="@string/escribe_tal_como_aparece_en_tu_nidentificacion_oficial_sin_abreviaturas"
-                android:textColor="@color/kodemia_black"
+                android:text="Escribe tal como aparece en tu\nidentificacion oficial sin abreviaturas"
+                android:textColor="@color/negro"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -75,9 +75,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="88dp"
-                android:text="@string/esta_informaci_n_es_necesaria_para_verificar_tu_nidentidad_n"
-                android:textColor="@color/kodemia_black"
-                app:layout_constraintEnd_toEndOf="@+id/til_datos_fechaNacimiento"
+                android:text="Esta información es necesaria para verificar tu\nidentidad\n"
+                android:textColor="@color/negro"
                 app:layout_constraintHorizontal_bias="0.428"
                 app:layout_constraintStart_toStartOf="@+id/til_datos_fechaNacimiento"
                 app:layout_constraintTop_toBottomOf="@+id/til_datos_fechaNacimiento" />
@@ -103,7 +102,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="48dp"
-        android:backgroundTint="@color/kodemia_blue"
+        android:backgroundTint="@color/celeste"
         android:fontFamily="@font/poppins_400"
         android:text="@string/continuar"
         android:textSize="18sp"
@@ -135,7 +134,7 @@
                 app:layout_constraintEnd_toEndOf="@+id/textView9"
                 app:layout_constraintStart_toStartOf="@+id/textView9"
                 app:layout_constraintTop_toBottomOf="@+id/textView9"
-                app:boxStrokeColor="@color/kodemia_blue">
+                app:boxStrokeColor="@color/celeste">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/tiet_datos_nombre"
@@ -157,6 +156,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/til_datos_nombre"
                 app:boxStrokeColor="@color/kodemia_blue">
 
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/tiet_datos_apellidos"
                     android:layout_width="match_parent"
@@ -171,10 +171,16 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
+
                 app:layout_constraintEnd_toEndOf="@+id/til_datos_apellido"
                 app:layout_constraintStart_toStartOf="@+id/til_datos_apellido"
                 app:layout_constraintTop_toBottomOf="@+id/til_datos_apellido"
                 app:boxStrokeColor="@color/kodemia_blue">
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayout4"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayout4"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout4"
+                app:boxStrokeColor="@color/celeste">
+
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/tiet_datos_ocupacion"
@@ -193,11 +199,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:layout_marginBottom="100dp"
+
                 app:layout_constraintEnd_toEndOf="@+id/til_datos_ocupacion"
                 app:layout_constraintStart_toStartOf="@+id/til_datos_ocupacion"
                 app:layout_constraintTop_toBottomOf="@+id/til_datos_ocupacion"
                 app:boxStrokeColor="@color/kodemia_blue">
 
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayout5"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayout5"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout5"
+                app:boxStrokeColor="@color/celeste">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/tiet_datos_FechaNaci"

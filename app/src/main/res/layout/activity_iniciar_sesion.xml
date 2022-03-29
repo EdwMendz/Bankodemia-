@@ -77,7 +77,7 @@
                 android:layout_marginEnd="24dp"
                 android:fontFamily="@font/poppins_500"
                 android:text="@string/escribe_el_correo_y_telefono_con_el_que_n_te_registraste_a_trav_s_de_estos_nte_enciaremos_el_acceso"
-                android:textColor="@color/kodemia_black"
+                android:textColor="@color/negro"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -117,7 +117,7 @@
         android:layout_width="297dp"
         android:layout_height="50dp"
         android:layout_marginBottom="48dp"
-        android:backgroundTint="@color/kodemia_blue"
+        android:backgroundTint="@color/celeste"
         android:fontFamily="@font/poppins_400"
         android:text="@string/iniciar_sesion"
         android:textSize="18sp"
@@ -144,12 +144,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 app:endIconMode="clear_text"
-                app:prefixTextColor="@color/kodemia_blue"
+                app:prefixTextColor="@color/celeste"
                 app:layout_constraintEnd_toEndOf="@+id/textView9"
                 app:layout_constraintStart_toStartOf="@+id/textView9"
                 app:layout_constraintTop_toBottomOf="@+id/textView9"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                app:boxStrokeColor="@color/kodemia_blue">
+                app:boxStrokeColor="@color/celeste">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/tiet_IniciarSesison_Correo"
@@ -163,13 +163,12 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="44dp"
-                app:prefixTextColor="@color/kodemia_blue"
+                app:prefixTextColor="@color/celeste"
                 app:endIconMode="password_toggle"
-                app:layout_constraintEnd_toEndOf="@+id/til_iniciarSesion_correo"
-                app:layout_constraintStart_toStartOf="@+id/til_iniciarSesion_correo"
-                app:layout_constraintTop_toBottomOf="@+id/til_iniciarSesion_correo"
-                app:boxStrokeColor="@color/kodemia_blue"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                app:layout_constraintEnd_toEndOf="@+id/til_itd_nombre"
+                app:layout_constraintStart_toStartOf="@+id/til_itd_nombre"
+                app:layout_constraintTop_toBottomOf="@+id/til_itd_nombre"
+                app:boxStrokeColor="@color/celeste"/>
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/tiet_IniciarSesion_contrasenia"

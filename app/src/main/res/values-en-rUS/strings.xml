@@ -5,7 +5,7 @@
     <string name="title_dashboard">CARD</string>
     <string name="title_notifications">SERVICES</string>
     <string name="enviar">Send</string>
-    <string name="recibir">Recieve</string>
+    <string name="recibir">Receive</string>
     <string name="dinero_disponible">AVAILABLE MONEY</string>
     <string name="adios_a_las_complicaciones">!Goodbye complications!</string>
     <string name="title_activity_home">HomeActivity</string>
@@ -44,7 +44,6 @@
     <string name="octubre">october</string>
     <string name="noviembre">november</string>
     <string name="diciembre">december</string>
-=======
     <string name="textVArrastrar">Drag your file here or upload it from your COMPUTER</string>
     <string name="btnSubir">Upload Information</string>
     <string name="textViewPermisoCamara">Give Bankodemia permission to use the camera. Make sure you have good light and focus well on your document from the front.</string>
@@ -72,7 +71,7 @@
     <string name="btnConfirmacionVolverInicio">Back to top</string>
     <string name="tiet_password_login">Password</string>
     <string name="tietPasswordConfirm">Confirm your password</string>
->>>>>>> main
+
 
 
     <!--***************** INICIO TEXTOS EDWIN ***************-->
@@ -123,8 +122,6 @@
 
 
     <!--************* FIN TEXTOS EDWIN *************-->
-
-
 
 
 </resources>

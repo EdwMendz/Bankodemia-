@@ -4,20 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import mx.kodemia.bankodemiaapp.animations.initParpadeoGuionLogo
 import mx.kodemia.bankodemiaapp.databinding.FragmentServiciosBinding
-import mx.kodemia.bankodemiaapp.modules.home.viewmodel.ServiciosFragmentViewModel
 
 class ServiciosFragment : Fragment() {
 
+    //View Binding
     private var binding: FragmentServiciosBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-
 
     override fun onCreateView(
         inflater: LayoutInflater,

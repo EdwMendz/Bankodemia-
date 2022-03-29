@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".verificacionIdentidad.pasaporte.Pasaporte">
+    tools:context=".verificacionIdentidad.VerificacionIdentidadActivitySael">
 
     <ImageView
-        android:id="@+id/imageViewPasaporte"
+        android:id="@+id/imageViewIdentidad1"
         android:layout_width="70dp"
         android:layout_height="40dp"
         android:layout_marginTop="26dp"
@@ -17,52 +17,55 @@
         app:srcCompat="@drawable/bk" />
 
     <TextView
-        android:id="@+id/textViewPasaporte"
+        android:id="@+id/textViewIdentidad"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginTop="19dp"
-        android:text="@string/pasaporte"
+        android:text="@string/identidad"
+        android:textColor="@color/gris"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewPasaporte" />
+        app:layout_constraintTop_toBottomOf="@+id/imageViewIdentidad1" />
 
     <TextView
-        android:id="@+id/textViewPermisoCamaraPasaporte"
+        android:id="@+id/textViewVerificarIdentidad"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="22dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="10dp"
         android:lineSpacingExtra="5sp"
-        android:text="@string/textViewPermisoCamara"
+        android:text="@string/textViewIdentidad1"
+        android:textStyle="bold"
+        android:textColor="@color/negro"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewPasaporte" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewIdentidad" />
 
     <TextView
-        android:id="@+id/textViewFotoDPasaporte"
+        android:id="@+id/textViewInstrucciones"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="51dp"
-        android:layout_marginTop="137dp"
-        android:layout_marginEnd="51dp"
-        android:text="@string/textVArrastrar"
-        android:textAlignment="center"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="20dp"
+        android:lineSpacingExtra="5sp"
+        android:text="@string/textViewIdentidad2"
+        android:textColor="@color/gris"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewPermisoCamaraPasaporte" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewVerificarIdentidad" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnPasaporte"
+        android:id="@+id/btnIdentidad"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="290dp"
-        android:layout_marginEnd="31dp"
-        android:text="@string/btnSubir"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/btnIdentidad"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewFotoDPasaporte" />
-
+        app:layout_constraintTop_toBottomOf="@+id/textViewInstrucciones" />
 </androidx.constraintlayout.widget.ConstraintLayout>

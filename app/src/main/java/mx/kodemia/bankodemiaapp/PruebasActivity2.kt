@@ -1,12 +1,11 @@
-package mx.kodemia.bankodemiaapp.verificacionIdentidad.ine
+package mx.kodemia.bankodemiaapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import mx.kodemia.bankodemiaapp.R
 
-class Ine : AppCompatActivity() {
+class PruebasActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_ine)
+        setContentView(R.layout.activity_pruebas2)
     }
 }

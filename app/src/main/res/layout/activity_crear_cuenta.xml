@@ -61,8 +61,8 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:fontFamily="@font/poppins_500"
-        android:text="@string/aqu_recibir_s_comprobantes_de_tus_nmovimientos_en_informaci_n_sobre_tu_ncuenta"
-        android:textColor="@color/kodemia_black"
+        android:text="Aquí recibirás comprobantes de tus \nmovimientos en información sobre tu\ncuenta"
+        android:textColor="@color/negro"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,10 +74,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="600dp"
-        android:text="@string/al_tocar_continuar_aceptas_nuestro"
-        android:textColor="@color/kodemia_black"
-        app:layout_constraintEnd_toEndOf="@+id/til_crearcuenta_correo"
-        app:layout_constraintStart_toStartOf="@+id/til_crearcuenta_correo"
+
+        android:text="Al tocar continuar aceptas nuestro"
+        android:textColor="@color/negro"
+        app:layout_constraintEnd_toEndOf="@+id/til_itd_nombre"
+        app:layout_constraintStart_toStartOf="@+id/til_itd_nombre"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -102,7 +103,7 @@
         android:layout_marginTop="712dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="46dp"
-        android:backgroundTint="@color/kodemia_blue"
+        android:backgroundTint="@color/celeste"
         android:fontFamily="@font/poppins_400"
         android:text="@string/continuar"
         android:textSize="18sp"
@@ -127,12 +128,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        app:boxStrokeColor="@color/kodemia_blue"
+        app:boxStrokeColor="@color/celeste"
         app:endIconMode="clear_text"
         app:layout_constraintEnd_toEndOf="@+id/textView9"
         app:layout_constraintStart_toStartOf="@+id/textView9"
         app:layout_constraintTop_toBottomOf="@+id/textView9"
-        app:prefixTextColor="@color/kodemia_blue">
+        app:prefixTextColor="@color/celeste">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tiet_crearcuenta_correo"

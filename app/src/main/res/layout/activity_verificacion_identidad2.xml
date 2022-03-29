@@ -23,6 +23,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="19dp"
         android:text="@string/identidad"
+        android:fontFamily="@font/poppins_500"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewIdentidad2" />
 
@@ -33,15 +34,19 @@
         android:layout_marginStart="22dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="10dp"
+        android:fontFamily="@font/poppins_500"
         android:lineSpacingExtra="5sp"
         android:text="@string/textViewIdentidad3"
+        android:textColor="@color/negro"
         android:textSize="16sp"
+        android:textStyle="bold"
+        android:typeface="normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewIdentidad2" />
 
     <TextView
-        android:id="@+id/textViewIne"
+        android:id="@+id/tvTipoDocumento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -49,6 +54,7 @@
         android:clickable="true"
         android:focusable="true"
         android:text="@string/ine"
+        android:fontFamily="@font/poppins_400"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewTipoDocumento" />
 
@@ -60,8 +66,9 @@
         android:clickable="true"
         android:focusable="true"
         android:text="@string/documentoMigratorio"
-        app:layout_constraintStart_toStartOf="@+id/textViewIne"
-        app:layout_constraintTop_toBottomOf="@+id/textViewIne" />
+        android:fontFamily="@font/poppins_400"
+        app:layout_constraintStart_toStartOf="@+id/tvTipoDocumento"
+        app:layout_constraintTop_toBottomOf="@+id/tvTipoDocumento" />
 
     <TextView
         android:id="@+id/textViewPasaporte"
@@ -71,6 +78,7 @@
         android:clickable="true"
         android:focusable="true"
         android:text="@string/pasaporte"
+        android:fontFamily="@font/poppins_400"
         app:layout_constraintStart_toStartOf="@+id/textViewDocMigratorio"
         app:layout_constraintTop_toBottomOf="@+id/textViewDocMigratorio" />
 
@@ -83,6 +91,10 @@
         android:layout_marginEnd="15dp"
         android:text="@string/textViewIdentidad4"
         android:textAlignment="center"
+        android:textColor="@color/lila"
+        android:fontFamily="@font/poppins_500"
+        android:clickable="true"
+        android:focusable="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewPasaporte" />

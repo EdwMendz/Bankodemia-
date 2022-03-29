@@ -25,7 +25,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/img" />
+                app:srcCompat="@drawable/avion" />
 
 
             <ImageButton
@@ -38,7 +38,7 @@
                 android:scaleType="fitCenter"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/flecha" />
+                app:srcCompat="@drawable/avion" />
 
             <TextView
                 android:id="@+id/TV_enviar_dinero"
