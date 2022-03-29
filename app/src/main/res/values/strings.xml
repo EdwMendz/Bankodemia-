@@ -48,6 +48,7 @@
     <string name="tiet_password_login">Contraseña</string>
     <string name="tietPasswordConfirm">Confirmar tu contraseña</string>
 
+<<<<<<< HEAD
     <string name="adios_a_las_complicaciones">!Adiós a las complicaciones!</string>
 
     <string name="iniciar_sesion">Iniciar Sesión</string>
@@ -161,3 +162,11 @@
 </resources>
 
 
+=======
+
+</resources>
+
+    <string name="adios_a_las_complicaciones">!Adiós a las complicaciones!</string>
+</resources>
+
+>>>>>>> 637e0df1d59016c67377006be78339c28472b8da

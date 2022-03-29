@@ -117,10 +117,10 @@
         android:fontFamily="@font/poppins_500"
         android:text="@string/btnContrasena"
         app:cornerRadius="10dp"
+        app:strokeColor="@color/celeste"
         app:layout_constraintEnd_toEndOf="@+id/tilPasswordConfirm"
         app:layout_constraintStart_toStartOf="@+id/tilPasswordConfirm"
         app:layout_constraintTop_toBottomOf="@+id/tilPasswordConfirm"
-        app:strokeColor="@color/celeste"
         tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
