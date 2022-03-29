@@ -64,6 +64,13 @@
 
         <!-- _____________ACTIVITIES DE VERIFICACION DE IDENTIDAD (Inicio del Bloque)________________ -->
         <activity
+        android:theme="@style/Theme.BankodemiaApp">
+        
+      <activity
+            android:name=".PruebasActivity"
+            android:exported="true" >
+        </activity>
+        <activity
             android:name=".verificacionIdentidad.confirmacion.Confirmacion"
             android:exported="false" />
         <activity
@@ -85,9 +92,28 @@
             android:name=".verificacionIdentidad.VerificacionIdentidad2"
             android:exported="false" />
         <activity
+            android:name=".verificacionIdentidad.VerificacionIdentidadActivitySael"
+            android:exported="false" />
+        <activity
+            android:name=".Telefono"
+            android:exported="false" />
+        <activity
+            android:name=".IniciarSesion"
+            android:exported="true" />
+        <activity
+            android:name=".CrearCuenta"
+            android:exported="true" />
+        <activity
+            android:name=".IngresaTusDatos"
+            android:exported="true" />
+        <activity
+            android:name=".modules.home.view.HomeDetailsTransactionActivity"
+            android:exported="false" /> 
+        <activity
             android:name=".verificacionIdentidad.VerificacionIdentidadActivity"
             android:exported="true" />
         <!-- _____________ACTIVITIES DE VERIFICACION DE IDENTIDAD (Final del Bloque)________________ -->
+
 
 
         <!-- _____________PRIMERA ACTIVITY DE SELECCION DE LOGIN O SINGUP (Inicio del Bloque)________________ -->
@@ -95,6 +121,9 @@
             android:name=".MainActivity"
             android:exported="false" />
         <!-- _____________PRIMERA ACTIVITY DE SELECCION DE LOGIN O SINGUP (Final del Bloque)________________ -->
+
+     
+
 
     </application>
 

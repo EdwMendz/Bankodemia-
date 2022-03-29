@@ -10,6 +10,19 @@ import mx.kodemia.bankodemiaapp.verificacionIdentidad.ine.Ine
 import mx.kodemia.bankodemiaapp.verificacionIdentidad.pasaporte.Pasaporte
 
 class VerificacionIdentidad2 : AppCompatActivity() {
+
+
+    /*lateinit var binding: ActivityVerificacionIdentidad2Binding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityVerificacionIdentidad2Binding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.apply {
+
+        }*/
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_verificacion_identidad2)
