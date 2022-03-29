@@ -23,7 +23,6 @@
         <entry key="..\:/Proyectos_Android_Kodemia/Proyecto_Final/Bankodemia-/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.173" />
         <entry key="..\:/Users/HP/BankodemiaApp/app/src/main/res/layout/activity_main.xml" value="0.18461538461538463" />
         <entry key="..\:/Users/HP/BankodemiaApp/app/src/main/res/layout/main_fragment.xml" value="0.16944444444444445" />
-<<<<<<< HEAD
         <entry key="..\:/Users/saela/OneDrive/Escritorio/Desafio Final/Bankodemia-/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.151" />
         <entry key="..\:/Users/saela/OneDrive/Escritorio/Desafio Final/Bankodemia-/app/src/main/res/drawable/borde.xml" value="0.1" />
         <entry key="..\:/Users/saela/OneDrive/Escritorio/Desafio Final/Bankodemia-/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.151" />
@@ -34,10 +33,8 @@
         <entry key="..\:/Users/saela/OneDrive/Escritorio/Desafio Final/Bankodemia-/app/src/main/res/drawable/ic_icono_tarjeta_nav.xml" value="0.151" />
         <entry key="..\:/Users/saela/OneDrive/Escritorio/Desafio Final/Bankodemia-/app/src/main/res/drawable/ic_icono_usuario.xml" value="0.151" />
         <entry key="..\:/Users/saela/OneDrive/Escritorio/Desafio Final/Bankodemia-/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.151" />
-=======
-<<<<<<< HEAD
->>>>>>> pruebas
-        <entry key="..\:/Users/saela/OneDrive/Escritorio/Desafio Final/Bankodemia-/app/src/main/res/layout/activity_confirmacion.xml" value="0.136" />
+        <entry key="..\:/Users/saela/OneDrive/Escritorio/Desafio Final/Bankodemia-/app/src/main/res/layout/activity_confirmacion.xml" value="0.2" />
+        <entry key="..\:/Users/saela/OneDrive/Escritorio/Desafio Final/Bankodemia-/app/src/main/res/layout/activity_confirmacion_tipo_documento.xml" value="0.12760416666666666" />
         <entry key="..\:/Users/saela/OneDrive/Escritorio/Desafio Final/Bankodemia-/app/src/main/res/layout/activity_confirmacion_transferencia.xml" value="0.11614583333333334" />
         <entry key="..\:/Users/saela/OneDrive/Escritorio/Desafio Final/Bankodemia-/app/src/main/res/layout/activity_contrasena.xml" value="0.152" />
         <entry key="..\:/Users/saela/OneDrive/Escritorio/Desafio Final/Bankodemia-/app/src/main/res/layout/activity_crear_cuenta.xml" value="0.18697916666666667" />
@@ -65,19 +62,6 @@
         <entry key="..\:/Users/saela/OneDrive/Escritorio/Desafio Final/Bankodemia-/app/src/main/res/layout/fragment_tarjeta.xml" value="0.264" />
         <entry key="..\:/Users/saela/OneDrive/Escritorio/Desafio Final/Bankodemia-/app/src/main/res/layout/item_cardview_home.xml" value="0.264" />
         <entry key="..\:/Users/saela/OneDrive/Escritorio/Desafio Final/Bankodemia-/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
-=======
-        <entry key="..\:/Users/saela/OneDrive/Escritorio/Desafio Final/Bankodemia-/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.193" />
-        <entry key="..\:/Users/saela/OneDrive/Escritorio/Desafio Final/Bankodemia-/app/src/main/res/drawable/ic_launcher_background.xml" value="0.215" />
-        <entry key="..\:/Users/saela/OneDrive/Escritorio/Desafio Final/Bankodemia-/app/src/main/res/layout/activity_confirmacion.xml" value="0.1" />
-        <entry key="..\:/Users/saela/OneDrive/Escritorio/Desafio Final/Bankodemia-/app/src/main/res/layout/activity_contrasena.xml" value="0.264" />
-        <entry key="..\:/Users/saela/OneDrive/Escritorio/Desafio Final/Bankodemia-/app/src/main/res/layout/activity_doc_migratorio.xml" value="0.1" />
-        <entry key="..\:/Users/saela/OneDrive/Escritorio/Desafio Final/Bankodemia-/app/src/main/res/layout/activity_enviar_datos.xml" value="0.264" />
-        <entry key="..\:/Users/saela/OneDrive/Escritorio/Desafio Final/Bankodemia-/app/src/main/res/layout/activity_ine.xml" value="0.176" />
-        <entry key="..\:/Users/saela/OneDrive/Escritorio/Desafio Final/Bankodemia-/app/src/main/res/layout/activity_pasaporte.xml" value="0.1" />
-        <entry key="..\:/Users/saela/OneDrive/Escritorio/Desafio Final/Bankodemia-/app/src/main/res/layout/activity_verificacion_identidad.xml" value="0.16" />
-        <entry key="..\:/Users/saela/OneDrive/Escritorio/Desafio Final/Bankodemia-/app/src/main/res/layout/activity_verificacion_identidad2.xml" value="0.2" />
-        <entry key="..\:/Users/saela/OneDrive/Escritorio/Desafio Final/Bankodemia-/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1225" />
->>>>>>> 637e0df1d59016c67377006be78339c28472b8da
       </map>
     </option>
   </component>
