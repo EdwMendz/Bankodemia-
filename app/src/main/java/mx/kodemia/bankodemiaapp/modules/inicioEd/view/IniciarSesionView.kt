@@ -1,5 +1,6 @@
 package mx.kodemia.bankodemiaapp.modules.inicioEd.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -9,6 +10,7 @@ import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.core.checkForInternet
 import mx.kodemia.bankodemiaapp.data.model.request.LogInRequest
 import mx.kodemia.bankodemiaapp.databinding.ActivityIniciarSesionBinding
+import mx.kodemia.bankodemiaapp.modules.home.view.HomeActivity
 import mx.kodemia.bankodemiaapp.modules.inicioEd.viewModel.IniciarSesionViewModel
 
 class IniciarSesionView : AppCompatActivity() {
@@ -16,41 +18,46 @@ class IniciarSesionView : AppCompatActivity() {
     private lateinit var binding: ActivityIniciarSesionBinding
 
     //Union ViewModel con View
-    val viewmodel: IniciarSesionViewModel by viewModels()
+    //val viewmodel: IniciarSesionViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //Infla el binding
-        inicializarBinding()
-        realizarPeticion()
-        observadores()
-    }
+        binding = ActivityIniciarSesionBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+       // observadores()
 
+        binding.btnIniciarSesionIniciarSesion.setOnClickListener {
 
-    //Observadores
-    private fun observadores() {
-        //Observamos el progresbar
-        viewmodel.cargando.observe(this) {cargando ->
-            cargando(cargando)
+                startActivity(Intent(this@IniciarSesionView,HomeActivity::class.java))
+
         }
     }
 
-    //Realizar Peticion
-    private fun realizarPeticion() {
-        if (checkForInternet(applicationContext))
-            binding.apply {
-                val correo: String = tietIniciarSesisonCorreo.text.toString()
-                val pass: String = tietIniciarSesionContrasenia.text.toString()
-                btnIniciarSesionIniciarSesion.setOnClickListener {
-                    validarCorreoYContrasenia()
-                    val logIng = LogInRequest(correo, pass)
-                    viewmodel.logIn("1h", logIng, this@IniciarSesionView)
-                }
-            }
-    }
-
-
-    //Validar Correo
+//    //
+//    //Observadores
+//    private fun observadores() {
+//        //Observamos el progresbar
+//        viewmodel.cargando.observe(this) { cargando ->
+//            cargando(cargando)
+//        }
+//    }
+//
+////    //Realizar Peticion
+////    private fun realizarPeticion() {
+////        if (checkForInternet(applicationContext))
+////            binding.apply {
+////                val correo: String = tietIniciarSesisonCorreo.text.toString()
+////                val pass: String = tietIniciarSesionContrasenia.text.toString()
+////                btnIniciarSesionIniciarSesion.setOnClickListener {
+////                    validarCorreoYContrasenia()
+////                    val logIng = LogInRequest(correo, pass)
+////                    viewmodel.logIn("1h", logIng, this@IniciarSesionView)
+////                }
+////            }
+////    }
+//
+//
+//    Validar Correo
     private fun validarCorreo(): Boolean {
         binding.apply {
 
@@ -64,14 +71,14 @@ class IniciarSesionView : AppCompatActivity() {
                     tilIniciarSesionCorreo.isErrorEnabled = false
                     true
                 } else {
-                   tilIniciarSesionCorreo.error = getString(R.string.correo_no_valido)
+                    tilIniciarSesionCorreo.error = getString(R.string.correo_no_valido)
                     false
                 }
             }
         }
     }
-
-    //Validar contrasenia
+//
+  //  Validar contrasenia
     private fun validarContrasenia(): Boolean {
         binding.apply {
             return if (tietIniciarSesionContrasenia.text.toString().isEmpty()) {
@@ -91,21 +98,15 @@ class IniciarSesionView : AppCompatActivity() {
             return
     }
 
-    //Infla el view Binding
-    private fun inicializarBinding() {
-        binding = ActivityIniciarSesionBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-    }
-
-    //Mostrar progresbar
-    private fun cargando(cargando: Boolean) {
-        binding.apply {
-            if (cargando) {
-                pbIniciarSesion.visibility = View.VISIBLE
-            } else {
-                pbIniciarSesion.visibility = View.GONE
-            }
-        }
-
-    }
+//    //Mostrar progresbar
+//    private fun cargando(cargando: Boolean) {
+//        binding.apply {
+//            if (cargando) {
+//                pbIniciarSesion.visibility = View.VISIBLE
+//            } else {
+//                pbIniciarSesion.visibility = View.GONE
+//            }
+//        }
+//
+//    }
 }

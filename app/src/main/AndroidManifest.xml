@@ -39,8 +39,9 @@
         <activity
             android:name=".modules.inicioEd.view.CrearCuentaView"
             android:exported="true"/>
+        <!--.modules.inicioEd.view.InicioActivityView-->
         <activity
-            android:name=".modules.inicioEd.view.InicioActivityView"
+            android:name=".modules.home.view.HomeActivity"
             android:exported="true" />
         <activity
             android:name=".modules.inicioEd.view.DatosView"
@@ -100,8 +101,9 @@
 
 
         <!-- _____________ACTIVITIES DE FABIAN (Inicio del Bloque)________________ -->
+        <!--.modules.home.view.HomeActivity-->
         <activity
-            android:name=".modules.home.view.HomeActivity"
+            android:name=".modules.inicioEd.view.InicioActivityView"
             android:exported="true"
             android:label="@string/title_activity_home" >
             <intent-filter>

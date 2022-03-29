@@ -18,8 +18,10 @@ import java.util.*
 
 class DatosView : AppCompatActivity() {
     var formatDate = SimpleDateFormat("dd MMMM yyyy", Locale.US)
+
     //Inicializa el viewBindin
     private lateinit var binding: ActivityDatosBinding
+
     //Union ViewModel con View
     val viewmodel: DatosViewModel by viewModels()
 
@@ -27,18 +29,24 @@ class DatosView : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         inicializarBinding()
+        fechaNacimiento()
+        lanzarActivities()
 
+    }
+
+    
+    
+    
+// **********   Funciones  ***********
+    //Se hace la fecha de nacimiento
+    private fun fechaNacimiento() {
         binding.apply {
-            ivIniciarSesionRegresar.setOnClickListener {
-                lanzarActivityCrearC()
-            }
             tietDatosFechaNaci.setOnClickListener(View.OnClickListener {
                 val getDate: Calendar = Calendar.getInstance()
                 val datepicker = DatePickerDialog(
                     this@DatosView,
                     android.R.style.Theme_Holo_Light_Dialog_MinWidth,
                     DatePickerDialog.OnDateSetListener { datePicker, i, i2, i3 ->
-
                         val selectDate: Calendar = Calendar.getInstance()
                         selectDate.set(Calendar.YEAR, i)
                         selectDate.set(Calendar.MONTH, i2)
@@ -56,24 +64,36 @@ class DatosView : AppCompatActivity() {
                 )
                 datepicker.show()
             })
-            btnIniciarSesionIniciarSesion.setOnClickListener {
-                lanzarActivityTelefono()
-            }
-
         }
     }
+
+
     //Infla el view Binding
     private fun inicializarBinding() {
         binding = ActivityDatosBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
 
+    //Se lanzan las actividades
+    private fun lanzarActivities() {
+        binding.apply {
+            ivIniciarSesionRegresar.setOnClickListener {
+                lanzarActivityCrearC()
+            }
+            btnIniciarSesionIniciarSesion.setOnClickListener {
+                lanzarActivityTelefono()
+            }
+        }
+    }
 
+    //Lanza la actividadCrear
     fun lanzarActivityCrearC() {
         val intent = Intent(this, CrearCuentaView::class.java)
         startActivity(intent)
     }
-    fun lanzarActivityTelefono(){
+    
+    //Lanza la actividad telefono
+    fun lanzarActivityTelefono() {
         val intent = Intent(this, TelefonoView::class.java)
         startActivity(intent)
     }
