@@ -39,6 +39,7 @@
         <activity
             android:name=".verificacionIdentidad.VerificacionIdentidad2"
             android:exported="false" />
+<<<<<<< HEAD
         <activity
             android:name=".verificacionIdentidad.VerificacionIdentidadActivitySael"
             android:exported="false" />
@@ -66,6 +67,15 @@
             android:name=".Bienvenida"
             android:exported="false" />-->
         <activity
+=======
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <!--<activity
+            android:name=".Bienvenida"
+            android:exported="false" />-->
+        <activity
+>>>>>>> 637e0df1d59016c67377006be78339c28472b8da
             android:name=".verificacionIdentidad.VerificacionIdentidadActivity"
             android:exported="true">
             <intent-filter>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">BankodemiaApp</string>
+<<<<<<< HEAD
     <string name="title_home">HOME</string>
     <string name="title_dashboard">CARD</string>
     <string name="title_notifications">SERVICES</string>
@@ -49,6 +50,8 @@
     <string name="diciembre">december</string>
 =======
 >>>>>>> 9cd53af66d2940fb6660d977dde44754c5cd7b0b
+=======
+>>>>>>> 637e0df1d59016c67377006be78339c28472b8da
     <string name="textVArrastrar">Drag your file here or upload it from your COMPUTER</string>
     <string name="btnSubir">Upload Information</string>
     <string name="textViewPermisoCamara">Give Bankodemia permission to use the camera. Make sure you have good light and focus well on your document from the front.</string>
@@ -77,7 +80,10 @@
     <string name="tiet_password_login">Password</string>
     <string name="tietPasswordConfirm">Confirm your password</string>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> main
 >>>>>>> 9cd53af66d2940fb6660d977dde44754c5cd7b0b
+=======
+>>>>>>> 637e0df1d59016c67377006be78339c28472b8da
 </resources>
