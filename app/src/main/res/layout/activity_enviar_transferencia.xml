@@ -108,7 +108,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/tv_necesitasAyuda"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
@@ -148,7 +148,7 @@
             android:layout_marginTop="100dp"
             android:text="CONCEPTO DE PAGO "
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView10" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_necesitasAyuda" />
 
         <TextView
             android:id="@+id/TV_ConceptoPago"

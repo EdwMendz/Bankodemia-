@@ -17,7 +17,12 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.BankodemiaApp" >
+        android:theme="@style/Theme.BankodemiaApp">
+        
+      <activity
+            android:name=".PruebasActivity"
+            android:exported="true" >
+        </activity>
 
 
         <!-- _____________ACTIVITIES DE PRUEBA (Inicio del Bloque)________________ -->
@@ -31,14 +36,18 @@
 
 
         <!--_____________ACTIVITIES DE REGISTRO (Inicio del Bloque)________________ -->
+
         <activity
-            android:name=".Telefono"
+            android:name=".modules.inicioEd.view.TelefonoView"
             android:exported="false" />
         <activity
-            android:name=".CrearCuenta"
+
+            android:name=".modules.inicioEd.view.IniciarSesionView"
             android:exported="true" />
         <activity
-            android:name=".IngresaTusDatos"
+            android:name=".modules.inicioEd.view.CrearCuentaView"
+        <activity
+            android:name=".modules.inicioEd.view.DatosView"
             android:exported="true" />
         <!--_____________ACTIVITIES DE REGISTRO (Final del Bloque)________________ -->
 
@@ -109,7 +118,8 @@
             android:name=".Telefono"
             android:exported="false" />
         <activity
-            android:name=".IniciarSesion"
+
+            android:name=".modules.inicioEd.view.InicioActivityView"
             android:exported="false" />
         <activity
             android:name=".CrearCuenta"
@@ -125,18 +135,6 @@
             android:name=".modules.home.view.HomeActivity"
             android:exported="false"
             android:label="@string/title_activity_home"/>
-
-        <!--<activity
-            android:name=".Bienvenida"
-            android:exported="false" />-->
-            android:exported="false" /> 
-
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-        <!--<activity
-            android:name=".Bienvenida"
-            android:exported="false" />-->
         <activity
             android:name=".verificacionIdentidad.VerificacionIdentidadActivity"
             android:exported="true" />
@@ -150,9 +148,6 @@
             android:name=".MainActivity"
             android:exported="false" />
         <!-- _____________PRIMERA ACTIVITY DE SELECCION DE LOGIN O SINGUP (Final del Bloque)________________ -->
-
-     
-
 
     </application>
 

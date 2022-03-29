@@ -58,11 +58,17 @@ dependencies {
 
     //Gson
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    // Fragment
+    implementation "androidx.fragment:fragment-ktx:1.4.1"
 
     //Coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0-native-mt'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.1'
+
+    //LiveData
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
+
+    //ViewModel
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
 
 <<<<<<< HEAD

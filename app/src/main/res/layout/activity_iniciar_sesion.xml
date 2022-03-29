@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".IniciarSesion">
+    tools:context=".modules.inicioEd.view.IniciarSesionView">
 
 
 
@@ -44,7 +44,7 @@
             android:id="@+id/iv_logoKodemia"
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:contentDescription="@string/todo"
+            android:contentDescription="@string/logokodemia"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -86,30 +86,31 @@
 
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/tv_necesitasAyuda"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="224dp"
                 android:text="@string/necesitas_ayuda_escribenos_a"
-                android:textColor="@color/negro"
-                app:layout_constraintEnd_toEndOf="@+id/textInputLayout4"
+                android:textColor="@color/kodemia_black"
+                app:layout_constraintEnd_toEndOf="@+id/til_IniciarSesion_contrasenia"
                 app:layout_constraintHorizontal_bias="0.505"
-                app:layout_constraintStart_toStartOf="@+id/textInputLayout4"
-                app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
+                app:layout_constraintStart_toStartOf="@+id/til_IniciarSesion_contrasenia"
+                app:layout_constraintTop_toBottomOf="@+id/til_IniciarSesion_contrasenia" />
 
-            <TextView
-                android:id="@+id/textView11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+    <TextView
+        android:id="@+id/tv_bankodemiacorreo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
 
-                android:autoLink="email"
-                android:minHeight="48dp"
-                android:text="@string/bankodemia_com_mx"
-                android:textColor="#00838F"
-                app:layout_constraintEnd_toEndOf="@+id/textView10"
-                app:layout_constraintStart_toStartOf="@+id/textView10"
-                app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        android:autoLink="email"
+        android:minHeight="48dp"
+        android:text="@string/bankodemia_com_mx"
+        android:textColor="#00838F"
+        app:layout_constraintEnd_toEndOf="@+id/tv_necesitasAyuda"
+        app:layout_constraintStart_toStartOf="@+id/tv_necesitasAyuda"
+        app:layout_constraintTop_toBottomOf="@+id/tv_necesitasAyuda"
+        tools:ignore="TextContrastCheck" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_iniciarSesion_iniciarSesion"
@@ -121,22 +122,24 @@
         android:text="@string/iniciar_sesion"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textInputLayout4"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayout4"
-        app:layout_constraintTop_toBottomOf="@+id/textView11"
-        app:layout_constraintVertical_bias="0.405" />
+        app:layout_constraintEnd_toEndOf="@+id/til_IniciarSesion_contrasenia"
+        app:layout_constraintStart_toStartOf="@+id/til_IniciarSesion_contrasenia"
+        app:layout_constraintTop_toBottomOf="@+id/tv_bankodemiacorreo"
+        app:layout_constraintVertical_bias="0.405"
+        tools:ignore="TextContrastCheck" />
 
     <ImageView
                 android:id="@+id/iv_iniciarSesion_Regresar"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_marginTop="24dp"
+                android:contentDescription="@string/flechaatras"
                 app:layout_constraintStart_toStartOf="@+id/textView9"
                 app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
                 app:srcCompat="@drawable/regresar"/>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/til_itd_nombre"
+                android:id="@+id/til_iniciarSesion_correo"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
@@ -149,13 +152,14 @@
                 app:boxStrokeColor="@color/celeste">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiet_IniciarSesison_Correo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Escribe tu correo" />
+                    android:hint="@string/escribe_tu_correo" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayout4"
+                android:id="@+id/til_IniciarSesion_contrasenia"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="44dp"
@@ -164,14 +168,25 @@
                 app:layout_constraintEnd_toEndOf="@+id/til_itd_nombre"
                 app:layout_constraintStart_toStartOf="@+id/til_itd_nombre"
                 app:layout_constraintTop_toBottomOf="@+id/til_itd_nombre"
-                app:boxStrokeColor="@color/celeste"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                app:boxStrokeColor="@color/celeste"/>
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiet_IniciarSesion_contrasenia"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Escribe tu contraseña"
+                    android:hint="@string/escribe_tu_contrase_a"
                     android:inputType="textPassword"/>
             </com.google.android.material.textfield.TextInputLayout>
+
+    <ProgressBar
+        android:id="@+id/pb_iniciarSesion"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

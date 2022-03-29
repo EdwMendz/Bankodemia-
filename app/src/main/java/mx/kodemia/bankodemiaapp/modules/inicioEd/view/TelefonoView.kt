@@ -1,10 +1,10 @@
-package mx.kodemia.bankodemiaapp
+package mx.kodemia.bankodemiaapp.modules.inicioEd.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import mx.kodemia.bankodemiaapp.databinding.ActivityTelefonoBinding
 
-class Telefono : AppCompatActivity() {
+class TelefonoView : AppCompatActivity() {
 
     private lateinit var binding: ActivityTelefonoBinding
     override fun onCreate(savedInstanceState: Bundle?) {

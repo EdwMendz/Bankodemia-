@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CrearCuenta">
+    tools:context=".modules.inicioEd.view.CrearCuentaView">
 
-    <!--    <ScrollView-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="match_parent"-->
-    <!--        tools:layout_editor_absoluteX="0dp"-->
-    <!--        tools:layout_editor_absoluteY="-60dp">-->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="-60dp">
 
-    <!--        <androidx.constraintlayout.widget.ConstraintLayout-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="wrap_content">-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout3"
@@ -30,7 +30,7 @@
             android:id="@+id/iv_logoKodemia"
             android:layout_width="70dp"
             android:layout_height="40dp"
-            android:contentDescription="@string/todo"
+            android:contentDescription="@string/logokodemia"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -46,7 +46,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/poppins_400"
-        android:text="ESCRIBE TU CORREO"
+        android:text="@string/escribe_tu_correo"
         app:layout_constraintBottom_toBottomOf="@+id/iv_iniciarSesion_Regresar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.037"
@@ -70,10 +70,11 @@
 
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/tv_necesitasAyuda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="600dp"
+
         android:text="Al tocar continuar aceptas nuestro"
         android:textColor="@color/negro"
         app:layout_constraintEnd_toEndOf="@+id/til_itd_nombre"
@@ -81,18 +82,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/tv_bankodemiacorreo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
 
         android:autoLink="email"
         android:minHeight="48dp"
-        android:text="Aviso de privacidad"
+        android:text="@string/aviso_de_privacidad"
         android:textColor="#00838F"
-        app:layout_constraintEnd_toEndOf="@+id/textView10"
-        app:layout_constraintStart_toStartOf="@+id/textView10"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintEnd_toEndOf="@+id/tv_necesitasAyuda"
+        app:layout_constraintStart_toStartOf="@+id/tv_necesitasAyuda"
+        app:layout_constraintTop_toBottomOf="@+id/tv_necesitasAyuda" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_crearCuenta_continuar"
@@ -122,7 +123,7 @@
         app:srcCompat="@drawable/regresar" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_itd_nombre"
+        android:id="@+id/til_crearcuenta_correo"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -135,10 +136,11 @@
         app:prefixTextColor="@color/celeste">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tiet_crearcuenta_correo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="correo" />
+            android:hint="@string/correo" />
     </com.google.android.material.textfield.TextInputLayout>
-    <!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
-    <!--    </ScrollView>-->
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
