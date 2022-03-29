@@ -23,6 +23,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="19dp"
         android:text="@string/contrasena"
+        android:fontFamily="@font/poppins_500"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewContrasena" />
 
@@ -36,6 +37,9 @@
         android:lineSpacingExtra="5sp"
         android:text="@string/textViewContrasena1"
         android:textSize="16sp"
+        android:fontFamily="@font/poppins_500"
+        android:textStyle="bold"
+        android:textColor="@color/negro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewContrasena" />
@@ -46,6 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="@string/textViewContrasena2"
+        android:fontFamily="@font/poppins_400"
         app:layout_constraintEnd_toEndOf="@+id/textViewCrearPass"
         app:layout_constraintStart_toStartOf="@+id/textViewCrearPass"
         app:layout_constraintTop_toBottomOf="@+id/textViewCrearPass" />
@@ -56,6 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="@string/textViewContrasena3"
+        android:fontFamily="@font/poppins_400"
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -76,6 +82,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/tiet_password_login"
+            android:fontFamily="@font/poppins_500"
             android:inputType="textPassword"
             tools:ignore="TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -97,6 +104,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="45dp"
             android:hint="@string/tietPasswordConfirm"
+            android:fontFamily="@font/poppins_500"
             android:inputType="textPassword"
             tools:ignore="TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -105,13 +113,14 @@
         android:id="@+id/buttonPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="180dp"
+        android:fontFamily="@font/poppins_500"
         android:text="@string/btnContrasena"
         app:cornerRadius="10dp"
-        app:strokeColor="@color/celeste"
         app:layout_constraintEnd_toEndOf="@+id/tilPasswordConfirm"
         app:layout_constraintStart_toStartOf="@+id/tilPasswordConfirm"
         app:layout_constraintTop_toBottomOf="@+id/tilPasswordConfirm"
+        app:strokeColor="@color/celeste"
         tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

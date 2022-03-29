@@ -23,6 +23,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="19dp"
         android:text="@string/documentoMigratorio"
+        android:fontFamily="@font/poppins_500"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewDocMigratorio" />
 
@@ -36,6 +37,8 @@
         android:lineSpacingExtra="5sp"
         android:text="@string/textViewPermisoCamara"
         android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/negro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewDocMig" />
@@ -49,6 +52,10 @@
         android:layout_marginEnd="51dp"
         android:text="@string/textVArrastrar"
         android:textAlignment="center"
+        android:fontFamily="@font/poppins_500"
+        android:textColor="@color/lila"
+        android:clickable="true"
+        android:focusable="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewPermisoCamaraDoc" />
@@ -58,8 +65,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="31dp"
-        android:layout_marginTop="290dp"
+        android:layout_marginTop="250dp"
         android:layout_marginEnd="31dp"
+        android:fontFamily="@font/poppins_500"
         android:text="@string/btnSubir"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

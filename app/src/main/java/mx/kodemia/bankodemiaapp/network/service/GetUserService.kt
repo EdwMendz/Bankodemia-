@@ -13,9 +13,9 @@ import retrofit2.Response
 class GetUserService (context: Context){
     private val retrofit = RetrofitInstance.getRetrofit(context).create(GetUser::class.java)
 
-    suspend fun GetUser(): Response<GetUsersResponse> {
+    suspend fun GetUser(id:String): Response<GetUsersResponse> {
         return withContext(Dispatchers.IO){
-            val response = retrofit.getUser()
+            val response = retrofit.getUser(id)
             response
         }
     }

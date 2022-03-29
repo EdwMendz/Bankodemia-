@@ -16,9 +16,9 @@ class SearchUsers (context: Context){
 
     //Se crea la funcion para mandar la peticion con los parametros necesarios para realizarla
     //Con un tipo de retorno del modelo de la respuesta
-    suspend fun SearchUsers(): Response<SearchUserResponse> {
+    suspend fun SearchUsers(query: String): Response<SearchUserResponse> {
         return withContext(Dispatchers.IO){
-            val response = retrofit.searchUsers()
+            val response = retrofit.searchUsers(query)
             response
         }
     }
