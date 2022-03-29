@@ -26,8 +26,8 @@
                 app:layout_constraintHorizontal_bias="0.869"
                 app:layout_constraintStart_toEndOf="@+id/TV_enviar_dinero"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/avion"
-                />
+                app:srcCompat="@drawable/agregar" />
+
 
             <ImageView
                 android:id="@+id/imageView"
@@ -39,7 +39,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/avion" />
+                app:srcCompat="@drawable/img" />
 
             <ImageView
                 android:id="@+id/imageView4"
@@ -49,7 +49,7 @@
                 android:layout_marginTop="150dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/avion" />
+                app:srcCompat="@drawable/flecha" />
 
             <TextView
                 android:id="@+id/TV_enviar_dinero"
@@ -78,7 +78,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
-            android:text="@string/dinero_disponible"
+            android:text="@string/TV_usuario_uno"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -88,7 +88,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginBottom="8dp"
-            android:text="@string/ATYT"
+            android:text="@string/TV_no_cuenta"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/TV_usuario_p" />
@@ -98,7 +98,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/back"
+            android:text="@string/barra"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/TV_cuentad"
             app:layout_constraintTop_toTopOf="parent" />
@@ -108,7 +108,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/bk"
+            android:text="@string/no_cuenta_uno"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/barra2"
             app:layout_constraintTop_toTopOf="parent" />
@@ -130,7 +130,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
-            android:text="@string/back"
+            android:text="@string/usuario_dos"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -140,7 +140,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginBottom="8dp"
-            android:text="@string/app_name"
+            android:text="@string/no_cuenta_dos"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/TV_usuario" />
@@ -151,7 +151,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
-            android:text="@string/app_name"
+            android:text="@string/barrauno"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/TV_num_cuenta"
             app:layout_constraintTop_toTopOf="parent" />
@@ -161,7 +161,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/back"
+            android:text="@string/banco_dos"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/barra"
             app:layout_constraintTop_toTopOf="parent" />
