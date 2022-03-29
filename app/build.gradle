@@ -46,7 +46,7 @@ android {
 dependencies {
 
     implementation 'com.github.sparrow007:carouselrecyclerview:1.2.1'
-    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    implementation 'com.github.bumptech.glide:glide:4.13.0'
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
@@ -62,7 +62,7 @@ dependencies {
     implementation "androidx.fragment:fragment-ktx:1.4.1"
 
     //Coroutines
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0-native-mt'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.1'
 
     //LiveData

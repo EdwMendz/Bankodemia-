@@ -90,8 +90,57 @@
     <string name="nunca_la_usaremos_sin_tu_n_consentimiento">Nunca la usaremos sin tu\n consentimiento</string>
     <string name="esta_informaci_n_es_necesaria_para_verificar_tu_nidentidad_n">Esta información es necesaria para verificar tu\nidentidad\n</string>
     <string name="flechaatras">flechaAtras</string>
-
-
+    <string name="textVArrastrar">Arrastra tu archivo aquí o subelo desde tu ORDENADOR</string>
+    <string name="btnSubir">Subir Información</string>
+    <string name="textViewPermisoCamara">Dale permiso a Bankodemia para utilizar la cámara. Asegúrate de tener buena luz y enfocar bien tu documento de frente.</string>
+    <string name="identidad">IDENTIDAD</string>
+    <string name="textViewIdentidad1">Ahora, vamos a verificar tu identidad para proteger tu cuenta.</string>
+    <string name="textViewIdentidad2">Deberás subir una fotografía de tu INE o pasaporte vigente y tomarte una selfie. Si eres extranjero necesitarás una fotografía de tu documento migratorio (FM3)</string>
+    <string name="back">REGRESAR</string>
+    <string name="btnIdentidad">Entendido</string>
+    <string name="textViewIdentidad3">Seleccionado el tipo de documento que deseas fotografiar</string>
+    <string name="textViewIdentidadIne">INE</string>
+    <string name="textViewIdentidadDocumentosMigratorios">Documentos Migratorios</string>
+    <string name="textViewIdentidadPasaporte">Pasaporte</string>
+    <string name="textViewIdentidad4">Conoce cómo protegemos tus documentos</string>
+    <string name="ine">INE</string>
+    <string name="pasaporte">PASAPORTE</string>
+    <string name="contrasena">CONTRASEÑA</string>
+    <string name="documentoMigratorio">DOCUMENTO MIGRATORIO</string>
+    <string name="textViewContrasena1">Crea una contraseña segura</string>
+    <string name="textViewContrasena2">La usarás para entrar a la app y confirmar tus transacciones.</string>
+    <string name="textViewContrasena3">Usa al menos 6 caracteres alfanuméricos, no consecutivos ni repetidos.</string>
+    <string name="btnContrasena">Crear Contraseña</string>
+    <string name="textViewEnviarDatos">Espera un momento, estamos enviando tus datos</string>
+    <string name="textViewConfirmacion1">¡Listo! Recibimos tu información. Usualmente tardamos unos minutos en verificar, pero en caso de tener algún problema, nos comunicaremos contigo.</string>
+    <string name="textViewGracias">¡GRACIAS POR USAR BANKODEMIA!</string>
+    <string name="btnConfirmacionVolverInicio">Volver al Inicio</string>
+    <string name="tiet_password_login">Contraseña</string>
+    <string name="tietPasswordConfirm">Confirmar tu contraseña</string>
+    <string name="previous">Anterior</string>
+    <string name="next">Siguiente</string>
+    <string name="title_activity_enviar_transferencia">EnviarTransferencia</string>
+    <string name="button">Botón</string>
+    <string name="correo_de_ntoficacion">Correo de Ntoficacion</string>
+    <string name="nombre">Nombre</string>
+    <string name="no_de_tarjeta">No. de Tarjeta</string>
+    <string name="textodialogo">¿Estas Seguro(o) que quieres realizar esta transacciòn?</string>
+    <string name="no_internet">Se perdió la conexión a internet</string>
+    <string name="si_internet">Conexión reestablecida</string>
+    <string name="tu_contacto_fue_agregado_con_xito">Tu contacto fue agregado con éxito</string>
+    <string name="error_trans">Ha ocurrido un error con la lista de transacciones</string>
+    <string name="cvv_tarjeta">cvv_tarjeta</string>
+    <string name="vigencia_tarjeta">vigencia_tarjeta</string>
+    <string name="iv_inicio">iv_incio</string>
+    <string name="logokodemia">LogoKodemia</string>
+    <string name="tu_n_mero_de_celular">Tu número de celular</string>
+    <string name="Volver_Inicio">Volver a Inicio</string>
+    <string name="textoAgregarContancto">Tu contacto fue agregado con éxito</string>
+    <string name="AgregarNombre">Nombre</string>
+    <string name="institucion">Institución</string>
+    <string name="letra_tarjeta">CLABE</string>
+    <string name="numero_tarjeta">numero_tarjeta</string>
+    <string name="comentario_tarjeta">El numero de Tarjeta tiene que ser de 12 digitos</string>
 
     <!--************* FIN TEXTOS EDWIN *************-->
 

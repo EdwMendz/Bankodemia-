@@ -1,4 +1,4 @@
-package com.example.proyecto
+package mx.kodemia.bankodemiaapp.modules.home.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import mx.kodemia.bankodemiaapp.data.model.request.LogInRequest
-import mx.kodemia.bankodemiaapp.data.model.response.error.ErrorMessageResponse
+import mx.kodemia.bankodemiaapp.data.model.response.error.ErrorResponse
 import mx.kodemia.bankodemiaapp.data.model.response.logIn.LoginResponse
 import mx.kodemia.bankodemiaapp.modules.home.view.HomeActivity
 import mx.kodemia.bankodemiaapp.network.service.LogInService
@@ -22,7 +22,7 @@ class IniciarSesionViewModel(context: Context) : ViewModel() {
     //LoginRequest
     val logInRequest = MutableLiveData<LogInRequest>()
     //errores
-    val error = MutableLiveData<ErrorMessageResponse>()
+    val error = MutableLiveData<ErrorResponse>()
     //Cargando
      val cargando = MutableLiveData<Boolean>()
 

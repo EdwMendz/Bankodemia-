@@ -10,7 +10,6 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import mx.kodemia.bankodemiaapp.data.model.request.LogInRequest
 import mx.kodemia.bankodemiaapp.data.model.request.SignUpResquest
-import mx.kodemia.bankodemiaapp.data.model.response.error.ErrorMessageResponse
 import mx.kodemia.bankodemiaapp.data.model.response.signUp.SignUpResponse
 import mx.kodemia.bankodemiaapp.modules.home.view.HomeActivity
 import mx.kodemia.bankodemiaapp.modules.inicioEd.view.TelefonoView
@@ -26,8 +25,6 @@ class DatosViewModel(context: Context) : ViewModel() {
     //SignUpResquest
     val SignUpResquest = MutableLiveData<SignUpResquest>()
 
-    //errores
-    val error = MutableLiveData<ErrorMessageResponse>()
 
     //Cargando
     val cargando = MutableLiveData<Boolean>()

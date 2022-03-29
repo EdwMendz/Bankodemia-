@@ -16,7 +16,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/img"
-        app:srcCompat="@drawable/avion"
         android:contentDescription="TODO" />
 
     <ImageView
@@ -29,7 +28,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
         app:srcCompat="@drawable/img_final" />
-        app:srcCompat="@drawable/avion" />
 
     <TextView
         android:id="@+id/textView2"
@@ -45,19 +43,12 @@
 
     <Button
         android:id="@+id/btn_VolverInicio"
-        app:strokeColor="@color/kodemia_blue"
+        app:strokeColor="@color/celeste"
         tools:ignore="TextContrastCheck"
         android:layout_width="342dp"
         android:layout_height="48dp"
         android:layout_marginTop="110dp"
         android:text="@string/Volver_Inicio"
-        app:layout_constraintEnd_toEndOf="@+id/textView2"
-        app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-        android:layout_width="342dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="110dp"
-        android:text="Volver a inicio"
         app:layout_constraintEnd_toEndOf="@+id/textView2"
         app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />

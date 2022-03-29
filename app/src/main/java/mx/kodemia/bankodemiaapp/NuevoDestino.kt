@@ -1,9 +1,10 @@
-package com.example.proyecto
+package mx.kodemia.bankodemiaapp
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import mx.kodemia.bankodemiaapp.R
 
 class NuevoDestino : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

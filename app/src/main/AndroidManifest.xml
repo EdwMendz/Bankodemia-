@@ -5,7 +5,6 @@
     <!--______________________PERMISOS______________________-->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-feature android:name="android.hardware.camera" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="18" />
@@ -18,48 +17,89 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BankodemiaApp">
-        
-      <activity
-            android:name=".PruebasActivity"
-            android:exported="true" >
-        </activity>
 
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="mx.kodemia.bankodemiaapp.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
 
-        <!-- _____________ACTIVITIES DE PRUEBA (Inicio del Bloque)________________ -->
-        <activity
-            android:name=".PruebasActivity"
-            android:exported="true" />
-        <activity
-            android:name=".PruebasActivity2"
-            android:exported="false" />
-        <!-- _____________ACTIVITIES DE PRUEBA (Final del Bloque)________________-->
-
-
-        <!--_____________ACTIVITIES DE REGISTRO (Inicio del Bloque)________________ -->
+        <!-- _____________ACTIVITIES DE EDWIN (Inicio del Bloque)________________ -->
 
         <activity
             android:name=".modules.inicioEd.view.TelefonoView"
-            android:exported="false" />
+            android:exported="true" />
         <activity
-
             android:name=".modules.inicioEd.view.IniciarSesionView"
             android:exported="true" />
         <activity
             android:name=".modules.inicioEd.view.CrearCuentaView"
+            android:exported="true"/>
+        <activity
+            android:name=".modules.inicioEd.view.InicioActivityView"
+            android:exported="true" />
         <activity
             android:name=".modules.inicioEd.view.DatosView"
             android:exported="true" />
-        <!--_____________ACTIVITIES DE REGISTRO (Final del Bloque)________________ -->
+
+        <!-- _____________ACTIVITIES DE EDWIN (Final del Bloque)________________ -->
 
 
-        <!--_____________ACTIVITIES DE INICIO DE SESION (Inicio del Bloque)________________ -->
+        <!-- _____________ACTIVITIES DE SAEL (Inicio del Bloque)________________ -->
+
         <activity
-            android:name=".IniciarSesion"
+            android:name=".verificacionIdentidad.confirmacion.Confirmacion"
+            android:exported="false" />
+        <activity
+            android:name=".verificacionIdentidad.enviarDatos.EnviarDatos"
+            android:exported="false" />
+        <activity
+            android:name=".verificacionIdentidad.contrasena.Contrasena"
+            android:exported="false" />
+        <activity
+            android:name=".verificacionIdentidad.confirmacionDocumento.ConfirmarTipoDocumento"
+            android:exported="false" />
+        <activity
+            android:name=".verificacionIdentidad.VerificacionIdentidad2"
+            android:exported="false" />
+        <activity
+            android:name=".verificacionIdentidad.VerificacionIdentidadActivitySael"
+            android:exported="false" />
+        <activity
+            android:name=".verificacionIdentidad.VerificacionIdentidadActivity"
             android:exported="true" />
-        <!--_____________ACTIVITIES DE INICIO DE SESION (Final del Bloque)________________ -->
+
+        <!-- _____________ACTIVITIES DE SAEL (Final del Bloque)________________ -->
 
 
-        <!-- _____________ACTIVITIES DE HOME (Inicio del Bloque)________________ -->
+        <!-- _____________ACTIVITIES DE LIZZ (Inicio del Bloque)________________ -->
+
+        <activity
+            android:name=".ConfirmacionTransferencia"
+            android:exported="true" />
+        <activity
+            android:name=".EnviarDinero"
+            android:exported="true" />
+        <activity
+            android:name=".EnviarTransferencia"
+            android:exported="true" />
+        <activity
+            android:name=".FinalizadoContacto"
+            android:exported="true" />
+        <activity
+            android:name=".Mensaje"
+            android:exported="true" />
+        <activity
+            android:name=".NuevoDestino"
+            android:exported="true" />
+        <!-- _____________ACTIVITIES DE LIZZ (Final del Bloque)________________ -->
+
+
+        <!-- _____________ACTIVITIES DE FABIAN (Inicio del Bloque)________________ -->
         <activity
             android:name=".modules.home.view.HomeActivity"
             android:exported="true"
@@ -73,81 +113,17 @@
         <activity
             android:name=".modules.home.view.HomeDetailsTransactionActivity"
             android:exported="false" />
-        <!-- _____________ACTIVITIES DE HOME (Final del Bloque)________________ -->
+        <!-- _____________ACTIVITIES DE FABIAN (Final del Bloque)________________ -->
 
 
-        <!-- _____________ACTIVITIES DE VERIFICACION DE IDENTIDAD (Inicio del Bloque)________________ -->
+        <!-- _____________ACTIVITIES DE PRUEBA (Inicio del Bloque)________________ -->
         <activity
-        android:theme="@style/Theme.BankodemiaApp">
-
-        <provider
-            android:name="androidx.core.content.FileProvider"
-            android:authorities="mx.kodemia.bankodemiaapp.fileprovider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-        <meta-data
-            android:name="android.support.FILE_PROVIDER_PATHS"
-            android:resource="@xml/file_paths" />
-        </provider>
-
-
-      <activity
             android:name=".PruebasActivity"
-            android:exported="true" >
-        </activity>
-        <activity
-            android:name=".verificacionIdentidad.confirmacion.Confirmacion"
-            android:exported="false" />
-        <activity
-            android:name=".verificacionIdentidad.enviarDatos.EnviarDatos"
-            android:exported="false" />
-        <activity
-            android:name=".verificacionIdentidad.contrasena.Contrasena"
-            android:exported="false" />
-
-        <activity
-            android:name=".verificacionIdentidad.confirmacionDocumento.ConfirmarTipoDocumento"
-            android:exported="false" />
-        <activity
-            android:name=".verificacionIdentidad.VerificacionIdentidad2"
-            android:exported="false" />
-        <activity
-            android:name=".verificacionIdentidad.VerificacionIdentidadActivitySael"
-            android:exported="false" />
-        <activity
-            android:name=".Telefono"
-            android:exported="false" />
-        <activity
-
-            android:name=".modules.inicioEd.view.InicioActivityView"
-            android:exported="false" />
-        <activity
-            android:name=".CrearCuenta"
-            android:exported="false" />
-        <activity
-            android:name=".IngresaTusDatos"
-            android:exported="false" />
-        <activity
-            android:name=".modules.home.view.HomeDetailsTransactionActivity"
-            android:exported="false" />
-        <!-- _______________ACTIVITY HOME________________ -->
-        <activity
-            android:name=".modules.home.view.HomeActivity"
-            android:exported="false"
-            android:label="@string/title_activity_home"/>
-        <activity
-            android:name=".verificacionIdentidad.VerificacionIdentidadActivity"
             android:exported="true" />
-          
-        <!-- _____________ACTIVITIES DE VERIFICACION DE IDENTIDAD (Final del Bloque)________________ -->
-
-
-
-        <!-- _____________PRIMERA ACTIVITY DE SELECCION DE LOGIN O SINGUP (Inicio del Bloque)________________ -->
         <activity
-            android:name=".MainActivity"
+            android:name=".PruebasActivity2"
             android:exported="false" />
-        <!-- _____________PRIMERA ACTIVITY DE SELECCION DE LOGIN O SINGUP (Final del Bloque)________________ -->
+        <!-- _____________ACTIVITIES DE PRUEBA (Final del Bloque)________________-->
 
     </application>
 

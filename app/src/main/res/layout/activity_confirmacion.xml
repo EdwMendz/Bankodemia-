@@ -27,7 +27,7 @@
         app:srcCompat="@drawable/avion" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textViewManera"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
@@ -50,9 +50,9 @@
         android:text="@string/textViewGracias"
         android:textAlignment="center"
         android:textColor="@color/lila"
-        app:layout_constraintEnd_toEndOf="@+id/textView4"
-        app:layout_constraintStart_toStartOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintEnd_toEndOf="@+id/textViewManera"
+        app:layout_constraintStart_toStartOf="@+id/textViewManera"
+        app:layout_constraintTop_toBottomOf="@+id/textViewManera" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button2"

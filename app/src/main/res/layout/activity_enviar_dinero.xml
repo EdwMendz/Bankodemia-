@@ -22,11 +22,12 @@
                 android:layout_height="53dp"
                 android:layout_marginTop="144dp"
                 android:scaleType="fitCenter"
+                android:background="?attr/colorOnPrimary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.869"
                 app:layout_constraintStart_toEndOf="@+id/TV_enviar_dinero"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/agregar" />
+                app:srcCompat="@drawable/ic_anadir_usuario" />
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="120dp"
@@ -76,7 +77,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
-            android:text="@string/TV_usuario_uno"
+            android:text="Jose de Jesus Rodriguez De La O"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -86,7 +87,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginBottom="8dp"
-            android:text="@string/TV_no_cuenta"
+            android:text="849375984375035498735"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/TV_usuario_p" />
@@ -96,7 +97,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/barra"
+            android:text="/"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/TV_cuentad"
             app:layout_constraintTop_toTopOf="parent" />
@@ -106,7 +107,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/no_cuenta_uno"
+            android:text="BANORTE"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/barra2"
             app:layout_constraintTop_toTopOf="parent" />
@@ -128,7 +129,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
-            android:text="@string/usuario_dos"
+            android:text="Juanita de la Soledad"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -138,7 +139,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginBottom="8dp"
-            android:text="@string/no_cuenta_dos"
+            android:text="83248276348726348762"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/TV_usuario" />
@@ -149,7 +150,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
-            android:text="@string/barrauno"
+            android:text="/"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/TV_num_cuenta"
             app:layout_constraintTop_toTopOf="parent" />
@@ -159,7 +160,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/banco_dos"
+            android:text="BANORTE"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/barra"
             app:layout_constraintTop_toTopOf="parent" />

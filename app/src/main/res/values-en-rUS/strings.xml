@@ -118,8 +118,30 @@
     <string name="nunca_la_usaremos_sin_tu_n_consentimiento">We will never use it without your\n consent</string>
     <string name="esta_informaci_n_es_necesaria_para_verificar_tu_nidentidad_n">This information is necessary to verify your\nidentity\n</string>
     <string name="flechaatras">arrowback</string>
-
-
+    <string name="comentario_tarjeta">The card number have to be of 12 digits</string>
+    <string name="numero_tarjeta">card_number</string>
+    <string name="letra_tarjeta">CLABE</string>
+    <string name="institucion">Institution</string>
+    <string name="AgregarNombre">Name</string>
+    <string name="textoAgregarContancto">Your contact was added successfully</string>
+    <string name="Volver_Inicio">Back to home</string>
+    <string name="tu_n_mero_de_celular">Your phone number</string>
+    <string name="logokodemia">LogoKodemia</string>
+    <string name="iv_inicio">iv_home</string>
+    <string name="vigencia_tarjeta">card_validity</string>
+    <string name="cvv_tarjeta">card_cvv</string>
+    <string name="error_trans">An error has occurred with the transaction list</string>
+    <string name="tu_contacto_fue_agregado_con_xito">Your contact was added successfully</string>
+    <string name="si_internet">Connection restored</string>
+    <string name="no_internet">Internet connection lost</string>
+    <string name="textodialogo">Are you sure you want to do this transaction?</string>
+    <string name="no_de_tarjeta">Card number</string>
+    <string name="nombre">Name</string>
+    <string name="correo_de_ntoficacion">E-mail notification</string>
+    <string name="button">Button</string>
+    <string name="title_activity_enviar_transferencia">Send transference</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
 
     <!--************* FIN TEXTOS EDWIN *************-->
 

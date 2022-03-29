@@ -154,7 +154,7 @@
                 app:layout_constraintEnd_toEndOf="@+id/til_datos_nombre"
                 app:layout_constraintStart_toStartOf="@+id/til_datos_nombre"
                 app:layout_constraintTop_toBottomOf="@+id/til_datos_nombre"
-                app:boxStrokeColor="@color/kodemia_blue">
+                app:boxStrokeColor="@color/celeste">
 
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -175,12 +175,7 @@
                 app:layout_constraintEnd_toEndOf="@+id/til_datos_apellido"
                 app:layout_constraintStart_toStartOf="@+id/til_datos_apellido"
                 app:layout_constraintTop_toBottomOf="@+id/til_datos_apellido"
-                app:boxStrokeColor="@color/kodemia_blue">
-                app:layout_constraintEnd_toEndOf="@+id/textInputLayout4"
-                app:layout_constraintStart_toStartOf="@+id/textInputLayout4"
-                app:layout_constraintTop_toBottomOf="@+id/textInputLayout4"
                 app:boxStrokeColor="@color/celeste">
-
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/tiet_datos_ocupacion"
@@ -203,11 +198,6 @@
                 app:layout_constraintEnd_toEndOf="@+id/til_datos_ocupacion"
                 app:layout_constraintStart_toStartOf="@+id/til_datos_ocupacion"
                 app:layout_constraintTop_toBottomOf="@+id/til_datos_ocupacion"
-                app:boxStrokeColor="@color/kodemia_blue">
-
-                app:layout_constraintEnd_toEndOf="@+id/textInputLayout5"
-                app:layout_constraintStart_toStartOf="@+id/textInputLayout5"
-                app:layout_constraintTop_toBottomOf="@+id/textInputLayout5"
                 app:boxStrokeColor="@color/celeste">
 
                 <com.google.android.material.textfield.TextInputEditText
