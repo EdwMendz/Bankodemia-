@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BankodemiaApp</string>
+    <string name="adios_a_las_complicaciones">!Adiós a las complicaciones!</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">INICIO</string>
+    <string name="title_dashboard">TARJETA</string>
+    <string name="title_notifications">SERVICIOS</string>
+    <string name="dinero_disponible">DINERO DISPONIBLE</string>
+    <string name="enviar">Enviar</string>
+    <string name="recibir">Recibir</string>
+    <string name="tarjeta">TARJETA</string>
+    <string name="No_tarjeta">No. de Tarjeta</string>
+    <string name="vigencia">Vigencia</string>
+    <string name="cvv">CVV</string>
+    <string name="servicios">SERVICIOS</string>
+    <string name="recarga_celular">Recarga de celular</string>
+    <string name="plan_movil">Plan móvil</string>
+    <string name="internet_tv_telefono">Internet/TV/Teléfono</string>
+    <string name="gas">Gas</string>
+    <string name="tarjetas_credito">Tarjetas de crédito</string>
+    <string name="tiendas">Tiendas departamentales</string>
+    <string name="liverpool">Liverpool, Sears, Palacio de Hierro</string>
+    <string name="BBVA">BBVA, Santander, Banorte, Banamex</string>
+    <string name="Naturgy">Naturgy y Compañía Mexicana</string>
+    <string name="telmex">Telmex, Izzi, TotalPlay</string>
+    <string name="ATYT"><![CDATA[AT&T, Telcel, Movistar]]></string>
+    <string name="detalle_transaccion">DETALLE DE TRANSACCIÓN</string>
+    <string name="fecha_hora">FECHA Y HORA</string>
+    <string name="id_transaccion">ID DE TRANSACCIÓN</string>
+    <string name="concepto">CONCEPTO</string>
+    <string name="cuenta_emisora">CUENTA EMISORA</string>
+    <string name="no_cuenta">Número de Cuenta</string>
+    <string name="enero">enero</string>
+    <string name="febrero">febrero</string>
+    <string name="marzo">marzo</string>
+    <string name="abril">abril</string>
+    <string name="mayo">mayo</string>
+    <string name="junio">junio</string>
+    <string name="julio">julio</string>
+    <string name="agosto">agosto</string>
+    <string name="septiembre">septiembre</string>
+    <string name="octubre">octubre</string>
+    <string name="noviembre">noviembre</string>
+    <string name="diciembre">diciembre</string>
+</resources>
