@@ -25,9 +25,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/img" />
                 app:srcCompat="@drawable/avion" />
-
-
             <ImageButton
                 android:id="@+id/Img_regreso"
                 android:layout_width="52dp"
@@ -38,6 +37,7 @@
                 android:scaleType="fitCenter"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/flecha" />
                 app:srcCompat="@drawable/avion" />
 
             <TextView
