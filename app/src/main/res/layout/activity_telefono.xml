@@ -6,117 +6,155 @@
     android:layout_height="match_parent"
     tools:context=".modules.inicioEd.view.TelefonoView">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="46dp">
+
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
 
-            <ImageView
-                android:id="@+id/iv_logoKodemia"
-                android:layout_width="130dp"
-                android:layout_height="70dp"
+                <ImageView
+                    android:id="@+id/iv_logoKodemia"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:contentDescription="@string/logokodemia"
+                    android:src="@drawable/bk"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tv_itd_itd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins_400"
+                android:text="@string/escribe_tu_telefono"
+                android:textAllCaps="true"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_crear_Regresar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.037"
+                app:layout_constraintStart_toEndOf="@+id/iv_crear_Regresar"
+                app:layout_constraintTop_toTopOf="@+id/iv_crear_Regresar" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:fontFamily="@font/poppins_500"
+                android:text="@string/lo_usaras_para_inciar_sesi_n"
+                android:textColor="@color/negro"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_itd_itd" />
+
+
+            <TextView
+                android:id="@+id/tv_necesitasAyuda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Al tocar continuar aceptas nuestro"
+                android:textColor="@color/negro"
+                app:layout_constraintBottom_toTopOf="@+id/tv_bankodemiacorreo"
+                app:layout_constraintEnd_toEndOf="@+id/tv_bankodemiacorreo"
+                app:layout_constraintStart_toStartOf="@+id/tv_bankodemiacorreo" />
+
+            <TextView
+                android:id="@+id/tv_bankodemiacorreo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:autoLink="email"
+                android:minHeight="48dp"
+                android:text="@string/aviso_de_privacidad"
+                android:textColor="#00838F"
+                app:layout_constraintBottom_toTopOf="@+id/btn_crearCuenta_continuar"
+                app:layout_constraintEnd_toEndOf="@+id/btn_crearCuenta_continuar"
+                app:layout_constraintStart_toStartOf="@+id/btn_crearCuenta_continuar" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_crearCuenta_continuar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="712dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="46dp"
+                android:backgroundTint="@color/celeste"
+                android:fontFamily="@font/poppins_400"
+                android:text="@string/continuar"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:srcCompat="@drawable/bk" />
+                app:layout_constraintVertical_bias="0.0" />
 
+            <ImageView
+                android:id="@+id/iv_crear_Regresar"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintStart_toStartOf="@+id/textView9"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
+                app:srcCompat="@drawable/regresar" />
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_crearcuenta_correo"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                app:boxStrokeColor="@color/celeste"
+                app:endIconMode="clear_text"
+                app:layout_constraintEnd_toEndOf="@+id/textView9"
+                app:layout_constraintStart_toStartOf="@+id/textView9"
+                app:layout_constraintTop_toBottomOf="@+id/textView9"
+                app:prefixTextColor="@color/celeste">
 
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiet_crearcuenta_correo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/escribe_tu_telefono" />
+            </com.google.android.material.textfield.TextInputLayout>
 
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="@string/escribe_tu_telefono"
+                android:textColor="@color/negro"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/til_crearcuenta_correo"
+                app:layout_constraintStart_toStartOf="@+id/til_crearcuenta_correo" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
-        <TextView
-            android:id="@+id/tv_itd_itd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/poppins_400"
-            android:text="@string/escribe_tu_telefono"
-            app:layout_constraintBottom_toBottomOf="@+id/iv_iniciarSesion_Regresar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.037"
-            app:layout_constraintStart_toEndOf="@+id/iv_iniciarSesion_Regresar"
-            app:layout_constraintTop_toTopOf="@+id/iv_iniciarSesion_Regresar" />
-
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="24dp"
-            android:fontFamily="@font/poppins_500"
-            android:text="@string/lo_usaras_para_inciar_sesi_n"
-            android:textColor="@color/negro"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_itd_itd" />
-
-
-        <TextView
-            android:id="@+id/tv_necesitasAyuda"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="36dp"
-            android:text="Para proteger tu cuenta, te enviaremos un\ncódigo via SMS. "
-            android:textColor="@color/negro"
-            app:layout_constraintBottom_toTopOf="@+id/btn_iniciarSesion_iniciarSesion"
-            app:layout_constraintEnd_toEndOf="@+id/constraintLayout3"
-            app:layout_constraintHorizontal_bias="0.422"
-            app:layout_constraintStart_toStartOf="@+id/constraintLayout3"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_iniciarSesion_iniciarSesion"
-            android:layout_width="257dp"
-            android:layout_height="50dp"
-            android:layout_marginBottom="60dp"
-            android:backgroundTint="@color/celeste"
-            android:fontFamily="@font/poppins_400"
-            android:text="@string/continuar"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/tv_necesitasAyuda"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/tv_necesitasAyuda" />
-
-        <ImageView
-            android:id="@+id/iv_iniciarSesion_Regresar"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginTop="24dp"
-            app:layout_constraintStart_toStartOf="@+id/textView9"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
-            app:srcCompat="@drawable/regresar" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="56dp"
-            android:layout_marginEnd="24dp"
-            android:hint="@string/tu_n_mero_de_celular"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView9">
-
-            <AutoCompleteTextView
-                android:id="@+id/actv_telefono"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
