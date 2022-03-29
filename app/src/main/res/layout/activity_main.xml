@@ -4,10 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".MainActivity">
     android:background="@color/negro"
     tools:context=".MainActivity">
 
+
+    android:background="@color/kodemia_black"
+    tools:context=".modules.inicioEd.view.InicioActivityView">
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_bienvenida_inisiarSesion"
         android:layout_width="0dp"
@@ -83,8 +87,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_400"
-            android:text="@string/usa_el_dinero_a1"
-            android:textColor="@color/blanco"
+            android:text="@string/usa_el_diner_a"
+            android:textColor="@color/white"
             android:textSize="22sp"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="4dp"

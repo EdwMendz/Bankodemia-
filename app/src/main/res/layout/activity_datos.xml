@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".IngresaTusDatos">
+    tools:context=".modules.inicioEd.view.DatosView">
 
-<!--    <ScrollView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        tools:layout_editor_absoluteX="0dp"-->
-<!--        tools:layout_editor_absoluteY="-60dp">-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-60dp">
 
-<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content">-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout3"
@@ -46,7 +46,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/poppins_400"
-                android:text="INGRESA TUS DATOS"
+                android:text="@string/ingresa_tus_datos"
                 app:layout_constraintBottom_toBottomOf="@+id/iv_iniciarSesion_Regresar"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.037"
@@ -71,30 +71,29 @@
 
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/tv_necesitasAyuda"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="88dp"
                 android:text="Esta información es necesaria para verificar tu\nidentidad\n"
                 android:textColor="@color/negro"
-                app:layout_constraintEnd_toEndOf="@+id/til_itd_fechaNacimiento"
                 app:layout_constraintHorizontal_bias="0.428"
-                app:layout_constraintStart_toStartOf="@+id/til_itd_fechaNacimiento"
-                app:layout_constraintTop_toBottomOf="@+id/til_itd_fechaNacimiento" />
+                app:layout_constraintStart_toStartOf="@+id/til_datos_fechaNacimiento"
+                app:layout_constraintTop_toBottomOf="@+id/til_datos_fechaNacimiento" />
 
             <TextView
-                android:id="@+id/textView11"
+                android:id="@+id/tv_bankodemiacorreo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:autoLink="email"
                 android:minHeight="48dp"
-                android:text="Nunca la usaremos sin tu\n         consentimiento"
+                android:text="@string/nunca_la_usaremos_sin_tu_n_consentimiento"
                 android:textColor="#00838F"
-                app:layout_constraintEnd_toEndOf="@+id/textView10"
+                app:layout_constraintEnd_toEndOf="@+id/tv_necesitasAyuda"
                 app:layout_constraintHorizontal_bias="0.537"
-                app:layout_constraintStart_toStartOf="@+id/textView10"
-                app:layout_constraintTop_toBottomOf="@+id/textView10" />
+                app:layout_constraintStart_toStartOf="@+id/tv_necesitasAyuda"
+                app:layout_constraintTop_toBottomOf="@+id/tv_necesitasAyuda" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_iniciarSesion_iniciarSesion"
@@ -105,13 +104,13 @@
         android:layout_marginBottom="48dp"
         android:backgroundTint="@color/celeste"
         android:fontFamily="@font/poppins_400"
-        android:text="Continuar"
+        android:text="@string/continuar"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        app:layout_constraintTop_toBottomOf="@+id/tv_bankodemiacorreo"
         app:layout_constraintVertical_bias="1.0" />
 
             <ImageView
@@ -119,12 +118,14 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toStartOf="@+id/constraintLayout3"
                 app:layout_constraintStart_toStartOf="@+id/textView9"
                 app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
-                app:srcCompat="@drawable/regresar" />
+                app:srcCompat="@drawable/regresar"
+                android:contentDescription="@string/flechaatras" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/til_itd_nombre"
+                android:id="@+id/til_datos_nombre"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -136,78 +137,103 @@
                 app:boxStrokeColor="@color/celeste">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/tiet_itd_nombre"
+                    android:id="@+id/tiet_datos_nombre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Nombre(s)"
+                    android:hint="@string/nombre_s"
                     android:inputType="text"
                     />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayout4"
+                android:id="@+id/til_datos_apellido"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                app:layout_constraintEnd_toEndOf="@+id/til_itd_nombre"
-                app:layout_constraintStart_toStartOf="@+id/til_itd_nombre"
-                app:layout_constraintTop_toBottomOf="@+id/til_itd_nombre"
-                app:boxStrokeColor="@color/celeste">
+                app:layout_constraintEnd_toEndOf="@+id/til_datos_nombre"
+                app:layout_constraintStart_toStartOf="@+id/til_datos_nombre"
+                app:layout_constraintTop_toBottomOf="@+id/til_datos_nombre"
+                app:boxStrokeColor="@color/kodemia_blue">
+
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiet_datos_apellidos"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Apellido(s)"
+                    android:hint="@string/apellido_s"
                     android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayout5"
+                android:id="@+id/til_datos_ocupacion"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
+
+                app:layout_constraintEnd_toEndOf="@+id/til_datos_apellido"
+                app:layout_constraintStart_toStartOf="@+id/til_datos_apellido"
+                app:layout_constraintTop_toBottomOf="@+id/til_datos_apellido"
+                app:boxStrokeColor="@color/kodemia_blue">
                 app:layout_constraintEnd_toEndOf="@+id/textInputLayout4"
                 app:layout_constraintStart_toStartOf="@+id/textInputLayout4"
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout4"
                 app:boxStrokeColor="@color/celeste">
 
+
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiet_datos_ocupacion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Ocupacion"
-                    android:inputType="text"
+                    android:hint="@string/ocupacion"
 
 
-                    />
+                    android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/til_itd_fechaNacimiento"
+                android:id="@+id/til_datos_fechaNacimiento"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:layout_marginBottom="100dp"
+
+                app:layout_constraintEnd_toEndOf="@+id/til_datos_ocupacion"
+                app:layout_constraintStart_toStartOf="@+id/til_datos_ocupacion"
+                app:layout_constraintTop_toBottomOf="@+id/til_datos_ocupacion"
+                app:boxStrokeColor="@color/kodemia_blue">
+
                 app:layout_constraintEnd_toEndOf="@+id/textInputLayout5"
                 app:layout_constraintStart_toStartOf="@+id/textInputLayout5"
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout5"
                 app:boxStrokeColor="@color/celeste">
 
-
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/tiet_ingTusDat_FechaNaci"
+                    android:id="@+id/tiet_datos_FechaNaci"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Fecha de Nacimiento" />
+                    android:hint="@string/fecha_de_nacimiento" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
-<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+            <ProgressBar
+                android:id="@+id/pb_activitydatos"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-<!--    </ScrollView>-->
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
