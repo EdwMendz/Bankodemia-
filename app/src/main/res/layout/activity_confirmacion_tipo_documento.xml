@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".verificacionIdentidad.confirmacionDocumento.ConfirmarTipoDocumento">
+
+
+    <ImageView
+        android:id="@+id/imageViewIne"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="26dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bk" />
+
+    <TextView
+        android:id="@+id/tvTipoDocumento"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="19dp"
+        android:fontFamily="@font/poppins_500"
+        android:text="@string/ine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewIne" />
+
+    <TextView
+        android:id="@+id/textViewPermisoCamaraIne"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/poppins_500"
+        android:lineSpacingExtra="5sp"
+        android:text="@string/textViewPermisoCamara"
+        android:textColor="@color/negro"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTipoDocumento" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSubirFoto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="31dp"
+        android:fontFamily="@font/poppins_500"
+        android:text="@string/btnSubir"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewFoto" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardViewFoto"
+        android:layout_width="350dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="100dp"
+        android:background="@color/negro"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPermisoCamaraIne">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/borde">
+
+            <TextView
+                android:id="@+id/textViewTomarFoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/poppins_500"
+                android:text="@string/textVArrastrar"
+                android:textAlignment="center"
+                android:textColor="@color/lila"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@+id/ivFoto"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <ImageView
+                android:id="@+id/ivFoto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:rotation="90"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/avatars" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

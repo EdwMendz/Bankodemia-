@@ -4,6 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".VerificacionIdentidadActivity">
+    tools:context=".verificacionIdentidad.VerificacionIdentidadActivity">
 
+    <ImageView
+        android:id="@+id/imageViewIdentidad1"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="26dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bk" />
+
+    <TextView
+        android:id="@+id/textViewIdentidad"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="19dp"
+        android:text="@string/identidad"
+        android:fontFamily="@font/poppins_500"
+        android:textColor="@color/gris"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewIdentidad1" />
+
+    <TextView
+        android:id="@+id/textViewVerificarIdentidad"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="10dp"
+        android:lineSpacingExtra="5sp"
+        android:text="@string/textViewIdentidad1"
+        android:fontFamily="@font/poppins_500"
+        android:textColor="@color/negro"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewIdentidad" />
+
+    <TextView
+        android:id="@+id/textViewInstrucciones"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="20dp"
+        android:lineSpacingExtra="5sp"
+        android:text="@string/textViewIdentidad2"
+        android:fontFamily="@font/poppins_400"
+        android:textColor="@color/gris"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewVerificarIdentidad" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnIdentidad"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/btnIdentidad"
+        android:fontFamily="@font/poppins_500"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewInstrucciones" />
 </androidx.constraintlayout.widget.ConstraintLayout>
