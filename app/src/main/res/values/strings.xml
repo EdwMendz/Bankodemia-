@@ -34,4 +34,18 @@
     <string name="concepto">CONCEPTO</string>
     <string name="cuenta_emisora">CUENTA EMISORA</string>
     <string name="no_cuenta">Número de Cuenta</string>
+
+
+    <!--AGREGAR CONTACTO-->
+    <string name="comentario_tarjeta">El numero de Tarjeta tiene que ser de 12 digitos</string>
+    <string name="numero_tarjeta">No. de Tarjeta</string>
+    <string name="letra_tarjeta">CLABE</string>
+    <string name="institucion">Institución</string>
+    <string name="AgregarNombre">Nombre</string>
+    <string name="correo">Correo de notificaciòn</string>
+
+    <!---FIN DE CONTACTO-->
+    <string name="textoAgregarContancto">Tu contanto fue agregado con éxito</string>
+    <string name="Volver_Inicio">Volver a Inicio</string>
+
 </resources>
