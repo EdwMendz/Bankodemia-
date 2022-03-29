@@ -1,9 +1,8 @@
+package mx.kodemia.bankodemiaapp
 
-package mx.kodemia.bankodemiaapp.verificacionIdentidad.ine
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import mx.kodemia.bankodemiaapp.R
 
 
 class FinalizadoContacto : AppCompatActivity() {
