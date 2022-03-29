@@ -1,12 +1,11 @@
-package mx.kodemia.bankodemiaapp
+package mx.kodemia.bankodemiaapp.modules.inicioEd.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import mx.kodemia.bankodemiaapp.databinding.ActivityMainBinding
-import mx.kodemia.bankodemiaapp.modules.home.view.IniciarSesionView
 
-class MainActivity : AppCompatActivity() {
+class InicioActivityView : AppCompatActivity() {
     //Inicializamos el viewBinding
     private lateinit var binding: ActivityMainBinding
 
@@ -42,7 +41,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun lanzarActivityCrearCuenta() {
-        val intent = Intent(this, CrearCuenta::class.java)
+        val intent = Intent(this, CrearCuentaView::class.java)
         startActivity(intent)
         finish()
     }

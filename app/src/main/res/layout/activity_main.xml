@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/kodemia_black"
-    tools:context=".MainActivity">
+    tools:context=".modules.inicioEd.view.InicioActivityView">
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_bienvenida_inisiarSesion"

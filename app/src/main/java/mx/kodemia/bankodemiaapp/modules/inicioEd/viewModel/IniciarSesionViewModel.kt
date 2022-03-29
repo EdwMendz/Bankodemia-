@@ -1,4 +1,4 @@
-package mx.kodemia.bankodemiaapp.modules.home.viewmodel
+package mx.kodemia.bankodemiaapp.modules.inicioEd.viewModel
 
 import android.app.Activity
 import android.content.Context
@@ -40,6 +40,7 @@ class IniciarSesionViewModel(context: Context) : ViewModel() {
                     //Se actualizara el Mutable LoginResponse
                     //Voy a cargar la informacion para que le avise a la vista que esta oks
                     logInResponse.postValue(respuestaLogin.body())
+                    //Se lanza la actividad
                     lanzarActivity(activity)
 
                     //De acuerdo a la documentacion el error 401 es unautorizaed

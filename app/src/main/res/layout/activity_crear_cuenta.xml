@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CrearCuenta">
+    tools:context=".modules.inicioEd.view.CrearCuentaView">
 
-    <!--    <ScrollView-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="match_parent"-->
-    <!--        tools:layout_editor_absoluteX="0dp"-->
-    <!--        tools:layout_editor_absoluteY="-60dp">-->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="-60dp">
 
-    <!--        <androidx.constraintlayout.widget.ConstraintLayout-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="wrap_content">-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout3"
@@ -30,7 +30,7 @@
             android:id="@+id/iv_logoKodemia"
             android:layout_width="70dp"
             android:layout_height="40dp"
-            android:contentDescription="@string/todo"
+            android:contentDescription="@string/logokodemia"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -76,8 +76,8 @@
         android:layout_marginTop="600dp"
         android:text="@string/al_tocar_continuar_aceptas_nuestro"
         android:textColor="@color/kodemia_black"
-        app:layout_constraintEnd_toEndOf="@+id/til_IniciarSesison_Correo"
-        app:layout_constraintStart_toStartOf="@+id/til_IniciarSesison_Correo"
+        app:layout_constraintEnd_toEndOf="@+id/til_crearcuenta_correo"
+        app:layout_constraintStart_toStartOf="@+id/til_crearcuenta_correo"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -122,7 +122,7 @@
         app:srcCompat="@drawable/regresar" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_IniciarSesison_Correo"
+        android:id="@+id/til_crearcuenta_correo"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -135,10 +135,11 @@
         app:prefixTextColor="@color/kodemia_blue">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tiet_crearcuenta_correo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/correo" />
     </com.google.android.material.textfield.TextInputLayout>
-    <!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
-    <!--    </ScrollView>-->
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

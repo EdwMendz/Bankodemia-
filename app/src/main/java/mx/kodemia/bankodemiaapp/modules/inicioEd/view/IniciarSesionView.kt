@@ -1,17 +1,15 @@
-package mx.kodemia.bankodemiaapp.modules.home.view
+package mx.kodemia.bankodemiaapp.modules.inicioEd.view
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
 import kotlinx.android.synthetic.main.activity_iniciar_sesion.*
-import mx.kodemia.bankodemiaapp.MainActivity
 import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.core.checkForInternet
 import mx.kodemia.bankodemiaapp.data.model.request.LogInRequest
 import mx.kodemia.bankodemiaapp.databinding.ActivityIniciarSesionBinding
-import mx.kodemia.bankodemiaapp.modules.home.viewmodel.IniciarSesionViewModel
+import mx.kodemia.bankodemiaapp.modules.inicioEd.viewModel.IniciarSesionViewModel
 
 class IniciarSesionView : AppCompatActivity() {
     //Inicializa el viewBindin
@@ -57,16 +55,16 @@ class IniciarSesionView : AppCompatActivity() {
         binding.apply {
 
             return if (tiet_IniciarSesison_Correo.text.toString().isEmpty()) {
-                tilIniciarSesisonCorreo.error = getString(R.string.campo_vacio)
+                tilIniciarSesionCorreo.error = getString(R.string.campo_vacio)
                 false
             } else {
                 if (android.util.Patterns.EMAIL_ADDRESS.matcher(tietIniciarSesisonCorreo.text.toString())
                         .matches()
                 ) {
-                    tilIniciarSesisonCorreo.isErrorEnabled = false
+                    tilIniciarSesionCorreo.isErrorEnabled = false
                     true
                 } else {
-                    tilIniciarSesisonCorreo.error = getString(R.string.correo_no_valido)
+                   tilIniciarSesionCorreo.error = getString(R.string.correo_no_valido)
                     false
                 }
             }
@@ -103,9 +101,9 @@ class IniciarSesionView : AppCompatActivity() {
     private fun cargando(cargando: Boolean) {
         binding.apply {
             if (cargando) {
-                progressBar.visibility = View.VISIBLE
+                pbIniciarSesion.visibility = View.VISIBLE
             } else {
-                progressBar.visibility = View.GONE
+                pbIniciarSesion.visibility = View.GONE
             }
         }
 
