@@ -17,9 +17,20 @@ fun checkForInternet(context: Context): Boolean{
 
         return when {
             //Indica si la red usa transporte WiFi o tiene conectividad WiFi
-            activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
+            activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> {
+
+                true
+            }
             //Indica si la red tiene conectividad por datos moviles
-            activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> true
+            activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> {
+
+                true
+            }
+            //Indica si la red tiene conectividad por ethernet
+            activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) -> {
+
+                true
+            }
 
             else -> false
         }

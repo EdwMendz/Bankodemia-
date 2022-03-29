@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".modules.inicioEd.view.IniciarSesionView">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3333" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.6666" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/iv_logoKodemia"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:contentDescription="@string/logokodemia"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/bk" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_itd_itd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/poppins_400"
+        android:text="@string/iniciar_sesion"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_iniciarSesion_Regresar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.038"
+        app:layout_constraintStart_toEndOf="@+id/iv_iniciarSesion_Regresar"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/poppins_500"
+        android:text="@string/escribe_el_correo_y_telefono_con_el_que_n_te_registraste_a_trav_s_de_estos_nte_enciaremos_el_acceso"
+        android:textColor="@color/negro"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_itd_itd" />
+
+    <TextView
+        android:id="@+id/tv_necesitasAyuda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/necesitas_ayuda_escribenos_a"
+        android:textColor="@color/negro"
+        app:layout_constraintBottom_toTopOf="@+id/tv_bankodemiacorreo"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeft" />
+
+    <TextView
+        android:id="@+id/tv_bankodemiacorreo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:autoLink="email"
+        android:minHeight="48dp"
+        android:text="@string/bankodemia_com_mx"
+        android:textColor="#00838F"
+        app:layout_constraintBottom_toTopOf="@+id/btn_iniciarSesion_iniciarSesion"
+        app:layout_constraintEnd_toEndOf="@+id/btn_iniciarSesion_iniciarSesion"
+        app:layout_constraintStart_toStartOf="@+id/btn_iniciarSesion_iniciarSesion"
+        tools:ignore="TextContrastCheck" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_iniciarSesion_iniciarSesion"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="52dp"
+        android:backgroundTint="@color/celeste"
+        android:fontFamily="@font/poppins_400"
+        android:text="@string/iniciar_sesion"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TextContrastCheck" />
+
+    <ImageView
+        android:id="@+id/iv_iniciarSesion_Regresar"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="24dp"
+        android:contentDescription="@string/flechaatras"
+        app:layout_constraintStart_toStartOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
+        app:srcCompat="@drawable/regresar" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_iniciarSesion_correo"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        app:boxStrokeColor="@color/celeste"
+        app:endIconMode="clear_text"
+        app:layout_constraintEnd_toEndOf="@+id/textView9"
+        app:layout_constraintStart_toStartOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        app:prefixTextColor="@color/celeste">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tiet_IniciarSesison_Correo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/escribe_tu_correo"
+            android:inputType="textWebEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_IniciarSesion_contrasenia"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        app:boxStrokeColor="@color/celeste"
+        app:endIconMode="password_toggle"
+        app:layout_constraintEnd_toEndOf="@+id/til_iniciarSesion_correo"
+        app:layout_constraintStart_toStartOf="@+id/til_iniciarSesion_correo"
+        app:layout_constraintTop_toBottomOf="@+id/til_iniciarSesion_correo"
+        app:prefixTextColor="@color/celeste">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tiet_IniciarSesion_contrasenia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/escribe_tu_contrase_a"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+<ProgressBar
+style="?android:attr/progressBarStyle"
+android:id="@+id/pb_iniciarSesion"
+android:layout_height="wrap_content"
+android:layout_width="wrap_content"
+android:visibility="gone"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="@string/escribe_tu_correo"
+        android:textColor="@color/negro"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/til_iniciarSesion_correo"
+        app:layout_constraintStart_toStartOf="@+id/til_iniciarSesion_correo" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="@string/escribe_tu_contrase_a"
+        android:textColor="@color/negro"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/til_IniciarSesion_contrasenia"
+        app:layout_constraintStart_toStartOf="@+id/til_IniciarSesion_contrasenia" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,13 +2,15 @@
     <!-- Base application theme. -->
     <style name="Theme.BankodemiaApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
+
         <item name="colorPrimary">@color/celeste</item>
-        <item name="colorPrimaryVariant">@color/blanco</item>
+        <item name="colorPrimaryVariant">@color/negro</item>
         <item name="colorOnPrimary">@color/blanco</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/lila</item>
         <item name="colorSecondaryVariant">@color/negro</item>
         <item name="colorOnSecondary">@color/gris</item>
+
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->

@@ -1,46 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="mx.kodemia.bankodemiaapp">
+    package="mx.kodemia.bankodemiaapp" >
 
+    <!--______________________PERMISOS______________________-->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="18" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BankodemiaApp">
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="mx.kodemia.bankodemiaapp.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <!-- _____________ACTIVITIES DE EDWIN (Inicio del Bloque)________________ -->
+
         <activity
-            android:name=".PruebasActivity"
-            android:exported="true" >
-
-
-
-        </activity>
+            android:name=".modules.inicioEd.view.TelefonoView"
+            android:exported="true" />
         <activity
-            android:name=".modules.home.view.HomeDetailsTransactionActivity"
-            android:exported="false" /> <!-- _______________ACTIVITY HOME________________ -->
+            android:name=".modules.inicioEd.view.IniciarSesionView"
+            android:exported="true" />
+        <activity
+            android:name=".modules.inicioEd.view.CrearCuentaView"
+            android:exported="true"/>
+        <activity
+            android:name=".modules.inicioEd.view.InicioActivityView"
+            android:exported="true" />
+        <activity
+            android:name=".modules.inicioEd.view.DatosView"
+            android:exported="true" />
+
+        <!-- _____________ACTIVITIES DE EDWIN (Final del Bloque)________________ -->
+
+
+        <!-- _____________ACTIVITIES DE SAEL (Inicio del Bloque)________________ -->
+
+        <activity
+            android:name=".verificacionIdentidad.confirmacion.Confirmacion"
+            android:exported="false" />
+        <activity
+            android:name=".verificacionIdentidad.enviarDatos.EnviarDatos"
+            android:exported="false" />
+        <activity
+            android:name=".verificacionIdentidad.contrasena.Contrasena"
+            android:exported="false" />
+        <activity
+            android:name=".verificacionIdentidad.confirmacionDocumento.ConfirmarTipoDocumento"
+            android:exported="false" />
+        <activity
+            android:name=".verificacionIdentidad.VerificacionIdentidad2"
+            android:exported="false" />
+        <activity
+            android:name=".verificacionIdentidad.VerificacionIdentidadActivitySael"
+            android:exported="false" />
+        <activity
+            android:name=".verificacionIdentidad.VerificacionIdentidadActivity"
+            android:exported="true" />
+
+        <!-- _____________ACTIVITIES DE SAEL (Final del Bloque)________________ -->
+
+
+        <!-- _____________ACTIVITIES DE LIZZ (Inicio del Bloque)________________ -->
+
+        <activity
+            android:name=".ConfirmacionTransferencia"
+            android:exported="true" />
+        <activity
+            android:name=".EnviarDinero"
+            android:exported="true" />
+        <activity
+            android:name=".EnviarTransferencia"
+            android:exported="true" />
+        <activity
+            android:name=".FinalizadoContacto"
+            android:exported="true" />
+        <activity
+            android:name=".Mensaje"
+            android:exported="true" />
+        <activity
+            android:name=".NuevoDestino"
+            android:exported="true" />
+        <!-- _____________ACTIVITIES DE LIZZ (Final del Bloque)________________ -->
+
+
+        <!-- _____________ACTIVITIES DE FABIAN (Inicio del Bloque)________________ -->
         <activity
             android:name=".modules.home.view.HomeActivity"
             android:exported="true"
-            android:label="@string/title_activity_home">
-
+            android:label="@string/title_activity_home" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
-            android:name=".VerificacionIdentidadActivity"
+            android:name=".modules.home.view.HomeDetailsTransactionActivity"
             android:exported="false" />
+        <!-- _____________ACTIVITIES DE FABIAN (Final del Bloque)________________ -->
+
+
+        <!-- _____________ACTIVITIES DE PRUEBA (Inicio del Bloque)________________ -->
         <activity
-            android:name=".MainActivity"
+            android:name=".PruebasActivity"
             android:exported="true" />
+        <activity
+            android:name=".PruebasActivity2"
+            android:exported="false" />
+        <!-- _____________ACTIVITIES DE PRUEBA (Final del Bloque)________________-->
+
     </application>
 
 </manifest>

@@ -1,6 +1,5 @@
 package mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones
 
-import mx.kodemia.bankodemiaapp.data.model.response.makeTransaction.Type
 
 data class Transaccion(
     val amount: Double,

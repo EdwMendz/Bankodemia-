@@ -5,7 +5,7 @@
     <string name="title_dashboard">CARD</string>
     <string name="title_notifications">SERVICES</string>
     <string name="enviar">Send</string>
-    <string name="recibir">Recieve</string>
+    <string name="recibir">Receive</string>
     <string name="dinero_disponible">AVAILABLE MONEY</string>
     <string name="adios_a_las_complicaciones">!Goodbye complications!</string>
     <string name="title_activity_home">HomeActivity</string>
@@ -31,4 +31,119 @@
     <string name="cuenta_emisora">ISSUER ACCOUNT</string>
     <string name="no_cuenta">Account number</string>
     <string name="recarga_celular">Phone recharge</string>
+
+    <string name="enero">january</string>
+    <string name="febrero">february</string>
+    <string name="marzo">march</string>
+    <string name="abril">april</string>
+    <string name="mayo">may</string>
+    <string name="junio">june</string>
+    <string name="julio">july</string>
+    <string name="agosto">august</string>
+    <string name="septiembre">september</string>
+    <string name="octubre">october</string>
+    <string name="noviembre">november</string>
+    <string name="diciembre">december</string>
+    <string name="textVArrastrar">Drag your file here or upload it from your COMPUTER</string>
+    <string name="btnSubir">Upload Information</string>
+    <string name="textViewPermisoCamara">Give Bankodemia permission to use the camera. Make sure you have good light and focus well on your document from the front.</string>
+    <string name="identidad">IDENTITY</string>
+    <string name="textViewIdentidad1">Now, we will verify your identity to protect your account.</string>
+    <string name="textViewIdentidad2">You will need to upload a photo of your INE or valid passport and take a selfie. If you are a foreigner you will need a picture of your immigration document (FM3).</string>
+    <string name="back">BACK</string>
+    <string name="btnIdentidad">Understood</string>
+    <string name="textViewIdentidad3">Selected the type of document to be photographed</string>
+    <string name="textViewIdentidadIne">INE</string>
+    <string name="textViewIdentidadDocumentosMigratorios">Migratory Documents</string>
+    <string name="textViewIdentidadPasaporte">Passport</string>
+    <string name="textViewIdentidad4">Learn how we protect your documents</string>
+    <string name="ine">INE</string>
+    <string name="pasaporte">PASSPORT</string>
+    <string name="contrasena">PASSWORD</string>
+    <string name="documentoMigratorio">MIGRATORY DOCUMENT</string>
+    <string name="textViewContrasena1">Create a secure password</string>
+    <string name="textViewContrasena2">You will use it to log in to the app and confirm your transactions.</string>
+    <string name="textViewContrasena3">Use at least 6 alphanumeric characters, not consecutive or repeated.</string>
+    <string name="btnContrasena">Create Password</string>
+    <string name="textViewEnviarDatos">Wait a moment, we are sending your data</string>
+    <string name="textViewConfirmacion1">You\'re done! We received your information. It usually takes a few minutes to verify, but if you have any problems, we will contact you.</string>
+    <string name="textViewGracias">THANK YOU FOR USING BANKODEMIA!</string>
+    <string name="btnConfirmacionVolverInicio">Back to top</string>
+    <string name="tiet_password_login">Password</string>
+    <string name="tietPasswordConfirm">Confirm your password</string>
+
+
+
+    <!--***************** INICIO TEXTOS EDWIN ***************-->
+
+    <!-- Textos de Pagina de inicio  -->
+    <string name="iniciar_sesion">Log in</string>
+    <string name="crear_cuenta">create Account</string>
+    <string name="bankodemia">bankodemia</string>
+    <string name="usa_el_diner_a">use the money</string>
+    <string name="manera">way</string>
+
+    <!--Activity Iniciar Sesion-->
+
+    <string name="escribe_el_correo_y_telefono_con_el_que_n_te_registraste_a_trav_s_de_estos_nte_enciaremos_el_acceso">Write the email and phone with which you \nregistered, through these we will \nsend you the access</string>
+    <string name="escribe_tu_correo">Write your email</string>
+    <string name="escribe_tu_contrase_a">write your password</string>
+    <string name="necesitas_ayuda_escribenos_a">Need help? write us to</string>
+    <string name="bankodemia_com_mx">bankodemia@com.mx</string>
+    <!-- Validaciones-->
+    <string name="campo_vacio">empty field</string>
+    <string name="correo_no_valido">invalid email</string>
+
+    <!--Activity Crear Cuenta -->
+
+    <string name="correo">email</string>
+    <string name="aqu_recibir_s_comprobantes_de_tus_nmovimientos_en_informaci_n_sobre_tu_ncuenta">Here you will receive proof of your \nmovements in information about your\naccount</string>
+    <string name="al_tocar_continuar_aceptas_nuestro">By touching continue you accept our</string>
+    <string name="aviso_de_privacidad">Notice of Privacy</string>
+
+    <!--Activity Telefono-->
+    <string name="escribe_tu_telefono">WRITE YOUR PHONE</string>
+    <string name="lo_usaras_para_inciar_sesi_n">You will use it to login</string>
+    <string name="para_proteger_tu_cuenta_te_enviaremos_un_nc_digo_via_sms">To protect your account, well send you a\ncode via SMS.</string>
+    <string name="continuar">Continue</string>
+
+
+    <!--Activity Ingresa tus datos -->
+    <string name="ingresa_tus_datos">ENTER YOUR DATA</string>
+    <string name="escribe_tal_como_aparece_en_tu_nidentificacion_oficial_sin_abreviaturas">Write as it appears on your\nofficial identification without abbreviations</string>
+    <string name="nombre_s">Name(s)</string>
+    <string name="apellido_s">Last name(s)</string>
+    <string name="ocupacion">major</string>
+    <string name="fecha_de_nacimiento">Date of birth</string>
+    <string name="nunca_la_usaremos_sin_tu_n_consentimiento">We will never use it without your\n consent</string>
+    <string name="esta_informaci_n_es_necesaria_para_verificar_tu_nidentidad_n">This information is necessary to verify your\nidentity\n</string>
+    <string name="flechaatras">arrowback</string>
+    <string name="comentario_tarjeta">The card number have to be of 12 digits</string>
+    <string name="numero_tarjeta">card_number</string>
+    <string name="letra_tarjeta">CLABE</string>
+    <string name="institucion">Institution</string>
+    <string name="AgregarNombre">Name</string>
+    <string name="textoAgregarContancto">Your contact was added successfully</string>
+    <string name="Volver_Inicio">Back to home</string>
+    <string name="tu_n_mero_de_celular">Your phone number</string>
+    <string name="logokodemia">LogoKodemia</string>
+    <string name="iv_inicio">iv_home</string>
+    <string name="vigencia_tarjeta">card_validity</string>
+    <string name="cvv_tarjeta">card_cvv</string>
+    <string name="error_trans">An error has occurred with the transaction list</string>
+    <string name="tu_contacto_fue_agregado_con_xito">Your contact was added successfully</string>
+    <string name="si_internet">Connection restored</string>
+    <string name="no_internet">Internet connection lost</string>
+    <string name="textodialogo">Are you sure you want to do this transaction?</string>
+    <string name="no_de_tarjeta">Card number</string>
+    <string name="nombre">Name</string>
+    <string name="correo_de_ntoficacion">E-mail notification</string>
+    <string name="button">Button</string>
+    <string name="title_activity_enviar_transferencia">Send transference</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <!--************* FIN TEXTOS EDWIN *************-->
+
+
 </resources>
