@@ -46,6 +46,8 @@ object SharedPreferencesInstance {
         }
     }
 
+    //Se guarda datos de regitro del usuario, parte de Edwin
+
     //Se guarda el token y el tiempo en el que expira el token con ayuda del editor
     fun guardarSesionLogin(sesion: LoginResponse){
         with(editor){

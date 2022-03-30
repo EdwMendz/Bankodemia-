@@ -108,18 +108,55 @@ class DatosView : AppCompatActivity() {
             return if (tietDatosNombre.text.toString().isEmpty()) {
                 tilDatosNombre.error = getString(R.string.campo_vacio)
                 false
-            } else {
-                if (android.util.Patterns.EMAIL_ADDRESS.matcher(tietDatosNombre.text.toString())
-                        .matches()
-                ) {
-                    tilDatosNombre.isErrorEnabled = false
-                    true
-                } else {
-                    tilDatosNombre.error = getString(R.string.usuario)
-                    false
-                }
-            }
+            } else
+                true
         }
+    }
+
+    //validar major
+    private fun validarApellido(): Boolean {
+        binding.apply {
+            return if (tietDatosApellidos.text.toString().isEmpty()) {
+                tilDatosNombre.error = getString(R.string.campo_vacio)
+                false
+            } else
+                true
+        }
+    }
+
+    //Validar Ocupacion
+    private fun validarMajor(): Boolean {
+        binding.apply {
+            return if (tietDatosOcupacion.text.toString().isEmpty()) {
+                tilDatosOcupacion.error = getString(R.string.campo_vacio)
+                false
+            } else
+                true
+        }
+    }
+
+    //validar fechaDeNacimiento
+    private fun validarFechadeNacimiento(): Boolean {
+        binding.apply {
+            return if (tietDatosFechaNaci.text.toString().isEmpty()) {
+                tilDatosFechaNacimiento.error = getString(R.string.campo_vacio)
+                false
+            } else
+                true
+        }
+    }
+//
+//    private fun validarCampos(
+//        nombre: Boolean,
+//        apellidos: Boolean,
+//        fecha: Boolean,
+//        ocupacion: Boolean
+//    ): Boolean {
+//        val result = arrayOf(nombre, apellidos, fecha, ocupacion)
+//        if (false in result) {
+//            return false
+//        }
+
 
 //
 //    json.put("name", tiet_usuario_registro.text)
@@ -128,5 +165,6 @@ class DatosView : AppCompatActivity() {
 //    json.put("password_confirmation", tiet_contrasenia2_registro.text)
 //    json.put("device_name", "User's phone")
 
-    }
+
+
 }

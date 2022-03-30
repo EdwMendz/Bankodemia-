@@ -3,6 +3,8 @@ package mx.kodemia.bankodemiaapp.modules.inicioEd.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
 import androidx.activity.viewModels
 import kotlinx.android.synthetic.main.activity_iniciar_sesion.*
@@ -24,16 +26,30 @@ class IniciarSesionView : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityIniciarSesionBinding.inflate(layoutInflater)
         setContentView(binding.root)
-       // observadores()
-
-        binding.btnIniciarSesionIniciarSesion.setOnClickListener {
-
-                startActivity(Intent(this@IniciarSesionView,HomeActivity::class.java))
-
-        }
+        escuchadoresCorreoYEmail()
+        realizarPeticion()
     }
 
-//    //
+
+    //Mandar peticion
+    private fun realizarPeticion() {
+        if (checkForInternet(applicationContext))
+            binding.apply {
+                btnIniciarSesionIniciarSesion.setOnClickListener {
+                    if (validarCorreoYContrasenia()) {
+                        //Lanzar la peticion
+                        lanzarActivitiHome()
+                    }
+                }
+            }
+    }
+
+    private fun lanzarActivitiHome() {
+        val intent = Intent(this@IniciarSesionView, HomeActivity::class.java)
+        startActivity(intent)
+    }
+
+    //    //
 //    //Observadores
 //    private fun observadores() {
 //        //Observamos el progresbar
@@ -57,7 +73,8 @@ class IniciarSesionView : AppCompatActivity() {
 ////    }
 //
 //
-//    Validar Correo
+
+    //    Validar Correo
     private fun validarCorreo(): Boolean {
         binding.apply {
 
@@ -77,8 +94,9 @@ class IniciarSesionView : AppCompatActivity() {
             }
         }
     }
-//
-  //  Validar contrasenia
+
+    //
+    //  Validar contrasenia
     private fun validarContrasenia(): Boolean {
         binding.apply {
             return if (tietIniciarSesionContrasenia.text.toString().isEmpty()) {
@@ -91,12 +109,55 @@ class IniciarSesionView : AppCompatActivity() {
         }
     }
 
-    //Valida Correo y contrasenia juntos
-    private fun validarCorreoYContrasenia() {
-        val result = arrayOf(validarCorreo(), validarContrasenia())
-        if (false in result)
-            return
+    //EscuchaTodoel tiempo los editText
+    private fun escuchadoresCorreoYEmail() {
+        //validacion del email
+        binding.apply {
+            //Se escucha el email
+            tietIniciarSesisonCorreo.addTextChangedListener(object : TextWatcher {
+                override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                }
+
+                override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                }
+
+                override fun afterTextChanged(editText: Editable?) {
+                    if (editText.toString().trim().isEmpty()) {
+                        tilIniciarSesionCorreo.setError("El campo es requerido")
+                    } else {
+                        tilIniciarSesionCorreo.setErrorEnabled(false)
+                        tilIniciarSesionCorreo.setError("")
+                    }
+                }
+
+            })
+            //Se escucha la contrasenia
+            tietIniciarSesionContrasenia.addTextChangedListener(object : TextWatcher {
+                override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                }
+
+                override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                }
+
+                override fun afterTextChanged(editText: Editable?) {
+                    if (editText.toString().trim().isEmpty()) {
+                        tilIniciarSesionContrasenia.setError("El campo es requerido")
+                    } else {
+                        tilIniciarSesionContrasenia.setErrorEnabled(false)
+                        tilIniciarSesionContrasenia.setError("")
+                    }
+                }
+            })
+        }
     }
+
+
+    //Valida Correo y contrasenia juntos
+    private fun validarCorreoYContrasenia(): Boolean {
+        val result = arrayOf(validarCorreo(), validarContrasenia())
+        return false !in result
+    }
+}
 
 //    //Mostrar progresbar
 //    private fun cargando(cargando: Boolean) {
@@ -109,4 +170,4 @@ class IniciarSesionView : AppCompatActivity() {
 //        }
 //
 //    }
-}
+
