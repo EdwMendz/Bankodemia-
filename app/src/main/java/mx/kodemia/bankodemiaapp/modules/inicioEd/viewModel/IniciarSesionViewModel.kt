@@ -37,7 +37,7 @@ class IniciarSesionViewModel() : ViewModel() {
 
     }
 
-    fun logIn(expires_in: String, logInRequest: LogInRequest, activity: Activity) {
+    fun logIn(expires_in: String, logInRequest: LogInRequest) {
         //Se lanza la corrutina
         viewModelScope.launch {
             //Se lanza una carga
@@ -62,6 +62,22 @@ class IniciarSesionViewModel() : ViewModel() {
             }
         }
     }
+
+    //TEMPORAL-----------Inicio del bloque
+//    lateinit var serviceLogin: LogInService
+//    val logInResponse = MutableLiveData<LoginResponse>()
+//    fun logIn(expires_in: String, LoginRequest: LogInRequest){
+//        viewModelScope.launch {
+//            val response = serviceLogin.LogIn(expires_in,LoginRequest)
+//            if(response.isSuccessful){
+//                logInResponse.postValue(response.body())
+//            }else if(response.code() == 401){
+//                Log.e("LOGINERROR","Unauthorized")
+//            }
+//        }
+//    }
+    //TEMPORAL------------Final del bloque
+
 }
 
 
