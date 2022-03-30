@@ -44,8 +44,8 @@ class IniciarSesionView : AppCompatActivity() {
     private fun init() {
         binding = ActivityIniciarSesionBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        viewmodel.pasarContext(this@IniciarSesionView)
-        shared = SharedPreferencesInstance.obtenerInstancia(this@IniciarSesionView)
+//        viewmodel.pasarContext(this@IniciarSesionView)
+//        shared = SharedPreferencesInstance.obtenerInstancia(this@IniciarSesionView)
     }
 
 //    btnTestLogin.setOnClickListener {
@@ -65,9 +65,8 @@ class IniciarSesionView : AppCompatActivity() {
                         val correo: String = tietIniciarSesisonCorreo.text.toString()
                         val pass: String = tietIniciarSesionContrasenia.text.toString()
                         val logIn = LogInRequest(correo,pass)
-                        viewmodel.logIn("1h", logIn)
-                        mandarDatosLogIn("1h", logIn)
-                        lanzarActivitiHome()
+                        viewmodel.logIn("1h", logIn,this@IniciarSesionView,this@IniciarSesionView)
+                        //mandarDatosLogIn("1h", logIn,)
                     }
                 }
             }
@@ -102,18 +101,6 @@ class IniciarSesionView : AppCompatActivity() {
     //TEMPORAL----------Final del bloque
 
 
-    //    Realizar Peticion
-    private fun realizarPeticion1() {
-        if (checkForInternet(applicationContext))
-            binding.apply {
-                val correo: String = tietIniciarSesisonCorreo.text.toString()
-                val pass: String = tietIniciarSesionContrasenia.text.toString()
-                btnIniciarSesionIniciarSesion.setOnClickListener {
-                    val logIng = LogInRequest(correo, pass)
-                    viewmodel.logIn("1h", logIng)
-                }
-            }
-    }
 
     //Mostrar progresbar
     private fun cargando(cargando: Boolean) {
@@ -132,14 +119,14 @@ class IniciarSesionView : AppCompatActivity() {
         shared.guardarSesionLogin(login)
     }
     //MandarDatos
-    private fun mandarDatosLogIn(expires_in: String, logInRequest: LogInRequest) {
-        viewmodel.logIn(expires_in,logInRequest)
+    private fun mandarDatosLogIn(expires_in: String, logInRequest: LogInRequest,homeActivity: HomeActivity) {
+        viewmodel.logIn(expires_in,logInRequest,homeActivity,this@IniciarSesionView)
     }
 
 
     //Si algo malo pasa mostramos el error
     private fun errorLogin(error: String) {
-        alert.showToast("Algo malo paso", this@IniciarSesionView)
+        alert.showToast("Datos Incorrectos", this@IniciarSesionView)
     }
     //TEMPORAL (Con esta funcion guardamos el Token y tiempo de vencimiento del LOGIN)------Inicio del Bloque
 

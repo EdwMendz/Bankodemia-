@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.util.Log
+import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -31,16 +32,17 @@ class IniciarSesionViewModel() : ViewModel() {
 //*************** Fin mutable LiveData **********************
 
     //Se lanza el servicio a la vista del Activity o Fragment
-    fun pasarContext(context: Context) {
-        serviceLogin = LogInService(context)
-    }
+//    fun pasarContext(context: Context) {
+//        serviceLogin = LogInService(context)
+//    }
 
     /*
     Funcion donde se realiza la peticion a la API y la respuesta la recibe ViewModel
     para despues mandarla a su respectiva vista "IniciarSesionView"
     */
 
-    fun logIn(expires_in: String, logInRequest: LogInRequest) {
+    fun logIn(expires_in: String, logInRequest: LogInRequest,activity: Activity,context: Context) {
+        serviceLogin = LogInService(context)
         //Se lanza la corrutina
         viewModelScope.launch {
             //Se lanza una carga
@@ -54,13 +56,16 @@ class IniciarSesionViewModel() : ViewModel() {
                     //Se actualizara el Mutable LoginResponse
                     //Voy a cargar la informacion para que le avise a la vista que esta oks
                     logInResponse.postValue(respuestaLogin.body())
-
+                    lanzarActivity(activity)
+                    alert.showToast("Bienvenido",context)
+                    cargando.postValue(false)
                     //De acuerdo a la documentacion el error 401 es unautorizaed
                 } else if (respuestaLogin.code() == 401) {
+                    cargando.postValue(false)
                     Log.e("LoginError", "Unauthorizaed")
-
+                    alert.showToast("Ups datos incorrectos",context)
                 }
-                cargando.postValue(true)
+                cargando.postValue(false)
             } catch (err: Exception) {
                 error.postValue(err.localizedMessage)
                 cargando.postValue(false)
@@ -68,11 +73,10 @@ class IniciarSesionViewModel() : ViewModel() {
             }
         }
     }
-    fun lanzarActivity(context: Context,activity: Activity){
-        val intent = Intent(context,HomeActivity::class.java)
-        startActivity(intent)
+    private fun lanzarActivity(activity: Activity) {
+        val intent = Intent(activity, HomeActivity::class.java)
+        activity.startActivity(intent)
     }
-
 }
 
 
