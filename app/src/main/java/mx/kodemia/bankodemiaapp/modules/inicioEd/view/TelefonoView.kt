@@ -27,6 +27,7 @@ class TelefonoView : AppCompatActivity() {
         binding = ActivityTelefonoBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
+    //Mandar a la otra activity
     private fun lanzarActivityVerificacion(){
         binding.apply {
             btnCrearCuentaContinuar.setOnClickListener {
@@ -34,7 +35,7 @@ class TelefonoView : AppCompatActivity() {
             }
         }
     }
-
+    //AutoCompletarTextview
     private fun autoCompletTextView() {
         binding.apply {
             val numeros: List<Int> = listOf(55, 52, 31, 52, 52, 52, 56, 54)
@@ -61,6 +62,7 @@ class TelefonoView : AppCompatActivity() {
 
         }
     }
+    //Validar telefono
     private fun validarTelefono() {
 
     }

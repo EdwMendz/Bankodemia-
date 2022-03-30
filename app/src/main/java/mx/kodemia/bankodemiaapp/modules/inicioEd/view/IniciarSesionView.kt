@@ -77,7 +77,6 @@ class IniciarSesionView : AppCompatActivity() {
     //    Validar Correo
     private fun validarCorreo(): Boolean {
         binding.apply {
-
             return if (tiet_IniciarSesison_Correo.text.toString().isEmpty()) {
                 tilIniciarSesionCorreo.error = getString(R.string.campo_vacio)
                 false

@@ -33,7 +33,7 @@ class DatosViewModel(context: Context) : ViewModel() {
     fun signUp(signUpResquest: SignUpResquest,activity: Activity) {
         //Se lanza la corrutina
         viewModelScope.launch {
-            //Se lanza la carga del progresbar
+            //Se lanza la carga
             cargando.postValue(true)
             //Se obtiene la respuesta
             val response = serviceSignUp.SigUp(signUpResquest)
@@ -55,7 +55,6 @@ class DatosViewModel(context: Context) : ViewModel() {
             } catch (err: Exception) {
                 //error.postValue(err.localizedMessage)
                 cargando.postValue(false)
-
             }
         }
     }

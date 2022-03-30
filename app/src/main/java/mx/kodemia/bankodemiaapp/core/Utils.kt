@@ -43,7 +43,5 @@ fun checkForInternet(context: Context): Boolean{
         @Suppress("DEPRECATION")
         return networkInfo.isConnected
     }
-    fun lanzar(context: Context, ){
 
-    }
 }
