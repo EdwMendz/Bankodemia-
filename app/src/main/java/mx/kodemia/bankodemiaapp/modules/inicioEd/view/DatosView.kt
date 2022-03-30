@@ -19,10 +19,8 @@ import java.util.*
 
 class DatosView : AppCompatActivity() {
     var formatDate = SimpleDateFormat("dd MMMM yyyy", Locale.US)
-
     //Inicializa el viewBindin
     private lateinit var binding: ActivityDatosBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -63,7 +61,6 @@ class DatosView : AppCompatActivity() {
         }
     }
 
-
     //Infla el view Binding
     private fun inicializarBinding() {
         binding = ActivityDatosBinding.inflate(layoutInflater)
@@ -76,11 +73,15 @@ class DatosView : AppCompatActivity() {
             ivIniciarSesionRegresar.setOnClickListener {
                 lanzarActivityCrearC()
             }
-            btnIniciarSesionIniciarSesion.setOnClickListener {
-                lanzarActivityTelefono()
+                btnIniciarSesionIniciarSesion.setOnClickListener {
+                    if (validarCampos()) {
+                        lanzarActivityTelefono()
+                    }
+                }
             }
+
         }
-    }
+
 
     //Lanza la actividadCrear
     fun lanzarActivityCrearC() {
@@ -95,7 +96,7 @@ class DatosView : AppCompatActivity() {
     }
 
     //Validaciones
-    private fun validarCorreoYContrasenia(): Boolean {
+    private fun validarCampos(): Boolean {
         val result = arrayOf(validarUsuario(), validarApellido(),validarMajor(),validarFechadeNacimiento())
         return false !in result
     }
@@ -152,26 +153,5 @@ class DatosView : AppCompatActivity() {
             }
         }
     }
-//
-//    private fun validarCampos(
-//        nombre: Boolean,
-//        apellidos: Boolean,
-//        fecha: Boolean,
-//        ocupacion: Boolean
-//    ): Boolean {
-//        val result = arrayOf(nombre, apellidos, fecha, ocupacion)
-//        if (false in result) {
-//            return false
-//        }
-
-
-//
-//    json.put("name", tiet_usuario_registro.text)
-//    json.put("email", tiet_correo_registro.text)
-//    json.put("password", tiet_contrasenia_registro.text)
-//    json.put("password_confirmation", tiet_contrasenia2_registro.text)
-//    json.put("device_name", "User's phone")
-
-
 
 }
