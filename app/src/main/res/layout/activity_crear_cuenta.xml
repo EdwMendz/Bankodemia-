@@ -75,7 +75,7 @@
                 android:id="@+id/tv_necesitasAyuda"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Al tocar continuar aceptas nuestro"
+                android:text="@string/al_tocar_continuar_aceptas_nuestro"
                 android:textColor="@color/negro"
                 app:layout_constraintBottom_toTopOf="@+id/tv_bankodemiacorreo"
                 app:layout_constraintEnd_toEndOf="@+id/tv_bankodemiacorreo"
