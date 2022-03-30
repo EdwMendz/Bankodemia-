@@ -1,23 +1,16 @@
 package mx.kodemia.bankodemiaapp.modules.inicioEd.view
 
 import android.content.Intent
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.activity_crear_cuenta.*
-import kotlinx.android.synthetic.main.activity_iniciar_sesion.*
+import androidx.activity.viewModels
 import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
+import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.User
 import mx.kodemia.bankodemiaapp.databinding.ActivityCrearCuentaBinding
-import mx.kodemia.bankodemiaapp.databinding.ItemCardviewHomeBinding
-import mx.kodemia.bankodemiaapp.formatos.darFormatoActivoOPasivo
-import mx.kodemia.bankodemiaapp.formatos.darFormatoColorAlternado
 import mx.kodemia.bankodemiaapp.formatos.darFormatoHoraMinutos
 import mx.kodemia.bankodemiaapp.modules.home.view.HomeDetailsTransactionActivity
+import mx.kodemia.bankodemiaapp.modules.inicioEd.viewModel.CrearCuentaViewModel
 
 
 class CrearCuentaView : AppCompatActivity() {
@@ -103,11 +96,21 @@ class CrearCuentaView : AppCompatActivity() {
         binding.apply {
             btnCrearCuentaContinuar.setOnClickListener {
                 if (validarCorreo()) {
-                    lanzarDatos()
+                    binding.apply {
+                        val usuario: User
+                        //guardarCoreoShared(usuario)
+
+                        lanzarDatos()
+                    }
                 }
             }
         }
     }
+    private fun guardarCoreoShared(user:User){
+        sharedPreferences = SharedPreferencesInstance.obtenerInstancia(this)
+        sharedPreferences.registroUsuarioemail(user)
+    }
+
 
 
     private fun lanzarDatos() {

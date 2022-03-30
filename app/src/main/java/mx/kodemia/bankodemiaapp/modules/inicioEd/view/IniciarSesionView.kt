@@ -9,8 +9,12 @@ import android.view.View
 import androidx.activity.viewModels
 import kotlinx.android.synthetic.main.activity_iniciar_sesion.*
 import mx.kodemia.bankodemiaapp.R
+import mx.kodemia.bankodemiaapp.core.Alerts
+import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.core.checkForInternet
 import mx.kodemia.bankodemiaapp.data.model.request.LogInRequest
+import mx.kodemia.bankodemiaapp.data.model.response.logIn.LoginResponse
+import mx.kodemia.bankodemiaapp.databinding.ActivityCrearCuentaBinding
 import mx.kodemia.bankodemiaapp.databinding.ActivityIniciarSesionBinding
 import mx.kodemia.bankodemiaapp.modules.home.view.HomeActivity
 import mx.kodemia.bankodemiaapp.modules.inicioEd.viewModel.IniciarSesionViewModel
@@ -19,15 +23,24 @@ class IniciarSesionView : AppCompatActivity() {
     //Inicializa el viewBindin
     private lateinit var binding: ActivityIniciarSesionBinding
 
-    //Union ViewModel con View
-    //val viewmodel: IniciarSesionViewModel by viewModels()
+    //SharedPreferences
+    private lateinit var shared: SharedPreferencesInstance
 
+    //Alertas por medio de Toast o SnackBar
+    private val alert = Alerts
+
+    //Union ViewModel con View
+    val viewmodel: IniciarSesionViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        inicializarBinding()
+        listenersCorreoYEmail()
+        realizarPeticion()
+    }
+
+    private fun inicializarBinding() {
         binding = ActivityIniciarSesionBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        escuchadoresCorreoYEmail()
-        realizarPeticion()
     }
 
 
@@ -49,30 +62,62 @@ class IniciarSesionView : AppCompatActivity() {
         startActivity(intent)
     }
 
-    //    //
-//    //Observadores
-//    private fun observadores() {
-//        //Observamos el progresbar
-//        viewmodel.cargando.observe(this) { cargando ->
-//            cargando(cargando)
-//        }
+
+    //Observadores
+    private fun observadores() {
+        //Observamos el progresbar
+        viewmodel.cargando.observe(this) { cargando ->
+            cargando(cargando)
+        }
+        //TEMPORAL-----------Inicio del bloque
+        viewmodel.logInResponse.observe(this, ::guardarLogin)
+    }
+    //TEMPORAL----------Final del bloque
+
+
+    //    Realizar Peticion
+    private fun realizarPeticion1() {
+        if (checkForInternet(applicationContext))
+            binding.apply {
+                val correo: String = tietIniciarSesisonCorreo.text.toString()
+                val pass: String = tietIniciarSesionContrasenia.text.toString()
+                btnIniciarSesionIniciarSesion.setOnClickListener {
+                    val logIng = LogInRequest(correo, pass)
+                    viewmodel.logIn("1h", logIng, this@IniciarSesionView)
+                }
+            }
+    }
+
+    //Mostrar progresbar
+    private fun cargando(cargando: Boolean) {
+        binding.apply {
+            if (cargando) {
+                pbIniciarSesion.visibility = View.VISIBLE
+            } else {
+                pbIniciarSesion.visibility = View.GONE
+            }
+        }
+
+    }
+
+    //Guardar Login
+    private fun guardarLogin(login: LoginResponse) {
+        shared.guardarSesionLogin(login)
+    }
+    //MandarDatos
+//    private fun mandarDatosLogIn(expires_in: String, logInRequest: LogInRequest) {
+//       // viewmodel.logIn(expires_in,logInRequest)
 //    }
-//
-////    //Realizar Peticion
-////    private fun realizarPeticion() {
-////        if (checkForInternet(applicationContext))
-////            binding.apply {
-////                val correo: String = tietIniciarSesisonCorreo.text.toString()
-////                val pass: String = tietIniciarSesionContrasenia.text.toString()
-////                btnIniciarSesionIniciarSesion.setOnClickListener {
-////                    validarCorreoYContrasenia()
-////                    val logIng = LogInRequest(correo, pass)
-////                    viewmodel.logIn("1h", logIng, this@IniciarSesionView)
-////                }
-////            }
-////    }
-//
-//
+
+
+    //Si algo malo pasa mostramos el error
+    private fun errorLogin(error: String) {
+        alert.showToast("Algo malo paso", this@IniciarSesionView)
+    }
+    //TEMPORAL (Con esta funcion guardamos el Token y tiempo de vencimiento del LOGIN)------Inicio del Bloque
+
+
+    //**************************Validaciones del correo y email****************************************
 
     //    Validar Correo
     private fun validarCorreo(): Boolean {
@@ -109,7 +154,7 @@ class IniciarSesionView : AppCompatActivity() {
     }
 
     //EscuchaTodoel tiempo los editText
-    private fun escuchadoresCorreoYEmail() {
+    private fun listenersCorreoYEmail() {
         //validacion del email
         binding.apply {
             //Se escucha el email
@@ -156,17 +201,7 @@ class IniciarSesionView : AppCompatActivity() {
         val result = arrayOf(validarCorreo(), validarContrasenia())
         return false !in result
     }
-}
+    //**************************FIN DE LAS Validaciones del correo y email****************************************
 
-//    //Mostrar progresbar
-//    private fun cargando(cargando: Boolean) {
-//        binding.apply {
-//            if (cargando) {
-//                pbIniciarSesion.visibility = View.VISIBLE
-//            } else {
-//                pbIniciarSesion.visibility = View.GONE
-//            }
-//        }
-//
-//    }
+}
 

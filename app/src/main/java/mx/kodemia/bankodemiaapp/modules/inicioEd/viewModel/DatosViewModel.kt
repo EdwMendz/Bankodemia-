@@ -1,7 +1,6 @@
 package mx.kodemia.bankodemiaapp.modules.inicioEd.viewModel
 
 import android.app.Activity
-import android.content.Context
 import android.content.Intent
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
@@ -13,11 +12,12 @@ import mx.kodemia.bankodemiaapp.data.model.request.SignUpResquest
 import mx.kodemia.bankodemiaapp.data.model.response.signUp.SignUpResponse
 import mx.kodemia.bankodemiaapp.modules.home.view.HomeActivity
 import mx.kodemia.bankodemiaapp.modules.inicioEd.view.TelefonoView
+import mx.kodemia.bankodemiaapp.network.service.LogInService
 import mx.kodemia.bankodemiaapp.network.service.SignUpService
 
-class DatosViewModel(context: Context) : ViewModel() {
+class DatosViewModel() : ViewModel() {
     // Servicicio
-    val serviceSignUp = SignUpService(context)
+    lateinit var serviceLogin: LogInService
 
     //SignUpResponse
     val signUpResponse = MutableLiveData<SignUpResponse>()
@@ -30,13 +30,13 @@ class DatosViewModel(context: Context) : ViewModel() {
     val cargando = MutableLiveData<Boolean>()
 
 
-    fun signUp(signUpResquest: SignUpResquest,activity: Activity) {
+    fun logIn(signUpResquest: SignUpResquest,expires_in:String) {
         //Se lanza la corrutina
         viewModelScope.launch {
             //Se lanza la carga
             cargando.postValue(true)
             //Se obtiene la respuesta
-            val response = serviceSignUp.SigUp(signUpResquest)
+            val response = serviceLogin.LogIn(expires_in,signUpResquest)
             //Se lanza una doble validacion
             try {
                 if (response.isSuccessful) {
@@ -44,7 +44,6 @@ class DatosViewModel(context: Context) : ViewModel() {
                     //Voy a cargar la informacion para que le avise a la vista que esta oks
                     signUpResponse.postValue(response.body())
                     //Si la respuesta es oks se lanza la ActivityTelefono
-                    lanzarActivity(activity)
                     //Los siguientes errores se encuentran en la documentacion
                 } else if (response.code() == 400) {
                     Log.e("SIGNUPERROR", response.message())

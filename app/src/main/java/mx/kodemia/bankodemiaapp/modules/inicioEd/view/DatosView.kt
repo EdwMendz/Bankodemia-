@@ -114,7 +114,7 @@ class DatosView : AppCompatActivity() {
         }
     }
 
-    //validar major
+    //validar Apellido
     private fun validarApellido(): Boolean {
         binding.apply {
             return if (tietDatosApellidos.text.toString().isEmpty()) {

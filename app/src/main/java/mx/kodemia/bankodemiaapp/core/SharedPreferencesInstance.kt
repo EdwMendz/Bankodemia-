@@ -47,6 +47,12 @@ object SharedPreferencesInstance {
     }
 
     //Se guarda datos de regitro del usuario, parte de Edwin
+    fun registroUsuarioemail(berificacion: User){
+        with(editor){
+            putString("email",berificacion.email)
+            apply()
+        }
+    }
 
     //Se guarda el token y el tiempo en el que expira el token con ayuda del editor
     fun guardarSesionLogin(sesion: LoginResponse){

@@ -2,7 +2,6 @@ package mx.kodemia.bankodemiaapp.modules.inicioEd.viewModel
 
 import android.app.Activity
 import android.content.Context
-import android.content.Intent
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -11,20 +10,32 @@ import kotlinx.coroutines.launch
 import mx.kodemia.bankodemiaapp.data.model.request.LogInRequest
 import mx.kodemia.bankodemiaapp.data.model.response.error.ErrorResponse
 import mx.kodemia.bankodemiaapp.data.model.response.logIn.LoginResponse
-import mx.kodemia.bankodemiaapp.modules.home.view.HomeActivity
 import mx.kodemia.bankodemiaapp.network.service.LogInService
 
-class IniciarSesionViewModel(context: Context) : ViewModel() {
+class IniciarSesionViewModel() : ViewModel() {
     // Servicicio
-     val serviceLogin = LogInService(context)
+    lateinit var serviceLogin: LogInService
+
     //LoginResponse
-     val logInResponse = MutableLiveData<LoginResponse>()
+    val logInResponse = MutableLiveData<LoginResponse>()
+
     //LoginRequest
     val logInRequest = MutableLiveData<LogInRequest>()
+
     //errores
     val error = MutableLiveData<ErrorResponse>()
+
     //Cargando
-     val cargando = MutableLiveData<Boolean>()
+    val cargando = MutableLiveData<Boolean>()
+
+
+    //Se lanza el servicio a la vista del Activity o Fragment
+    fun onCreate(context: Context) {
+        //TEMPORAL--------Inicio del Bloque
+        serviceLogin = LogInService(context)
+        //TEMPORAL---------Final del Bloque
+
+    }
 
     fun logIn(expires_in: String, logInRequest: LogInRequest, activity: Activity) {
         //Se lanza la corrutina
@@ -40,25 +51,16 @@ class IniciarSesionViewModel(context: Context) : ViewModel() {
                     //Se actualizara el Mutable LoginResponse
                     //Voy a cargar la informacion para que le avise a la vista que esta oks
                     logInResponse.postValue(respuestaLogin.body())
-                    //Se lanza la actividad
-                    lanzarActivity(activity)
-
                     //De acuerdo a la documentacion el error 401 es unautorizaed
                 } else if (respuestaLogin.code() == 401) {
                     Log.e("LoginError", "Unauthorizaed")
                 }
                 cargando.postValue(true)
-            } catch (err : Exception) {
-              //  error.postValue(err.localizedMessage)
+            } catch (err: Exception) {
+                //  error.postValue(err.localizedMessage)
                 cargando.postValue(false)
             }
         }
-    }
-
-    //Si la respuesta es correcta se inicializa activityHome
-    private fun lanzarActivity(activity: Activity) {
-        val intent = Intent(activity, HomeActivity::class.java)
-        activity.startActivity(intent)
     }
 }
 
