@@ -23,9 +23,6 @@ class DatosView : AppCompatActivity() {
     //Inicializa el viewBindin
     private lateinit var binding: ActivityDatosBinding
 
-    //Union ViewModel con View
-    val viewmodel: DatosViewModel by viewModels()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -98,8 +95,9 @@ class DatosView : AppCompatActivity() {
     }
 
     //Validaciones
-    fun validaciones() {
-
+    private fun validarCorreoYContrasenia(): Boolean {
+        val result = arrayOf(validarUsuario(), validarApellido(),validarMajor(),validarFechadeNacimiento())
+        return false !in result
     }
 
     //validar usuario
@@ -108,8 +106,10 @@ class DatosView : AppCompatActivity() {
             return if (tietDatosNombre.text.toString().isEmpty()) {
                 tilDatosNombre.error = getString(R.string.campo_vacio)
                 false
-            } else
+            } else {
+                tilDatosNombre.isErrorEnabled = false
                 true
+            }
         }
     }
 
@@ -117,11 +117,14 @@ class DatosView : AppCompatActivity() {
     private fun validarApellido(): Boolean {
         binding.apply {
             return if (tietDatosApellidos.text.toString().isEmpty()) {
-                tilDatosNombre.error = getString(R.string.campo_vacio)
+                tilDatosApellido.error = getString(R.string.campo_vacio)
                 false
-            } else
+            } else {
+                tilDatosApellido.isErrorEnabled = false
                 true
+            }
         }
+
     }
 
     //Validar Ocupacion
@@ -130,8 +133,10 @@ class DatosView : AppCompatActivity() {
             return if (tietDatosOcupacion.text.toString().isEmpty()) {
                 tilDatosOcupacion.error = getString(R.string.campo_vacio)
                 false
-            } else
+            } else {
+                tilDatosOcupacion.isErrorEnabled = false
                 true
+            }
         }
     }
 
@@ -141,8 +146,10 @@ class DatosView : AppCompatActivity() {
             return if (tietDatosFechaNaci.text.toString().isEmpty()) {
                 tilDatosFechaNacimiento.error = getString(R.string.campo_vacio)
                 false
-            } else
+            } else {
+                tilDatosFechaNacimiento.isErrorEnabled = false
                 true
+            }
         }
     }
 //

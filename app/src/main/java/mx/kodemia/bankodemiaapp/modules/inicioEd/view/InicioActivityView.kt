@@ -3,6 +3,7 @@ package mx.kodemia.bankodemiaapp.modules.inicioEd.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import mx.kodemia.bankodemiaapp.databinding.ActivityDatosBinding
 import mx.kodemia.bankodemiaapp.databinding.ActivityMainBinding
 import mx.kodemia.bankodemiaapp.modules.home.view.HomeActivity
 
@@ -12,10 +13,10 @@ class InicioActivityView : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+       //Inicializar Binding
+        inicializarBinding()
+        //Activa el setOnCLickListener de los botones
         initButtons()
-
 
     }
 
@@ -38,5 +39,11 @@ class InicioActivityView : AppCompatActivity() {
     private fun lanzarCrearCuenta() {
         val intent = Intent(this@InicioActivityView, CrearCuentaView::class.java)
         startActivity(intent)
+    }
+
+    //Infla el view Binding
+    private fun inicializarBinding() {
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
     }
 }
