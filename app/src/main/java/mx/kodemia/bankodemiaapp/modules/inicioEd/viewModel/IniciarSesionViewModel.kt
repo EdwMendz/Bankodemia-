@@ -15,27 +15,26 @@ import mx.kodemia.bankodemiaapp.network.service.LogInService
 class IniciarSesionViewModel() : ViewModel() {
     // Servicicio
     lateinit var serviceLogin: LogInService
-
+//***************** Mutable Live Datas *********************
     //LoginResponse
     val logInResponse = MutableLiveData<LoginResponse>()
-
     //LoginRequest
     val logInRequest = MutableLiveData<LogInRequest>()
-
     //errores
-    val error = MutableLiveData<ErrorResponse>()
-
+    val error = MutableLiveData<String>()
     //Cargando
     val cargando = MutableLiveData<Boolean>()
-
+//*************** Fin mutable LiveData **********************
 
     //Se lanza el servicio a la vista del Activity o Fragment
-    fun onCreate(context: Context) {
-        //TEMPORAL--------Inicio del Bloque
+    fun pasarContext(context: Context) {
         serviceLogin = LogInService(context)
-        //TEMPORAL---------Final del Bloque
-
     }
+
+    /*
+    Funcion donde se realiza la peticion a la API y la respuesta la recibe ViewModel
+    para despues mandarla a su respectiva vista "IniciarSesionView"
+    */
 
     fun logIn(expires_in: String, logInRequest: LogInRequest) {
         //Se lanza la corrutina
@@ -57,26 +56,12 @@ class IniciarSesionViewModel() : ViewModel() {
                 }
                 cargando.postValue(true)
             } catch (err: Exception) {
-                //  error.postValue(err.localizedMessage)
+                error.postValue(err.localizedMessage)
                 cargando.postValue(false)
+
             }
         }
     }
-
-    //TEMPORAL-----------Inicio del bloque
-//    lateinit var serviceLogin: LogInService
-//    val logInResponse = MutableLiveData<LoginResponse>()
-//    fun logIn(expires_in: String, LoginRequest: LogInRequest){
-//        viewModelScope.launch {
-//            val response = serviceLogin.LogIn(expires_in,LoginRequest)
-//            if(response.isSuccessful){
-//                logInResponse.postValue(response.body())
-//            }else if(response.code() == 401){
-//                Log.e("LOGINERROR","Unauthorized")
-//            }
-//        }
-//    }
-    //TEMPORAL------------Final del bloque
 
 }
 

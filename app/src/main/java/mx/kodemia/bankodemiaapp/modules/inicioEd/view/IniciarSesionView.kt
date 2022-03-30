@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
+import androidx.lifecycle.lifecycleScope
 import kotlinx.android.synthetic.main.activity_iniciar_sesion.*
+import kotlinx.coroutines.launch
 import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.core.Alerts
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
@@ -22,28 +25,36 @@ import mx.kodemia.bankodemiaapp.modules.inicioEd.viewModel.IniciarSesionViewMode
 class IniciarSesionView : AppCompatActivity() {
     //Inicializa el viewBindin
     private lateinit var binding: ActivityIniciarSesionBinding
-
     //SharedPreferences
     private lateinit var shared: SharedPreferencesInstance
-
     //Alertas por medio de Toast o SnackBar
     private val alert = Alerts
-
+    //TAG
+    val TAG = "LOGIN"
     //Union ViewModel con View
     val viewmodel: IniciarSesionViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         inicializarBinding()
         listenersCorreoYEmail()
         realizarPeticion()
+        observadores()
     }
-
+    //InicializaBinding
     private fun inicializarBinding() {
         binding = ActivityIniciarSesionBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        viewmodel.pasarContext(this@IniciarSesionView)
     }
 
-
+//    btnTestLogin.setOnClickListener {
+//        val logIn = LogInRequest(
+//            "federico123@kodemia.com",
+//            "FedericoGonza123"
+//        )
+//        mandarDatosLogIn("1h",logIn)
+//    }
     //Mandar peticion
     private fun realizarPeticion() {
         if (checkForInternet(applicationContext))
@@ -51,6 +62,11 @@ class IniciarSesionView : AppCompatActivity() {
                 btnIniciarSesionIniciarSesion.setOnClickListener {
                     if (validarCorreoYContrasenia()) {
                         //Lanzar la peticion
+                        val correo: String = tietIniciarSesisonCorreo.text.toString()
+                        val pass: String = tietIniciarSesionContrasenia.text.toString()
+                        val logIn = LogInRequest(correo,pass)
+                        viewmodel.logIn("1h", logIn)
+                        mandarDatosLogIn("1h", logIn)
                         lanzarActivitiHome()
                     }
                 }
@@ -71,6 +87,17 @@ class IniciarSesionView : AppCompatActivity() {
         }
         //TEMPORAL-----------Inicio del bloque
         viewmodel.logInResponse.observe(this, ::guardarLogin)
+
+        viewmodel.logInResponse.observe(this) {logIn: LoginResponse ->
+            shared.guardarSesionLogin(logIn)
+            lifecycleScope.launch {
+                logIn.apply {
+                    Log.e(TAG,this.token.toString())
+                    Log.e(TAG,this.expiresIn.toString())
+                }
+            }
+
+        }
     }
     //TEMPORAL----------Final del bloque
 
@@ -83,7 +110,7 @@ class IniciarSesionView : AppCompatActivity() {
                 val pass: String = tietIniciarSesionContrasenia.text.toString()
                 btnIniciarSesionIniciarSesion.setOnClickListener {
                     val logIng = LogInRequest(correo, pass)
-                    viewmodel.logIn("1h", logIng, this@IniciarSesionView)
+                    viewmodel.logIn("1h", logIng)
                 }
             }
     }
@@ -105,9 +132,9 @@ class IniciarSesionView : AppCompatActivity() {
         shared.guardarSesionLogin(login)
     }
     //MandarDatos
-//    private fun mandarDatosLogIn(expires_in: String, logInRequest: LogInRequest) {
-//       // viewmodel.logIn(expires_in,logInRequest)
-//    }
+    private fun mandarDatosLogIn(expires_in: String, logInRequest: LogInRequest) {
+        viewmodel.logIn(expires_in,logInRequest)
+    }
 
 
     //Si algo malo pasa mostramos el error
