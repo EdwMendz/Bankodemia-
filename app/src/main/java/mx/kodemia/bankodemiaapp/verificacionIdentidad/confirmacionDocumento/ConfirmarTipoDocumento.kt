@@ -3,6 +3,7 @@ package mx.kodemia.bankodemiaapp.verificacionIdentidad.confirmacionDocumento
 import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
@@ -11,15 +12,20 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
+import android.util.Log
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import kotlinx.android.synthetic.main.activity_confirmacion_tipo_documento.*
+import kotlinx.coroutines.runBlocking
 import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
+import mx.kodemia.bankodemiaapp.data.model.request.SignUpResquest
 import mx.kodemia.bankodemiaapp.databinding.ActivityConfirmacionTipoDocumentoBinding
+import mx.kodemia.bankodemiaapp.network.service.SignUpService
+import mx.kodemia.bankodemiaapp.verificacionIdentidad.ImageConverter
 import mx.kodemia.bankodemiaapp.verificacionIdentidad.contrasena.Contrasena
 import java.io.File
 import java.io.IOException
@@ -28,11 +34,10 @@ import java.util.*
 
 class ConfirmarTipoDocumento : AppCompatActivity() {
 
-    private val shared = SharedPreferencesInstance.obtenerInstancia(this)
-
     lateinit var  binding: ActivityConfirmacionTipoDocumentoBinding
     var archivoFoto: File? = null
     lateinit var absolutePathImagen: String
+    private val imageConverter = ImageConverter
 
     private val startForResult =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult())
@@ -44,14 +49,18 @@ class ConfirmarTipoDocumento : AppCompatActivity() {
                 binding.ivFoto.visibility = View.VISIBLE
                 binding.textViewTomarFoto.visibility = View.GONE
                 binding.btnSubirFoto.isEnabled = true
+
+                archivoFoto?.also {
+                    //Conversion de Archivo de Foto a Base64
+                    val archivoFotoBase64 = imageConverter.PathToBase64(it.toString())
+                    Log.e("ARCHIVO64", archivoFotoBase64)
+                }
             }
         }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_confirmacion_tipo_documento)
-
-
 
         configuracionInicial()
 
@@ -65,7 +74,10 @@ class ConfirmarTipoDocumento : AppCompatActivity() {
     private fun configuracionInicial() {
         binding = ActivityConfirmacionTipoDocumentoBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.tvTipoDocumento.text = shared.obtenerTipoDocumento()
+        intent.extras?.let {
+            val tipoDocumento = it.getString("tipoDocumento")
+            binding.tvTipoDocumento.text = getString(R.string.tipoDocumentoChange,tipoDocumento)
+        }
         binding.btnSubirFoto.isEnabled = false
         binding.textViewTomarFoto.setOnClickListener {
             checarPermisos()

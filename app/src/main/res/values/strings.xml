@@ -23,6 +23,7 @@
 
     //Vista INE
     <string name="ine">INE</string>
+    <string name="tipoDocumentoChange" translatable="false">%s</string>
 
     //Documento Migratorio
     <string name="documentoMigratorio">DOCUMENTO MIGRATORIO</string>

@@ -10,27 +10,20 @@ import mx.kodemia.bankodemiaapp.verificacionIdentidad.confirmacionDocumento.Conf
 
 class VerificacionIdentidad2 : AppCompatActivity() {
 
-    private val shared = SharedPreferencesInstance
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_verificacion_identidad2)
 
-
-
         tvTipoDocumento.setOnClickListener {
-            shared.guardarTipoDocumento(getString(R.string.ine))
-            startActivity(Intent(this, ConfirmarTipoDocumento::class.java))
+            pasarDatos(this,getString(R.string.ine))
         }
 
         textViewPasaporte.setOnClickListener {
-            shared.guardarTipoDocumento(getString(R.string.pasaporte))
-            startActivity(Intent(this, ConfirmarTipoDocumento::class.java))
+            pasarDatos(this,getString(R.string.pasaporte))
         }
 
         textViewDocMigratorio.setOnClickListener {
-            shared.guardarTipoDocumento(getString(R.string.documentoMigratorio))
-            startActivity(Intent(this, ConfirmarTipoDocumento::class.java))
+            pasarDatos(this,getString(R.string.documentoMigratorio))
         }
 
 

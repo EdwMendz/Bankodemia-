@@ -8,6 +8,7 @@
     </padding>
     <stroke android:width="1dp"
         android:color="#000000"
-        android:dashGap="5dp"
+        android:dashGap="1dp"
         android:dashWidth="3dp"/>
+    <solid android:color="@color/gris_muy_claro"/>
 </shape>

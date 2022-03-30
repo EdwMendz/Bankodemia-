@@ -71,7 +71,13 @@
             android:exported="false" />
         <activity
             android:name=".verificacionIdentidad.VerificacionIdentidadActivity"
-            android:exported="true" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <!-- _____________ACTIVITIES DE SAEL (Final del Bloque)________________ -->
 
@@ -103,13 +109,7 @@
         <activity
             android:name=".modules.home.view.HomeActivity"
             android:exported="true"
-            android:label="@string/title_activity_home" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:label="@string/title_activity_home" />
         <activity
             android:name=".modules.home.view.HomeDetailsTransactionActivity"
             android:exported="false" />

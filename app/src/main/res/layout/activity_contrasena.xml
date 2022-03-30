@@ -113,14 +113,14 @@
         android:id="@+id/buttonPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
+        android:layout_marginBottom="48dp"
         android:fontFamily="@font/poppins_500"
         android:text="@string/btnContrasena"
         app:cornerRadius="10dp"
-        app:strokeColor="@color/celeste"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/tilPasswordConfirm"
         app:layout_constraintStart_toStartOf="@+id/tilPasswordConfirm"
-        app:layout_constraintTop_toBottomOf="@+id/tilPasswordConfirm"
+        app:strokeColor="@color/celeste"
         tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
