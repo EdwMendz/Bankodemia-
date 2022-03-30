@@ -17,7 +17,6 @@ import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.core.checkForInternet
 import mx.kodemia.bankodemiaapp.data.model.request.LogInRequest
 import mx.kodemia.bankodemiaapp.data.model.response.logIn.LoginResponse
-import mx.kodemia.bankodemiaapp.databinding.ActivityCrearCuentaBinding
 import mx.kodemia.bankodemiaapp.databinding.ActivityIniciarSesionBinding
 import mx.kodemia.bankodemiaapp.modules.home.view.HomeActivity
 import mx.kodemia.bankodemiaapp.modules.inicioEd.viewModel.IniciarSesionViewModel
@@ -36,22 +35,23 @@ class IniciarSesionView : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        inicializarBinding()
+        init()
         listenersCorreoYEmail()
         realizarPeticion()
         observadores()
     }
-    //InicializaBinding
-    private fun inicializarBinding() {
+    //InicializaBindingViewModelyShared
+    private fun init() {
         binding = ActivityIniciarSesionBinding.inflate(layoutInflater)
         setContentView(binding.root)
         viewmodel.pasarContext(this@IniciarSesionView)
+        shared = SharedPreferencesInstance.obtenerInstancia(this@IniciarSesionView)
     }
 
 //    btnTestLogin.setOnClickListener {
 //        val logIn = LogInRequest(
-//            "federico123@kodemia.com",
-//            "FedericoGonza123"
+//            "email": "koder@kodemia.mx",
+//              "password": "BondJames007"
 //        )
 //        mandarDatosLogIn("1h",logIn)
 //    }
