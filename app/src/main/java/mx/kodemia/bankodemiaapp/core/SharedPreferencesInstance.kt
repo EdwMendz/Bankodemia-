@@ -47,9 +47,21 @@ object SharedPreferencesInstance {
     }
 
     //Se guarda datos de regitro del usuario, parte de Edwin
-    fun registroUsuarioemail(berificacion: User){
+    fun registroUsuarioe1(berificacion: User){
         with(editor){
             putString("email",berificacion.email)
+            putString("name",berificacion.name)
+            putString("lastName",berificacion.lastName)
+            putString("occupation",berificacion.occupation)
+            putString("birthData",berificacion.birthDate)
+            putString("password",berificacion.password)
+            putString("phone",berificacion.phone)
+            apply()
+        }
+    }
+    fun crerUsuarioemail(user:User,email:String) {
+        with(editor) {
+            putString(email, user.email)
             apply()
         }
     }
