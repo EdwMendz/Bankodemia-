@@ -142,6 +142,7 @@
     <string name="title_activity_enviar_transferencia">Send transference</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="usuario">invalid user</string>
 
     <!--************* FIN TEXTOS EDWIN *************-->
 
