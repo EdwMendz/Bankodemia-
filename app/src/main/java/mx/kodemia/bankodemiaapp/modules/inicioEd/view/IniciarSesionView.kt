@@ -25,7 +25,7 @@ class IniciarSesionView : AppCompatActivity() {
     //Inicializa el viewBindin
     private lateinit var binding: ActivityIniciarSesionBinding
     //SharedPreferences
-    private lateinit var shared: SharedPreferencesInstance
+     val shared = SharedPreferencesInstance
     //Alertas por medio de Toast o SnackBar
     private val alert = Alerts
     //TAG
@@ -65,7 +65,7 @@ class IniciarSesionView : AppCompatActivity() {
                         val correo: String = tietIniciarSesisonCorreo.text.toString()
                         val pass: String = tietIniciarSesionContrasenia.text.toString()
                         val logIn = LogInRequest(correo,pass)
-                        viewmodel.logIn("1h", logIn,this@IniciarSesionView,this@IniciarSesionView)
+                        viewmodel.logIn("1h", logIn,this@IniciarSesionView)
                         //mandarDatosLogIn("1h", logIn,)
                     }
                 }
@@ -87,30 +87,28 @@ class IniciarSesionView : AppCompatActivity() {
         //TEMPORAL-----------Inicio del bloque
         viewmodel.logInResponse.observe(this, ::guardarLogin)
 
-        viewmodel.logInResponse.observe(this) {logIn: LoginResponse ->
-            shared.guardarSesionLogin(logIn)
-            lifecycleScope.launch {
-                logIn.apply {
-                    Log.e(TAG,this.token.toString())
-                    Log.e(TAG,this.expiresIn.toString())
-                }
-            }
-
+        viewmodel.error.observe(this, ::errorLogin)
         }
-    }
+
+
     //TEMPORAL----------Final del bloque
 
 
 
     //Mostrar progresbar
     private fun cargando(cargando: Boolean) {
-        binding.apply {
-            if (cargando) {
-                pbIniciarSesion.visibility = View.VISIBLE
-            } else {
-                pbIniciarSesion.visibility = View.GONE
-            }
+        if(!cargando && viewmodel.error.value?.isEmpty() == true){
+            lanzarActivitiHome()
         }
+
+
+//        binding.apply {
+//            if (!cargando) {
+//                pbIniciarSesion.visibility = View.VISIBLE
+//            } else {
+//                pbIniciarSesion.visibility = View.GONE
+//            }
+//        }
 
     }
 
@@ -120,13 +118,17 @@ class IniciarSesionView : AppCompatActivity() {
     }
     //MandarDatos
     private fun mandarDatosLogIn(expires_in: String, logInRequest: LogInRequest,homeActivity: HomeActivity) {
-        viewmodel.logIn(expires_in,logInRequest,homeActivity,this@IniciarSesionView)
+        viewmodel.logIn(expires_in,logInRequest,homeActivity)
     }
 
 
     //Si algo malo pasa mostramos el error
-    private fun errorLogin(error: String) {
-        alert.showToast("Datos Incorrectos", this@IniciarSesionView)
+    private fun errorLogin(error: String): Boolean {
+        if (error.isNotEmpty()){
+            alert.showToast(error,this)
+        return true
+        }
+        return false
     }
     //TEMPORAL (Con esta funcion guardamos el Token y tiempo de vencimiento del LOGIN)------Inicio del Bloque
 

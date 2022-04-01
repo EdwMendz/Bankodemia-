@@ -41,7 +41,7 @@ class IniciarSesionViewModel() : ViewModel() {
     para despues mandarla a su respectiva vista "IniciarSesionView"
     */
 
-    fun logIn(expires_in: String, logInRequest: LogInRequest,activity: Activity,context: Context) {
+    fun logIn(expires_in: String, logInRequest: LogInRequest,context: Context) {
         serviceLogin = LogInService(context)
         //Se lanza la corrutina
         viewModelScope.launch {
@@ -56,14 +56,13 @@ class IniciarSesionViewModel() : ViewModel() {
                     //Se actualizara el Mutable LoginResponse
                     //Voy a cargar la informacion para que le avise a la vista que esta oks
                     logInResponse.postValue(respuestaLogin.body())
-                    lanzarActivity(activity)
-                    alert.showToast("Bienvenido",context)
-                    cargando.postValue(false)
+                    error.postValue("")
+
                     //De acuerdo a la documentacion el error 401 es unautorizaed
                 } else if (respuestaLogin.code() == 401) {
-                    cargando.postValue(false)
-                    Log.e("LoginError", "Unauthorizaed")
-                    alert.showToast("Ups datos incorrectos",context)
+                    error.postValue("Usuario no registrado")
+                }else{
+                    error.postValue("Ha ocurrido un error")
                 }
                 cargando.postValue(false)
             } catch (err: Exception) {
@@ -72,10 +71,6 @@ class IniciarSesionViewModel() : ViewModel() {
 
             }
         }
-    }
-    private fun lanzarActivity(activity: Activity) {
-        val intent = Intent(activity, HomeActivity::class.java)
-        activity.startActivity(intent)
     }
 }
 
