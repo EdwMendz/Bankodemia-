@@ -18,12 +18,14 @@ class CrearCuentaView : AppCompatActivity() {
     //Binding
     private lateinit var binding: ActivityCrearCuentaBinding
     //SharedPreferences
-    private lateinit var sharedPreferences: SharedPreferencesInstance
+    private lateinit var shared: SharedPreferencesInstance
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        shared = SharedPreferencesInstance.obtenerInstancia(this)
         //Inicializa el binding
         inicializarBinding()
+
         //vamos a hacer validacion de correo y si pasa lanzar continuar
         lanzarActivities()
     }
@@ -34,25 +36,15 @@ class CrearCuentaView : AppCompatActivity() {
             btnCrearCuentaContinuar.setOnClickListener {
                 if (validarCorreo()) {
                     binding.apply {
-                    //    val email = binding.tietCrearcuentaCorreo.text.toString().trim()
-                        val user : User
-                       // guardarCoreoShared(user,
-
-
-
+                        val email = binding.tietCrearcuentaCorreo.text.toString().trim()
+                       shared.guardarCorreo(email)
                         lanzarDatos()
                     }
                 }
             }
         }
     }
-    private fun guardarCoreoShared(user: User){
-        val email = binding.tietCrearcuentaCorreo.text.toString().trim()
-            sharedPreferences = SharedPreferencesInstance.obtenerInstancia(this)
-        sharedPreferences.crerUsuarioemail(user,email)
 
-
-    }
 
 
 

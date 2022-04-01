@@ -1,5 +1,6 @@
 package mx.kodemia.bankodemiaapp.modules.inicioEd.view
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -44,17 +45,9 @@ class IniciarSesionView : AppCompatActivity() {
     private fun init() {
         binding = ActivityIniciarSesionBinding.inflate(layoutInflater)
         setContentView(binding.root)
-//        viewmodel.pasarContext(this@IniciarSesionView)
-//        shared = SharedPreferencesInstance.obtenerInstancia(this@IniciarSesionView)
+
     }
 
-//    btnTestLogin.setOnClickListener {
-//        val logIn = LogInRequest(
-//            "email": "koder@kodemia.mx",
-//              "password": "BondJames007"
-//        )
-//        mandarDatosLogIn("1h",logIn)
-//    }
     //Mandar peticion
     private fun realizarPeticion() {
         if (checkForInternet(applicationContext))
@@ -66,7 +59,7 @@ class IniciarSesionView : AppCompatActivity() {
                         val pass: String = tietIniciarSesionContrasenia.text.toString()
                         val logIn = LogInRequest(correo,pass)
                         viewmodel.logIn("1h", logIn,this@IniciarSesionView)
-                        //mandarDatosLogIn("1h", logIn,)
+                        mandarDatosLogIn("1h", logIn,this@IniciarSesionView)
                     }
                 }
             }
@@ -100,16 +93,6 @@ class IniciarSesionView : AppCompatActivity() {
         if(!cargando && viewmodel.error.value?.isEmpty() == true){
             lanzarActivitiHome()
         }
-
-
-//        binding.apply {
-//            if (!cargando) {
-//                pbIniciarSesion.visibility = View.VISIBLE
-//            } else {
-//                pbIniciarSesion.visibility = View.GONE
-//            }
-//        }
-
     }
 
     //Guardar Login
@@ -117,8 +100,8 @@ class IniciarSesionView : AppCompatActivity() {
         shared.guardarSesionLogin(login)
     }
     //MandarDatos
-    private fun mandarDatosLogIn(expires_in: String, logInRequest: LogInRequest,homeActivity: HomeActivity) {
-        viewmodel.logIn(expires_in,logInRequest,homeActivity)
+    private fun mandarDatosLogIn(expires_in: String, logInRequest: LogInRequest, activity: Activity) {
+        viewmodel.logIn(expires_in,logInRequest,activity)
     }
 
 
@@ -130,7 +113,7 @@ class IniciarSesionView : AppCompatActivity() {
         }
         return false
     }
-    //TEMPORAL (Con esta funcion guardamos el Token y tiempo de vencimiento del LOGIN)------Inicio del Bloque
+
 
 
     //**************************Validaciones del correo y email****************************************

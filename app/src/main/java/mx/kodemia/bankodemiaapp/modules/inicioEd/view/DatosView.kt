@@ -8,8 +8,10 @@ import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import mx.kodemia.bankodemiaapp.R
+import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.core.checkForInternet
 import mx.kodemia.bankodemiaapp.data.model.request.LogInRequest
+import mx.kodemia.bankodemiaapp.data.model.sharedPreferencesModels.DatosRegistro
 import mx.kodemia.bankodemiaapp.databinding.ActivityDatosBinding
 import mx.kodemia.bankodemiaapp.databinding.ActivityIniciarSesionBinding
 import mx.kodemia.bankodemiaapp.modules.inicioEd.viewModel.DatosViewModel
@@ -18,11 +20,13 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class DatosView : AppCompatActivity() {
+    lateinit var shared: SharedPreferencesInstance
     var formatDate = SimpleDateFormat("dd MMMM yyyy", Locale.US)
     //Inicializa el viewBindin
     private lateinit var binding: ActivityDatosBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        shared = SharedPreferencesInstance.obtenerInstancia(this)
 
         inicializarBinding()
         fechaNacimiento()
@@ -51,6 +55,7 @@ class DatosView : AppCompatActivity() {
                             .show()
                         tietDatosFechaNaci.setText(date)
 
+
                     },
                     getDate.get(Calendar.YEAR),
                     getDate.get(Calendar.MONTH),
@@ -75,6 +80,7 @@ class DatosView : AppCompatActivity() {
             }
                 btnIniciarSesionIniciarSesion.setOnClickListener {
                     if (validarCampos()) {
+                        pedirDatostiet()
                         lanzarActivityTelefono()
                     }
                 }
@@ -82,6 +88,17 @@ class DatosView : AppCompatActivity() {
 
         }
 
+    private fun pedirDatostiet(){
+            binding.apply{
+                val datosUsuario = DatosRegistro(
+                    tietDatosNombre.text.toString(),
+                    tietDatosApellidos.text.toString(),
+                    tietDatosOcupacion.text.toString(),
+                    tietDatosFechaNaci.text.toString()
+                )
+                shared.guardarDatosUsuario(datosUsuario)
+            }
+    }
 
     //Lanza la actividadCrear
     fun lanzarActivityCrearC() {
