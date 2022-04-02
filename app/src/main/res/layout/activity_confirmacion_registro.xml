@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".verificacionIdentidad.confirmacion.Confirmacion">
+    tools:context=".verificacionIdentidad.activitiesrespuesta.ConfirmacionRegistroActivity">
 
     <ImageView
         android:id="@+id/imageViewConfrimacion"
@@ -69,4 +69,3 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-

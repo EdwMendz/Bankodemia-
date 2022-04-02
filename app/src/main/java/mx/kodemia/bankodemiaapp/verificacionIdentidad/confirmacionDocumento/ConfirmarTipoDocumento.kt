@@ -17,9 +17,9 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import kotlinx.android.synthetic.main.activity_confirmacion_tipo_documento.*
-import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.databinding.ActivityConfirmacionTipoDocumentoBinding
+import mx.kodemia.bankodemiaapp.verificacionIdentidad.ImageConverter
 import mx.kodemia.bankodemiaapp.verificacionIdentidad.contrasena.Contrasena
 import java.io.File
 import java.io.IOException
@@ -27,8 +27,6 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class ConfirmarTipoDocumento : AppCompatActivity() {
-
-    private val shared = SharedPreferencesInstance.obtenerInstancia(this)
 
     lateinit var  binding: ActivityConfirmacionTipoDocumentoBinding
     var archivoFoto: File? = null
@@ -40,18 +38,22 @@ class ConfirmarTipoDocumento : AppCompatActivity() {
 
             if (result.resultCode == Activity.RESULT_OK) {
                 val imagen = BitmapFactory.decodeFile(absolutePathImagen)
-                binding.ivFoto.setImageBitmap(imagen)
-                binding.ivFoto.visibility = View.VISIBLE
-                binding.textViewTomarFoto.visibility = View.GONE
-                binding.btnSubirFoto.isEnabled = true
+                binding.apply {
+                    ivFoto.setImageBitmap(imagen)
+                    ivFoto.visibility = View.VISIBLE
+                    textViewTomarFoto.visibility = View.GONE
+                    btnSubirFoto.isEnabled = true
+                }
+                archivoFoto?.also {
+                    //Conversion de Archivo de Foto a Base64
+                    val shared = SharedPreferencesInstance.obtenerInstancia(this)
+                    shared.guardarFotoArchivo(it.toString())
+                }
             }
         }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_confirmacion_tipo_documento)
-
-
 
         configuracionInicial()
 
@@ -65,11 +67,15 @@ class ConfirmarTipoDocumento : AppCompatActivity() {
     private fun configuracionInicial() {
         binding = ActivityConfirmacionTipoDocumentoBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.tvTipoDocumento.text = shared.obtenerTipoDocumento()
-        binding.btnSubirFoto.isEnabled = false
-        binding.textViewTomarFoto.setOnClickListener {
-            checarPermisos()
+        val shared = SharedPreferencesInstance.obtenerInstancia(this)
+        binding.apply {
+            tvTipoDocumento.text = shared.obtenerTipoDocumento()
+            btnSubirFoto.isEnabled = false
+            textViewTomarFoto.setOnClickListener {
+                checarPermisos()
+            }
         }
+
     }
 
     private fun checarPermisos() {

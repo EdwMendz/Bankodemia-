@@ -23,6 +23,7 @@
 
     //Vista INE
     <string name="ine">INE</string>
+    <string name="tipoDocumentoChange" translatable="false">%s</string>
 
     //Documento Migratorio
     <string name="documentoMigratorio">DOCUMENTO MIGRATORIO</string>
@@ -185,5 +186,7 @@
     <!-- Strings used for fragments for navigation -->
     <string name="next">Siguiente</string>
     <string name="previous">Anterior</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

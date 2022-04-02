@@ -167,21 +167,33 @@ object SharedPreferencesInstance {
             apply()
         }
     }
+    
+    fun obtenerEstadoRed(): Boolean = sharedPreferences.getBoolean("estado",false)
 
-    fun obtenerEstadoRed(): Boolean = sharedPreferences.getBoolean("estado", false)
-
-    //Cambio de nombre de documento en subida de foto
-    fun guardarTipoDocumento(tipo: String) {
-        with(editor) {
-            putString("tipoDocumento", tipo)
+    fun guardarTipoDocumento(documento: String){
+        with(editor){
+            putString("tipoDocumento",documento)
             apply()
         }
     }
 
-    //Jalar el tipo de documento
-    fun obtenerTipoDocumento(): String? {
-        return sharedPreferences.getString("tipoDocumento", null)
+    fun obtenerTipoDocumento():String? = sharedPreferences.getString("tipoDocumento",null)
+
+    fun guardarFotoArchivo(tipo:String){
+        with(editor){
+            putString("archivo64", tipo)
+            apply()
+        }
     }
 
+    fun obtenerFotoArchivo():String? = sharedPreferences.getString("archivo64", null)
 
+    fun guardarErrorRegistro(error: String){
+        with(editor){
+            putString("errorRegistro",error)
+            apply()
+        }
+    }
+
+    fun obtenerErrorRegistro(): String? = sharedPreferences.getString("errorRegistro",null)
 }

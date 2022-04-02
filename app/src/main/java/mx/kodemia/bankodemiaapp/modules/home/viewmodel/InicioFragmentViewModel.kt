@@ -50,14 +50,15 @@ class InicioFragmentViewModel : ViewModel() {
             try{
                 if (response.isSuccessful){
                     listTransactionResponse.postValue(response.body())
+                    errorTrans.postValue("")
                 }else if(response.code() == 401) {
-                    Log.e("TransError","Unauthorized")
+                    errorTrans.postValue("Unauthorized")
                 }else {
-                    errorTrans.postValue(response.message())
+                    errorTrans.postValue("Ha ocurrido un error")
                 }
                 cargandoTrans.postValue(false)
             }catch (io: IOException){
-                errorTrans.postValue(io.message)
+                errorTrans.postValue("Error general")
                 cargandoTrans.postValue(false)
             }
         }
