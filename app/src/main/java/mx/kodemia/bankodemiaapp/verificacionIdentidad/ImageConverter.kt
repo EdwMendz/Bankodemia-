@@ -25,16 +25,9 @@ object ImageConverter {
         val baos = ByteArrayOutputStream()
         bm.compress(Bitmap.CompressFormat.JPEG,100,baos)
         val b:ByteArray = baos.toByteArray()
-        val encodeImage = Base64.encodeToString(b, Base64.DEFAULT)
+        val encodeImage = Base64.encodeToString(b,0,64, Base64.NO_WRAP)
 
         return encodeImage
-    }
-
-    fun Base64ToPath(foto: String): Bitmap {
-        val imageBytes = Base64.decode(foto, Base64.DEFAULT)
-        val decodedImage = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
-
-        return decodedImage
     }
 
 }

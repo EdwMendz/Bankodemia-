@@ -13,7 +13,7 @@ import mx.kodemia.bankodemiaapp.data.model.request.SignUpResquest
 import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.ListaTransaccionesResponse
 import mx.kodemia.bankodemiaapp.data.model.response.logIn.LoginResponse
 import mx.kodemia.bankodemiaapp.data.model.response.makeTransaction.MakeTransactionResponse
-import mx.kodemia.bankodemiaapp.data.model.response.makeTransaction.Type
+import mx.kodemia.bankodemiaapp.data.model.request.enummodels.TransactionType
 import mx.kodemia.bankodemiaapp.data.model.response.signUp.SignUpResponse
 import mx.kodemia.bankodemiaapp.databinding.ActivityPruebasBinding
 
@@ -58,7 +58,7 @@ class PruebasActivity : AppCompatActivity() {
             btnTestMakeTrans.setOnClickListener {
                 val makeTransaction = MakeTransactionRequest(
                     10000.00,
-                    Type.DEPOSIT.toString(), //Si se quiere hacer un deposito a otra cuenta se pone PAYMENT
+                    TransactionType.DEPOSIT.toString(), //Si se quiere hacer un deposito a otra cuenta se pone PAYMENT
                     null, // Si es deposito no se pone Usuario de Destino
                     "De mi para mi x3 xD"
                 )

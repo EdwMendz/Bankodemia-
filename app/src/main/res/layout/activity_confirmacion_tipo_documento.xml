@@ -108,14 +108,6 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 
-    <Button
-        android:id="@+id/buttonPruebaRegistro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="PruebaRegistro"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardViewFoto" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

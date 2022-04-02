@@ -1,5 +1,6 @@
 package mx.kodemia.bankodemiaapp.modules.home.view.fragments
 
+import android.content.Intent
 import android.content.IntentFilter
 import android.net.ConnectivityManager
 import android.os.Bundle
@@ -7,12 +8,14 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.launch
+import mx.kodemia.bankodemiaapp.EnviarDinero
 import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.animations.initParpadeoGuionLogo
 import mx.kodemia.bankodemiaapp.core.Alerts
@@ -26,8 +29,11 @@ import mx.kodemia.bankodemiaapp.data.model.response.logIn.LoginResponse
 import mx.kodemia.bankodemiaapp.data.model.response.user.GetUserFullResponse
 import mx.kodemia.bankodemiaapp.databinding.FragmentInicioBinding
 import mx.kodemia.bankodemiaapp.formatos.darFormatoFechaActual
+import mx.kodemia.bankodemiaapp.modules.home.view.HomeDetailsTransactionActivity
 import mx.kodemia.bankodemiaapp.modules.home.view.adapter.TransaccionesAdapter
 import mx.kodemia.bankodemiaapp.modules.home.viewmodel.InicioFragmentViewModel
+import mx.kodemia.bankodemiaapp.modules.inicioEd.view.TelefonoView
+import mx.kodemia.bankodemiaapp.verificacionIdentidad.VerificacionIdentidadActivity
 
 class InicioFragment : Fragment() {
 
@@ -63,6 +69,16 @@ class InicioFragment : Fragment() {
         binding?.apply {
             textViewFecha.text = darFormatoFechaActual()
             initParpadeoGuionLogo(requireContext(),imageViewGuionLogo)
+
+            buttonEnviarHome.setOnClickListener {
+                val intent = Intent(activity,EnviarDinero::class.java)
+                startActivity(intent)
+            }
+
+            buttonRecibirHome.setOnClickListener {
+                Toast.makeText(requireActivity(),"Se necesita una vista para recibir dinero", Toast.LENGTH_LONG).show()
+            }
+
         }
 
         observers()
@@ -111,12 +127,17 @@ class InicioFragment : Fragment() {
 
     //Funcion para observer de carga cuando se esta haciendo la solicitud a la API
     private fun cargandoTrans(b: Boolean){
-
+        if(!b){
+            val intent = Intent(requireActivity(), VerificacionIdentidadActivity::class.java)
+            requireActivity().startActivity(intent)
+        }
     }
 
     //Funcion para observer de muestra de error en caso de fallo con la API
     private fun errorTrans(error: String){
-        alert.showSnackbar(error, activity = requireActivity())
+        if(error.isNotEmpty()){
+            alert.showSnackbar(error, activity = requireActivity())
+        }
     }
 
     //Funcion para observer para llenar el RecyclerView con la informacion obtenida de la API
