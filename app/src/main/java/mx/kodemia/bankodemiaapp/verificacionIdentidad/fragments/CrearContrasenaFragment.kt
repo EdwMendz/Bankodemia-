@@ -38,31 +38,33 @@ class CrearContrasenaFragment : Fragment() {
 
             buttonPassword.setOnClickListener {
 
-                val pathFoto = shared.obtenerFotoArchivo()
-                val archivoFotoBase64 = imageConverter.PathToBase64(pathFoto!!)
+                if(validarContrasena() && validarContrasenaDos() && validarSimilutud() && validarLongitud() && validarConsecutivos()){
+                    val pathFoto = shared.obtenerFotoArchivo()
+                    val archivoFotoBase64 = imageConverter.PathToBase64(pathFoto!!)
 
-                when(shared.obtenerTipoDocumento()){
-                    getString(R.string.ine) ->{tipoDocumento = DocumentType.INE}
-                    getString(R.string.pasaporte) ->{tipoDocumento = DocumentType.PASSPORT}
-                    getString(R.string.documentoMigratorio) ->{tipoDocumento = DocumentType.MIGRATION_FORM}
+                    when(shared.obtenerTipoDocumento()){
+                        getString(R.string.ine) ->{tipoDocumento = DocumentType.INE}
+                        getString(R.string.pasaporte) ->{tipoDocumento = DocumentType.PASSPORT}
+                        getString(R.string.documentoMigratorio) ->{tipoDocumento = DocumentType.MIGRATION_FORM}
+                    }
+
+                    val signUp =
+                        SignUpResquest(
+                            "miguelitopa@kodemia.com",
+                            "Miguelitopa",
+                            "Ponchitopa",
+                            "Loverpa",
+                            "1987-09-27",
+                            tietPassword.text.toString(),
+                            "+523315246987",
+                            archivoFotoBase64,
+                            tipoDocumento.toString()
+                        )
+                    mandarDatosSignUp(signUp)
                 }
-
-                val signUp =
-                    SignUpResquest(
-                        "miguelitope@kodemia.com",
-                        "Miguelitope",
-                        "Ponchitope",
-                        "Loverpe",
-                        "1987-09-27",
-                        "MiguelitoLoverPe",
-                        "+523315246774",
-                        archivoFotoBase64,
-                        tipoDocumento.toString()
-                    )
-                mandarDatosSignUp(signUp)
             }
         }
-        //observers()
+
 
         return binding!!.root
     }
@@ -72,39 +74,93 @@ class CrearContrasenaFragment : Fragment() {
         shared = SharedPreferencesInstance.obtenerInstancia(requireActivity())
     }
 
-    private fun validarContrasena(){
+    private fun validarContrasena():Boolean{
         binding?.apply {
             return if(tietPassword.text.toString().isEmpty()){
                 tilPassword.error = getString(R.string.campo_vacio)
+                false
             }else{
                 tilPassword.isErrorEnabled = false
-
+                true
             }
         }
+        return false
     }
 
-    private fun validarContrasenaDos(){
+    private fun validarContrasenaDos(): Boolean{
         binding?.apply {
             return if(tietPasswordConfirm.text.toString().isEmpty()){
                 tilPasswordConfirm.error = getString(R.string.campo_vacio)
+                false
             }else{
                 tilPasswordConfirm.isErrorEnabled = false
+                true
             }
         }
+        return false
     }
 
-    private fun validarSimilutud(){
+    private fun validarSimilutud(): Boolean{
         binding?.apply {
             val textoPassword: String = tietPassword.text?.trim().toString()
             val textoPassConfirm: String = tietPasswordConfirm.text?.trim().toString()
-            if (textoPassword != textoPassConfirm){
+            return if (textoPassword != textoPassConfirm){
                 alert.showToast("Contrasenias Diferentes",requireActivity())
                 tietPassword.setText("")
                 tietPasswordConfirm.setText("")
+                false
             }else{
-
+                true
             }
         }
+        return false
+    }
+
+    private fun validarLongitud(): Boolean{
+        binding?.apply {
+            val textoPassword: String = tietPassword.text?.trim().toString()
+            val textoPassConfirm: String = tietPasswordConfirm.text?.trim().toString()
+            return if(textoPassword.length < 6 || textoPassConfirm.length < 6){
+                alert.showToast("Se necesitan minimo 6 caracteres para la contraseña", requireActivity())
+                false
+            }else{
+                true
+            }
+        }
+        return false
+    }
+
+    private fun validarConsecutivos(): Boolean{
+        binding?.apply {
+            val textoPassword: String = tietPassword.text?.trim().toString()
+            var contador = 1
+            var coincidencias = 0
+            for (item in textoPassword){
+                if(contador == textoPassword.length){
+                    break
+                }else{
+                    if(item.isDigit()){
+                        if(item.code == textoPassword[contador].code-1){
+                            coincidencias++
+                        }else if (item.code == textoPassword[contador].code+1){
+                            coincidencias++
+                        }
+                    }else{
+                        if (item == textoPassword[contador]){
+                            coincidencias++
+                        }
+                    }
+                    contador++
+                }
+            }
+            if(coincidencias>=2){
+                alert.showToast("No se permiten caracteres consecutivos o repetidos", requireContext())
+                return false
+            }else{
+                return true
+            }
+        }
+        return false
     }
 
     private fun mandarDatosSignUp(signUpResquest: SignUpResquest) {

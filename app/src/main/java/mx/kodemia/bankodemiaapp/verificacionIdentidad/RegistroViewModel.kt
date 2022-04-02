@@ -39,7 +39,7 @@ class RegistroViewModel: ViewModel() {
                 }else if(response.code() == 400){
                     error.postValue(response.message())
                 }else if(response.code() == 412){
-                    error.postValue("User already exists")
+                    error.postValue("Este usuario ya existe")
                 }else{
                     error.postValue("Ha ocurrido un error")
                 }

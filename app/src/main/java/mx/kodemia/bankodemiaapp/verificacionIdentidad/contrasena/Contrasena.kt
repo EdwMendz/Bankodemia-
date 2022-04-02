@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.fragment.app.Fragment
 import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.core.Alerts
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
@@ -22,11 +23,6 @@ class Contrasena : AppCompatActivity() {
     val viewModel: RegistroViewModel by viewModels()
     lateinit var binding: ActivityContrasenaBinding
     private lateinit var shared: SharedPreferencesInstance
-    private val imageConverter = ImageConverter
-    private lateinit var tipoDocumento: DocumentType
-
-    //Alertas por medio de Toast o SnackBar
-    private val alert = Alerts
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,9 +31,7 @@ class Contrasena : AppCompatActivity() {
         supportActionBar?.hide()
         setContentView(binding.root)
 
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.registro_fragmet_container, CrearContrasenaFragment())
-            .commit()
+        lanzarFragment(CrearContrasenaFragment())
 
         init()
 
@@ -60,29 +54,25 @@ class Contrasena : AppCompatActivity() {
     }
 
     fun procesoDeRegistro(signUpResponse: SignUpResponse) {
-        alert.showToast("Exito",this)
         val intent = Intent(this,ConfirmacionRegistroActivity::class.java)
         startActivity(intent)
-        /*supportFragmentManager.beginTransaction()
-            .replace(R.id.registro_fragmet_container, ConfirmacionRegistroFragment())
-            .commit()*/
     }
 
     fun cargando(b: Boolean) {
-        alert.showToast("Cargando",this)
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.registro_fragmet_container, CargandoRegistroFragment())
-            .commit()
+        lanzarFragment(CargandoRegistroFragment())
     }
 
 
     fun error(error: String) {
-        alert.showToast("Error",this)
+        shared.guardarErrorRegistro(error)
         val intent = Intent(this,ErrorRegistroActivity::class.java)
         startActivity(intent)
-        /*supportFragmentManager.beginTransaction()
-            .replace(R.id.registro_fragmet_container, ErrorRegistroFragment())
-            .commit()*/
+    }
+
+    private fun lanzarFragment(fragment: Fragment){
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.registro_fragmet_container,fragment)
+            .commit()
     }
 
 }

@@ -139,4 +139,13 @@ object SharedPreferencesInstance {
 
     //Jalar el tipo de documento
     fun obtenerFotoArchivo():String? = sharedPreferences.getString("archivo64", null)
+
+    fun guardarErrorRegistro(error: String){
+        with(editor){
+            putString("errorRegistro",error)
+            apply()
+        }
+    }
+
+    fun obtenerErrorRegistro(): String? = sharedPreferences.getString("errorRegistro",null)
 }
