@@ -1,6 +1,7 @@
-package mx.kodemia.bankodemiaapp.verificacionIdentidad.fragments
+package mx.kodemia.bankodemiaapp.modules.identity_verification.view.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,8 +12,9 @@ import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.data.model.request.SignUpResquest
 import mx.kodemia.bankodemiaapp.data.model.request.enummodels.DocumentType
 import mx.kodemia.bankodemiaapp.databinding.FragmentCrearContrasenaBinding
-import mx.kodemia.bankodemiaapp.verificacionIdentidad.ImageConverter
-import mx.kodemia.bankodemiaapp.verificacionIdentidad.contrasena.Contrasena
+import mx.kodemia.bankodemiaapp.formatos.cambiarMesANumero
+import mx.kodemia.bankodemiaapp.modules.identity_verification.encoder.ImageConverter
+import mx.kodemia.bankodemiaapp.modules.identity_verification.view.Contrasena
 
 class CrearContrasenaFragment : Fragment() {
 
@@ -42,21 +44,34 @@ class CrearContrasenaFragment : Fragment() {
                     val pathFoto = shared.obtenerFotoArchivo()
                     val archivoFotoBase64 = imageConverter.PathToBase64(pathFoto!!)
 
+                    val correo = shared.obtenerCorreo()
+                    val telefono = shared.obtenerTelefono()
+                    val datosUsuario = shared.obtenerDatosUsuario()
+
                     when(shared.obtenerTipoDocumento()){
                         getString(R.string.ine) ->{tipoDocumento = DocumentType.INE}
                         getString(R.string.pasaporte) ->{tipoDocumento = DocumentType.PASSPORT}
                         getString(R.string.documentoMigratorio) ->{tipoDocumento = DocumentType.MIGRATION_FORM}
                     }
+                    Log.e("datos",correo!!)
+                    Log.e("datos",datosUsuario.nombre!!)
+                    Log.e("datos",datosUsuario.apellido!!)
+                    Log.e("datos",datosUsuario.ocupacion!!)
+                    Log.e("datos",formatearFecha(datosUsuario.fechaDeNacimiento!!))
+                    Log.e("datos",tietPassword.text.toString())
+                    Log.e("datos",telefono!!)
+                    Log.e("datos",archivoFotoBase64)
+                    Log.e("datos",tipoDocumento.toString())
 
                     val signUp =
                         SignUpResquest(
-                            "miguelitopa@kodemia.com",
-                            "Miguelitopa",
-                            "Ponchitopa",
-                            "Loverpa",
-                            "1987-09-27",
+                            correo!!,
+                            datosUsuario.nombre!!,
+                            datosUsuario.apellido!!,
+                            datosUsuario.ocupacion!!,
+                            formatearFecha(datosUsuario.fechaDeNacimiento!!),
                             tietPassword.text.toString(),
-                            "+523315246987",
+                            telefono!!,
                             archivoFotoBase64,
                             tipoDocumento.toString()
                         )
@@ -165,6 +180,18 @@ class CrearContrasenaFragment : Fragment() {
 
     private fun mandarDatosSignUp(signUpResquest: SignUpResquest) {
         (context as Contrasena).viewModel.signUp(signUpResquest)
+    }
+
+    private fun formatearFecha(fecha: String): String{
+
+        val longitud = fecha.length
+        val dia = fecha.substring(0,2)
+        val mesLetra = fecha.substring(3,longitud-5)
+        val mes = cambiarMesANumero(mesLetra,requireActivity())
+        val anio = fecha.substring(longitud-4,longitud)
+        val formato = "$anio-$mes-$dia"
+
+        return formato
     }
 
     override fun onDestroyView() {

@@ -1,14 +1,10 @@
-package mx.kodemia.bankodemiaapp.verificacionIdentidad.activitiesrespuesta
+package mx.kodemia.bankodemiaapp.modules.identity_verification.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
-import mx.kodemia.bankodemiaapp.databinding.ActivityContrasenaBinding
 import mx.kodemia.bankodemiaapp.databinding.ActivityErrorRegistroBinding
-import mx.kodemia.bankodemiaapp.modules.inicioEd.view.IniciarSesionView
-import mx.kodemia.bankodemiaapp.verificacionIdentidad.VerificacionIdentidadActivity
 
 class ErrorRegistroActivity : AppCompatActivity() {
 

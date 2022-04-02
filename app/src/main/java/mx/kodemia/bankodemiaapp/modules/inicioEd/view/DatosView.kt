@@ -69,6 +69,7 @@ class DatosView : AppCompatActivity() {
     //Infla el view Binding
     private fun inicializarBinding() {
         binding = ActivityDatosBinding.inflate(layoutInflater)
+        supportActionBar?.hide()
         setContentView(binding.root)
     }
 

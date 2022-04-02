@@ -1,4 +1,4 @@
-package mx.kodemia.bankodemiaapp.verificacionIdentidad
+package mx.kodemia.bankodemiaapp.modules.identity_verification.viewmodel
 
 import android.content.Context
 import android.util.Log

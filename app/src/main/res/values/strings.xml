@@ -172,6 +172,19 @@
     <string name="noviembre">noviembre</string>
     <string name="diciembre">diciembre</string>
 
+    <string name="january" translatable="false">January</string>
+    <string name="february" translatable="false">February</string>
+    <string name="march" translatable="false">March</string>
+    <string name="april" translatable="false">April</string>
+    <string name="may" translatable="false">May</string>
+    <string name="june" translatable="false">June</string>
+    <string name="july" translatable="false">July</string>
+    <string name="august" translatable="false">August</string>
+    <string name="september" translatable="false">September</string>
+    <string name="october" translatable="false">October</string>
+    <string name="november" translatable="false">November</string>
+    <string name="december" translatable="false">December</string>
+
     <!--Home Inicio-->
     <string name="error_trans">Ha ocurrido un error con la lista de transacciones</string>
     <string name="tu_contacto_fue_agregado_con_xito">Tu contacto fue agregado con exito</string>
@@ -187,6 +200,6 @@
     <string name="next">Siguiente</string>
     <string name="previous">Anterior</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
 
 </resources>

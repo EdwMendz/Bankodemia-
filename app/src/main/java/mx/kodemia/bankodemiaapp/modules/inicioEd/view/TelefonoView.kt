@@ -1,7 +1,6 @@
 package mx.kodemia.bankodemiaapp.modules.inicioEd.view
 
 import android.content.Intent
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -9,9 +8,8 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import mx.kodemia.bankodemiaapp.core.Alerts
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
-import mx.kodemia.bankodemiaapp.databinding.ActivityMainBinding
 import mx.kodemia.bankodemiaapp.databinding.ActivityTelefonoBinding
-import mx.kodemia.bankodemiaapp.verificacionIdentidad.VerificacionIdentidadActivity
+import mx.kodemia.bankodemiaapp.modules.identity_verification.view.VerificacionIdentidadActivity
 
 class TelefonoView : AppCompatActivity() {
     private lateinit var shared : SharedPreferencesInstance
@@ -32,6 +30,7 @@ class TelefonoView : AppCompatActivity() {
     //InicializarBindong
     private fun inicializarBinding() {
         binding = ActivityTelefonoBinding.inflate(layoutInflater)
+        supportActionBar?.hide()
         setContentView(binding.root)
     }
     //Mandar a la otra activity

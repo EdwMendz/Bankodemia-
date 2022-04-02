@@ -1,4 +1,4 @@
-package mx.kodemia.bankodemiaapp.verificacionIdentidad
+package mx.kodemia.bankodemiaapp.modules.identity_verification.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,7 +6,6 @@ import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_verificacion_identidad2.*
 import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
-import mx.kodemia.bankodemiaapp.verificacionIdentidad.confirmacionDocumento.ConfirmarTipoDocumento
 
 class VerificacionIdentidad2 : AppCompatActivity() {
 

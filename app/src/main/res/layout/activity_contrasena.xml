@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".verificacionIdentidad.contrasena.Contrasena">
+    tools:context=".modules.identity_verification.view.Contrasena">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/registro_fragmet_container"
