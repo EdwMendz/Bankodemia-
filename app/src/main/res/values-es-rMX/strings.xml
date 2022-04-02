@@ -141,6 +141,7 @@
     <string name="letra_tarjeta">CLABE</string>
     <string name="numero_tarjeta">numero_tarjeta</string>
     <string name="comentario_tarjeta">El numero de Tarjeta tiene que ser de 12 digitos</string>
+    <string name="usuario">usuario no valido</string>
 
     <!--************* FIN TEXTOS EDWIN *************-->
 

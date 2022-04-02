@@ -2,14 +2,11 @@ package mx.kodemia.bankodemiaapp.modules.home.viewmodel
 
 import android.content.Context
 import android.util.Log
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
-import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.data.model.request.LogInRequest
-import mx.kodemia.bankodemiaapp.data.model.response.error.ErrorResponse
 import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.ListaTransaccionesResponse
 import mx.kodemia.bankodemiaapp.data.model.response.logIn.LoginResponse
 import mx.kodemia.bankodemiaapp.data.model.response.user.GetUserFullResponse
