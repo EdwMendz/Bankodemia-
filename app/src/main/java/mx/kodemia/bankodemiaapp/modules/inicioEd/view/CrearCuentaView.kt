@@ -78,6 +78,7 @@ class CrearCuentaView : AppCompatActivity() {
     //   Infla el view Binding
     private fun inicializarBinding() {
         binding = ActivityCrearCuentaBinding.inflate(layoutInflater)
+        supportActionBar?.hide()
         setContentView(binding.root)
     }
 }

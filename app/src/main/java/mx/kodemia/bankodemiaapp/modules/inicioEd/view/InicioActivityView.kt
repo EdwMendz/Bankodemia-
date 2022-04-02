@@ -3,6 +3,7 @@ package mx.kodemia.bankodemiaapp.modules.inicioEd.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.addCallback
 import mx.kodemia.bankodemiaapp.databinding.ActivityDatosBinding
 import mx.kodemia.bankodemiaapp.databinding.ActivityMainBinding
@@ -60,6 +61,7 @@ class InicioActivityView : AppCompatActivity() {
     //Infla el view Binding
     private fun inicializarBinding() {
         binding = ActivityMainBinding.inflate(layoutInflater)
+        supportActionBar?.hide()
         setContentView(binding.root)
     }
 }

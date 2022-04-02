@@ -1,4 +1,4 @@
-package mx.kodemia.bankodemiaapp.verificacionIdentidad.fragments
+package mx.kodemia.bankodemiaapp.modules.identity_verification.view.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

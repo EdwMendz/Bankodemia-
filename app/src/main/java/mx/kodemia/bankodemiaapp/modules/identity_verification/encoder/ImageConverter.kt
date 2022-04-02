@@ -1,4 +1,4 @@
-package mx.kodemia.bankodemiaapp.verificacionIdentidad
+package mx.kodemia.bankodemiaapp.modules.identity_verification.encoder
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory

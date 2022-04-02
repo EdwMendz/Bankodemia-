@@ -31,9 +31,6 @@ class InicioFragmentViewModel : ViewModel() {
 
     //Se lanza el servicio a la vista del Activity o Fragment
     fun onCreate(context: Context){
-        //TEMPORAL--------Inicio del Bloque
-        serviceLogin = LogInService(context)
-        //TEMPORAL---------Final del Bloque
 
         serviceListTransaction = ListTransactionService(context)
         serviceGetUserInformation = GetUserInformationService(context)
@@ -83,20 +80,5 @@ class InicioFragmentViewModel : ViewModel() {
             }
         }
     }
-
-    //TEMPORAL-----------Inicio del bloque
-    lateinit var serviceLogin: LogInService
-    val logInResponse = MutableLiveData<LoginResponse>()
-    fun logIn(expires_in: String, LoginRequest: LogInRequest){
-        viewModelScope.launch {
-            val response = serviceLogin.LogIn(expires_in,LoginRequest)
-            if(response.isSuccessful){
-                logInResponse.postValue(response.body())
-            }else if(response.code() == 401){
-                Log.e("LOGINERROR","Unauthorized")
-            }
-        }
-    }
-    //TEMPORAL------------Final del bloque
 
 }

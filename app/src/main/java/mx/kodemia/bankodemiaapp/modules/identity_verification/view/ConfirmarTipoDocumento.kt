@@ -1,4 +1,4 @@
-package mx.kodemia.bankodemiaapp.verificacionIdentidad.confirmacionDocumento
+package mx.kodemia.bankodemiaapp.modules.identity_verification.view
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -19,8 +19,6 @@ import androidx.core.content.FileProvider
 import kotlinx.android.synthetic.main.activity_confirmacion_tipo_documento.*
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.databinding.ActivityConfirmacionTipoDocumentoBinding
-import mx.kodemia.bankodemiaapp.verificacionIdentidad.ImageConverter
-import mx.kodemia.bankodemiaapp.verificacionIdentidad.contrasena.Contrasena
 import java.io.File
 import java.io.IOException
 import java.text.SimpleDateFormat

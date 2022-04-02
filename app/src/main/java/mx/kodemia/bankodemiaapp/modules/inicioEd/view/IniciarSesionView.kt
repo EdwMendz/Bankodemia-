@@ -44,6 +44,7 @@ class IniciarSesionView : AppCompatActivity() {
     //InicializaBindingViewModelyShared
     private fun init() {
         binding = ActivityIniciarSesionBinding.inflate(layoutInflater)
+        supportActionBar?.hide()
         setContentView(binding.root)
 
     }
