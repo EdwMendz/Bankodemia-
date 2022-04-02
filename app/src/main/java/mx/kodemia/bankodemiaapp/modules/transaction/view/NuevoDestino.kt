@@ -1,4 +1,4 @@
-package mx.kodemia.bankodemiaapp
+package mx.kodemia.bankodemiaapp.modules.transaction.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -13,7 +13,7 @@ class NuevoDestino : AppCompatActivity() {
 
         val Bnt_NuevoDestinatario: Button = findViewById(R.id.Bnt_NuevoDestinatario)
         Bnt_NuevoDestinatario.setOnClickListener{
-            startActivity(Intent(this,FinalizadoContacto::class.java))
+            startActivity(Intent(this, FinalizadoContacto::class.java))
         }
     }
 }

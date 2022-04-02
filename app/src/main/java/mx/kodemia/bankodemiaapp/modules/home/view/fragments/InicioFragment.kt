@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import mx.kodemia.bankodemiaapp.EnviarDinero
 import mx.kodemia.bankodemiaapp.animations.initParpadeoGuionLogo
 import mx.kodemia.bankodemiaapp.core.Alerts
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
@@ -25,6 +24,7 @@ import mx.kodemia.bankodemiaapp.formatos.darFormatoFechaActual
 import mx.kodemia.bankodemiaapp.modules.home.view.adapter.TransaccionesAdapter
 import mx.kodemia.bankodemiaapp.modules.home.viewmodel.InicioFragmentViewModel
 import mx.kodemia.bankodemiaapp.modules.identity_verification.view.VerificacionIdentidadActivity
+import mx.kodemia.bankodemiaapp.modules.transaction.view.EnviarDinero
 
 class InicioFragment : Fragment() {
 
@@ -54,7 +54,7 @@ class InicioFragment : Fragment() {
             initParpadeoGuionLogo(requireContext(),imageViewGuionLogo)
 
             buttonEnviarHome.setOnClickListener {
-                val intent = Intent(activity,EnviarDinero::class.java)
+                val intent = Intent(activity, EnviarDinero::class.java)
                 startActivity(intent)
             }
 
