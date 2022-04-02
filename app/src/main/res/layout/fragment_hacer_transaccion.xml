@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".modules.transaction.view.fragments.HacerTransaccionFragment">
+
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_icono_kodemia" />
+
+            <ImageView
+                android:id="@+id/Img_regreso"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="32dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="@+id/TV_enviar_dinero"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/TV_enviar_dinero"
+                app:srcCompat="@drawable/ic_flecha_return" />
+
+            <TextView
+                android:id="@+id/TV_enviar_dinero"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
+                android:text="CONTACTOS"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@+id/Img_regreso"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_icono_kodemia_barra"
+                app:tint="?attr/colorPrimary" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="48dp"
+                android:fontFamily="@font/poppins_400"
+                android:text="ENVIAR A"
+                android:textColor="@color/negro"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Img_regreso" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="CARLOS CONTRERAS CHAVEZ"
+                android:textColor="@color/negro"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppins_400"
+                app:layout_constraintStart_toStartOf="@+id/textView4"
+                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2345 5678 5645 7800"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppins_400"
+                app:layout_constraintStart_toStartOf="@+id/textView6"
+                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="19dp"
+                android:text="/"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppins_400"
+                app:layout_constraintStart_toEndOf="@+id/textView7"
+                app:layout_constraintTop_toTopOf="@+id/textView6" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BANORTE"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppins_400"
+                app:layout_constraintStart_toEndOf="@+id/textView8"
+                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+            <TextView
+                android:id="@+id/tv_necesitasAyuda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/poppins_400"
+                android:text="CANTIDAD"
+                android:textColor="@color/negro"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/textView7"
+                app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+            <EditText
+                android:id="@+id/TV_MontoPago"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:inputType="numberSigned"
+                android:minHeight="48dp"
+                android:hint="Monto"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_necesitasAyuda" />
+
+            <TextView
+                android:id="@+id/TV_textopago"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="CONCEPTO DE PAGO "
+                android:textSize="18sp"
+                android:fontFamily="@font/poppins_400"
+                android:textColor="@color/negro"
+                app:layout_constraintStart_toStartOf="@+id/tv_necesitasAyuda"
+                app:layout_constraintTop_toBottomOf="@+id/TV_spei" />
+
+            <TextView
+                android:id="@+id/TV_spei"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="SPEI sin costo"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="12dp"
+                app:layout_constraintEnd_toEndOf="@+id/TV_MontoPago"
+                app:layout_constraintStart_toStartOf="@+id/TV_MontoPago"
+                app:layout_constraintTop_toBottomOf="@+id/TV_MontoPago" />
+
+            <TextView
+                android:id="@+id/TV_ConceptoPago"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pago de croquetas gato"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppins_400"
+                app:layout_constraintStart_toStartOf="@+id/TV_textopago"
+                app:layout_constraintTop_toBottomOf="@+id/TV_textopago" />
+
+            <Button
+                android:id="@+id/btnTransferencia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="240dp"
+                android:text="Hacer Transferencia"
+                android:textColorHighlight="#8E6E6E"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TV_ConceptoPago" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

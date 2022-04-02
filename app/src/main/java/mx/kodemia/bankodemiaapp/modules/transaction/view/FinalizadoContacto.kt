@@ -1,14 +1,12 @@
-package mx.kodemia.bankodemiaapp.modules.home.view
+package mx.kodemia.bankodemiaapp.modules.transaction.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import mx.kodemia.bankodemiaapp.R
 
-class ConfirmacionTransferencia : AppCompatActivity() {
+class FinalizadoContacto : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_confirmacion_transferencia)
-
-
+        setContentView(R.layout.activity_finalizado_contacto)
     }
 }
