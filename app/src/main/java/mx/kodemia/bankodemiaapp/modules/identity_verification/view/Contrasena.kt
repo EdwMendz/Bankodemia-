@@ -59,7 +59,7 @@ class Contrasena : AppCompatActivity() {
 
 
     fun error(error: String) {
-        shared.guardarErrorRegistro(error)
+        shared.guardarError(error)
         val intent = Intent(this, ErrorRegistroActivity::class.java)
         startActivity(intent)
     }

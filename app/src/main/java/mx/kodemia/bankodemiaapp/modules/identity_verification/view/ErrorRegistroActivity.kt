@@ -20,7 +20,7 @@ class ErrorRegistroActivity : AppCompatActivity() {
         shared = SharedPreferencesInstance.obtenerInstancia(this)
 
         binding.apply {
-            tvError.text = shared.obtenerErrorRegistro()
+            tvError.text = shared.obtenerError()
         }
 
         binding.buttonVolverARegistro.setOnClickListener {

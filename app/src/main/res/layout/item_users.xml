@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardView_Item_User"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textViewNombre_Usuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_400"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Cruz Eduardo" />
+
+        <TextView
+            android:id="@+id/textViewApellidoUsuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:fontFamily="@font/poppins_400"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/textViewNombre_Usuario"
+            app:layout_constraintTop_toTopOf="@+id/textViewNombre_Usuario"
+            tools:text="Reveles Caldera" />
+
+        <TextView
+            android:id="@+id/textView_Id_Usuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_400"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/textViewNombre_Usuario"
+            app:layout_constraintTop_toBottomOf="@+id/textViewNombre_Usuario"
+            tools:text="d5g8f2g1d3f4dgdgdgd5fgd" />
+
+        <TextView
+            android:id="@+id/textView_email_usuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/poppins_400"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView_Id_Usuario"
+            app:layout_constraintTop_toBottomOf="@+id/textView_Id_Usuario"
+            tools:text="cruzedi@kodemia.mx" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

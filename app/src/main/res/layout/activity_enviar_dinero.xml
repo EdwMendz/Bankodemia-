@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".modules.transaction.view.EnviarDinero"
   >
 
     <ScrollView
@@ -16,6 +17,7 @@
             android:layout_height="wrap_content">
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView_Contactos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
@@ -24,7 +26,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/Img_agrega" />
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/Img_agrega"
                 android:layout_width="52dp"
                 android:layout_height="53dp"

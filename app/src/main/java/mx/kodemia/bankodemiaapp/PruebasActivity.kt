@@ -57,7 +57,7 @@ class PruebasActivity : AppCompatActivity() {
 
             btnTestMakeTrans.setOnClickListener {
                 val makeTransaction = MakeTransactionRequest(
-                    10000.00,
+                    10000,
                     TransactionType.DEPOSIT.toString(), //Si se quiere hacer un deposito a otra cuenta se pone PAYMENT
                     null, // Si es deposito no se pone Usuario de Destino
                     "De mi para mi x3 xD"

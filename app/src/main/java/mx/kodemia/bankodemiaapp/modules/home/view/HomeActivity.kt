@@ -44,7 +44,7 @@ class HomeActivity : AppCompatActivity() {
 
     }
 
-    override fun onStart() {
+    /*override fun onStart() {
         val filter = IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION)
         registerReceiver(networkChangeListener,filter)
         super.onStart()
@@ -53,6 +53,6 @@ class HomeActivity : AppCompatActivity() {
     override fun onStop() {
         unregisterReceiver(networkChangeListener)
         super.onStop()
-    }
+    }*/
 
 }
