@@ -75,37 +75,37 @@
                 app:layout_constraintTop_toBottomOf="@+id/Img_regreso" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/textViewNombre_Hacer_Transaccion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="CARLOS CONTRERAS CHAVEZ"
                 android:textColor="@color/negro"
                 android:textSize="16sp"
-                android:fontFamily="@font/poppins_400"
+                android:fontFamily="@font/poppins_500"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/textView4"
                 app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/textViewId_Hacer_Transaccion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_400"
                 android:text="2345 5678 5645 7800"
                 android:textSize="16sp"
-                android:fontFamily="@font/poppins_400"
-                app:layout_constraintStart_toStartOf="@+id/textView6"
-                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+                app:layout_constraintStart_toStartOf="@+id/textViewNombre_Hacer_Transaccion"
+                app:layout_constraintTop_toBottomOf="@+id/textViewNombre_Hacer_Transaccion" />
 
             <TextView
                 android:id="@+id/textView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="19dp"
+                android:fontFamily="@font/poppins_400"
                 android:text="/"
                 android:textSize="16sp"
-                android:fontFamily="@font/poppins_400"
-                app:layout_constraintStart_toEndOf="@+id/textView7"
-                app:layout_constraintTop_toTopOf="@+id/textView6" />
+                app:layout_constraintStart_toEndOf="@+id/textViewId_Hacer_Transaccion"
+                app:layout_constraintTop_toTopOf="@+id/textViewId_Hacer_Transaccion" />
 
             <TextView
                 android:id="@+id/textView9"
@@ -115,7 +115,7 @@
                 android:textSize="16sp"
                 android:fontFamily="@font/poppins_400"
                 app:layout_constraintStart_toEndOf="@+id/textView8"
-                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+                app:layout_constraintTop_toBottomOf="@+id/textViewNombre_Hacer_Transaccion" />
 
             <TextView
                 android:id="@+id/tv_necesitasAyuda"
@@ -126,11 +126,11 @@
                 android:text="CANTIDAD"
                 android:textColor="@color/negro"
                 android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="@+id/textView7"
-                app:layout_constraintTop_toBottomOf="@+id/textView7" />
+                app:layout_constraintStart_toStartOf="@+id/textViewId_Hacer_Transaccion"
+                app:layout_constraintTop_toBottomOf="@+id/textViewId_Hacer_Transaccion" />
 
             <EditText
-                android:id="@+id/TV_MontoPago"
+                android:id="@+id/et_MontoPago"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -138,6 +138,7 @@
                 android:inputType="numberSigned"
                 android:minHeight="48dp"
                 android:hint="Monto"
+                android:background="?attr/colorOnBackground"
                 android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -163,30 +164,33 @@
                 android:text="SPEI sin costo"
                 android:textColor="?attr/colorPrimary"
                 android:textSize="12dp"
-                app:layout_constraintEnd_toEndOf="@+id/TV_MontoPago"
-                app:layout_constraintStart_toStartOf="@+id/TV_MontoPago"
-                app:layout_constraintTop_toBottomOf="@+id/TV_MontoPago" />
+                app:layout_constraintEnd_toEndOf="@+id/et_MontoPago"
+                app:layout_constraintStart_toStartOf="@+id/et_MontoPago"
+                app:layout_constraintTop_toBottomOf="@+id/et_MontoPago" />
 
-            <TextView
-                android:id="@+id/TV_ConceptoPago"
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/et_ConceptoPago"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Pago de croquetas gato"
-                android:textSize="16sp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:fontFamily="@font/poppins_400"
-                app:layout_constraintStart_toStartOf="@+id/TV_textopago"
+                android:background="?attr/colorOnBackground"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/TV_textopago" />
 
             <Button
                 android:id="@+id/btnTransferencia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="240dp"
+                android:layout_marginTop="128dp"
                 android:text="Hacer Transferencia"
                 android:textColorHighlight="#8E6E6E"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/TV_ConceptoPago" />
+                app:layout_constraintTop_toBottomOf="@+id/et_ConceptoPago" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

@@ -5,22 +5,21 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.databinding.ActivityConfirmacionTransferenciaBinding
-import mx.kodemia.bankodemiaapp.databinding.ActivityHomeBinding
+import mx.kodemia.bankodemiaapp.databinding.ActivityErrorTransactionBinding
 import mx.kodemia.bankodemiaapp.modules.home.view.HomeActivity
 
-class ConfirmacionTransferencia : AppCompatActivity() {
+class ErrorTransactionActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityConfirmacionTransferenciaBinding
+    private lateinit var binding: ActivityErrorTransactionBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityConfirmacionTransferenciaBinding.inflate(layoutInflater)
+        binding = ActivityErrorTransactionBinding.inflate(layoutInflater)
         supportActionBar?.hide()
         setContentView(binding.root)
 
-        binding.btnVolverAInicio.setOnClickListener {
-            startActivity(Intent(this,HomeActivity::class.java))
+        binding.btnVolverAInicioErrorTransaccion.setOnClickListener {
+            startActivity(Intent(this, HomeActivity::class.java))
         }
-
     }
 }

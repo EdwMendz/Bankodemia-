@@ -8,15 +8,24 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import mx.kodemia.bankodemiaapp.R
+import mx.kodemia.bankodemiaapp.core.Alerts
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
+import mx.kodemia.bankodemiaapp.data.model.response.contacts.GetSingleContactResponse
 import mx.kodemia.bankodemiaapp.data.model.response.makeTransaction.MakeTransactionResponse
 import mx.kodemia.bankodemiaapp.databinding.ActivityContrasenaBinding
 import mx.kodemia.bankodemiaapp.databinding.ActivityEnviarDineroBinding
 import mx.kodemia.bankodemiaapp.databinding.ActivityEnviarTransferenciaBinding
+import mx.kodemia.bankodemiaapp.databinding.FragmentHacerTransaccionBinding
+import mx.kodemia.bankodemiaapp.modules.identity_verification.view.ConfirmacionRegistroActivity
+import mx.kodemia.bankodemiaapp.modules.identity_verification.view.ErrorRegistroActivity
+import mx.kodemia.bankodemiaapp.modules.identity_verification.view.fragments.CargandoRegistroFragment
 import mx.kodemia.bankodemiaapp.modules.identity_verification.viewmodel.RegistroViewModel
+import mx.kodemia.bankodemiaapp.modules.transaction.view.fragments.CargandoTransaccionFragment
 import mx.kodemia.bankodemiaapp.modules.transaction.view.fragments.HacerTransaccionFragment
 import mx.kodemia.bankodemiaapp.modules.transaction.viewmodel.EnviarDineroViewModel
+import mx.kodemia.bankodemiaapp.modules.transaction.viewmodel.ObtenerContactoUnicoViewModel
 
 class EnviarTransferencia : AppCompatActivity() {
 
@@ -52,20 +61,23 @@ class EnviarTransferencia : AppCompatActivity() {
     }
 
     private fun procesoDeTransaccion(transaction: MakeTransactionResponse){
-
+        val intent = Intent(this, ConfirmacionTransferencia::class.java)
+        startActivity(intent)
     }
 
     private fun cargando(b: Boolean){
-
+        lanzarFragment(CargandoTransaccionFragment())
     }
 
     private fun error(error: String){
-
+        shared.guardarError(error)
+        val intent = Intent(this, ErrorTransactionActivity::class.java)
+        startActivity(intent)
     }
 
     private fun lanzarFragment(fragment: Fragment){
         supportFragmentManager.beginTransaction()
-            .replace(R.id.registro_fragmet_container,fragment)
+            .replace(R.id.transaccion_container,fragment)
             .commit()
     }
 

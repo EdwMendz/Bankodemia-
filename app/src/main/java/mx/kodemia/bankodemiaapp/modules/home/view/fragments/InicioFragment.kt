@@ -25,6 +25,7 @@ import mx.kodemia.bankodemiaapp.modules.home.view.adapter.TransaccionesAdapter
 import mx.kodemia.bankodemiaapp.modules.home.viewmodel.InicioFragmentViewModel
 import mx.kodemia.bankodemiaapp.modules.identity_verification.view.VerificacionIdentidadActivity
 import mx.kodemia.bankodemiaapp.modules.transaction.view.EnviarDinero
+import mx.kodemia.bankodemiaapp.modules.transaction.view.EnviarTransferencia
 
 class InicioFragment : Fragment() {
 
@@ -49,20 +50,31 @@ class InicioFragment : Fragment() {
 
         init()
 
+
+
         binding?.apply {
             textViewFecha.text = darFormatoFechaActual()
             initParpadeoGuionLogo(requireContext(),imageViewGuionLogo)
 
+            buttonEnviarHome.isEnabled = false
+            buttonRecibirHome.isEnabled = false
+
             buttonEnviarHome.setOnClickListener {
+                shared.guardarModoTransaccion(false)
                 val intent = Intent(activity, EnviarDinero::class.java)
                 startActivity(intent)
             }
 
             buttonRecibirHome.setOnClickListener {
-                Toast.makeText(requireActivity(),"Se necesita una vista para recibir dinero", Toast.LENGTH_LONG).show()
+                shared.guardarModoTransaccion(true)
+                val intent = Intent(activity, EnviarTransferencia::class.java)
+                startActivity(intent)
             }
 
         }
+
+        solicitarInformacionDeUsuario()
+        solicitarTransacciones()
 
         observers()
 
@@ -81,10 +93,8 @@ class InicioFragment : Fragment() {
 
         viewModel.errorTrans.observe(viewLifecycleOwner,::errorTrans)
         viewModel.cargandoTrans.observe(viewLifecycleOwner,::cargandoTrans)
-        viewModel.listTransacciones()
         viewModel.listTransactionResponse.observe(viewLifecycleOwner,::mostrarTransacciones)
 
-        viewModel.getUserFullProfile()
         viewModel.getUserInformationResponse.observe(viewLifecycleOwner,::mostrarInfoUsuario)
 
     }
@@ -116,7 +126,21 @@ class InicioFragment : Fragment() {
     }
 
     private fun mostrarInfoUsuario(userFull: GetUserFullResponse){
-        binding?.textViewDineroDisponible?.text  = darFormatoDinero(userFull.data.balance)
+        shared.guardarIdPropio(userFull.data.user._id)
+        binding?.apply {
+            buttonEnviarHome.isEnabled = true
+            buttonRecibirHome.isEnabled = true
+            textViewDineroDisponible.text = darFormatoDinero(userFull.data.balance)
+        }
+
+    }
+
+    private fun solicitarInformacionDeUsuario(){
+        viewModel.getUserFullProfile()
+    }
+
+    private fun solicitarTransacciones(){
+        viewModel.listTransacciones()
     }
 
     override fun onDestroyView() {

@@ -20,7 +20,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BankodemiaApp">
-        
+        <activity
+            android:name=".modules.transaction.view.ErrorTransactionActivity"
+            android:exported="false" />
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="mx.kodemia.bankodemiaapp.fileprovider"
@@ -38,8 +41,7 @@
             android:exported="true" />
         <activity
             android:name=".modules.inicioEd.view.CrearCuentaView"
-            android:exported="true" />
-        <!--.modules.inicioEd.view.InicioActivityView-->
+            android:exported="true" /> <!-- .modules.inicioEd.view.InicioActivityView -->
         <activity
             android:name=".modules.home.view.HomeActivity"
             android:exported="true" />
@@ -85,11 +87,10 @@
             android:name=".modules.transaction.view.NuevoDestino"
             android:exported="true" /> <!-- _____________ACTIVITIES DE LIZZ (Final del Bloque)________________ -->
         <!-- _____________ACTIVITIES DE FABIAN (Inicio del Bloque)________________ -->
-        <!--.modules.home.view.HomeActivity-->
+        <!-- .modules.home.view.HomeActivity -->
         <activity
             android:name=".modules.inicioEd.view.InicioActivityView"
-            android:exported="true"
-            android:label="@string/title_activity_home">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

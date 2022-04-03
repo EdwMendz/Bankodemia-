@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.util.Log
 import android.widget.TextView
+import mx.kodemia.bankodemiaapp.data.model.response.contacts.Contacto
 import mx.kodemia.bankodemiaapp.formatos.darFormatoDiaMesAnioHora
 import mx.kodemia.bankodemiaapp.formatos.darFormatoDinero
 import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.Transaccion
@@ -188,12 +189,54 @@ object SharedPreferencesInstance {
 
     fun obtenerFotoArchivo():String? = sharedPreferences.getString("archivo64", null)
 
-    fun guardarErrorRegistro(error: String){
+    fun guardarError(error: String){
         with(editor){
-            putString("errorRegistro",error)
+            putString("errorGeneral",error)
             apply()
         }
     }
 
-    fun obtenerErrorRegistro(): String? = sharedPreferences.getString("errorRegistro",null)
+    fun obtenerError(): String? = sharedPreferences.getString("errorGeneral",null)
+
+    fun guardarContacto(contacto: Contacto){
+        with(editor){
+            putString("nombreContacto",contacto.shortName)
+            putString("tarjetaContacto",contacto._id)
+            apply()
+        }
+    }
+
+    fun obtenerContacto(): Contacto{
+        return Contacto(
+            sharedPreferences.getString("tarjetaContacto",null),
+            sharedPreferences.getString("nombreContacto",null)
+        )
+    }
+
+    fun guardarContactoUnico(contacto: String){
+        with(editor){
+            putString("contactoUnico",contacto)
+            apply()
+        }
+    }
+
+    fun obtenerContactoUnico(): String? = sharedPreferences.getString("contactoUnico",null)
+
+    fun guardarModoTransaccion(modo: Boolean){
+        with(editor){
+            putBoolean("modoTransaccion",modo)
+            apply()
+        }
+    }
+
+    fun obtenerModoTransaccion(): Boolean = sharedPreferences.getBoolean("modoTransaccion",false)
+
+    fun guardarIdPropio(id: String){
+        with(editor){
+            putString("idPropio",id)
+            apply()
+        }
+    }
+
+    fun obtenerIdPropio(): String? = sharedPreferences.getString("idPropio",null)
 }

@@ -53,15 +53,6 @@ class CrearContrasenaFragment : Fragment() {
                         getString(R.string.pasaporte) ->{tipoDocumento = DocumentType.PASSPORT}
                         getString(R.string.documentoMigratorio) ->{tipoDocumento = DocumentType.MIGRATION_FORM}
                     }
-                    Log.e("datos",correo!!)
-                    Log.e("datos",datosUsuario.nombre!!)
-                    Log.e("datos",datosUsuario.apellido!!)
-                    Log.e("datos",datosUsuario.ocupacion!!)
-                    Log.e("datos",formatearFecha(datosUsuario.fechaDeNacimiento!!))
-                    Log.e("datos",tietPassword.text.toString())
-                    Log.e("datos",telefono!!)
-                    Log.e("datos",archivoFotoBase64)
-                    Log.e("datos",tipoDocumento.toString())
 
                     val signUp =
                         SignUpResquest(
