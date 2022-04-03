@@ -21,6 +21,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BankodemiaApp">
         <activity
+            android:name=".modules.user.UserActivity"
+            android:exported="false" />
+        <activity
             android:name=".modules.transaction.view.ListaUsuariosActivity"
             android:exported="false" />
         <activity

@@ -8,6 +8,7 @@ import android.widget.Button
 import androidx.activity.viewModels
 import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.core.Alerts
+import mx.kodemia.bankodemiaapp.core.CheckToken
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.core.internet.CheckInternet
 import mx.kodemia.bankodemiaapp.data.model.request.SaveContactRequest
@@ -46,16 +47,20 @@ class NuevoDestino : AppCompatActivity() {
             TVNombreIngresar.hint = id.shortName
 
             BntNuevoDestinatario.setOnClickListener {
-                if(checkInternet.isNetworkAvailable(this@NuevoDestino)){
-                    if (validacionCampo()){
-                        val save = SaveContactRequest(
-                            TVNombreIngresar.text.toString().trim(),
-                            id._id!!
-                        )
-                        guardarContacto(save)
+                if(CheckInternet.isNetworkAvailable(this@NuevoDestino)){
+                    if(CheckToken.monitorToken(this@NuevoDestino, CheckToken.obtenerHoraActual())){
+                        if (validacionCampo()){
+                            val save = SaveContactRequest(
+                                TVNombreIngresar.text.toString().trim(),
+                                id._id!!
+                            )
+                            guardarContacto(save)
+                        }
+                    }else{
+                        Alerts.showSnackbar("Tu token ha caducado", activity = this@NuevoDestino)
                     }
                 }else{
-                    alert.showSnackbar("Necesitas internet para guardar el contacto", activity = this@NuevoDestino)
+                    alert.showToast("Necesitas internet para guardar el contacto", this@NuevoDestino)
                 }
             }
 

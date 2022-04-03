@@ -13,6 +13,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
 import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.core.Alerts
+import mx.kodemia.bankodemiaapp.core.CheckToken
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.core.internet.CheckInternet
 import mx.kodemia.bankodemiaapp.data.model.request.MakeTransactionRequest
@@ -52,15 +53,31 @@ class HacerTransaccionFragment : Fragment() {
             if (shared.obtenerModoTransaccion()){
                 preparacionDatosDeposito()
                 btnTransferencia.setOnClickListener{
-                    mandarDatosTransaccionDeposito()
+                    if(CheckInternet.isNetworkAvailable(requireActivity())){
+                        if(CheckToken.monitorToken(requireActivity(), CheckToken.obtenerHoraActual())){
+                            mandarDatosTransaccionDeposito()
+                        }else{
+                            Alerts.showSnackbar("Tu token ha caducado", activity = requireActivity())
+                        }
+                    }else{
+                        Alerts.showToast("No tienes conexion a internet",requireActivity())
+                    }
                 }
 
             }else{
                 preparacionDatosPago()
                 btnTransferencia.setOnClickListener{
-                    mandarDatosTransaccionPago()
-                }
+                    if(CheckInternet.isNetworkAvailable(requireActivity())){
+                        if(CheckToken.monitorToken(requireActivity(), CheckToken.obtenerHoraActual())){
+                            mandarDatosTransaccionPago()
+                        }else{
+                            Alerts.showSnackbar("Tu token ha caducado", activity = requireActivity())
+                        }
+                    }else{
+                        Alerts.showToast("No tienes conexion a internet",requireActivity())
+                    }
 
+                }
             }
 
             ImgRegreso.setOnClickListener {

@@ -7,7 +7,10 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import mx.kodemia.bankodemiaapp.R
+import mx.kodemia.bankodemiaapp.core.Alerts
+import mx.kodemia.bankodemiaapp.core.CheckToken
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
+import mx.kodemia.bankodemiaapp.core.internet.CheckInternet
 import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.ListaTransaccionesResponse
 import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.Transaccion
 import mx.kodemia.bankodemiaapp.data.model.response.user.EspecificUserInfo
@@ -36,7 +39,15 @@ class ListaUsuariosActivity : AppCompatActivity() {
 
         init()
 
-        solicitarUsuarios()
+        if(CheckInternet.isNetworkAvailable(this)){
+            if(CheckToken.monitorToken(this, CheckToken.obtenerHoraActual())){
+                solicitarUsuarios()
+            }else{
+                Alerts.showSnackbar("Tu token ha caducado", activity = this)
+            }
+        }else{
+            Alerts.showToast("No tienes conexion a internet",this)
+        }
 
         observers()
 

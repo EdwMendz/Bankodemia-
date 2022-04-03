@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.core.Alerts
+import mx.kodemia.bankodemiaapp.core.CheckToken
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.core.internet.CheckInternet
 import mx.kodemia.bankodemiaapp.data.model.request.UpdateContactRequest
@@ -44,18 +45,19 @@ class EnviarDinero : AppCompatActivity() {
     //Internet
     val checkInternet = CheckInternet
 
-    //Alerts
-    val alert = Alerts
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         init()
 
         if(checkInternet.isNetworkAvailable(this)){
-            solicitarContactos()
+            if(CheckToken.monitorToken(this, CheckToken.obtenerHoraActual())){
+                solicitarContactos()
+            }else{
+                Alerts.showSnackbar("Tu token ha caducado", activity = this)
+            }
         }else{
-            alert.showToast("No tienes internet para ver los contactos",this)
+            Alerts.showToast("No tienes internet para ver los contactos",this)
         }
 
         binding.apply {
@@ -131,12 +133,12 @@ class EnviarDinero : AppCompatActivity() {
     }
 
     private fun confirmacionBorrado(actionsContactResponse: ActionsContactResponse){
-        alert.showSnackbar("Contacto borrado exitosamente", activity = this)
+        Alerts.showSnackbar("Contacto borrado exitosamente", activity = this)
         viewModel.getContacts()
     }
 
     private fun confirmacionActualizado(actionsContactResponse: ActionsContactResponse){
-        alert.showSnackbar("Contacto actualizado exitosamente", activity = this)
+        Alerts.showSnackbar("Contacto actualizado exitosamente", activity = this)
         viewModel.getContacts()
     }
 

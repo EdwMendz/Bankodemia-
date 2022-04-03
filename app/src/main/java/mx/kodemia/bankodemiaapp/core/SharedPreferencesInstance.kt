@@ -39,15 +39,6 @@ object SharedPreferencesInstance {
         editor.apply()
     }
 
-    //Se guardan datos de registro del usuario, parte de Sael
-    fun registroUsuario2(berificacion: User) {
-        with(editor) {
-            putString("identityImage", berificacion.identityImage)
-            putString("typeImage", berificacion.identityImageType)
-            apply()
-        }
-    }
-
     //Se guarda datos de regitro del usuario, parte de Edwin
 
 
@@ -108,7 +99,6 @@ object SharedPreferencesInstance {
     fun guardarRespuestaSigUp(sesion: SignUpResponse) {
         with(editor) {
             putString("successSignUp", sesion.success.toString())
-            Log.e("successSignUp", sesion.success.toString())
             apply()
         }
     }
@@ -239,4 +229,13 @@ object SharedPreferencesInstance {
     }
 
     fun obtenerIdPropio(): String? = sharedPreferences.getString("idPropio",null)
+
+    fun guardarHoraDeInicioDeSesion(hora: String){
+        with(editor){
+            putString("horaDeSesion",hora)
+            apply()
+        }
+    }
+
+    fun obtenerHoraDeInicioDeSesion(): String? = sharedPreferences.getString("horaDeSesion",null)
 }
