@@ -42,5 +42,4 @@ object RetrofitInstance {
             return chain.proceed(requestBuilder.build())
         }
     }
-
 }

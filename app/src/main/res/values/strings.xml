@@ -23,6 +23,7 @@
 
     //Vista INE
     <string name="ine">INE</string>
+    <string name="tipoDocumentoChange" translatable="false">%s</string>
 
     //Documento Migratorio
     <string name="documentoMigratorio">DOCUMENTO MIGRATORIO</string>
@@ -92,6 +93,7 @@
     <string name="nunca_la_usaremos_sin_tu_n_consentimiento">Nunca la usaremos sin tu\n consentimiento</string>
     <string name="esta_informaci_n_es_necesaria_para_verificar_tu_nidentidad_n">Esta información es necesaria para verificar tu\nidentidad\n</string>
     <string name="flechaatras">flechaAtras</string>
+    <string name="usuario">usuario no valido</string>
 
 
     <!--************* FIN TEXTOS EDWIN *************-->
@@ -170,6 +172,19 @@
     <string name="noviembre">noviembre</string>
     <string name="diciembre">diciembre</string>
 
+    <string name="january" translatable="false">January</string>
+    <string name="february" translatable="false">February</string>
+    <string name="march" translatable="false">March</string>
+    <string name="april" translatable="false">April</string>
+    <string name="may" translatable="false">May</string>
+    <string name="june" translatable="false">June</string>
+    <string name="july" translatable="false">July</string>
+    <string name="august" translatable="false">August</string>
+    <string name="september" translatable="false">September</string>
+    <string name="october" translatable="false">October</string>
+    <string name="november" translatable="false">November</string>
+    <string name="december" translatable="false">December</string>
+
     <!--Home Inicio-->
     <string name="error_trans">Ha ocurrido un error con la lista de transacciones</string>
     <string name="tu_contacto_fue_agregado_con_xito">Tu contacto fue agregado con exito</string>
@@ -184,5 +199,10 @@
     <!-- Strings used for fragments for navigation -->
     <string name="next">Siguiente</string>
     <string name="previous">Anterior</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="mensaje_transaccion_exitosa">Tu transacción ha sido finalizada</string>
+    <string name="diagonal">/</string>
+    <string name="banorte_contacto">BANORTE</string>
 
 </resources>

@@ -23,5 +23,4 @@ class LogInService(context: Context) {
             response
         }
     }
-
 }

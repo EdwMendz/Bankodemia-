@@ -3,54 +3,61 @@ package mx.kodemia.bankodemiaapp.modules.inicioEd.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_iniciar_sesion.*
+import androidx.activity.viewModels
 import mx.kodemia.bankodemiaapp.R
-import mx.kodemia.bankodemiaapp.core.checkForInternet
-import mx.kodemia.bankodemiaapp.data.model.request.LogInRequest
+import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
+import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.User
 import mx.kodemia.bankodemiaapp.databinding.ActivityCrearCuentaBinding
-import mx.kodemia.bankodemiaapp.databinding.ActivityDatosBinding
+import mx.kodemia.bankodemiaapp.formatos.darFormatoDinero
+import mx.kodemia.bankodemiaapp.formatos.darFormatoHoraMinutos
+import mx.kodemia.bankodemiaapp.modules.home.view.HomeDetailsTransactionActivity
+import mx.kodemia.bankodemiaapp.modules.inicioEd.viewModel.CrearCuentaViewModel
 
 
 class CrearCuentaView : AppCompatActivity() {
+    //Binding
     private lateinit var binding: ActivityCrearCuentaBinding
+    //SharedPreferences
+    private lateinit var shared: SharedPreferencesInstance
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(binding.root)
+        shared = SharedPreferencesInstance.obtenerInstancia(this)
         //Inicializa el binding
         inicializarBinding()
 
-
-
-        binding.ivIniciarSesionRegresar.setOnClickListener {
-            lanzarActivityRegresar()
-//            finish()
-        }
+        //vamos a hacer validacion de correo y si pasa lanzar continuar
+        lanzarActivities()
     }
 
-    fun realizarPeticion() {
+    //mandamos las activities
+    private fun lanzarActivities() {
         binding.apply {
-            if (checkForInternet(applicationContext)) {
-                val correo: String = tietCrearcuentaCorreo.text.toString()
-                btnCrearCuentaContinuar.setOnClickListener {
-                    if (validarCorreo()) {
-                        lanzarAcivityDatos()
-                    } else {
-                        Toast.makeText(applicationContext, "upps algo paso", Toast.LENGTH_SHORT)
-                            .show()
+            btnCrearCuentaContinuar.setOnClickListener {
+                if (validarCorreo()) {
+                    binding.apply {
+                        val email = binding.tietCrearcuentaCorreo.text.toString().trim()
+                       shared.guardarCorreo(email)
+                        lanzarDatos()
                     }
                 }
             }
         }
-
     }
 
+
+
+
+    private fun lanzarDatos() {
+        val intent = Intent(this@CrearCuentaView, DatosView::class.java)
+        startActivity(intent)
+    }
 
     //Validar Correo
     private fun validarCorreo(): Boolean {
         binding.apply {
 
-            return if (tiet_IniciarSesison_Correo.text.toString().isEmpty()) {
+            return if (tietCrearcuentaCorreo.text.toString().isEmpty()) {
                 tilCrearcuentaCorreo.error = getString(R.string.campo_vacio)
                 false
             } else {
@@ -68,19 +75,10 @@ class CrearCuentaView : AppCompatActivity() {
     }
 
 
-    fun lanzarAcivityDatos() {
-        val intent = Intent(this, DatosView::class.java)
-        startActivity(intent)
-    }
-
-    fun lanzarActivityRegresar() {
-        val intent = Intent(this, InicioActivityView::class.java)
-        startActivity(intent)
-    }
-
-    //Infla el view Binding
+    //   Infla el view Binding
     private fun inicializarBinding() {
         binding = ActivityCrearCuentaBinding.inflate(layoutInflater)
+        supportActionBar?.hide()
         setContentView(binding.root)
     }
 }

@@ -152,7 +152,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/materialCardView" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/textViewNombre_Hacer_Transaccion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_400"
@@ -164,7 +164,7 @@
                 tools:text="5439 2464 7664 2003" />
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/textViewId_Hacer_Transaccion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -174,7 +174,7 @@
                 android:textColor="@color/negro"
                 android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+                app:layout_constraintTop_toBottomOf="@+id/textViewNombre_Hacer_Transaccion" />
 
             <TextView
                 android:id="@+id/textView8"
@@ -186,8 +186,8 @@
                 android:textColor="@color/gris"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/textView7"
-                app:layout_constraintTop_toBottomOf="@+id/textView7"
+                app:layout_constraintStart_toStartOf="@+id/textViewId_Hacer_Transaccion"
+                app:layout_constraintTop_toBottomOf="@+id/textViewId_Hacer_Transaccion"
                 tools:text="11/26" />
 
             <TextView
@@ -199,7 +199,7 @@
                 android:textSize="14sp"
                 android:fontFamily="@font/poppins_400"
                 app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
-                app:layout_constraintTop_toTopOf="@+id/textView7" />
+                app:layout_constraintTop_toTopOf="@+id/textViewId_Hacer_Transaccion" />
 
             <TextView
                 android:id="@+id/tv_necesitasAyuda"

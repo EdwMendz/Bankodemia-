@@ -1,23 +1,21 @@
 package mx.kodemia.bankodemiaapp.modules.home.view.fragments
 
-import android.content.IntentFilter
-import android.net.ConnectivityManager
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.coroutines.launch
-import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.animations.initParpadeoGuionLogo
 import mx.kodemia.bankodemiaapp.core.Alerts
+import mx.kodemia.bankodemiaapp.core.CheckToken
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
-import mx.kodemia.bankodemiaapp.core.internet.NetworkChangeListener
+import mx.kodemia.bankodemiaapp.core.internet.CheckInternet
 import mx.kodemia.bankodemiaapp.formatos.darFormatoDinero
 import mx.kodemia.bankodemiaapp.data.model.request.LogInRequest
 import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.ListaTransaccionesResponse
@@ -28,6 +26,10 @@ import mx.kodemia.bankodemiaapp.databinding.FragmentInicioBinding
 import mx.kodemia.bankodemiaapp.formatos.darFormatoFechaActual
 import mx.kodemia.bankodemiaapp.modules.home.view.adapter.TransaccionesAdapter
 import mx.kodemia.bankodemiaapp.modules.home.viewmodel.InicioFragmentViewModel
+import mx.kodemia.bankodemiaapp.modules.identity_verification.view.VerificacionIdentidadActivity
+import mx.kodemia.bankodemiaapp.modules.transaction.view.EnviarDinero
+import mx.kodemia.bankodemiaapp.modules.transaction.view.EnviarTransferencia
+import mx.kodemia.bankodemiaapp.modules.user.UserActivity
 
 class InicioFragment : Fragment() {
 
@@ -40,9 +42,6 @@ class InicioFragment : Fragment() {
     //SharedPreferences
     lateinit var shared : SharedPreferencesInstance
 
-    //Alertas por medio de Toast o SnackBar
-    private val alert = Alerts
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -52,17 +51,42 @@ class InicioFragment : Fragment() {
 
         init()
 
-        //TEMPORAL (Login Automatico)-----Inicio del bloque
-        val logIn = LogInRequest(
-            "federico123@kodemia.com",
-            "FedericoGonza123"
-        )
-        mandarDatosLogIn("1h",logIn)
-        //TEMPORAL--------Final del bloque
-
         binding?.apply {
             textViewFecha.text = darFormatoFechaActual()
             initParpadeoGuionLogo(requireContext(),imageViewGuionLogo)
+
+            buttonEnviarHome.isEnabled = false
+            buttonRecibirHome.isEnabled = false
+
+            buttonEnviarHome.setOnClickListener {
+                shared.guardarModoTransaccion(false)
+                val intent = Intent(activity, EnviarDinero::class.java)
+                startActivity(intent)
+            }
+
+            buttonRecibirHome.setOnClickListener {
+                shared.guardarModoTransaccion(true)
+                val intent = Intent(activity, EnviarTransferencia::class.java)
+                startActivity(intent)
+            }
+
+            buttonUserHome.setOnClickListener {
+                requireActivity().startActivity(Intent(requireActivity(),UserActivity::class.java))
+            }
+
+            returnNativo()
+
+        }
+
+        if(CheckInternet.isNetworkAvailable(requireActivity())){
+            if(CheckToken.monitorToken(requireActivity(), CheckToken.obtenerHoraActual())){
+                solicitarInformacionDeUsuario()
+                solicitarTransacciones()
+            }else{
+                Alerts.showSnackbar("Tu token ha caducado", activity = requireActivity())
+            }
+        }else{
+            Alerts.showToast("No se tiene acceso a internet",requireActivity())
         }
 
         observers()
@@ -80,25 +104,13 @@ class InicioFragment : Fragment() {
     //Observers pendientes a cambios en los datos por parte de MVVM
     private fun observers(){
 
-        //TEMPORAL-----------Inicio del bloque
-        viewModel.logInResponse.observe(viewLifecycleOwner,::guardarLogin)
-        //TEMPORAL----------Final del bloque
-
         viewModel.errorTrans.observe(viewLifecycleOwner,::errorTrans)
         viewModel.cargandoTrans.observe(viewLifecycleOwner,::cargandoTrans)
-        viewModel.listTransacciones()
         viewModel.listTransactionResponse.observe(viewLifecycleOwner,::mostrarTransacciones)
 
-        viewModel.getUserFullProfile()
         viewModel.getUserInformationResponse.observe(viewLifecycleOwner,::mostrarInfoUsuario)
 
     }
-
-    //TEMPORAL--------Inicio del bloque
-    private fun mandarDatosLogIn(expires_in: String, logInRequest: LogInRequest) {
-        viewModel.logIn(expires_in,logInRequest)
-    }
-    //TEMPORAL---------Final del bloque
 
     //Inicializacion de RecyclerView que contiene la informacion de las transacciones
     private fun initRecycler(lista: MutableList<Transaccion>, recyclerView: RecyclerView){
@@ -116,7 +128,9 @@ class InicioFragment : Fragment() {
 
     //Funcion para observer de muestra de error en caso de fallo con la API
     private fun errorTrans(error: String){
-        alert.showSnackbar(error, activity = requireActivity())
+        if(error.isNotEmpty()){
+            Alerts.showSnackbar(error, activity = requireActivity())
+        }
     }
 
     //Funcion para observer para llenar el RecyclerView con la informacion obtenida de la API
@@ -125,14 +139,32 @@ class InicioFragment : Fragment() {
     }
 
     private fun mostrarInfoUsuario(userFull: GetUserFullResponse){
-        binding?.textViewDineroDisponible?.text  = darFormatoDinero(userFull.data.balance)
+        shared.guardarIdPropio(userFull.data.user._id)
+        binding?.apply {
+            buttonEnviarHome.isEnabled = true
+            buttonRecibirHome.isEnabled = true
+            textViewDineroDisponible.text = darFormatoDinero(userFull.data.balance)
+        }
+
     }
 
-    //TEMPORAL (Con esta funcion guardamos el Token y tiempo de vencimiento del LOGIN)------Inicio del Bloque
-    private fun guardarLogin(login: LoginResponse){
-        shared.guardarSesionLogin(login)
+    private fun solicitarInformacionDeUsuario(){
+        viewModel.getUserFullProfile()
     }
-    //TEMPORAL------------Final del bloque
+
+    private fun solicitarTransacciones(){
+        viewModel.listTransacciones()
+    }
+
+    private fun returnNativo(){
+        val callback = requireActivity().onBackPressedDispatcher.addCallback(this) {
+            requireActivity().finish()
+            val intent = Intent(Intent.ACTION_MAIN)
+            intent.addCategory(Intent.CATEGORY_HOME)
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
+        }
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()

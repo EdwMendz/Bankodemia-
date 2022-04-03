@@ -10,6 +10,7 @@ import mx.kodemia.bankodemiaapp.network.apiInstance.RetrofitInstance
 import retrofit2.Response
 
 class SaveContactService (context: Context) {
+
     private val retrofit = RetrofitInstance.getRetrofit(context).create(SaveContact::class.java)
 
     suspend fun saveContact(saveContactRequest: SaveContactRequest): Response<SaveContactResponse> {

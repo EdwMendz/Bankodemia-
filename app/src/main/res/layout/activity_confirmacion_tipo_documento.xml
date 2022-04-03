@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".verificacionIdentidad.confirmacionDocumento.ConfirmarTipoDocumento">
+    tools:context=".modules.identity_verification.view.ConfirmarTipoDocumento">
 
 
     <ImageView
@@ -24,9 +24,9 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="19dp"
         android:fontFamily="@font/poppins_500"
-        android:text="@string/ine"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewIne" />
+        app:layout_constraintTop_toBottomOf="@+id/imageViewIne"
+        tools:text="@string/ine"/>
 
     <TextView
         android:id="@+id/textViewPermisoCamaraIne"
@@ -50,13 +50,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="31dp"
-        android:layout_marginTop="50dp"
         android:layout_marginEnd="31dp"
+        android:layout_marginBottom="48dp"
         android:fontFamily="@font/poppins_500"
         android:text="@string/btnSubir"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardViewFoto" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardViewFoto"
@@ -80,7 +80,6 @@
                 android:id="@+id/textViewTomarFoto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
                 android:clickable="true"
                 android:focusable="true"
                 android:fontFamily="@font/poppins_500"
@@ -88,7 +87,7 @@
                 android:textAlignment="center"
                 android:textColor="@color/lila"
                 android:visibility="visible"
-                app:layout_constraintBottom_toTopOf="@+id/ivFoto"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"

@@ -9,7 +9,10 @@
 
     <!--_____________COLOR DE RECYCLERVIEW HOME_____________-->
     <color name="gris_recycler">#48D2D3D5</color>
-
     <color name="otherblack">#4D4D4D</color>
+    <color name="gris_muy_claro">#42C7C8C7</color>
+
+    <!--_____________COLORES SECUNDARIOS_____________-->
+    <color name="rojo">#C62828</color>
 
 </resources>

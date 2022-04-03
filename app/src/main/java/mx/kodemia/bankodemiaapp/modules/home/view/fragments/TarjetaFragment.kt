@@ -1,5 +1,6 @@
 package mx.kodemia.bankodemiaapp.modules.home.view.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import mx.kodemia.bankodemiaapp.animations.initParpadeoGuionLogo
 import mx.kodemia.bankodemiaapp.databinding.FragmentTarjetaBinding
+import mx.kodemia.bankodemiaapp.modules.user.UserActivity
 
 class TarjetaFragment : Fragment() {
 
@@ -24,6 +26,11 @@ class TarjetaFragment : Fragment() {
 
         binding?.apply {
             initParpadeoGuionLogo(requireContext(),imageViewGuionLogo)
+
+            buttonUserHome.setOnClickListener {
+                requireActivity().startActivity(Intent(requireActivity(), UserActivity::class.java))
+            }
+
         }
 
         return binding!!.root

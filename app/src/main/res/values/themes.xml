@@ -10,6 +10,7 @@
         <item name="colorSecondary">@color/lila</item>
         <item name="colorSecondaryVariant">@color/negro</item>
         <item name="colorOnSecondary">@color/gris</item>
+        <item name="colorOnBackground">@color/blanco</item>
 
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>

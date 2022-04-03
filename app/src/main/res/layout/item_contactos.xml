@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardView_item_contacto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView_Nombre_Contacto"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/poppins_500"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Cruz Eduardo Reveles Caldera" />
+
+        <TextView
+            android:id="@+id/textViewDiagonal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="-6dp"
+            android:text="@string/diagonal"
+            android:textSize="26sp"
+            app:layout_constraintStart_toEndOf="@+id/textViewTarjeta_Contacto"
+            app:layout_constraintTop_toTopOf="@+id/textViewTarjeta_Contacto" />
+
+        <TextView
+            android:id="@+id/textViewTarjeta_Contacto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/poppins_400"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView_Nombre_Contacto"
+            app:layout_constraintTop_toBottomOf="@+id/textView_Nombre_Contacto"
+            tools:text="4915 1573 8890 4376" />
+
+        <TextView
+            android:id="@+id/textViewBanco_Contacto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:fontFamily="@font/poppins_400"
+            android:text="@string/banorte_contacto"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/textViewDiagonal"
+            app:layout_constraintTop_toTopOf="@+id/textViewTarjeta_Contacto" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

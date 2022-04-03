@@ -7,8 +7,11 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
+import mx.kodemia.bankodemiaapp.R
+import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.core.checkForInternet
 import mx.kodemia.bankodemiaapp.data.model.request.LogInRequest
+import mx.kodemia.bankodemiaapp.data.model.sharedPreferencesModels.DatosRegistro
 import mx.kodemia.bankodemiaapp.databinding.ActivityDatosBinding
 import mx.kodemia.bankodemiaapp.databinding.ActivityIniciarSesionBinding
 import mx.kodemia.bankodemiaapp.modules.inicioEd.viewModel.DatosViewModel
@@ -17,28 +20,31 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class DatosView : AppCompatActivity() {
+    lateinit var shared: SharedPreferencesInstance
     var formatDate = SimpleDateFormat("dd MMMM yyyy", Locale.US)
     //Inicializa el viewBindin
     private lateinit var binding: ActivityDatosBinding
-    //Union ViewModel con View
-    val viewmodel: DatosViewModel by viewModels()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        shared = SharedPreferencesInstance.obtenerInstancia(this)
 
         inicializarBinding()
+        fechaNacimiento()
+        lanzarActivities()
 
+    }
+
+
+    // **********   Funciones  *************
+    //Se hace la fecha de nacimiento
+    private fun fechaNacimiento() {
         binding.apply {
-            ivIniciarSesionRegresar.setOnClickListener {
-                lanzarActivityCrearC()
-            }
             tietDatosFechaNaci.setOnClickListener(View.OnClickListener {
                 val getDate: Calendar = Calendar.getInstance()
                 val datepicker = DatePickerDialog(
                     this@DatosView,
                     android.R.style.Theme_Holo_Light_Dialog_MinWidth,
                     DatePickerDialog.OnDateSetListener { datePicker, i, i2, i3 ->
-
                         val selectDate: Calendar = Calendar.getInstance()
                         selectDate.set(Calendar.YEAR, i)
                         selectDate.set(Calendar.MONTH, i2)
@@ -49,6 +55,7 @@ class DatosView : AppCompatActivity() {
                             .show()
                         tietDatosFechaNaci.setText(date)
 
+
                     },
                     getDate.get(Calendar.YEAR),
                     getDate.get(Calendar.MONTH),
@@ -56,26 +63,113 @@ class DatosView : AppCompatActivity() {
                 )
                 datepicker.show()
             })
-            btnIniciarSesionIniciarSesion.setOnClickListener {
-                lanzarActivityTelefono()
-            }
-
         }
     }
+
     //Infla el view Binding
     private fun inicializarBinding() {
         binding = ActivityDatosBinding.inflate(layoutInflater)
+        supportActionBar?.hide()
         setContentView(binding.root)
     }
 
+    //Se lanzan las actividades
+    private fun lanzarActivities() {
+        binding.apply {
+            ivIniciarSesionRegresar.setOnClickListener {
+                lanzarActivityCrearC()
+            }
+                btnIniciarSesionIniciarSesion.setOnClickListener {
+                    if (validarCampos()) {
+                        pedirDatostiet()
+                        lanzarActivityTelefono()
+                    }
+                }
+            }
 
+        }
+
+    private fun pedirDatostiet(){
+            binding.apply{
+                val datosUsuario = DatosRegistro(
+                    tietDatosNombre.text.toString(),
+                    tietDatosApellidos.text.toString(),
+                    tietDatosOcupacion.text.toString(),
+                    tietDatosFechaNaci.text.toString()
+                )
+                shared.guardarDatosUsuario(datosUsuario)
+            }
+    }
+
+    //Lanza la actividadCrear
     fun lanzarActivityCrearC() {
         val intent = Intent(this, CrearCuentaView::class.java)
         startActivity(intent)
     }
-    fun lanzarActivityTelefono(){
+
+    //Lanza la actividad telefono
+    fun lanzarActivityTelefono() {
         val intent = Intent(this, TelefonoView::class.java)
         startActivity(intent)
+    }
+
+    //Validaciones
+    private fun validarCampos(): Boolean {
+        val result = arrayOf(validarUsuario(), validarApellido(),validarMajor(),validarFechadeNacimiento())
+        return false !in result
+    }
+
+    //validar usuario
+    private fun validarUsuario(): Boolean {
+        binding.apply {
+            return if (tietDatosNombre.text.toString().isEmpty()) {
+                tilDatosNombre.error = getString(R.string.campo_vacio)
+                false
+            } else {
+                tilDatosNombre.isErrorEnabled = false
+                true
+            }
+        }
+    }
+
+    //validar Apellido
+    private fun validarApellido(): Boolean {
+        binding.apply {
+            return if (tietDatosApellidos.text.toString().isEmpty()) {
+                tilDatosApellido.error = getString(R.string.campo_vacio)
+                false
+            } else {
+                tilDatosApellido.isErrorEnabled = false
+                true
+            }
+        }
+
+    }
+
+    //Validar Ocupacion
+    private fun validarMajor(): Boolean {
+        binding.apply {
+            return if (tietDatosOcupacion.text.toString().isEmpty()) {
+                tilDatosOcupacion.error = getString(R.string.campo_vacio)
+                false
+            } else {
+                tilDatosOcupacion.isErrorEnabled = false
+                true
+            }
+        }
+    }
+
+    //validar fechaDeNacimiento
+    private fun validarFechadeNacimiento(): Boolean {
+        binding.apply {
+            return if (tietDatosFechaNaci.text.toString().isEmpty()) {
+                tilDatosFechaNacimiento.error = getString(R.string.campo_vacio)
+                false
+            } else {
+                tilDatosFechaNacimiento.isErrorEnabled = false
+                true
+            }
+        }
     }
 
 }
