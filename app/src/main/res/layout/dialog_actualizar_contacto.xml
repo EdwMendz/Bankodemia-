@@ -7,8 +7,7 @@
     android:layout_gravity="center"
     android:layout_marginHorizontal="16dp"
     app:cardCornerRadius="16dp"
-    app:cardElevation="8dp"
-    tools:context=".modules.transaction.view.Mensaje">
+    app:cardElevation="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -22,7 +21,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="24dp"
             android:fontFamily="@font/poppins_500"
-            android:text="CONFIRMACION DE TRANSFERENCIA"
+            android:text="ACTUALIZAR CONTACTO"
             android:textAlignment="center"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -33,10 +32,10 @@
             android:id="@+id/textView3"
             android:layout_width="220dp"
             android:layout_height="40dp"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="24dp"
             android:fontFamily="@font/poppins_500"
             android:gravity="center"
-            android:text="¿Estas segura(o) que quieres realizar esa transacciòn ?"
+            android:text="Ingresa el nuevo nombre para este contacto"
             android:textColor="@color/negro"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="@+id/textView"
@@ -44,19 +43,19 @@
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <Button
-            android:id="@+id/btn_aceptar"
+            android:id="@+id/btn_aceptar_actualizar"
             android:layout_width="0dp"
             android:layout_height="54dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:text="Aceptar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+            app:layout_constraintTop_toBottomOf="@+id/tiet_actualizarContacto" />
 
         <Button
-            android:id="@+id/btn_cancelar"
+            android:id="@+id/btn_cancelar_actualizar"
             android:layout_width="0dp"
             android:layout_height="54dp"
             android:layout_marginStart="16dp"
@@ -68,7 +67,20 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_aceptar" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_aceptar_actualizar" />
+
+        <EditText
+            android:id="@+id/tiet_actualizarContacto"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:inputType="text"
+            android:hint="Nuevo nombre"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>

@@ -50,8 +50,6 @@ class InicioFragment : Fragment() {
 
         init()
 
-
-
         binding?.apply {
             textViewFecha.text = darFormatoFechaActual()
             initParpadeoGuionLogo(requireContext(),imageViewGuionLogo)

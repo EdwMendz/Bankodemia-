@@ -23,6 +23,7 @@ import mx.kodemia.bankodemiaapp.databinding.FragmentHacerTransaccionBinding
 import mx.kodemia.bankodemiaapp.modules.identity_verification.view.Contrasena
 import mx.kodemia.bankodemiaapp.modules.transaction.view.EnviarDinero
 import mx.kodemia.bankodemiaapp.modules.transaction.view.EnviarTransferencia
+import mx.kodemia.bankodemiaapp.modules.transaction.view.dialogs.Dialogs
 import mx.kodemia.bankodemiaapp.modules.transaction.viewmodel.EnviarDineroViewModel
 import mx.kodemia.bankodemiaapp.modules.transaction.viewmodel.ObtenerContactoUnicoViewModel
 
@@ -33,6 +34,8 @@ class HacerTransaccionFragment : Fragment() {
     val viewModel: ObtenerContactoUnicoViewModel by viewModels()
 
     private val alert = Alerts
+
+    private val dialog = Dialogs
 
     private val checkInternet = CheckInternet
 
@@ -117,7 +120,7 @@ class HacerTransaccionFragment : Fragment() {
         return false
     }
 
-    private fun mandarDatosTransaccionPago(){
+    fun mandarDatosTransaccionPago(){
         binding?.apply {
             if(checkInternet.isNetworkAvailable(requireActivity())){
                 if (validarCampos()){
@@ -130,7 +133,8 @@ class HacerTransaccionFragment : Fragment() {
                         id, // Si es deposito no se pone Usuario de Destino
                         etConceptoPago.text.toString().trim()
                     )
-                    (context as EnviarTransferencia).viewModel.makeTransaction(makeTransaction)
+                    dialog.showDialogTransaction(requireActivity(),makeTransaction)
+                    //(context as EnviarTransferencia).viewModel.makeTransaction(makeTransaction)
                 }
             }else{
                 alert.showSnackbar("Favor de revisar su conexion a internet", activity = requireActivity())
@@ -150,7 +154,8 @@ class HacerTransaccionFragment : Fragment() {
                         null, // Si es deposito no se pone Usuario de Destino
                         etConceptoPago.text.toString().trim()
                     )
-                    (context as EnviarTransferencia).viewModel.makeTransaction(makeTransaction)
+                    dialog.showDialogTransaction(requireActivity(),makeTransaction)
+                    //(context as EnviarTransferencia).viewModel.makeTransaction(makeTransaction)
                 }
             }else{
                 alert.showSnackbar("Favor de revisar su conexion a internet", activity = requireActivity())

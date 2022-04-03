@@ -7,8 +7,7 @@
     android:layout_gravity="center"
     android:layout_marginHorizontal="16dp"
     app:cardCornerRadius="16dp"
-    app:cardElevation="8dp"
-    tools:context=".modules.transaction.view.Mensaje">
+    app:cardElevation="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -22,7 +21,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="24dp"
             android:fontFamily="@font/poppins_500"
-            android:text="CONFIRMACION DE TRANSFERENCIA"
+            android:text="ACCIONES DISPONIBLES"
             android:textAlignment="center"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -36,7 +35,7 @@
             android:layout_marginTop="48dp"
             android:fontFamily="@font/poppins_500"
             android:gravity="center"
-            android:text="¿Estas segura(o) que quieres realizar esa transacciòn ?"
+            android:text="Selecciona la acción a realizar en este contacto"
             android:textColor="@color/negro"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="@+id/textView"
@@ -44,19 +43,19 @@
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <Button
-            android:id="@+id/btn_aceptar"
+            android:id="@+id/btn_actualizar"
             android:layout_width="0dp"
             android:layout_height="54dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="48dp"
             android:layout_marginEnd="16dp"
-            android:text="Aceptar"
+            android:text="Actualizar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
         <Button
-            android:id="@+id/btn_cancelar"
+            android:id="@+id/btn_borrar"
             android:layout_width="0dp"
             android:layout_height="54dp"
             android:layout_marginStart="16dp"
@@ -64,11 +63,11 @@
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="8dp"
             android:backgroundTint="@color/rojo"
-            android:text="CANCELAR"
+            android:text="Borrar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_aceptar" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_actualizar" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>
