@@ -1,10 +1,15 @@
 package mx.kodemia.bankodemiaapp.modules.inicioEd.view
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.addCallback
+import mx.kodemia.bankodemiaapp.core.Alerts
+import mx.kodemia.bankodemiaapp.core.CheckToken
+import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
+import mx.kodemia.bankodemiaapp.core.internet.CheckInternet
 import mx.kodemia.bankodemiaapp.databinding.ActivityDatosBinding
 import mx.kodemia.bankodemiaapp.databinding.ActivityMainBinding
 import mx.kodemia.bankodemiaapp.modules.home.view.HomeActivity
@@ -14,8 +19,13 @@ class InicioActivityView : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        if(CheckToken.monitorToken(this,CheckToken.obtenerHoraActual())){
+            lanzarActivitiHome()
+        }
+
         super.onCreate(savedInstanceState)
-      
+
         //Inicializar Binding
         inicializarBinding()
         //Activa el setOnCLickListener de los botones
@@ -28,10 +38,18 @@ class InicioActivityView : AppCompatActivity() {
     private fun initButtons() {
         binding.apply {
             btnBienvenidaInisiarSesion.setOnClickListener {
-                lanzarIniciarSesion()
+                if (CheckInternet.isNetworkAvailable(this@InicioActivityView)){
+                    lanzarIniciarSesion()
+                }else{
+                    Alerts.showToast("No tienes conexion a internet",this@InicioActivityView)
+                }
             }
             btnBienvenidaCrearCuenta.setOnClickListener {
-                lanzarCrearCuenta()
+                if (CheckInternet.isNetworkAvailable(this@InicioActivityView)){
+                    lanzarCrearCuenta()
+                }else{
+                    Alerts.showToast("No tienes conexion a internet",this@InicioActivityView)
+                }
             }
         }
     }
@@ -63,5 +81,16 @@ class InicioActivityView : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         supportActionBar?.hide()
         setContentView(binding.root)
+    }
+
+    fun validarSesion(context: Context):Boolean{
+        val shared = SharedPreferencesInstance.obtenerInstancia(context)
+        val token = shared.sharedPreferences.getString("token",null)
+        return !token.isNullOrEmpty()
+    }
+
+    private fun lanzarActivitiHome() {
+        val intent = Intent(this, HomeActivity::class.java)
+        startActivity(intent)
     }
 }

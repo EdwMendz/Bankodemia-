@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.widget.Button
 import android.widget.EditText
 import mx.kodemia.bankodemiaapp.R
+import mx.kodemia.bankodemiaapp.core.CheckToken
+import mx.kodemia.bankodemiaapp.core.internet.CheckInternet
 import mx.kodemia.bankodemiaapp.data.model.request.MakeTransactionRequest
 import mx.kodemia.bankodemiaapp.data.model.request.UpdateContactRequest
 import mx.kodemia.bankodemiaapp.modules.transaction.view.EnviarDinero
@@ -57,8 +59,12 @@ object Dialogs {
         dialog.getWindow()?.setGravity(Gravity.CENTER)
 
         btnAceptar.setOnClickListener {
-            (context as EnviarDinero).viewModelActions.deleteContact(id)
-            dialog.dismiss()
+            if(CheckInternet.isNetworkAvailable(context)){
+                if(CheckToken.monitorToken(context, CheckToken.obtenerHoraActual())){
+                    (context as EnviarDinero).viewModelActions.deleteContact(id)
+                    dialog.dismiss()
+                }
+            }
         }
 
         btnCancelar.setOnClickListener {
@@ -84,12 +90,17 @@ object Dialogs {
 
         btnAceptar.setOnClickListener {
             val nombre = datoNuevoNombre.text.toString().trim()
-            if(nombre.isNotEmpty()){
-                (context as EnviarDinero).viewModelActions.updateContact(id,UpdateContactRequest(nombre))
-            }else{
-                showDialogUpdateContact(context,id)
+            if(CheckInternet.isNetworkAvailable(context)){
+                if(CheckToken.monitorToken(context, CheckToken.obtenerHoraActual())){
+                    if(nombre.isNotEmpty()){
+                        (context as EnviarDinero).viewModelActions.updateContact(id,UpdateContactRequest(nombre))
+                    }else{
+                        showDialogUpdateContact(context,id)
+                    }
+                    dialog.dismiss()
+                }
             }
-            dialog.dismiss()
+
         }
 
         btnCancelar.setOnClickListener {
