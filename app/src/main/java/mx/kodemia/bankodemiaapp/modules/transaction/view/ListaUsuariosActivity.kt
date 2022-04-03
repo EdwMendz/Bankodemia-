@@ -46,7 +46,7 @@ class ListaUsuariosActivity : AppCompatActivity() {
                 Alerts.showSnackbar("Tu token ha caducado", activity = this)
             }
         }else{
-            Alerts.showToast("No tienes conexion a internet",this)
+            Alerts.showToast("No tienes internet para ver los usuarios registrados",this)
         }
 
         observers()

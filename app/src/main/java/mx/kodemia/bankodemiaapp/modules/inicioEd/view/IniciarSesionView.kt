@@ -17,6 +17,7 @@ import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.core.Alerts
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.core.checkForInternet
+import mx.kodemia.bankodemiaapp.core.internet.CheckInternet
 import mx.kodemia.bankodemiaapp.data.model.request.LogInRequest
 import mx.kodemia.bankodemiaapp.data.model.response.logIn.LoginResponse
 import mx.kodemia.bankodemiaapp.databinding.ActivityIniciarSesionBinding
@@ -28,10 +29,13 @@ import java.util.*
 class IniciarSesionView : AppCompatActivity() {
     //Inicializa el viewBindin
     private lateinit var binding: ActivityIniciarSesionBinding
+
     //SharedPreferences
-    lateinit var shared : SharedPreferencesInstance
+    lateinit var shared: SharedPreferencesInstance
+
     //Alertas por medio de Toast o SnackBar
     private val alert = Alerts
+
     //Union ViewModel con View
     val viewmodel: IniciarSesionViewModel by viewModels()
 
@@ -42,6 +46,7 @@ class IniciarSesionView : AppCompatActivity() {
         realizarPeticion()
         observadores()
     }
+
     //InicializaBindingViewModelyShared
     private fun init() {
         binding = ActivityIniciarSesionBinding.inflate(layoutInflater)
@@ -53,18 +58,21 @@ class IniciarSesionView : AppCompatActivity() {
 
     //Mandar peticion
     private fun realizarPeticion() {
-        if (checkForInternet(applicationContext))
-            binding.apply {
-                btnIniciarSesionIniciarSesion.setOnClickListener {
+        binding.apply {
+            btnIniciarSesionIniciarSesion.setOnClickListener {
+                if (CheckInternet.isNetworkAvailable(this@IniciarSesionView)) {
                     if (validarCorreoYContrasenia()) {
                         //Lanzar la peticion
                         val correo: String = tietIniciarSesisonCorreo.text.toString()
                         val pass: String = tietIniciarSesionContrasenia.text.toString()
-                        val logIn = LogInRequest(correo,pass)
-                        mandarDatosLogIn("5m", logIn,this@IniciarSesionView)
+                        val logIn = LogInRequest(correo, pass)
+                        mandarDatosLogIn("5m", logIn, this@IniciarSesionView)
                     }
+                }else{
+                    Alerts.showToast("No tienes conexion a internet",this@IniciarSesionView)
                 }
             }
+        }
     }
 
     private fun lanzarActivitiHome() {
@@ -83,16 +91,15 @@ class IniciarSesionView : AppCompatActivity() {
         viewmodel.logInResponse.observe(this, ::guardarLogin)
 
         viewmodel.error.observe(this, ::errorLogin)
-        }
+    }
 
 
     //TEMPORAL----------Final del bloque
 
 
-
     //Mostrar progresbar
     private fun cargando(cargando: Boolean) {
-        if(!cargando && viewmodel.error.value?.isEmpty() == true){
+        if (!cargando && viewmodel.error.value?.isEmpty() == true) {
             finish()
             lanzarActivitiHome()
         }
@@ -102,26 +109,31 @@ class IniciarSesionView : AppCompatActivity() {
     private fun guardarLogin(login: LoginResponse) {
 
         val horaActual = System.currentTimeMillis()
-        val formatoDeHoraActual = SimpleDateFormat("HHmm", Locale.getDefault()).format(Date(horaActual))
+        val formatoDeHoraActual =
+            SimpleDateFormat("HHmm", Locale.getDefault()).format(Date(horaActual))
 
         shared.guardarSesionLogin(login)
         shared.guardarHoraDeInicioDeSesion(formatoDeHoraActual)
     }
+
     //MandarDatos
-    private fun mandarDatosLogIn(expires_in: String, logInRequest: LogInRequest, activity: Activity) {
-        viewmodel.logIn(expires_in,logInRequest,activity)
+    private fun mandarDatosLogIn(
+        expires_in: String,
+        logInRequest: LogInRequest,
+        activity: Activity
+    ) {
+        viewmodel.logIn(expires_in, logInRequest, activity)
     }
 
 
     //Si algo malo pasa mostramos el error
     private fun errorLogin(error: String): Boolean {
-        if (error.isNotEmpty()){
-            alert.showToast(error,this)
-        return true
+        if (error.isNotEmpty()) {
+            alert.showToast(error, this)
+            return true
         }
         return false
     }
-
 
 
     //**************************Validaciones del correo y email****************************************
