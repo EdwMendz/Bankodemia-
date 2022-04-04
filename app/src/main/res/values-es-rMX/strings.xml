@@ -142,6 +142,33 @@
     <string name="numero_tarjeta">numero_tarjeta</string>
     <string name="comentario_tarjeta">El numero de Tarjeta tiene que ser de 12 digitos</string>
     <string name="usuario">usuario no valido</string>
+    <string name="mensaje_transaccion_exitosa">Tu transacción ha sido finalizada</string>
+    <string name="no_acceso_internet">No se tiene acceso a internet</string>
+    <string name="usuario_no_autorizado">Usuario no autorizado</string>
+    <string name="ha_ocurrido_un_error">Ha ocurrido un error</string>
+    <string name="error_general">Error general</string>
+    <string name="minimo_6_caracteres">Se necesitan minimo 6 caracteres para la contraseña</string>
+    <string name="contrasenas_diferentes">Las contraseñas son diferentes</string>
+    <string name="caracteres_repetido">No se permiten caracteres consecutivos o repetidos</string>
+    <string name="el_campo_es_requerido">El campo es requerido</string>
+    <string name="numero_telefo_invalido">Número de telefono invalido</string>
+    <string name="opciones_cerradas">Opciones cerradas</string>
+    <string name="usuarios_no_registrado">Usuario no registrado</string>
+    <string name="no_pago_por_el_momento">En este momento no es posible realizar un pago a este contacto</string>
+    <string name="favor_revisar_internet">Favor de revisar su conexion a internet</string>
+    <string name="deposito_cuenta_propia">Deposito a cuenta propia</string>
+    <string name="favor_datos_solicitados">Favor de ingresar los datos solicitados</string>
+    <string name="favor_concepto">Favor de ingresar un concepto</string>
+    <string name="favor_monto">Favor de ingresar un monto</string>
+    <string name="no_borrar_contacto">No se pudo borrar este contacto</string>
+    <string name="no_actualizar_contacto">No se pudo actualizar este contacto</string>
+    <string name="no_acciones_contacto">No se pudo acceder a los contactos</string>
+    <string name="borrado_exitoso">Contacto borrado exitosamente</string>
+    <string name="actualizado_exitoso">Contacto actualizado exitosamente</string>
+    <string name="no_internet_para_registros">No tienes internet para ver los usuarios registrados</string>
+    <string name="no_se_pudo_mostrar_usuarios">No se pudo mostrar los usuarios</string>
+    <string name="internet_para_guardar_contacto">Necesitas internet para guardar el contacto</string>
+    <string name="agregar_un_nombre_para_contacto">Debes agregar un nombre para el contacto</string>
 
     <!--************* FIN TEXTOS EDWIN *************-->
 

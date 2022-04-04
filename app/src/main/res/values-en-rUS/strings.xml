@@ -143,6 +143,33 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
     <string name="usuario">invalid user</string>
+    <string name="mensaje_transaccion_exitosa">Your transaction has been completed</string>
+    <string name="no_acceso_internet">No internet access</string>
+    <string name="usuario_no_autorizado">User unauthorized</string>
+    <string name="ha_ocurrido_un_error">An error has occurred</string>
+    <string name="error_general">General error</string>
+    <string name="minimo_6_caracteres">A minimum of 6 characters is required for the password</string>
+    <string name="contrasenas_diferentes">Passwords are different</string>
+    <string name="caracteres_repetido">Consecutive or repeated characters are not allowed</string>
+    <string name="el_campo_es_requerido">The field is required</string>
+    <string name="numero_telefo_invalido">Invalid phone number</string>
+    <string name="opciones_cerradas">Closed options</string>
+    <string name="usuarios_no_registrado">Unregistered user</string>
+    <string name="no_pago_por_el_momento">At this time it is not possible to make a payment to this contact</string>
+    <string name="favor_revisar_internet">Please check your internet connection</string>
+    <string name="deposito_cuenta_propia">Deposit to own account</string>
+    <string name="favor_datos_solicitados">Please enter the requested data</string>
+    <string name="favor_concepto">Please enter a concept</string>
+    <string name="favor_monto">Please enter an amount</string>
+    <string name="no_borrar_contacto">This contact could not be deleted</string>
+    <string name="no_actualizar_contacto">This contact could not be updated</string>
+    <string name="no_acciones_contacto">Contacts could not be accessed</string>
+    <string name="borrado_exitoso">Contact deleted successfully</string>
+    <string name="actualizado_exitoso">Contact updated successfully</string>
+    <string name="no_internet_para_registros">You do not have internet to see registered users</string>
+    <string name="no_se_pudo_mostrar_usuarios">Users could not be displayed</string>
+    <string name="internet_para_guardar_contacto">You need internet to save the contact</string>
+    <string name="agregar_un_nombre_para_contacto">You must add a name for the contact</string>
 
     <!--************* FIN TEXTOS EDWIN *************-->
 

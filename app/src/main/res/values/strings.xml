@@ -202,8 +202,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="mensaje_transaccion_exitosa">Tu transacción ha sido finalizada</string>
-    <string name="diagonal">/</string>
-    <string name="banorte_contacto">BANORTE</string>
+    <string name="diagonal" translatable="false">/</string>
+    <string name="banorte_contacto" translatable="false">BANORTE</string>
 
     <string name="no_acceso_internet">No se tiene acceso a internet</string>
     <string name="usuario_no_autorizado">Usuario no autorizado</string>
