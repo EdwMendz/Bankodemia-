@@ -14,6 +14,7 @@ import mx.kodemia.bankodemiaapp.data.model.response.logIn.LoginResponse
 import mx.kodemia.bankodemiaapp.data.model.response.makeTransaction.MakeTransactionResponse
 import mx.kodemia.bankodemiaapp.data.model.response.signUp.SignUpResponse
 import mx.kodemia.bankodemiaapp.data.model.sharedPreferencesModels.DatosRegistro
+import mx.kodemia.bankodemiaapp.formatos.darFormatoHoraMinutos
 
 object SharedPreferencesInstance {
 

@@ -10,14 +10,25 @@ fun darFormatoDiaMesAnioHora(fecha: String, context: Context): String{
     var hora = fecha.substring(11,13)
     val minutos = fecha.substring(13,16)
 
-    if(hora.toInt() > 12){
-        val reformato = fecha.substring(11,13).toInt() - 12
+    var horaEnEntero = hora.toInt()
+
+    if(horaEnEntero <= 5){
+        horaEnEntero = 23-(5-(horaEnEntero+1))
+    }else{
+        horaEnEntero-=5
+    }
+    if(horaEnEntero == 0){
+        horaEnEntero = 1
+    }
+
+    if(horaEnEntero > 12){
+        val reformato = horaEnEntero - 12
         hora = "$reformato$minutos p.m."
     }else{
-        if(hora.toInt() > 9){
-            hora = fecha.substring(11,16) + " a.m."
+        if(horaEnEntero > 9){
+            hora = horaEnEntero.toString() + fecha.substring(13,16) + " a.m."
         }else{
-            hora = fecha.substring(12,16) + " a.m."
+            hora = horaEnEntero.toString() + fecha.substring(13,16) + " a.m."
         }
     }
 
