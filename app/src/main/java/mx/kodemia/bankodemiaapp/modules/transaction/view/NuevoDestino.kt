@@ -63,7 +63,7 @@ class NuevoDestino : AppCompatActivity() {
                         DialogExpiredToken.showDialogExpiredToken(this@NuevoDestino)
                     }
                 }else{
-                    alert.showToast("Necesitas internet para guardar el contacto", this@NuevoDestino)
+                    alert.showToast(getString(R.string.internet_para_guardar_contacto), this@NuevoDestino)
                 }
             }
 
@@ -104,7 +104,7 @@ class NuevoDestino : AppCompatActivity() {
 
     fun validacionCampo(): Boolean{
         return if(binding.TVNombreIngresar.text.toString().isEmpty()){
-            alert.showToast("Debes agregar un nombre para el contacto",this)
+            alert.showToast(getString(R.string.agregar_un_nombre_para_contacto),this)
             false
         }else{
             true

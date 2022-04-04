@@ -48,7 +48,7 @@ class InicioFragmentViewModel : ViewModel() {
                     listTransactionResponse.postValue(response.body())
                     errorTrans.postValue("")
                 }else if(response.code() == 401) {
-                    errorTrans.postValue("Unauthorized")
+                    errorTrans.postValue("Usuario no autorizado")
                 }else {
                     errorTrans.postValue("Ha ocurrido un error")
                 }

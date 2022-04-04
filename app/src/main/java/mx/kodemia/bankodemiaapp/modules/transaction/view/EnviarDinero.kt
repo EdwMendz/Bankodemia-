@@ -1,6 +1,8 @@
 package mx.kodemia.bankodemiaapp.modules.transaction.view
 
 import android.content.Intent
+import android.content.IntentFilter
+import android.net.ConnectivityManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -17,6 +19,7 @@ import mx.kodemia.bankodemiaapp.core.CheckToken
 import mx.kodemia.bankodemiaapp.core.DialogExpiredToken
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.core.internet.CheckInternet
+import mx.kodemia.bankodemiaapp.core.internet.NetworkChangeListener
 import mx.kodemia.bankodemiaapp.data.model.request.UpdateContactRequest
 import mx.kodemia.bankodemiaapp.data.model.response.contacts.ActionsContactResponse
 import mx.kodemia.bankodemiaapp.data.model.response.contacts.AllContacts
@@ -52,6 +55,8 @@ class EnviarDinero : AppCompatActivity() {
     //Internet
     val checkInternet = CheckInternet
 
+    val networkChangeListener: NetworkChangeListener = NetworkChangeListener()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -65,7 +70,7 @@ class EnviarDinero : AppCompatActivity() {
                 DialogExpiredToken.showDialogExpiredToken(this)
             }
         }else{
-            Alerts.showToast("No tienes internet para ver los contactos",this)
+            Alerts.showToast(getString(R.string.no_acceso_internet),this)
         }
 
         binding.apply {
@@ -114,7 +119,7 @@ class EnviarDinero : AppCompatActivity() {
     }
 
     private fun errorDelete(error: String){
-        Alerts.showSnackbar("No se pudo borrar este contacto", activity = this)
+        Alerts.showSnackbar(getString(R.string.no_borrar_contacto), activity = this)
     }
 
     private fun cargandoUpdate(b: Boolean){
@@ -122,7 +127,7 @@ class EnviarDinero : AppCompatActivity() {
     }
 
     private fun errorUpdate(error: String){
-        Alerts.showSnackbar("No se pudo actualizar este contacto", activity = this)
+        Alerts.showSnackbar(getString(R.string.no_actualizar_contacto), activity = this)
     }
 
     private fun cargando(b: Boolean){
@@ -130,7 +135,7 @@ class EnviarDinero : AppCompatActivity() {
     }
 
     private fun error(error: String){
-        Alerts.showSnackbar("No se pudo acceder a los contactos", activity = this)
+        Alerts.showSnackbar(getString(R.string.no_acciones_contacto), activity = this)
     }
 
     private fun mostrarContactos(contactos: AllContacts){
@@ -143,16 +148,16 @@ class EnviarDinero : AppCompatActivity() {
     }
 
     private fun confirmacionBorrado(actionsContactResponse: ActionsContactResponse){
-        Alerts.showSnackbar("Contacto borrado exitosamente", activity = this)
+        Alerts.showSnackbar(getString(R.string.borrado_exitoso), activity = this)
         viewModel.getContacts()
     }
 
     private fun confirmacionActualizado(actionsContactResponse: ActionsContactResponse){
-        Alerts.showSnackbar("Contacto actualizado exitosamente", activity = this)
+        Alerts.showSnackbar(getString(R.string.actualizado_exitoso), activity = this)
         viewModel.getContacts()
     }
 
-    private fun solicitarContactos(){
+    fun solicitarContactos(){
         viewModel.getContacts()
     }
 

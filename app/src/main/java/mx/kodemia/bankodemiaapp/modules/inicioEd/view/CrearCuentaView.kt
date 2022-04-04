@@ -4,15 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.addCallback
-import androidx.activity.viewModels
 import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
-import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.User
 import mx.kodemia.bankodemiaapp.databinding.ActivityCrearCuentaBinding
-import mx.kodemia.bankodemiaapp.formatos.darFormatoDinero
-import mx.kodemia.bankodemiaapp.formatos.darFormatoHoraMinutos
-import mx.kodemia.bankodemiaapp.modules.home.view.HomeDetailsTransactionActivity
-import mx.kodemia.bankodemiaapp.modules.inicioEd.viewModel.CrearCuentaViewModel
 
 
 class CrearCuentaView : AppCompatActivity() {

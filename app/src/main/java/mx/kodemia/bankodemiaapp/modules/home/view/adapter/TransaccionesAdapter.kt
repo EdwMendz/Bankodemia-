@@ -1,5 +1,4 @@
 package mx.kodemia.bankodemiaapp.modules.home.view.adapter
-
 import android.app.Activity
 import android.content.Intent
 import android.view.LayoutInflater
@@ -9,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.formatos.darFormatoActivoOPasivo
-import mx.kodemia.bankodemiaapp.formatos.darFormatoColorAlternado
 import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.Transaccion
 import mx.kodemia.bankodemiaapp.databinding.ItemCardviewHomeBinding
 import mx.kodemia.bankodemiaapp.formatos.darFormatoHoraMinutos
@@ -29,8 +27,12 @@ class TransaccionesAdapter(val activity: Activity, val transacciones: MutableLis
     }
 
     override fun onBindViewHolder(holder: TransaccionHolder, position: Int) {
+
+        //Invertir la posicion de la lista para ver las transacciones mas actuales
+        val posiccionInversa = (transacciones.size-1)-position
+
         //Se declara una variable para obtener los datos de un solo elemento y trabajar sobre él
-        val transaccion = transacciones.get(position)
+        val transaccion = transacciones.get(posiccionInversa)
 
         //Acciones a realizar con el Holder, es decir, cambios a realizar en las vistas del Item del CardView
         with(holder){
@@ -45,7 +47,7 @@ class TransaccionesAdapter(val activity: Activity, val transacciones: MutableLis
                 cardViewItemHome.setOnClickListener {
                     //Se guardan los datos del elemento seleccionado
                     shared = SharedPreferencesInstance.obtenerInstancia(activity)
-                    shared.guardarElementoListaTransacciones(transacciones,position)
+                    shared.guardarElementoListaTransacciones(transacciones,posiccionInversa)
 
                     //Se lanza el activity de Detalles de Transaccion
                     val intent = Intent(activity,HomeDetailsTransactionActivity::class.java)
@@ -56,8 +58,7 @@ class TransaccionesAdapter(val activity: Activity, val transacciones: MutableLis
                 textViewConceptoMovimiento.text = transaccion.concept
 
                 //Dar formato de hora
-                //textViewHoraConcepto.text = darFormatoHoraMinutos(transaccion.created_at)
-                textViewHoraConcepto.text = transaccion.created_at
+                textViewHoraConcepto.text = darFormatoHoraMinutos(transaccion.created_at)
 
                 //Verificar si es un Activo o un Pasivo y dar el formato correspondiente
                 textViewMontoMovimiento.text = darFormatoActivoOPasivo(transaccion.isIncome,transaccion.amount)

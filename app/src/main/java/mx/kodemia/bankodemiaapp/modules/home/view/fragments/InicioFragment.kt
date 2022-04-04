@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.animations.initParpadeoGuionLogo
 import mx.kodemia.bankodemiaapp.core.Alerts
 import mx.kodemia.bankodemiaapp.core.CheckToken
@@ -90,7 +91,7 @@ class InicioFragment : Fragment() {
                 DialogExpiredToken.showDialogExpiredToken(requireActivity())
             }
         }else{
-            Alerts.showToast("No se tiene acceso a internet",requireActivity())
+            Alerts.showToast(requireActivity().getString(R.string.no_acceso_internet),requireActivity())
         }
 
         observers()
@@ -127,8 +128,7 @@ class InicioFragment : Fragment() {
 
     //Funcion para observer de carga cuando se esta haciendo la solicitud a la API
     private fun cargandoTrans(b: Boolean){
-        //binding?.progressBarTransacciones?.isVisible = true
-        //binding?.textViewprogressBarTransacciones?.isVisible = true
+        //No se requiere ninguna accion aqui
     }
 
     //Funcion para observer de muestra de error en caso de fallo con la API

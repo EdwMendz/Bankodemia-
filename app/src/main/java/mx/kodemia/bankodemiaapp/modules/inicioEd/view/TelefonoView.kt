@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.core.Alerts
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.databinding.ActivityTelefonoBinding
@@ -63,7 +64,7 @@ class TelefonoView : AppCompatActivity() {
                         .show()
                 }
                 setOnDismissListener {
-                    Toast.makeText(this@TelefonoView, "opciones cerradas", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@TelefonoView, getString(R.string.opciones_cerradas), Toast.LENGTH_LONG).show()
                 }
                 onFocusChangeListener = View.OnFocusChangeListener { view, b ->
                     showDropDown()
@@ -78,7 +79,7 @@ class TelefonoView : AppCompatActivity() {
             return true
 
         }
-        alert.showToast("Numero De telefono Invalido",this)
+        alert.showToast(getString(R.string.numero_telefo_invalido),this)
         return false
     }
     private fun lanzarActivityVerificacion1(){

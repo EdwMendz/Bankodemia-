@@ -14,6 +14,7 @@ import mx.kodemia.bankodemiaapp.data.model.response.logIn.LoginResponse
 import mx.kodemia.bankodemiaapp.data.model.response.makeTransaction.MakeTransactionResponse
 import mx.kodemia.bankodemiaapp.data.model.response.signUp.SignUpResponse
 import mx.kodemia.bankodemiaapp.data.model.sharedPreferencesModels.DatosRegistro
+import mx.kodemia.bankodemiaapp.formatos.darFormatoHoraMinutos
 
 object SharedPreferencesInstance {
 
@@ -71,8 +72,6 @@ object SharedPreferencesInstance {
         )
     }
 
-
-
     //Guardamos el telefono de registro
     fun guardarTelefono(telefono:String){
         with(editor){
@@ -84,7 +83,6 @@ object SharedPreferencesInstance {
     fun obtenerTelefono():String?{
         return sharedPreferences.getString("telefono",null)
     }
-
 
     //Se guarda el token y el tiempo en el que expira el token con ayuda del editor
     fun guardarSesionLogin(sesion: LoginResponse) {

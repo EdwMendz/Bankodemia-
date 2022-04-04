@@ -17,7 +17,6 @@ class CargandoRegistroFragment : Fragment() {
     ): View {
         binding = FragmentCargandoRegistroBinding.inflate(inflater, container, false)
 
-        //(context as Contrasena).error("")
 
         return binding!!.root
     }
