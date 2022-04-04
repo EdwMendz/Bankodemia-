@@ -9,14 +9,17 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.view.View
+import androidx.activity.addCallback
 import androidx.activity.viewModels
+import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import kotlinx.android.synthetic.main.activity_iniciar_sesion.*
 import kotlinx.coroutines.launch
 import mx.kodemia.bankodemiaapp.R
+import mx.kodemia.bankodemiaapp.animations.initParpadeoGuionLogo
 import mx.kodemia.bankodemiaapp.core.Alerts
+import mx.kodemia.bankodemiaapp.core.CheckToken
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
-import mx.kodemia.bankodemiaapp.core.checkForInternet
 import mx.kodemia.bankodemiaapp.core.internet.CheckInternet
 import mx.kodemia.bankodemiaapp.data.model.request.LogInRequest
 import mx.kodemia.bankodemiaapp.data.model.response.logIn.LoginResponse
@@ -42,6 +45,8 @@ class IniciarSesionView : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         init()
+        returnNativo()
+        initParpadeoGuionLogo(this,binding.imageViewCargaLogin)
         listenersCorreoYEmail()
         realizarPeticion()
         observadores()
@@ -66,7 +71,7 @@ class IniciarSesionView : AppCompatActivity() {
                         val correo: String = tietIniciarSesisonCorreo.text.toString()
                         val pass: String = tietIniciarSesionContrasenia.text.toString()
                         val logIn = LogInRequest(correo, pass)
-                        mandarDatosLogIn("5m", logIn, this@IniciarSesionView)
+                        mandarDatosLogIn("10m", logIn, this@IniciarSesionView)
                     }
                 }else{
                     Alerts.showToast("No tienes conexion a internet",this@IniciarSesionView)
@@ -84,9 +89,7 @@ class IniciarSesionView : AppCompatActivity() {
     //Observadores
     private fun observadores() {
         //Observamos el progresbar
-        viewmodel.cargando.observe(this) { cargando ->
-            cargando(cargando)
-        }
+        viewmodel.cargando.observe(this,::cargando)
         //TEMPORAL-----------Inicio del bloque
         viewmodel.logInResponse.observe(this, ::guardarLogin)
 
@@ -108,12 +111,8 @@ class IniciarSesionView : AppCompatActivity() {
     //Guardar Login
     private fun guardarLogin(login: LoginResponse) {
 
-        val horaActual = System.currentTimeMillis()
-        val formatoDeHoraActual =
-            SimpleDateFormat("HHmm", Locale.getDefault()).format(Date(horaActual))
-
         shared.guardarSesionLogin(login)
-        shared.guardarHoraDeInicioDeSesion(formatoDeHoraActual)
+        shared.guardarHoraDeInicioDeSesion(CheckToken.obtenerHoraActual())
     }
 
     //MandarDatos
@@ -211,6 +210,12 @@ class IniciarSesionView : AppCompatActivity() {
                     }
                 }
             })
+        }
+    }
+
+    private fun returnNativo(){
+        val callback = onBackPressedDispatcher.addCallback(this) {
+            startActivity(Intent(this@IniciarSesionView,InicioActivityView::class.java))
         }
     }
 

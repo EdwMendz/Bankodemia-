@@ -37,7 +37,7 @@ class RegistroViewModel: ViewModel() {
                 if (response.isSuccessful){
                     signUpResponse.postValue(response.body())
                 }else if(response.code() == 400){
-                    error.postValue(response.message())
+                    error.postValue("Se ha enviado informacion incorrecta, favor de revisar sus datos e intentarlo nuevamente")
                 }else if(response.code() == 412){
                     error.postValue("Este usuario ya existe")
                 }else{

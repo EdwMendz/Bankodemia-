@@ -158,7 +158,7 @@
                 android:fontFamily="@font/poppins_400"
                 android:textColor="@color/gris"
                 android:textSize="14sp"
-                android:text="@string/numero_tarjeta"
+                android:text="@string/numero_tarjeta2"
                 app:layout_constraintStart_toStartOf="@+id/textView5"
                 app:layout_constraintTop_toBottomOf="@+id/textView5"
                 tools:text="5439 2464 7664 2003" />
@@ -182,7 +182,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="80dp"
                 android:fontFamily="@font/poppins_400"
-                android:text="@string/vigencia_tarjeta"
+                android:text="@string/vigencia_tarjeta2"
                 android:textColor="@color/gris"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -208,7 +208,7 @@
                 android:fontFamily="@font/poppins_400"
                 android:textColor="@color/gris"
                 android:textSize="14sp"
-                android:text="@string/cvv_tarjeta"
+                android:text="@string/cvv_tarjeta2"
                 app:layout_constraintStart_toStartOf="@+id/textView9"
                 app:layout_constraintTop_toBottomOf="@+id/textView9"
                 tools:text="125" />

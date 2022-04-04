@@ -55,7 +55,7 @@
     <string name="iniciar_sesion">Iniciar Sesión</string>
     <string name="crear_cuenta">Crear Cuenta</string>
     <string name="bankodemia">bankodemia</string>
-    <string name="usa_el_diner_a">usa el diner a</string>
+    <string name="usa_el_diner_a">usa el dinero a</string>
     <string name="manera">Manera</string>
 
     <!--Activity Iniciar Sesion-->
@@ -135,7 +135,7 @@
 
     <!--AGREGAR CONTACTO-->
     <string name="comentario_tarjeta">El numero de Tarjeta tiene que ser de 12 digitos</string>
-    <string name="numero_tarjeta">No. de Tarjeta</string>
+    <string name="numero_tarjeta">5439 2464 7664 2003</string>
     <string name="letra_tarjeta">CLABE</string>
     <string name="institucion">Institución</string>
     <string name="AgregarNombre">Nombre</string>
@@ -147,8 +147,8 @@
     <string name="tu_n_mero_de_celular">Tu número de celular</string>
     <string name="logokodemia">LogoKodemia</string>
     <string name="iv_inicio">iv_incio</string>
-    <string name="vigencia_tarjeta">vigencia_tarjeta</string>
-    <string name="cvv_tarjeta">cvv_tarjeta</string>
+    <string name="vigencia_tarjeta">11/26</string>
+    <string name="cvv_tarjeta">125</string>
 
 
     <string name="gris_items_recycler" translatable="false">#48D2D3D5</string>

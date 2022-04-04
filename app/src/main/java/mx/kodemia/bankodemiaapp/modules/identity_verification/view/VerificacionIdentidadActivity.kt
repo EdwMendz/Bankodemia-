@@ -13,7 +13,6 @@ class VerificacionIdentidadActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_verificacion_identidad)
 
-
         btnIdentidad.setOnClickListener {
             startActivity(Intent(this, VerificacionIdentidad2::class.java))
         }

@@ -5,13 +5,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
+import androidx.activity.addCallback
 import androidx.activity.viewModels
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.core.Alerts
 import mx.kodemia.bankodemiaapp.core.CheckToken
+import mx.kodemia.bankodemiaapp.core.DialogExpiredToken
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.core.internet.CheckInternet
 import mx.kodemia.bankodemiaapp.data.model.request.UpdateContactRequest
@@ -23,12 +26,16 @@ import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.Transacci
 import mx.kodemia.bankodemiaapp.databinding.ActivityEnviarDineroBinding
 import mx.kodemia.bankodemiaapp.databinding.ActivityHomeBinding
 import mx.kodemia.bankodemiaapp.databinding.ActivityListaUsuariosBinding
+import mx.kodemia.bankodemiaapp.modules.home.view.HomeActivity
 import mx.kodemia.bankodemiaapp.modules.home.view.adapter.TransaccionesAdapter
 import mx.kodemia.bankodemiaapp.modules.home.viewmodel.InicioFragmentViewModel
+import mx.kodemia.bankodemiaapp.modules.inicioEd.view.InicioActivityView
 import mx.kodemia.bankodemiaapp.modules.transaction.view.adapter.ContactosAdapter
 import mx.kodemia.bankodemiaapp.modules.transaction.viewmodel.AccionesContactoViewModel
 import mx.kodemia.bankodemiaapp.modules.transaction.viewmodel.ObtenerContactoUnicoViewModel
 import mx.kodemia.bankodemiaapp.modules.transaction.viewmodel.ObtenerContactosViewModel
+import java.text.SimpleDateFormat
+import java.util.*
 
 class EnviarDinero : AppCompatActivity() {
 
@@ -49,12 +56,13 @@ class EnviarDinero : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         init()
+        returnNativo()
 
         if(checkInternet.isNetworkAvailable(this)){
             if(CheckToken.monitorToken(this, CheckToken.obtenerHoraActual())){
                 solicitarContactos()
             }else{
-                Alerts.showSnackbar("Tu token ha caducado", activity = this)
+                DialogExpiredToken.showDialogExpiredToken(this)
             }
         }else{
             Alerts.showToast("No tienes internet para ver los contactos",this)
@@ -102,31 +110,33 @@ class EnviarDinero : AppCompatActivity() {
     }
 
     private fun cargandoDelete(b: Boolean){
-
+        //Esta cargando por defecto sin indicador
     }
 
     private fun errorDelete(error: String){
-
+        Alerts.showSnackbar("No se pudo borrar este contacto", activity = this)
     }
 
     private fun cargandoUpdate(b: Boolean){
-
+        //Esta cargando por defecto sin indicador
     }
 
     private fun errorUpdate(error: String){
-
+        Alerts.showSnackbar("No se pudo actualizar este contacto", activity = this)
     }
 
     private fun cargando(b: Boolean){
-
+        //Esta cargando por defecto sin indicador
     }
 
     private fun error(error: String){
-
+        Alerts.showSnackbar("No se pudo acceder a los contactos", activity = this)
     }
 
     private fun mostrarContactos(contactos: AllContacts){
         binding.apply {
+            progressBarContactos.isVisible = false
+            textViewprogressBarContactos.isVisible = false
             initRecycler(contactos.data.contacts,recyclerViewContactos)
         }
 
@@ -146,12 +156,10 @@ class EnviarDinero : AppCompatActivity() {
         viewModel.getContacts()
     }
 
-    private fun borrarContacto(id: String){
-        viewModelActions.deleteContact(id)
-    }
-
-    private fun actualizarContacto(id: String, updateContactRequest: UpdateContactRequest){
-        viewModelActions.updateContact(id,updateContactRequest)
+    private fun returnNativo(){
+        val callback = onBackPressedDispatcher.addCallback(this) {
+            startActivity(Intent(this@EnviarDinero, HomeActivity::class.java))
+        }
     }
 
     //Inicializacion de RecyclerView

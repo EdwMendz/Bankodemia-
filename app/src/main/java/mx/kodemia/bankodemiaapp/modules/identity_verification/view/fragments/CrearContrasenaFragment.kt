@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.core.Alerts
 import mx.kodemia.bankodemiaapp.core.CheckToken
+import mx.kodemia.bankodemiaapp.core.DialogExpiredToken
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.core.internet.CheckInternet
 import mx.kodemia.bankodemiaapp.data.model.request.SignUpResquest
@@ -17,6 +18,8 @@ import mx.kodemia.bankodemiaapp.databinding.FragmentCrearContrasenaBinding
 import mx.kodemia.bankodemiaapp.formatos.cambiarMesANumero
 import mx.kodemia.bankodemiaapp.modules.identity_verification.encoder.ImageConverter
 import mx.kodemia.bankodemiaapp.modules.identity_verification.view.Contrasena
+import java.text.SimpleDateFormat
+import java.util.*
 
 class CrearContrasenaFragment : Fragment() {
 
@@ -40,45 +43,46 @@ class CrearContrasenaFragment : Fragment() {
 
             buttonPassword.setOnClickListener {
 
-                if(CheckInternet.isNetworkAvailable(requireActivity())){
-                    if(CheckToken.monitorToken(requireActivity(), CheckToken.obtenerHoraActual())){
-                        if(validarContrasena() && validarContrasenaDos() && validarSimilutud() && validarLongitud() && validarConsecutivos()){
-                            val pathFoto = shared.obtenerFotoArchivo()
-                            val archivoFotoBase64 = imageConverter.PathToBase64(pathFoto!!)
+                if (CheckInternet.isNetworkAvailable(requireActivity())) {
+                    if (validarContrasena() && validarContrasenaDos() && validarSimilutud() && validarLongitud() && validarConsecutivos()) {
+                        val pathFoto = shared.obtenerFotoArchivo()
+                        val archivoFotoBase64 = imageConverter.PathToBase64(pathFoto!!)
 
-                            val correo = shared.obtenerCorreo()
-                            val telefono = shared.obtenerTelefono()
-                            val datosUsuario = shared.obtenerDatosUsuario()
+                        val correo = shared.obtenerCorreo()
+                        val telefono = shared.obtenerTelefono()
+                        val datosUsuario = shared.obtenerDatosUsuario()
 
-                            when(shared.obtenerTipoDocumento()){
-                                getString(R.string.ine) ->{tipoDocumento = DocumentType.INE}
-                                getString(R.string.pasaporte) ->{tipoDocumento = DocumentType.PASSPORT}
-                                getString(R.string.documentoMigratorio) ->{tipoDocumento = DocumentType.MIGRATION_FORM}
+                        when (shared.obtenerTipoDocumento()) {
+                            getString(R.string.ine) -> {
+                                tipoDocumento = DocumentType.INE
                             }
-
-                            val signUp =
-                                SignUpResquest(
-                                    correo!!,
-                                    datosUsuario.nombre!!,
-                                    datosUsuario.apellido!!,
-                                    datosUsuario.ocupacion!!,
-                                    formatearFecha(datosUsuario.fechaDeNacimiento!!),
-                                    tietPassword.text.toString(),
-                                    telefono!!,
-                                    archivoFotoBase64,
-                                    tipoDocumento.toString()
-                                )
-                            mandarDatosSignUp(signUp)
+                            getString(R.string.pasaporte) -> {
+                                tipoDocumento = DocumentType.PASSPORT
+                            }
+                            getString(R.string.documentoMigratorio) -> {
+                                tipoDocumento = DocumentType.MIGRATION_FORM
+                            }
                         }
-                    }else{
-                        Alerts.showSnackbar("Tu token ha caducado", activity = requireActivity())
+
+                        val signUp =
+                            SignUpResquest(
+                                correo!!,
+                                datosUsuario.nombre!!,
+                                datosUsuario.apellido!!,
+                                datosUsuario.ocupacion!!,
+                                formatearFecha(datosUsuario.fechaDeNacimiento!!),
+                                tietPassword.text.toString(),
+                                telefono!!,
+                                archivoFotoBase64,
+                                tipoDocumento.toString()
+                            )
+                        mandarDatosSignUp(signUp)
                     }
                 }else{
-                    Alerts.showToast("No tienes conexión a internet",requireActivity())
+                    Alerts.showToast("No tienes conexión a internet", requireActivity())
                 }
             }
         }
-
 
         return binding!!.root
     }

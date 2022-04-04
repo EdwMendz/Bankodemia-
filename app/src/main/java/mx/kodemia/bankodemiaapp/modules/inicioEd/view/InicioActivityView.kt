@@ -13,6 +13,8 @@ import mx.kodemia.bankodemiaapp.core.internet.CheckInternet
 import mx.kodemia.bankodemiaapp.databinding.ActivityDatosBinding
 import mx.kodemia.bankodemiaapp.databinding.ActivityMainBinding
 import mx.kodemia.bankodemiaapp.modules.home.view.HomeActivity
+import java.text.SimpleDateFormat
+import java.util.*
 
 class InicioActivityView : AppCompatActivity() {
     //Inicializamos el viewBinding
@@ -81,12 +83,6 @@ class InicioActivityView : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         supportActionBar?.hide()
         setContentView(binding.root)
-    }
-
-    fun validarSesion(context: Context):Boolean{
-        val shared = SharedPreferencesInstance.obtenerInstancia(context)
-        val token = shared.sharedPreferences.getString("token",null)
-        return !token.isNullOrEmpty()
     }
 
     private fun lanzarActivitiHome() {

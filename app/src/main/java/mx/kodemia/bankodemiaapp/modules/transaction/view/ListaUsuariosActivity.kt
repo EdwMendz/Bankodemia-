@@ -3,12 +3,14 @@ package mx.kodemia.bankodemiaapp.modules.transaction.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.core.Alerts
 import mx.kodemia.bankodemiaapp.core.CheckToken
+import mx.kodemia.bankodemiaapp.core.DialogExpiredToken
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.core.internet.CheckInternet
 import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.ListaTransaccionesResponse
@@ -21,6 +23,8 @@ import mx.kodemia.bankodemiaapp.modules.home.view.adapter.TransaccionesAdapter
 import mx.kodemia.bankodemiaapp.modules.home.viewmodel.InicioFragmentViewModel
 import mx.kodemia.bankodemiaapp.modules.transaction.view.adapter.UsersAdapter
 import mx.kodemia.bankodemiaapp.modules.transaction.viewmodel.ObtenerUsuariosViewModel
+import java.text.SimpleDateFormat
+import java.util.*
 
 class ListaUsuariosActivity : AppCompatActivity() {
 
@@ -43,7 +47,7 @@ class ListaUsuariosActivity : AppCompatActivity() {
             if(CheckToken.monitorToken(this, CheckToken.obtenerHoraActual())){
                 solicitarUsuarios()
             }else{
-                Alerts.showSnackbar("Tu token ha caducado", activity = this)
+                DialogExpiredToken.showDialogExpiredToken(this)
             }
         }else{
             Alerts.showToast("No tienes internet para ver los usuarios registrados",this)
@@ -66,15 +70,17 @@ class ListaUsuariosActivity : AppCompatActivity() {
     }
 
     private fun cargando(b: Boolean){
-
+        //Esta cargando por defecto sin indicador
     }
 
     private fun error(error: String){
-
+        Alerts.showSnackbar("No se pudo mostrar los usuarios", activity = this)
     }
 
     private fun mostrarUsuarios(usuarios: ListUsersResponse){
         binding.apply {
+            progressBarUsuarios.isVisible = false
+            textViewprogressBarUsuarios.isVisible = false
             initRecycler(usuarios.data.users, recyclerViewUsuarios)
         }
     }

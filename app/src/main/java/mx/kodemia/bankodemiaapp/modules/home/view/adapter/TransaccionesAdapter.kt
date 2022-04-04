@@ -56,13 +56,11 @@ class TransaccionesAdapter(val activity: Activity, val transacciones: MutableLis
                 textViewConceptoMovimiento.text = transaccion.concept
 
                 //Dar formato de hora
-                textViewHoraConcepto.text = darFormatoHoraMinutos(transaccion.created_at)
+                //textViewHoraConcepto.text = darFormatoHoraMinutos(transaccion.created_at)
+                textViewHoraConcepto.text = transaccion.created_at
 
                 //Verificar si es un Activo o un Pasivo y dar el formato correspondiente
-                textViewMontoMovimiento.text = darFormatoActivoOPasivo(transaccion.isIncome,transaccion.amount,textViewMontoMovimiento)
-
-                //Dar color de fondo alternado
-                darFormatoColorAlternado(activity,cardViewItemHome,position)
+                textViewMontoMovimiento.text = darFormatoActivoOPasivo(transaccion.isIncome,transaccion.amount)
             }
         }
     }

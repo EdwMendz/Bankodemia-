@@ -50,14 +50,14 @@
 
             <ImageView
                 android:id="@+id/iv_logoKodemia"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:contentDescription="@string/logokodemia"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/bk" />
+                app:srcCompat="@drawable/ic_icono_kodemia" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -94,43 +94,41 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_itd_itd" />
 
-        <TextView
-            android:id="@+id/tv_necesitasAyuda"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/necesitas_ayuda_escribenos_a"
-            android:textColor="@color/negro"
-            android:layout_marginTop="100dp"
-            app:layout_constraintBottom_toTopOf="@+id/tv_bankodemiacorreo"
-            app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
-            app:layout_constraintHorizontal_bias="0.505"
-            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
-            app:layout_constraintTop_toBottomOf="@+id/til_IniciarSesion_contrasenia"
+            <TextView
+                android:id="@+id/tv_necesitasAyuda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="72dp"
+                android:text="@string/necesitas_ayuda_escribenos_a"
+                android:textColor="@color/negro"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+                app:layout_constraintHorizontal_bias="0.505"
+                app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+                app:layout_constraintTop_toBottomOf="@+id/til_IniciarSesion_contrasenia"
 
-            />
+                />
 
-        <TextView
-            android:id="@+id/tv_bankodemiacorreo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:autoLink="email"
-            android:minHeight="48dp"
-            android:text="@string/bankodemia_com_mx"
-            android:textColor="#00838F"
-            app:layout_constraintBottom_toTopOf="@+id/btn_iniciarSesion_iniciarSesion"
-            app:layout_constraintEnd_toEndOf="@+id/btn_iniciarSesion_iniciarSesion"
-            app:layout_constraintStart_toStartOf="@+id/btn_iniciarSesion_iniciarSesion"
-            tools:ignore="TextContrastCheck" />
+            <TextView
+                android:id="@+id/tv_bankodemiacorreo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoLink="email"
+                android:minHeight="48dp"
+                android:text="@string/bankodemia_com_mx"
+                android:textColor="#00838F"
+                app:layout_constraintEnd_toEndOf="@+id/tv_necesitasAyuda"
+                app:layout_constraintStart_toStartOf="@+id/tv_necesitasAyuda"
+                app:layout_constraintTop_toBottomOf="@+id/tv_necesitasAyuda"
+                tools:ignore="TextContrastCheck" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_iniciarSesion_iniciarSesion"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
+                android:layout_marginTop="28dp"
                 android:layout_marginEnd="32dp"
-                android:layout_marginBottom="56dp"
-                android:backgroundTint="@color/celeste"
+                android:layout_marginBottom="32dp"
                 android:fontFamily="@font/poppins_400"
                 android:text="@string/iniciar_sesion"
                 android:textSize="18sp"
@@ -138,6 +136,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_bankodemiacorreo"
                 tools:ignore="TextContrastCheck" />
 
             <ImageView
@@ -148,7 +147,7 @@
             android:contentDescription="@string/flechaatras"
             app:layout_constraintStart_toStartOf="@+id/textView9"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
-            app:srcCompat="@drawable/regresar" />
+            app:srcCompat="@drawable/ic_flecha_return" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_iniciarSesion_correo"
@@ -168,6 +167,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/escribe_tu_correo"
+                android:textColorHint="?attr/colorPrimary"
                 android:inputType="textWebEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -189,6 +189,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/escribe_tu_contrase_a"
+                android:textColorHint="?attr/colorPrimary"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -224,6 +225,30 @@
             android:textSize="16sp"
             app:layout_constraintBottom_toTopOf="@+id/til_IniciarSesion_contrasenia"
             app:layout_constraintStart_toStartOf="@+id/til_IniciarSesion_contrasenia" />
+
+            <ImageView
+                android:id="@+id/imageView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_icono_kodemia_barra"
+                app:tint="?attr/colorPrimary"/>
+
+            <ImageView
+                android:id="@+id/imageViewCargaLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="18dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_bankodemiacorreo"
+                app:srcCompat="@drawable/ic_icono_kodemia_nav" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

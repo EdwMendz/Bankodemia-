@@ -14,6 +14,8 @@ import mx.kodemia.bankodemiaapp.data.model.request.UpdateContactRequest
 import mx.kodemia.bankodemiaapp.modules.transaction.view.EnviarDinero
 import mx.kodemia.bankodemiaapp.modules.transaction.view.EnviarTransferencia
 import mx.kodemia.bankodemiaapp.modules.transaction.view.fragments.HacerTransaccionFragment
+import java.text.SimpleDateFormat
+import java.util.*
 
 object Dialogs {
 
