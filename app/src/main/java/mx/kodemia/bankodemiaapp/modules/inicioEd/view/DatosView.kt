@@ -6,15 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import androidx.activity.viewModels
 import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
-import mx.kodemia.bankodemiaapp.data.model.request.LogInRequest
 import mx.kodemia.bankodemiaapp.data.model.sharedPreferencesModels.DatosRegistro
 import mx.kodemia.bankodemiaapp.databinding.ActivityDatosBinding
-import mx.kodemia.bankodemiaapp.databinding.ActivityIniciarSesionBinding
-import mx.kodemia.bankodemiaapp.modules.inicioEd.viewModel.DatosViewModel
-import mx.kodemia.bankodemiaapp.modules.inicioEd.viewModel.IniciarSesionViewModel
 import java.text.SimpleDateFormat
 import java.util.*
 

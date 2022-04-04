@@ -65,7 +65,7 @@ class EnviarDinero : AppCompatActivity() {
                 DialogExpiredToken.showDialogExpiredToken(this)
             }
         }else{
-            Alerts.showToast("No tienes internet para ver los contactos",this)
+            Alerts.showToast(getString(R.string.no_acceso_internet),this)
         }
 
         binding.apply {
@@ -114,7 +114,7 @@ class EnviarDinero : AppCompatActivity() {
     }
 
     private fun errorDelete(error: String){
-        Alerts.showSnackbar("No se pudo borrar este contacto", activity = this)
+        Alerts.showSnackbar(getString(R.string.no_borrar_contacto), activity = this)
     }
 
     private fun cargandoUpdate(b: Boolean){
@@ -122,7 +122,7 @@ class EnviarDinero : AppCompatActivity() {
     }
 
     private fun errorUpdate(error: String){
-        Alerts.showSnackbar("No se pudo actualizar este contacto", activity = this)
+        Alerts.showSnackbar(getString(R.string.no_actualizar_contacto), activity = this)
     }
 
     private fun cargando(b: Boolean){
@@ -130,7 +130,7 @@ class EnviarDinero : AppCompatActivity() {
     }
 
     private fun error(error: String){
-        Alerts.showSnackbar("No se pudo acceder a los contactos", activity = this)
+        Alerts.showSnackbar(getString(R.string.no_acciones_contacto), activity = this)
     }
 
     private fun mostrarContactos(contactos: AllContacts){
@@ -143,12 +143,12 @@ class EnviarDinero : AppCompatActivity() {
     }
 
     private fun confirmacionBorrado(actionsContactResponse: ActionsContactResponse){
-        Alerts.showSnackbar("Contacto borrado exitosamente", activity = this)
+        Alerts.showSnackbar(getString(R.string.borrado_exitoso), activity = this)
         viewModel.getContacts()
     }
 
     private fun confirmacionActualizado(actionsContactResponse: ActionsContactResponse){
-        Alerts.showSnackbar("Contacto actualizado exitosamente", activity = this)
+        Alerts.showSnackbar(getString(R.string.actualizado_exitoso), activity = this)
         viewModel.getContacts()
     }
 

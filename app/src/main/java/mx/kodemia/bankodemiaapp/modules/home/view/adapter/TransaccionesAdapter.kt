@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.formatos.darFormatoActivoOPasivo
-import mx.kodemia.bankodemiaapp.formatos.darFormatoColorAlternado
 import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.Transaccion
 import mx.kodemia.bankodemiaapp.databinding.ItemCardviewHomeBinding
 import mx.kodemia.bankodemiaapp.formatos.darFormatoHoraMinutos
@@ -56,8 +55,7 @@ class TransaccionesAdapter(val activity: Activity, val transacciones: MutableLis
                 textViewConceptoMovimiento.text = transaccion.concept
 
                 //Dar formato de hora
-                //textViewHoraConcepto.text = darFormatoHoraMinutos(transaccion.created_at)
-                textViewHoraConcepto.text = transaccion.created_at
+                textViewHoraConcepto.text = darFormatoHoraMinutos(transaccion.created_at)
 
                 //Verificar si es un Activo o un Pasivo y dar el formato correspondiente
                 textViewMontoMovimiento.text = darFormatoActivoOPasivo(transaccion.isIncome,transaccion.amount)

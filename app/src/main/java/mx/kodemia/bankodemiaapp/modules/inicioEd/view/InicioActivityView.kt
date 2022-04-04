@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.addCallback
+import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.core.Alerts
 import mx.kodemia.bankodemiaapp.core.CheckToken
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
@@ -43,14 +44,14 @@ class InicioActivityView : AppCompatActivity() {
                 if (CheckInternet.isNetworkAvailable(this@InicioActivityView)){
                     lanzarIniciarSesion()
                 }else{
-                    Alerts.showToast("No tienes conexion a internet",this@InicioActivityView)
+                    Alerts.showToast(getString(R.string.no_acceso_internet),this@InicioActivityView)
                 }
             }
             btnBienvenidaCrearCuenta.setOnClickListener {
                 if (CheckInternet.isNetworkAvailable(this@InicioActivityView)){
                     lanzarCrearCuenta()
                 }else{
-                    Alerts.showToast("No tienes conexion a internet",this@InicioActivityView)
+                    Alerts.showToast(getString(R.string.no_acceso_internet),this@InicioActivityView)
                 }
             }
         }

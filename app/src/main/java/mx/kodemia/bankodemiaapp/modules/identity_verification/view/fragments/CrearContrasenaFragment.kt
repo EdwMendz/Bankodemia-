@@ -1,15 +1,12 @@
 package mx.kodemia.bankodemiaapp.modules.identity_verification.view.fragments
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.core.Alerts
-import mx.kodemia.bankodemiaapp.core.CheckToken
-import mx.kodemia.bankodemiaapp.core.DialogExpiredToken
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.core.internet.CheckInternet
 import mx.kodemia.bankodemiaapp.data.model.request.SignUpResquest
@@ -18,8 +15,6 @@ import mx.kodemia.bankodemiaapp.databinding.FragmentCrearContrasenaBinding
 import mx.kodemia.bankodemiaapp.formatos.cambiarMesANumero
 import mx.kodemia.bankodemiaapp.modules.identity_verification.encoder.ImageConverter
 import mx.kodemia.bankodemiaapp.modules.identity_verification.view.Contrasena
-import java.text.SimpleDateFormat
-import java.util.*
 
 class CrearContrasenaFragment : Fragment() {
 
@@ -79,7 +74,7 @@ class CrearContrasenaFragment : Fragment() {
                         mandarDatosSignUp(signUp)
                     }
                 }else{
-                    Alerts.showToast("No tienes conexión a internet", requireActivity())
+                    Alerts.showToast(requireActivity().getString(R.string.no_acceso_internet), requireActivity())
                 }
             }
         }
@@ -123,7 +118,7 @@ class CrearContrasenaFragment : Fragment() {
             val textoPassword: String = tietPassword.text?.trim().toString()
             val textoPassConfirm: String = tietPasswordConfirm.text?.trim().toString()
             return if (textoPassword != textoPassConfirm){
-                alert.showToast("Contrasenias Diferentes",requireActivity())
+                alert.showToast(requireActivity().getString(R.string.contrasenas_diferentes),requireActivity())
                 tietPassword.setText("")
                 tietPasswordConfirm.setText("")
                 false
@@ -139,7 +134,7 @@ class CrearContrasenaFragment : Fragment() {
             val textoPassword: String = tietPassword.text?.trim().toString()
             val textoPassConfirm: String = tietPasswordConfirm.text?.trim().toString()
             return if(textoPassword.length < 6 || textoPassConfirm.length < 6){
-                alert.showToast("Se necesitan minimo 6 caracteres para la contraseña", requireActivity())
+                alert.showToast(requireActivity().getString(R.string.minimo_6_caracteres), requireActivity())
                 false
             }else{
                 true
@@ -172,7 +167,7 @@ class CrearContrasenaFragment : Fragment() {
                 }
             }
             if(coincidencias>=2){
-                alert.showToast("No se permiten caracteres consecutivos o repetidos", requireContext())
+                alert.showToast(requireActivity().getString(R.string.caracteres_repetido), requireContext())
                 return false
             }else{
                 return true

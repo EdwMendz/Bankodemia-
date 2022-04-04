@@ -63,7 +63,7 @@ class HacerTransaccionFragment : Fragment() {
                             DialogExpiredToken.showDialogExpiredToken(requireActivity())
                         }
                     }else{
-                        Alerts.showToast("No tienes conexion a internet",requireActivity())
+                        Alerts.showToast(requireActivity().getString(R.string.no_acceso_internet),requireActivity())
                     }
                 }
 
@@ -77,7 +77,7 @@ class HacerTransaccionFragment : Fragment() {
                             DialogExpiredToken.showDialogExpiredToken(requireActivity())
                         }
                     }else{
-                        Alerts.showToast("No tienes conexion a internet",requireActivity())
+                        Alerts.showToast(requireActivity().getString(R.string.no_acceso_internet),requireActivity())
                     }
 
                 }
@@ -107,7 +107,7 @@ class HacerTransaccionFragment : Fragment() {
     }
 
     private fun error(error: String){
-        alert.showSnackbar("En este momento no es posible realizar un pago a este contacto", activity = requireActivity())
+        alert.showSnackbar(requireActivity().getString(R.string.no_pago_por_el_momento), activity = requireActivity())
         binding?.btnTransferencia?.isEnabled = false
     }
 
@@ -125,13 +125,13 @@ class HacerTransaccionFragment : Fragment() {
             val monto = etMontoPago.text.toString().trim()
             val concepto = etConceptoPago.text.toString()
             return if(monto.isEmpty() && concepto.isEmpty()){
-                alert.showToast("Favor de ingresar los datos solicitados",requireActivity())
+                alert.showToast(requireActivity().getString(R.string.favor_datos_solicitados),requireActivity())
                 false
             }else if (monto.isNotEmpty() && concepto.isEmpty()){
-                alert.showToast("Favor de ingresar un concepto",requireActivity())
+                alert.showToast(requireActivity().getString(R.string.favor_concepto),requireActivity())
                 false
             }else if (monto.isEmpty() && concepto.isNotEmpty()){
-                alert.showToast("Favor de ingresar un monto",requireActivity())
+                alert.showToast(requireActivity().getString(R.string.favor_monto),requireActivity())
                 false
             }else{
                 true
@@ -157,7 +157,7 @@ class HacerTransaccionFragment : Fragment() {
                     //(context as EnviarTransferencia).viewModel.makeTransaction(makeTransaction)
                 }
             }else{
-                alert.showSnackbar("Favor de revisar su conexion a internet", activity = requireActivity())
+                alert.showSnackbar(requireActivity().getString(R.string.favor_revisar_internet), activity = requireActivity())
             }
         }
     }
@@ -178,7 +178,7 @@ class HacerTransaccionFragment : Fragment() {
                     //(context as EnviarTransferencia).viewModel.makeTransaction(makeTransaction)
                 }
             }else{
-                alert.showSnackbar("Favor de revisar su conexion a internet", activity = requireActivity())
+                alert.showSnackbar(requireActivity().getString(R.string.favor_revisar_internet), activity = requireActivity())
             }
         }
     }
@@ -199,7 +199,7 @@ class HacerTransaccionFragment : Fragment() {
 
     fun preparacionDatosDeposito(){
         binding?.apply {
-            textViewNombreHacerTransaccion.text = "Deposito a cuenta propia"
+            textViewNombreHacerTransaccion.text = requireActivity().getString(R.string.deposito_cuenta_propia)
             textViewIdHacerTransaccion.text = shared.obtenerIdPropio()
         }
     }

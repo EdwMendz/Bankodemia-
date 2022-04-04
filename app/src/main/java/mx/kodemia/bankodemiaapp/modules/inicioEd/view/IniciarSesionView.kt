@@ -74,7 +74,7 @@ class IniciarSesionView : AppCompatActivity() {
                         mandarDatosLogIn("10m", logIn, this@IniciarSesionView)
                     }
                 }else{
-                    Alerts.showToast("No tienes conexion a internet",this@IniciarSesionView)
+                    Alerts.showToast(getString(R.string.no_acceso_internet),this@IniciarSesionView)
                 }
             }
         }
@@ -185,7 +185,7 @@ class IniciarSesionView : AppCompatActivity() {
 
                 override fun afterTextChanged(editText: Editable?) {
                     if (editText.toString().trim().isEmpty()) {
-                        tilIniciarSesionCorreo.setError("El campo es requerido")
+                        tilIniciarSesionCorreo.setError(getString(R.string.el_campo_es_requerido))
                     } else {
                         tilIniciarSesionCorreo.setErrorEnabled(false)
                         tilIniciarSesionCorreo.setError("")
@@ -203,7 +203,7 @@ class IniciarSesionView : AppCompatActivity() {
 
                 override fun afterTextChanged(editText: Editable?) {
                     if (editText.toString().trim().isEmpty()) {
-                        tilIniciarSesionContrasenia.setError("El campo es requerido")
+                        tilIniciarSesionContrasenia.setError(getString(R.string.el_campo_es_requerido))
                     } else {
                         tilIniciarSesionContrasenia.setErrorEnabled(false)
                         tilIniciarSesionContrasenia.setError("")

@@ -50,7 +50,7 @@ class ListaUsuariosActivity : AppCompatActivity() {
                 DialogExpiredToken.showDialogExpiredToken(this)
             }
         }else{
-            Alerts.showToast("No tienes internet para ver los usuarios registrados",this)
+            Alerts.showToast(getString(R.string.no_internet_para_registros),this)
         }
 
         observers()
@@ -74,7 +74,7 @@ class ListaUsuariosActivity : AppCompatActivity() {
     }
 
     private fun error(error: String){
-        Alerts.showSnackbar("No se pudo mostrar los usuarios", activity = this)
+        Alerts.showSnackbar(getString(R.string.no_se_pudo_mostrar_usuarios), activity = this)
     }
 
     private fun mostrarUsuarios(usuarios: ListUsersResponse){

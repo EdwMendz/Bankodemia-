@@ -71,8 +71,6 @@ object SharedPreferencesInstance {
         )
     }
 
-
-
     //Guardamos el telefono de registro
     fun guardarTelefono(telefono:String){
         with(editor){
@@ -84,7 +82,6 @@ object SharedPreferencesInstance {
     fun obtenerTelefono():String?{
         return sharedPreferences.getString("telefono",null)
     }
-
 
     //Se guarda el token y el tiempo en el que expira el token con ayuda del editor
     fun guardarSesionLogin(sesion: LoginResponse) {

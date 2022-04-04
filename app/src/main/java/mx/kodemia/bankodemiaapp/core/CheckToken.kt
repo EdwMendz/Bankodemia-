@@ -49,7 +49,6 @@ object CheckToken {
                             }
                         }
                     }else if(horasGuardadas?.toInt() == 23 && minutosGuardados?.toInt()!! >= 50 && minutoActuales <= (minutosGuardados.toInt()-50)){
-                        Log.e("Token", "Token activo")
                         return true
                     } else{ //Si no se encuentra en el mismo dia
                         shared.limpiarPreferencias()
@@ -63,7 +62,6 @@ object CheckToken {
                 shared.limpiarPreferencias()
                 return false
             }
-            Log.e("Token", "Token activo")
             return true
         }
     }

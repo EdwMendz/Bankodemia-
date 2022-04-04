@@ -18,7 +18,7 @@ object ImageConverter {
         try {
             fis = FileInputStream(imageFile)
         }catch (e: FileNotFoundException){
-            Log.e("CONVERSOR", e.printStackTrace().toString())
+            Log.e("NOCONVERSOR", e.printStackTrace().toString())
         }
 
         val bm: Bitmap = BitmapFactory.decodeStream(fis)
