@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.core.Alerts
 import mx.kodemia.bankodemiaapp.core.CheckToken
+import mx.kodemia.bankodemiaapp.core.DialogExpiredToken
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.core.internet.CheckInternet
 import mx.kodemia.bankodemiaapp.data.model.request.SignUpResquest
@@ -17,6 +18,8 @@ import mx.kodemia.bankodemiaapp.databinding.FragmentCrearContrasenaBinding
 import mx.kodemia.bankodemiaapp.formatos.cambiarMesANumero
 import mx.kodemia.bankodemiaapp.modules.identity_verification.encoder.ImageConverter
 import mx.kodemia.bankodemiaapp.modules.identity_verification.view.Contrasena
+import java.text.SimpleDateFormat
+import java.util.*
 
 class CrearContrasenaFragment : Fragment() {
 
@@ -40,8 +43,11 @@ class CrearContrasenaFragment : Fragment() {
 
             buttonPassword.setOnClickListener {
 
+                val horaActual = System.currentTimeMillis()
+                val hora = SimpleDateFormat("HHmm", Locale.getDefault()).format(Date(horaActual))
+
                 if(CheckInternet.isNetworkAvailable(requireActivity())){
-                    if(CheckToken.monitorToken(requireActivity(), CheckToken.obtenerHoraActual())){
+                    if(CheckToken.monitorToken(requireActivity(), hora)){
                         if(validarContrasena() && validarContrasenaDos() && validarSimilutud() && validarLongitud() && validarConsecutivos()){
                             val pathFoto = shared.obtenerFotoArchivo()
                             val archivoFotoBase64 = imageConverter.PathToBase64(pathFoto!!)
@@ -71,7 +77,7 @@ class CrearContrasenaFragment : Fragment() {
                             mandarDatosSignUp(signUp)
                         }
                     }else{
-                        Alerts.showSnackbar("Tu token ha caducado", activity = requireActivity())
+                        DialogExpiredToken.showDialogExpiredToken(requireActivity())
                     }
                 }else{
                     Alerts.showToast("No tienes conexión a internet",requireActivity())

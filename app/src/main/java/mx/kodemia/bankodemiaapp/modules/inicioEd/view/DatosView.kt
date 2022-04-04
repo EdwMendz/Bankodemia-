@@ -9,7 +9,6 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
-import mx.kodemia.bankodemiaapp.core.checkForInternet
 import mx.kodemia.bankodemiaapp.data.model.request.LogInRequest
 import mx.kodemia.bankodemiaapp.data.model.sharedPreferencesModels.DatosRegistro
 import mx.kodemia.bankodemiaapp.databinding.ActivityDatosBinding

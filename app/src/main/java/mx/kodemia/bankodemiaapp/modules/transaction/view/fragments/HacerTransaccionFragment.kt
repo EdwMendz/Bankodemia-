@@ -14,6 +14,7 @@ import kotlinx.coroutines.runBlocking
 import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.core.Alerts
 import mx.kodemia.bankodemiaapp.core.CheckToken
+import mx.kodemia.bankodemiaapp.core.DialogExpiredToken
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.core.internet.CheckInternet
 import mx.kodemia.bankodemiaapp.data.model.request.MakeTransactionRequest
@@ -27,6 +28,8 @@ import mx.kodemia.bankodemiaapp.modules.transaction.view.EnviarTransferencia
 import mx.kodemia.bankodemiaapp.modules.transaction.view.dialogs.Dialogs
 import mx.kodemia.bankodemiaapp.modules.transaction.viewmodel.EnviarDineroViewModel
 import mx.kodemia.bankodemiaapp.modules.transaction.viewmodel.ObtenerContactoUnicoViewModel
+import java.text.SimpleDateFormat
+import java.util.*
 
 class HacerTransaccionFragment : Fragment() {
 
@@ -57,7 +60,7 @@ class HacerTransaccionFragment : Fragment() {
                         if(CheckToken.monitorToken(requireActivity(), CheckToken.obtenerHoraActual())){
                             mandarDatosTransaccionDeposito()
                         }else{
-                            Alerts.showSnackbar("Tu token ha caducado", activity = requireActivity())
+                            DialogExpiredToken.showDialogExpiredToken(requireActivity())
                         }
                     }else{
                         Alerts.showToast("No tienes conexion a internet",requireActivity())
@@ -67,11 +70,13 @@ class HacerTransaccionFragment : Fragment() {
             }else{
                 preparacionDatosPago()
                 btnTransferencia.setOnClickListener{
+                    val horaActual = System.currentTimeMillis()
+                    val hora = SimpleDateFormat("HHmm", Locale.getDefault()).format(Date(horaActual))
                     if(CheckInternet.isNetworkAvailable(requireActivity())){
-                        if(CheckToken.monitorToken(requireActivity(), CheckToken.obtenerHoraActual())){
+                        if(CheckToken.monitorToken(requireActivity(), hora)){
                             mandarDatosTransaccionPago()
                         }else{
-                            Alerts.showSnackbar("Tu token ha caducado", activity = requireActivity())
+                            DialogExpiredToken.showDialogExpiredToken(requireActivity())
                         }
                     }else{
                         Alerts.showToast("No tienes conexion a internet",requireActivity())

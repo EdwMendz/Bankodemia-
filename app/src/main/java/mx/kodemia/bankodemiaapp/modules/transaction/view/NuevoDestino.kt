@@ -9,6 +9,7 @@ import androidx.activity.viewModels
 import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.core.Alerts
 import mx.kodemia.bankodemiaapp.core.CheckToken
+import mx.kodemia.bankodemiaapp.core.DialogExpiredToken
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.core.internet.CheckInternet
 import mx.kodemia.bankodemiaapp.data.model.request.SaveContactRequest
@@ -19,6 +20,8 @@ import mx.kodemia.bankodemiaapp.databinding.ActivityNuevoDestinoBinding
 import mx.kodemia.bankodemiaapp.modules.transaction.view.fragments.CargandoTransaccionFragment
 import mx.kodemia.bankodemiaapp.modules.transaction.viewmodel.AgregarContactoViewModel
 import mx.kodemia.bankodemiaapp.modules.transaction.viewmodel.EnviarDineroViewModel
+import java.text.SimpleDateFormat
+import java.util.*
 
 class NuevoDestino : AppCompatActivity() {
 
@@ -57,7 +60,7 @@ class NuevoDestino : AppCompatActivity() {
                             guardarContacto(save)
                         }
                     }else{
-                        Alerts.showSnackbar("Tu token ha caducado", activity = this@NuevoDestino)
+                        DialogExpiredToken.showDialogExpiredToken(this@NuevoDestino)
                     }
                 }else{
                     alert.showToast("Necesitas internet para guardar el contacto", this@NuevoDestino)
@@ -88,11 +91,11 @@ class NuevoDestino : AppCompatActivity() {
     }
 
     private fun cargando(b: Boolean){
-
+        //Esta cargando por defecto sin indicador
     }
 
     private fun error(error: String){
-        Log.e("ERROR",error)
+        Alerts.showSnackbar(error, activity = this)
     }
 
     private fun guardarContacto(saveContactRequest: SaveContactRequest){

@@ -47,7 +47,7 @@
         android:id="@+id/btn_VolverInicio"
         android:layout_width="342dp"
         android:layout_height="48dp"
-        android:layout_marginTop="182dp"
+        android:layout_marginTop="128dp"
         android:text="@string/Volver_Inicio"
         app:layout_constraintEnd_toEndOf="@+id/textView2"
         app:layout_constraintStart_toStartOf="@+id/textView2"

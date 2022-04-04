@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.addCallback
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 import mx.kodemia.bankodemiaapp.animations.initParpadeoGuionLogo
 import mx.kodemia.bankodemiaapp.core.Alerts
 import mx.kodemia.bankodemiaapp.core.CheckToken
+import mx.kodemia.bankodemiaapp.core.DialogExpiredToken
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.core.internet.CheckInternet
 import mx.kodemia.bankodemiaapp.formatos.darFormatoDinero
@@ -30,6 +32,8 @@ import mx.kodemia.bankodemiaapp.modules.identity_verification.view.VerificacionI
 import mx.kodemia.bankodemiaapp.modules.transaction.view.EnviarDinero
 import mx.kodemia.bankodemiaapp.modules.transaction.view.EnviarTransferencia
 import mx.kodemia.bankodemiaapp.modules.user.UserActivity
+import java.text.SimpleDateFormat
+import java.util.*
 
 class InicioFragment : Fragment() {
 
@@ -83,7 +87,7 @@ class InicioFragment : Fragment() {
                 solicitarInformacionDeUsuario()
                 solicitarTransacciones()
             }else{
-                Alerts.showSnackbar("Tu token ha caducado", activity = requireActivity())
+                DialogExpiredToken.showDialogExpiredToken(requireActivity())
             }
         }else{
             Alerts.showToast("No se tiene acceso a internet",requireActivity())
@@ -123,7 +127,8 @@ class InicioFragment : Fragment() {
 
     //Funcion para observer de carga cuando se esta haciendo la solicitud a la API
     private fun cargandoTrans(b: Boolean){
-
+        //binding?.progressBarTransacciones?.isVisible = true
+        //binding?.textViewprogressBarTransacciones?.isVisible = true
     }
 
     //Funcion para observer de muestra de error en caso de fallo con la API
@@ -135,7 +140,11 @@ class InicioFragment : Fragment() {
 
     //Funcion para observer para llenar el RecyclerView con la informacion obtenida de la API
     private fun mostrarTransacciones(transacciones: ListaTransaccionesResponse){
-        binding?.let { initRecycler(transacciones.data.transactions, it.recyclerViewHome) }
+        binding?.apply {
+            progressBarTransacciones.isVisible = false
+            textViewprogressBarTransacciones.isVisible = false
+            initRecycler(transacciones.data.transactions, recyclerViewHome)
+        }
     }
 
     private fun mostrarInfoUsuario(userFull: GetUserFullResponse){
@@ -158,10 +167,9 @@ class InicioFragment : Fragment() {
 
     private fun returnNativo(){
         val callback = requireActivity().onBackPressedDispatcher.addCallback(this) {
-            requireActivity().finish()
             val intent = Intent(Intent.ACTION_MAIN)
             intent.addCategory(Intent.CATEGORY_HOME)
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
             startActivity(intent)
         }
     }

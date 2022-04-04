@@ -85,6 +85,31 @@
                 app:srcCompat="@drawable/ic_icono_kodemia_barra"
                 app:tint="?attr/colorPrimary" />
 
+            <ProgressBar
+                android:id="@+id/progressBarContactos"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="64dp"
+                android:indeterminate="true"
+                android:indeterminateTint="?attr/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/recyclerView_Contactos"
+                app:layout_constraintTop_toTopOf="@+id/recyclerView_Contactos" />
+
+            <TextView
+                android:id="@+id/textViewprogressBarContactos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/poppins_400"
+                android:text="Cargando contactos"
+                android:textColor="@color/gris"
+                app:layout_constraintEnd_toEndOf="@+id/progressBarContactos"
+                app:layout_constraintStart_toStartOf="@+id/progressBarContactos"
+                app:layout_constraintTop_toBottomOf="@+id/progressBarContactos" />
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
