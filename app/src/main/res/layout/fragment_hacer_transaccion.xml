@@ -186,8 +186,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="128dp"
+                android:layout_marginBottom="32dp"
                 android:text="Hacer Transferencia"
                 android:textColorHighlight="#8E6E6E"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/et_ConceptoPago" />

@@ -98,7 +98,7 @@
                 android:id="@+id/tv_necesitasAyuda"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="72dp"
                 android:text="@string/necesitas_ayuda_escribenos_a"
                 android:textColor="@color/negro"
                 app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
