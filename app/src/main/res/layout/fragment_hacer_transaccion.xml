@@ -172,13 +172,13 @@
                 android:id="@+id/et_ConceptoPago"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="32dp"
+                android:paddingHorizontal="8dp"
+                android:background="@color/gris_muy_claro"
                 android:fontFamily="@font/poppins_400"
-                android:background="?attr/colorOnBackground"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/TV_textopago"
                 app:layout_constraintTop_toBottomOf="@+id/TV_textopago" />
 
             <Button

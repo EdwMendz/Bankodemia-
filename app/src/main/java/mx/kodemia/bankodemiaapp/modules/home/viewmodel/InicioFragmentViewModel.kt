@@ -31,7 +31,6 @@ class InicioFragmentViewModel : ViewModel() {
 
     //Se lanza el servicio a la vista del Activity o Fragment
     fun onCreate(context: Context){
-
         serviceListTransaction = ListTransactionService(context)
         serviceGetUserInformation = GetUserInformationService(context)
     }

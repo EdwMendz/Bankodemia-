@@ -18,6 +18,7 @@ import kotlinx.coroutines.launch
 import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.animations.initParpadeoGuionLogo
 import mx.kodemia.bankodemiaapp.core.Alerts
+import mx.kodemia.bankodemiaapp.core.CheckToken
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.core.internet.CheckInternet
 import mx.kodemia.bankodemiaapp.data.model.request.LogInRequest
@@ -70,7 +71,7 @@ class IniciarSesionView : AppCompatActivity() {
                         val correo: String = tietIniciarSesisonCorreo.text.toString()
                         val pass: String = tietIniciarSesionContrasenia.text.toString()
                         val logIn = LogInRequest(correo, pass)
-                        mandarDatosLogIn("1h", logIn, this@IniciarSesionView)
+                        mandarDatosLogIn("10m", logIn, this@IniciarSesionView)
                     }
                 }else{
                     Alerts.showToast("No tienes conexion a internet",this@IniciarSesionView)
@@ -110,12 +111,8 @@ class IniciarSesionView : AppCompatActivity() {
     //Guardar Login
     private fun guardarLogin(login: LoginResponse) {
 
-        val horaActual = System.currentTimeMillis()
-        val formatoDeHoraActual =
-            SimpleDateFormat("HHmm", Locale.getDefault()).format(Date(horaActual))
-
         shared.guardarSesionLogin(login)
-        shared.guardarHoraDeInicioDeSesion(formatoDeHoraActual)
+        shared.guardarHoraDeInicioDeSesion(CheckToken.obtenerHoraActual())
     }
 
     //MandarDatos

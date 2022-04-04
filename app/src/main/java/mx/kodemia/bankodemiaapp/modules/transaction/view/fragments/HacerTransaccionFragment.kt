@@ -70,10 +70,8 @@ class HacerTransaccionFragment : Fragment() {
             }else{
                 preparacionDatosPago()
                 btnTransferencia.setOnClickListener{
-                    val horaActual = System.currentTimeMillis()
-                    val hora = SimpleDateFormat("HHmm", Locale.getDefault()).format(Date(horaActual))
                     if(CheckInternet.isNetworkAvailable(requireActivity())){
-                        if(CheckToken.monitorToken(requireActivity(), hora)){
+                        if(CheckToken.monitorToken(requireActivity(), CheckToken.obtenerHoraActual())){
                             mandarDatosTransaccionPago()
                         }else{
                             DialogExpiredToken.showDialogExpiredToken(requireActivity())
