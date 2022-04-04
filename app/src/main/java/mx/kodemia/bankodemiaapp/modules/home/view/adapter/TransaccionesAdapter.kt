@@ -1,5 +1,4 @@
 package mx.kodemia.bankodemiaapp.modules.home.view.adapter
-
 import android.app.Activity
 import android.content.Intent
 import android.view.LayoutInflater
