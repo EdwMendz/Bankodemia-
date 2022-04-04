@@ -70,7 +70,7 @@ class IniciarSesionView : AppCompatActivity() {
                         val correo: String = tietIniciarSesisonCorreo.text.toString()
                         val pass: String = tietIniciarSesionContrasenia.text.toString()
                         val logIn = LogInRequest(correo, pass)
-                        mandarDatosLogIn("1m", logIn, this@IniciarSesionView)
+                        mandarDatosLogIn("1h", logIn, this@IniciarSesionView)
                     }
                 }else{
                     Alerts.showToast("No tienes conexion a internet",this@IniciarSesionView)
@@ -101,8 +101,6 @@ class IniciarSesionView : AppCompatActivity() {
 
     //Mostrar progresbar
     private fun cargando(cargando: Boolean) {
-        binding.imageViewCargaLogin.visibility = View.VISIBLE
-        binding.btnIniciarSesionIniciarSesion.visibility = View.GONE
         if (!cargando && viewmodel.error.value?.isEmpty() == true) {
             finish()
             lanzarActivitiHome()
@@ -132,11 +130,8 @@ class IniciarSesionView : AppCompatActivity() {
 
     //Si algo malo pasa mostramos el error
     private fun errorLogin(error: String): Boolean {
-        binding.imageViewCargaLogin.visibility = View.GONE
         if (error.isNotEmpty()) {
             alert.showToast(error, this)
-            binding.btnIniciarSesionIniciarSesion.visibility = View.VISIBLE
-            binding.imageViewCargaLogin.visibility = View.GONE
             return true
         }
         return false

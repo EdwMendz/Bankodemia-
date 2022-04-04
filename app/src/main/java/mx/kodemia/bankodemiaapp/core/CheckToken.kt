@@ -15,12 +15,12 @@ object CheckToken {
         if(horaGuardada.isNullOrEmpty()){
             val algo = 1
         }else{
-            Log.e("Guardada",horaGuardada.substring(2, 4).toInt().plus(1).toString())
+            Log.e("Guardada",horaGuardada.substring(2, 4).toInt().plus(10).toString())
         }
 
         if(horaGuardada.isNullOrEmpty()){
             return false
-        }else if(horaActual.substring(2, 4).toInt() >= horaGuardada.substring(2, 4).toInt()+1){
+        }else if(horaActual.substring(2, 4).toInt() >= horaGuardada.substring(2, 4).toInt()+10){
             Log.e("Token","Token caducado")
             return false
         }else{

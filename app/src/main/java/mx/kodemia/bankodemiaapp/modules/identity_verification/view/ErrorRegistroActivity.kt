@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.databinding.ActivityErrorRegistroBinding
+import mx.kodemia.bankodemiaapp.modules.inicioEd.view.CrearCuentaView
 
 class ErrorRegistroActivity : AppCompatActivity() {
 
@@ -24,7 +25,8 @@ class ErrorRegistroActivity : AppCompatActivity() {
         }
 
         binding.buttonVolverARegistro.setOnClickListener {
-            val intent = Intent(this, VerificacionIdentidadActivity::class.java)
+            shared.limpiarPreferencias()
+            val intent = Intent(this, CrearCuentaView::class.java)
             startActivity(intent)
         }
     }

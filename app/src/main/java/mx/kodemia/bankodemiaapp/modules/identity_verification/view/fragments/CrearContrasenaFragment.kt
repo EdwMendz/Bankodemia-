@@ -43,48 +43,46 @@ class CrearContrasenaFragment : Fragment() {
 
             buttonPassword.setOnClickListener {
 
-                val horaActual = System.currentTimeMillis()
-                val hora = SimpleDateFormat("HHmm", Locale.getDefault()).format(Date(horaActual))
+                if (CheckInternet.isNetworkAvailable(requireActivity())) {
+                    if (validarContrasena() && validarContrasenaDos() && validarSimilutud() && validarLongitud() && validarConsecutivos()) {
+                        val pathFoto = shared.obtenerFotoArchivo()
+                        val archivoFotoBase64 = imageConverter.PathToBase64(pathFoto!!)
 
-                if(CheckInternet.isNetworkAvailable(requireActivity())){
-                    if(CheckToken.monitorToken(requireActivity(), hora)){
-                        if(validarContrasena() && validarContrasenaDos() && validarSimilutud() && validarLongitud() && validarConsecutivos()){
-                            val pathFoto = shared.obtenerFotoArchivo()
-                            val archivoFotoBase64 = imageConverter.PathToBase64(pathFoto!!)
+                        val correo = shared.obtenerCorreo()
+                        val telefono = shared.obtenerTelefono()
+                        val datosUsuario = shared.obtenerDatosUsuario()
 
-                            val correo = shared.obtenerCorreo()
-                            val telefono = shared.obtenerTelefono()
-                            val datosUsuario = shared.obtenerDatosUsuario()
-
-                            when(shared.obtenerTipoDocumento()){
-                                getString(R.string.ine) ->{tipoDocumento = DocumentType.INE}
-                                getString(R.string.pasaporte) ->{tipoDocumento = DocumentType.PASSPORT}
-                                getString(R.string.documentoMigratorio) ->{tipoDocumento = DocumentType.MIGRATION_FORM}
+                        when (shared.obtenerTipoDocumento()) {
+                            getString(R.string.ine) -> {
+                                tipoDocumento = DocumentType.INE
                             }
-
-                            val signUp =
-                                SignUpResquest(
-                                    correo!!,
-                                    datosUsuario.nombre!!,
-                                    datosUsuario.apellido!!,
-                                    datosUsuario.ocupacion!!,
-                                    formatearFecha(datosUsuario.fechaDeNacimiento!!),
-                                    tietPassword.text.toString(),
-                                    telefono!!,
-                                    archivoFotoBase64,
-                                    tipoDocumento.toString()
-                                )
-                            mandarDatosSignUp(signUp)
+                            getString(R.string.pasaporte) -> {
+                                tipoDocumento = DocumentType.PASSPORT
+                            }
+                            getString(R.string.documentoMigratorio) -> {
+                                tipoDocumento = DocumentType.MIGRATION_FORM
+                            }
                         }
-                    }else{
-                        DialogExpiredToken.showDialogExpiredToken(requireActivity())
+
+                        val signUp =
+                            SignUpResquest(
+                                correo!!,
+                                datosUsuario.nombre!!,
+                                datosUsuario.apellido!!,
+                                datosUsuario.ocupacion!!,
+                                formatearFecha(datosUsuario.fechaDeNacimiento!!),
+                                tietPassword.text.toString(),
+                                telefono!!,
+                                archivoFotoBase64,
+                                tipoDocumento.toString()
+                            )
+                        mandarDatosSignUp(signUp)
                     }
                 }else{
-                    Alerts.showToast("No tienes conexión a internet",requireActivity())
+                    Alerts.showToast("No tienes conexión a internet", requireActivity())
                 }
             }
         }
-
 
         return binding!!.root
     }

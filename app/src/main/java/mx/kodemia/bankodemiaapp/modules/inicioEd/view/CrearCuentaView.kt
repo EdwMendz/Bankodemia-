@@ -3,6 +3,7 @@ package mx.kodemia.bankodemiaapp.modules.inicioEd.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.addCallback
 import androidx.activity.viewModels
 import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
@@ -26,6 +27,7 @@ class CrearCuentaView : AppCompatActivity() {
         //Inicializa el binding
         inicializarBinding()
 
+        returnNativo()
         //vamos a hacer validacion de correo y si pasa lanzar continuar
         lanzarActivities()
     }
@@ -74,6 +76,11 @@ class CrearCuentaView : AppCompatActivity() {
         }
     }
 
+    private fun returnNativo(){
+        val callback = onBackPressedDispatcher.addCallback(this) {
+            startActivity(Intent(this@CrearCuentaView,InicioActivityView::class.java))
+        }
+    }
 
     //   Infla el view Binding
     private fun inicializarBinding() {
