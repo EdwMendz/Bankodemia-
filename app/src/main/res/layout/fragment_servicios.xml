@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:ignore="contentDescription"
     tools:context=".modules.home.view.fragments.ServiciosFragment">
 
     <ScrollView
@@ -73,12 +74,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="32dp"
+                android:fontFamily="@font/poppins_400"
                 android:text="@string/servicios"
                 android:textColor="@color/gris"
                 android:textSize="16sp"
-                android:fontFamily="@font/poppins_400"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView_logo_kodemia" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView_logo_kodemia"
+                tools:ignore="TextContrastCheck" />
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardView"

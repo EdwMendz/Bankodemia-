@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:ignore="contentDescription"
     tools:context=".modules.identity_verification.view.VerificacionIdentidad2">
 
     <ScrollView
@@ -65,7 +66,8 @@
                 android:text="@string/ine"
                 app:layout_constraintEnd_toStartOf="@+id/imageView14"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewTipoDocumento" />
+                app:layout_constraintTop_toBottomOf="@+id/textViewTipoDocumento"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <TextView
                 android:id="@+id/textViewDocMigratorio"
@@ -79,7 +81,8 @@
                 android:text="@string/documentoMigratorio"
                 app:layout_constraintEnd_toStartOf="@+id/imageView15"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvTipoDocumento" />
+                app:layout_constraintTop_toBottomOf="@+id/tvTipoDocumento"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <TextView
                 android:id="@+id/textViewPasaporte"
@@ -93,7 +96,8 @@
                 android:text="@string/pasaporte"
                 app:layout_constraintEnd_toStartOf="@+id/imageView16"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewDocMigratorio" />
+                app:layout_constraintTop_toBottomOf="@+id/textViewDocMigratorio"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <TextView
                 android:id="@+id/textViewProteccionDoc"
@@ -112,7 +116,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewPasaporte" />
+                app:layout_constraintTop_toBottomOf="@+id/textViewPasaporte"
+                tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
             <ImageView
                 android:id="@+id/imageView14"

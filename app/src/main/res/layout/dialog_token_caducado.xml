@@ -21,7 +21,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="24dp"
             android:fontFamily="@font/poppins_500"
-            android:text="TOKEN CADUCADO"
+            android:text="@string/token_caducado"
             android:textAlignment="center"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -35,7 +35,7 @@
             android:layout_marginTop="24dp"
             android:fontFamily="@font/poppins_500"
             android:gravity="center"
-            android:text="Ups!!! tu token de usuario ha caducado, vuelve a iniciar sesion para obtener uno nuevo"
+            android:text="@string/mensaje_token_caducado"
             android:textColor="@color/negro"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="@+id/textView"
@@ -50,11 +50,12 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:text="Aceptar"
+            android:text="@string/aceptar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+            app:layout_constraintTop_toBottomOf="@+id/textView3"
+            tools:ignore="TextContrastCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

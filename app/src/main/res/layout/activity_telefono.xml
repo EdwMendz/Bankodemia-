@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:ignore="contentDescription"
     tools:context=".modules.inicioEd.view.TelefonoView">
 
     <ScrollView
@@ -113,7 +114,8 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_bankodemiacorreo"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintVertical_bias="0.0"
+                tools:ignore="TextContrastCheck" />
 
             <ImageView
                 android:id="@+id/iv_crear_Regresar"
@@ -140,7 +142,10 @@
                 <AutoCompleteTextView
                     android:id="@+id/actv_telefono"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp" />
+                    android:layout_height="50dp"
+                    android:hint="@string/n_mero_de_telefono"
+                    android:paddingHorizontal="24dp"
+                    tools:ignore="TextContrastCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView

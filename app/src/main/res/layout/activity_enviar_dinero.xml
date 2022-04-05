@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:ignore="contentDescription"
     tools:context=".modules.transaction.view.EnviarDinero"
   >
 
@@ -69,7 +70,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="40dp"
-                android:text="INICIO"
+                android:text="@string/texto_inicio"
                 android:textSize="20sp"
                 app:layout_constraintStart_toEndOf="@+id/imageView4"
                 app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -103,11 +104,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/poppins_400"
-                android:text="Cargando contactos"
+                android:text="@string/cargando_contactos"
                 android:textColor="@color/gris"
                 app:layout_constraintEnd_toEndOf="@+id/progressBarContactos"
                 app:layout_constraintStart_toStartOf="@+id/progressBarContactos"
-                app:layout_constraintTop_toBottomOf="@+id/progressBarContactos" />
+                app:layout_constraintTop_toBottomOf="@+id/progressBarContactos"
+                tools:ignore="TextContrastCheck" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

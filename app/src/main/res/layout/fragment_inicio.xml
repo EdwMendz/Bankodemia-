@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:ignore="contentDescription"
     tools:context=".modules.home.view.fragments.InicioFragment">
 
     <ScrollView
@@ -79,7 +80,8 @@
                 android:textColor="@color/gris"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView_logo_kodemia" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView_logo_kodemia"
+                tools:ignore="TextContrastCheck" />
 
             <TextView
                 android:id="@+id/textView_dinero_disponible"
@@ -111,7 +113,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView_dinero_disponible"
                 app:strokeColor="?attr/colorPrimary"
-                app:strokeWidth="2dp" />
+                app:strokeWidth="2dp"
+                tools:ignore="TextContrastCheck" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_recibir_home"
@@ -127,7 +130,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@+id/guidelineCenter"
-                app:layout_constraintTop_toBottomOf="@+id/textView_dinero_disponible" />
+                app:layout_constraintTop_toBottomOf="@+id/textView_dinero_disponible"
+                tools:ignore="TextContrastCheck" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView_Home"
@@ -154,7 +158,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
-                    android:text="25 ENERO 2022"
+                    android:text="@string/_25_enero_2022"
                     android:textColor="@color/negro"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -191,11 +195,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/poppins_400"
-                android:text="Cargando transacciones"
+                android:text="@string/cargando_transacciones"
                 android:textColor="@color/gris"
                 app:layout_constraintEnd_toEndOf="@+id/progressBarTransacciones"
                 app:layout_constraintStart_toStartOf="@+id/progressBarTransacciones"
-                app:layout_constraintTop_toBottomOf="@+id/progressBarTransacciones" />
+                app:layout_constraintTop_toBottomOf="@+id/progressBarTransacciones"
+                tools:ignore="TextContrastCheck" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

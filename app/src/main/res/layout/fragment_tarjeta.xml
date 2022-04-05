@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:ignore="contentDescription"
     tools:context=".modules.home.view.fragments.TarjetaFragment">
 
     <ScrollView
@@ -74,12 +75,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="32dp"
+                android:fontFamily="@font/poppins_400"
                 android:text="@string/tarjeta"
                 android:textColor="@color/gris"
                 android:textSize="16sp"
-                android:fontFamily="@font/poppins_400"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView_logo_kodemia" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView_logo_kodemia"
+                tools:ignore="TextContrastCheck" />
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/materialCardView"
@@ -112,7 +114,8 @@
                         app:layout_constraintBottom_toTopOf="@+id/guidelineCardView"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="ImageContrastCheck" />
 
                     <ImageView
                         android:id="@+id/imageView5"
@@ -139,7 +142,7 @@
             </com.google.android.material.card.MaterialCardView>
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/textViewAgradecimiento"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -156,11 +159,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_400"
+                android:text="@string/numero_tarjeta2"
                 android:textColor="@color/gris"
                 android:textSize="14sp"
-                android:text="@string/numero_tarjeta2"
-                app:layout_constraintStart_toStartOf="@+id/textView5"
-                app:layout_constraintTop_toBottomOf="@+id/textView5"
+                app:layout_constraintStart_toStartOf="@+id/textViewAgradecimiento"
+                app:layout_constraintTop_toBottomOf="@+id/textViewAgradecimiento"
+                tools:ignore="TextContrastCheck"
                 tools:text="5439 2464 7664 2003" />
 
             <TextView
@@ -188,6 +192,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/textViewId_Hacer_Transaccion"
                 app:layout_constraintTop_toBottomOf="@+id/textViewId_Hacer_Transaccion"
+                tools:ignore="TextContrastCheck"
                 tools:text="11/26" />
 
             <TextView
@@ -206,11 +211,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_400"
+                android:text="@string/cvv_tarjeta2"
                 android:textColor="@color/gris"
                 android:textSize="14sp"
-                android:text="@string/cvv_tarjeta2"
                 app:layout_constraintStart_toStartOf="@+id/textView9"
                 app:layout_constraintTop_toBottomOf="@+id/textView9"
+                tools:ignore="TextContrastCheck"
                 tools:text="125" />
 
             <ImageView

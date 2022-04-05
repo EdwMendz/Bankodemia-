@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:ignore="contentDescription"
     tools:context=".modules.transaction.view.fragments.CargandoTransaccionFragment">
 
     <ScrollView
@@ -31,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/poppins_500"
-                android:text="Espera un momento, estamos procesando tu transacción"
+                android:text="@string/mensaje_proceso_transaccion"
                 android:textAlignment="center"
                 android:textColor="@color/negro"
                 android:textSize="20sp"

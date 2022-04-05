@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:ignore="contentDescription"
     tools:context=".modules.identity_verification.view.ConfirmacionRegistroActivity">
 
     <ScrollView
@@ -25,7 +26,7 @@
                 app:srcCompat="@drawable/ic_icono_kodemia" />
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/imageViewAvionsitoConfirmacion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="48dp"
@@ -49,10 +50,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                app:layout_constraintTop_toBottomOf="@+id/imageViewAvionsitoConfirmacion" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/textViewAgradecimiento"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="86dp"
@@ -77,11 +78,12 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView5"
-                app:strokeColor="?attr/colorPrimary" />
+                app:layout_constraintTop_toBottomOf="@+id/textViewAgradecimiento"
+                app:strokeColor="?attr/colorPrimary"
+                tools:ignore="TextContrastCheck" />
 
             <ImageView
-                android:id="@+id/imageView13"
+                android:id="@+id/imageViewLogo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"

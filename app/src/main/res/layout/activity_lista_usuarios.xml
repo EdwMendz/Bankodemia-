@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:ignore="contentDescription"
     tools:context=".modules.transaction.view.ListaUsuariosActivity">
 
     <ScrollView
@@ -55,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="40dp"
-                android:text="CONTACTOS"
+                android:text="@string/contactos"
                 android:textSize="20sp"
                 app:layout_constraintStart_toEndOf="@+id/imageView_regresar_contactos"
                 app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -78,7 +79,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="24dp"
                 android:fontFamily="@font/poppins_400"
-                android:text="Lista de usuarios registrados"
+                android:text="@string/lista_de_usuarios_registrados"
                 android:textColor="@color/negro"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -103,11 +104,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/poppins_400"
-                android:text="Cargando usuarios"
+                android:text="@string/cargando_usuarios"
                 android:textColor="@color/gris"
                 app:layout_constraintEnd_toEndOf="@+id/progressBarUsuarios"
                 app:layout_constraintStart_toStartOf="@+id/progressBarUsuarios"
-                app:layout_constraintTop_toBottomOf="@+id/progressBarUsuarios" />
+                app:layout_constraintTop_toBottomOf="@+id/progressBarUsuarios"
+                tools:ignore="TextContrastCheck" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
