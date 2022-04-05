@@ -108,10 +108,10 @@ object Dialogs {
                 if(CheckToken.monitorToken(context, CheckToken.obtenerHoraActual())){
                     if(nombre.isNotEmpty()){
                         (context as EnviarDinero).viewModelActions.updateContact(id,UpdateContactRequest(nombre))
+                        dialog.dismiss()
                     }else{
                         tvErrorUpdate.text = context.getString(R.string.campo_vacio)
                     }
-                    dialog.dismiss()
                 }else{
                     tvErrorUpdate.text = context.getString(R.string.token_caducado_vuelve_inicio)
                     btnAceptar.text = context.getString(R.string.volver_a_inicio)

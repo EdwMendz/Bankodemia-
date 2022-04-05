@@ -4,15 +4,184 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:ignore="contentDescription"
     tools:context=".modules.user.UserActivity">
 
-    <Button
-        android:id="@+id/btn_Cerrar_Sesion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Cerrar Sesion"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageViewLogoUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_icono_kodemia" />
+
+            <ImageView
+                android:id="@+id/imageViewBarritaUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_icono_kodemia_barra"
+                app:tint="?attr/colorPrimary" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/poppins_500"
+                android:text="@string/bienvenida_usuario"
+                android:textColor="@color/negro"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/materialCardView2"
+                app:layout_constraintTop_toBottomOf="@+id/materialCardView2" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView2"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="32dp"
+                app:cardCornerRadius="48dp"
+                app:cardElevation="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewLogoUser">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageView18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/foto_usuario"
+                        tools:ignore="ImageContrastCheck" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/textViewIndicadorNombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/negro"
+                android:fontFamily="@font/poppins_500"
+                android:textSize="16sp"
+                android:text="@string/tu_nombre_user_indicador"
+                app:layout_constraintStart_toStartOf="@+id/textView5"
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+            <TextView
+                android:id="@+id/textViewIndicadorId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/poppins_500"
+                android:text="@string/id_de_usuario_indicador_user"
+                android:textColor="@color/negro"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/textViewNombreUser"
+                app:layout_constraintTop_toBottomOf="@+id/textViewNombreUser" />
+
+            <TextView
+                android:id="@+id/textViewIndicadorCorreo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/poppins_500"
+                android:text="@string/correo_electronico_indicador_user"
+                android:textColor="@color/negro"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/textViewIdUser"
+                app:layout_constraintTop_toBottomOf="@+id/textViewIdUser" />
+
+            <TextView
+                android:id="@+id/textViewCerrarSesion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="32dp"
+                android:fontFamily="@font/poppins_500"
+                android:text="@string/cerrar_sesion"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textViewCorreoUser"
+                app:layout_constraintTop_toBottomOf="@+id/textViewCorreoUser"
+                tools:ignore="TextContrastCheck" />
+
+            <TextView
+                android:id="@+id/textViewNombreUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_400"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/textViewIndicadorNombre"
+                app:layout_constraintTop_toBottomOf="@+id/textViewIndicadorNombre"
+                tools:text="Miguelito" />
+
+            <TextView
+                android:id="@+id/textViewIdUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_400"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/textViewIndicadorId"
+                app:layout_constraintTop_toBottomOf="@+id/textViewIndicadorId"
+                tools:text="602grd4605736dge3u5482hd2u" />
+
+            <TextView
+                android:id="@+id/textViewCorreoUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_400"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/textViewIndicadorCorreo"
+                app:layout_constraintTop_toBottomOf="@+id/textViewIndicadorCorreo"
+                tools:text="miguelito@kodemia.mx" />
+
+            <ImageView
+                android:id="@+id/imageViewLogoBienvenida"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView5"
+                app:layout_constraintStart_toEndOf="@+id/textView5"
+                app:layout_constraintTop_toTopOf="@+id/textView5"
+                app:srcCompat="@drawable/ic_icono_kodemia_nav" />
+
+            <TextView
+                android:id="@+id/textViewAppelidoUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/poppins_400"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewNombreUser"
+                app:layout_constraintStart_toEndOf="@+id/textViewNombreUser"
+                app:layout_constraintTop_toTopOf="@+id/textViewNombreUser"
+                tools:text="Gonsalez" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

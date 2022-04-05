@@ -142,7 +142,8 @@ class InicioFragment : Fragment() {
     }
 
     private fun mostrarInfoUsuario(userFull: GetUserFullResponse){
-        shared.guardarIdPropio(userFull.data.user._id)
+        shared.guardarIdPropio(userFull.data.user._id!!)
+        shared.guardarInformacionCompletaUsuario(userFull.data.user)
         binding?.apply {
             buttonEnviarHome.isEnabled = true
             buttonRecibirHome.isEnabled = true

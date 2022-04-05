@@ -232,8 +232,8 @@
     <string name="no_se_pudo_mostrar_usuarios">No se pudo mostrar los usuarios</string>
     <string name="internet_para_guardar_contacto">Necesitas internet para guardar el contacto</string>
     <string name="agregar_un_nombre_para_contacto">Debes agregar un nombre para el contacto</string>
-    <string name="mensaje_inicio_registro">Aquí recibirás comprobantes de tus \nmovimientos en información sobre tu\ncuenta</string>
-    <string name="indicacion_llenar_datos_registro">Escribe tal como aparece en tu\nidentificacion oficial sin abreviaturas</string>
+    <string name="mensaje_inicio_registro" translatable="false">Aquí recibirás comprobantes de tus \nmovimientos en información sobre tu\ncuenta</string>
+    <string name="indicacion_llenar_datos_registro" translatable="false">Escribe tal como aparece en tu\nidentificacion oficial sin abreviaturas</string>
     <string name="texto_inicio">INICIO</string>
     <string name="cargando_contactos">Cargando contactos</string>
     <string name="txt_boton_volver_a_inicio">Volver a Registro</string>
@@ -264,17 +264,22 @@
     <string name="mensaje_proceso_transaccion">Espera un momento, estamos procesando tu transacción</string>
     <string name="contactos">CONTACTOS</string>
     <string name="enviar_a">ENVIAR A</string>
-    <string name="carlos_contreras_chavez">CARLOS CONTRERAS CHAVEZ</string>
-    <string name="_2345_5678_5645_7800">2345 5678 5645 7800</string>
+    <string name="carlos_contreras_chavez" translatable="false">CARLOS CONTRERAS CHAVEZ</string>
+    <string name="_2345_5678_5645_7800" translatable="false">2345 5678 5645 7800</string>
     <string name="cantidad">CANTIDAD</string>
     <string name="monto">Monto</string>
     <string name="concepto_de_pago">CONCEPTO DE PAGO</string>
     <string name="spei_sin_costo">SPEI sin costo</string>
     <string name="hacer_transferencia">Hacer Transferencia</string>
-    <string name="_25_enero_2022">25 ENERO 2022</string>
+    <string name="_25_enero_2022" translatable="false">25 ENERO 2022</string>
     <string name="cargando_transacciones">Cargando transacciones</string>
     <string name="agregar_contacto_boton">Agregar Contacto</string>
     <string name="volver_a_los_contactos">Volver a los Contactos</string>
     <string name="token_caducado_vuelve_inicio">Token caducado vuelve a iniciar sesión</string>
+    <string name="bienvenida_usuario">Hola de nuevo koder</string>
+    <string name="tu_nombre_user_indicador">Tu nombre:</string>
+    <string name="id_de_usuario_indicador_user">ID de usuario:</string>
+    <string name="correo_electronico_indicador_user">Correo electrónico:</string>
+    <string name="cerrar_sesion">Cerrar Sesión</string>
 
 </resources>

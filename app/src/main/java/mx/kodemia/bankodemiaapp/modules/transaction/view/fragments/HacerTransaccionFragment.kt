@@ -106,7 +106,7 @@ class HacerTransaccionFragment : Fragment() {
     }
 
     private fun obtenerContactoUnico(contacto: GetSingleContactResponse){
-        shared.guardarContactoUnico(contacto.data.contact.user._id)
+        shared.guardarContactoUnico(contacto.data.contact.user._id!!)
         binding?.btnTransferencia?.isEnabled = true
     }
 

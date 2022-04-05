@@ -5,8 +5,10 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.widget.TextView
 import mx.kodemia.bankodemiaapp.data.model.response.contacts.Contacto
+import mx.kodemia.bankodemiaapp.data.model.response.contacts.UserInfo
 import mx.kodemia.bankodemiaapp.data.model.response.listatransacciones.Transaccion
 import mx.kodemia.bankodemiaapp.data.model.response.logIn.LoginResponse
+import mx.kodemia.bankodemiaapp.data.model.response.user.EspecificUserInfo
 import mx.kodemia.bankodemiaapp.data.model.sharedpreferencesmodels.DatosRegistro
 import mx.kodemia.bankodemiaapp.formatos.darFormatoDiaMesAnioHora
 import mx.kodemia.bankodemiaapp.formatos.darFormatoDinero
@@ -214,4 +216,23 @@ object SharedPreferencesInstance {
     }
 
     fun obtenerHoraDeInicioDeSesion(): String? = sharedPreferences.getString("horaDeSesion",null)
+
+    fun guardarInformacionCompletaUsuario(userInfo: UserInfo){
+        with(editor){
+            putString("idUsuarioActual",userInfo._id)
+            putString("apellido",userInfo.lastName)
+            putString("nombreUsuario",userInfo.name)
+            putString("emailUsuario",userInfo.email)
+            apply()
+        }
+    }
+
+    fun obtenerInformacionCompletaUsuario(): UserInfo{
+        return UserInfo(
+            sharedPreferences.getString("idUsuarioActual",null),
+            sharedPreferences.getString("apellido",null),
+            sharedPreferences.getString("nombreUsuario",null),
+            sharedPreferences.getString("emailUsuario",null)
+        )
+    }
 }

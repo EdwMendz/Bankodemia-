@@ -122,7 +122,7 @@
                 android:layout_marginTop="24dp"
                 app:layout_constraintStart_toStartOf="@+id/textView9"
                 app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
-                app:srcCompat="@drawable/regresar" />
+                app:srcCompat="@drawable/ic_flecha_return" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/til_crearcuenta_correo"
