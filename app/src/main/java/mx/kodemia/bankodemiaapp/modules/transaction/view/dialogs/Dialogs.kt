@@ -2,15 +2,19 @@ package mx.kodemia.bankodemiaapp.modules.transaction.view.dialogs
 
 import android.app.AlertDialog
 import android.content.Context
+import android.content.Intent
 import android.view.Gravity
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.core.CheckToken
 import mx.kodemia.bankodemiaapp.core.internet.CheckInternet
 import mx.kodemia.bankodemiaapp.data.model.request.MakeTransactionRequest
 import mx.kodemia.bankodemiaapp.data.model.request.UpdateContactRequest
+import mx.kodemia.bankodemiaapp.modules.inicioEd.view.IniciarSesionView
 import mx.kodemia.bankodemiaapp.modules.transaction.view.EnviarDinero
 import mx.kodemia.bankodemiaapp.modules.transaction.view.EnviarTransferencia
 
@@ -49,6 +53,7 @@ object Dialogs {
 
         val btnAceptar = layoutDialog.findViewById<Button>(R.id.btn_aceptar_borrar)
         val btnCancelar = layoutDialog.findViewById<Button>(R.id.btn_cancelar_borrar)
+        val tvErrorDelete = layoutDialog.findViewById<TextView>(R.id.textViewErrorDelete)
 
 
         val dialog: AlertDialog = builder.create()
@@ -60,9 +65,18 @@ object Dialogs {
         btnAceptar.setOnClickListener {
             if(CheckInternet.isNetworkAvailable(context)){
                 if(CheckToken.monitorToken(context, CheckToken.obtenerHoraActual())){
+                    tvErrorDelete.visibility = View.GONE
                     (context as EnviarDinero).viewModelActions.deleteContact(id)
                     dialog.dismiss()
+                }else{
+                    tvErrorDelete.text = context.getString(R.string.token_caducado_vuelve_inicio)
+                    btnAceptar.text = context.getString(R.string.volver_a_inicio)
+                    btnAceptar.setOnClickListener {
+                        context.startActivity(Intent(context, IniciarSesionView::class.java))
+                    }
                 }
+            }else{
+                tvErrorDelete.text = context.getString(R.string.no_acceso_internet)
             }
         }
 
@@ -78,6 +92,7 @@ object Dialogs {
 
         val btnAceptar = layoutDialog.findViewById<Button>(R.id.btn_aceptar_actualizar)
         val btnCancelar = layoutDialog.findViewById<Button>(R.id.btn_cancelar_actualizar)
+        val tvErrorUpdate = layoutDialog.findViewById<TextView>(R.id.textViewErrorUpdate)
         val datoNuevoNombre = layoutDialog.findViewById<EditText>(R.id.tiet_actualizarContacto)
 
 
@@ -94,12 +109,19 @@ object Dialogs {
                     if(nombre.isNotEmpty()){
                         (context as EnviarDinero).viewModelActions.updateContact(id,UpdateContactRequest(nombre))
                     }else{
-                        showDialogUpdateContact(context,id)
+                        tvErrorUpdate.text = context.getString(R.string.campo_vacio)
                     }
                     dialog.dismiss()
+                }else{
+                    tvErrorUpdate.text = context.getString(R.string.token_caducado_vuelve_inicio)
+                    btnAceptar.text = context.getString(R.string.volver_a_inicio)
+                    btnAceptar.setOnClickListener {
+                        context.startActivity(Intent(context, IniciarSesionView::class.java))
+                    }
                 }
+            }else{
+                tvErrorUpdate.text = context.getString(R.string.no_acceso_internet)
             }
-
         }
 
         btnCancelar.setOnClickListener {
