@@ -189,7 +189,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="96dp"
                 android:layout_marginBottom="32dp"
-                android:text="@string/btnContrasena"
+                android:text="@string/agregar_contacto_boton"
                 app:cornerRadius="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/TV_CorreoN"

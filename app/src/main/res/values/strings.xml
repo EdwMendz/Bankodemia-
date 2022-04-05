@@ -238,7 +238,6 @@
     <string name="cargando_contactos">Cargando contactos</string>
     <string name="txt_boton_volver_a_inicio">Volver a Registro</string>
     <string name="volver_a_inicio">Volver a Inicio</string>
-    <string name="contactos">CONTACTOS</string>
     <string name="lista_de_usuarios_registrados">Lista de usuarios registrados</string>
     <string name="cargando_usuarios">Cargando usuarios</string>
     <string name="tu">TU</string>
@@ -249,7 +248,6 @@
     <string name="campo_no_requerido">Campo no requerido</string>
     <string name="_18_d_gitos">18 dígitos</string>
     <string name="correo_de_notificaci_n">Correo de notificación</string>
-    <string name="contactos">CONTACTOS</string>
     <string name="tarjeta_contactos">Tarjeta</string>
     <string name="n_mero_de_telefono">Número de telefono</string>
     <string name="nuevo_nombre">Nuevo nombre</string>
@@ -275,5 +273,7 @@
     <string name="hacer_transferencia">Hacer Transferencia</string>
     <string name="_25_enero_2022">25 ENERO 2022</string>
     <string name="cargando_transacciones">Cargando transacciones</string>
+    <string name="agregar_contacto_boton">Agregar Contacto</string>
+    <string name="volver_a_los_contactos">Volver a los Contactos</string>
 
 </resources>
