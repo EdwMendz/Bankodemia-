@@ -15,7 +15,7 @@ import java.util.*
 
 class DatosView : AppCompatActivity() {
     lateinit var shared: SharedPreferencesInstance
-    var formatDate = SimpleDateFormat("dd MMMM yyyy", Locale.US)
+    private var formatDate = SimpleDateFormat("dd MMMM yyyy", Locale.US)
     //Inicializa el viewBindin
     private lateinit var binding: ActivityDatosBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,7 +45,7 @@ class DatosView : AppCompatActivity() {
                         selectDate.set(Calendar.DAY_OF_MONTH, i3)
 
                         val date: String? = formatDate.format(selectDate.time)
-                        Toast.makeText(this@DatosView, "Fecha: " + date, Toast.LENGTH_SHORT)
+                        Toast.makeText(this@DatosView, "Fecha: $date", Toast.LENGTH_SHORT)
                             .show()
                         tietDatosFechaNaci.setText(date)
 
@@ -96,13 +96,13 @@ class DatosView : AppCompatActivity() {
     }
 
     //Lanza la actividadCrear
-    fun lanzarActivityCrearC() {
+    private fun lanzarActivityCrearC() {
         val intent = Intent(this, CrearCuentaView::class.java)
         startActivity(intent)
     }
 
     //Lanza la actividad telefono
-    fun lanzarActivityTelefono() {
+    private fun lanzarActivityTelefono() {
         val intent = Intent(this, TelefonoView::class.java)
         startActivity(intent)
     }

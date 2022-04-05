@@ -2,6 +2,7 @@
     <string name="app_name">BankodemiaApp</string>
 
     //Uso general
+    <string name="token_expired" translatable="false">10m</string>
     <string name="textVArrastrar">Arrastra tu archivo aquí o subelo desde tu ORDENADOR</string>
     <string name="btnSubir">Subir Información</string>
     <string name="back">REGRESAR</string>

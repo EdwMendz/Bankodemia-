@@ -1,21 +1,15 @@
 package mx.kodemia.bankodemiaapp.modules.inicioEd.view
 
-import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.addCallback
+import androidx.appcompat.app.AppCompatActivity
 import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.core.Alerts
 import mx.kodemia.bankodemiaapp.core.CheckToken
-import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.core.internet.CheckInternet
-import mx.kodemia.bankodemiaapp.databinding.ActivityDatosBinding
 import mx.kodemia.bankodemiaapp.databinding.ActivityMainBinding
 import mx.kodemia.bankodemiaapp.modules.home.view.HomeActivity
-import java.text.SimpleDateFormat
-import java.util.*
 
 class InicioActivityView : AppCompatActivity() {
     //Inicializamos el viewBinding
@@ -64,7 +58,7 @@ class InicioActivityView : AppCompatActivity() {
             finish()
             val intent = Intent(Intent.ACTION_MAIN)
             intent.addCategory(Intent.CATEGORY_HOME)
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
             startActivity(intent)
         }
     }

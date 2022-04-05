@@ -1,20 +1,14 @@
 package mx.kodemia.bankodemiaapp.modules.inicioEd.view
 
 import android.app.Activity
-import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
-import android.view.View
 import androidx.activity.addCallback
 import androidx.activity.viewModels
-import androidx.core.view.isVisible
-import androidx.lifecycle.lifecycleScope
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_iniciar_sesion.*
-import kotlinx.coroutines.launch
 import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.animations.initParpadeoGuionLogo
 import mx.kodemia.bankodemiaapp.core.Alerts
@@ -26,8 +20,6 @@ import mx.kodemia.bankodemiaapp.data.model.response.logIn.LoginResponse
 import mx.kodemia.bankodemiaapp.databinding.ActivityIniciarSesionBinding
 import mx.kodemia.bankodemiaapp.modules.home.view.HomeActivity
 import mx.kodemia.bankodemiaapp.modules.inicioEd.viewModel.IniciarSesionViewModel
-import java.text.SimpleDateFormat
-import java.util.*
 
 class IniciarSesionView : AppCompatActivity() {
     //Inicializa el viewBindin
@@ -71,7 +63,7 @@ class IniciarSesionView : AppCompatActivity() {
                         val correo: String = tietIniciarSesisonCorreo.text.toString()
                         val pass: String = tietIniciarSesionContrasenia.text.toString()
                         val logIn = LogInRequest(correo, pass)
-                        mandarDatosLogIn("10m", logIn, this@IniciarSesionView)
+                        mandarDatosLogIn(getString(R.string.token_expired), logIn, this@IniciarSesionView)
                     }
                 }else{
                     Alerts.showToast(getString(R.string.no_acceso_internet),this@IniciarSesionView)
@@ -185,10 +177,10 @@ class IniciarSesionView : AppCompatActivity() {
 
                 override fun afterTextChanged(editText: Editable?) {
                     if (editText.toString().trim().isEmpty()) {
-                        tilIniciarSesionCorreo.setError(getString(R.string.el_campo_es_requerido))
+                        tilIniciarSesionCorreo.error = getString(R.string.el_campo_es_requerido)
                     } else {
-                        tilIniciarSesionCorreo.setErrorEnabled(false)
-                        tilIniciarSesionCorreo.setError("")
+                        tilIniciarSesionCorreo.isErrorEnabled = false
+                        tilIniciarSesionCorreo.error = ""
                     }
                 }
 
@@ -203,10 +195,10 @@ class IniciarSesionView : AppCompatActivity() {
 
                 override fun afterTextChanged(editText: Editable?) {
                     if (editText.toString().trim().isEmpty()) {
-                        tilIniciarSesionContrasenia.setError(getString(R.string.el_campo_es_requerido))
+                        tilIniciarSesionContrasenia.error = getString(R.string.el_campo_es_requerido)
                     } else {
-                        tilIniciarSesionContrasenia.setErrorEnabled(false)
-                        tilIniciarSesionContrasenia.setError("")
+                        tilIniciarSesionContrasenia.isErrorEnabled = false
+                        tilIniciarSesionContrasenia.error = ""
                     }
                 }
             })
