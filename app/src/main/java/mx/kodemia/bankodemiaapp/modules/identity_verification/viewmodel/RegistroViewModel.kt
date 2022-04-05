@@ -13,7 +13,7 @@ import java.io.IOException
 class RegistroViewModel: ViewModel() {
 
     //Service
-    lateinit var serviceSignUp: SignUpService
+    private lateinit var serviceSignUp: SignUpService
 
     //LiveDatas
     val signUpResponse = MutableLiveData<SignUpResponse>()
@@ -30,14 +30,19 @@ class RegistroViewModel: ViewModel() {
             cargando.postValue(true)
             val response = serviceSignUp.sigUp(signUpResquest)
             try {
-                if (response.isSuccessful){
-                    signUpResponse.postValue(response.body())
-                }else if(response.code() == 400){
-                    error.postValue("Se ha enviado informacion incorrecta, favor de revisar sus datos e intentarlo nuevamente")
-                }else if(response.code() == 412){
-                    error.postValue("Este usuario ya existe")
-                }else{
-                    error.postValue("Ha ocurrido un error")
+                when {
+                    response.isSuccessful -> {
+                        signUpResponse.postValue(response.body())
+                    }
+                    response.code() == 400 -> {
+                        error.postValue("Se ha enviado informacion incorrecta, favor de revisar sus datos e intentarlo nuevamente")
+                    }
+                    response.code() == 412 -> {
+                        error.postValue("Este usuario ya existe")
+                    }
+                    else -> {
+                        error.postValue("Ha ocurrido un error")
+                    }
                 }
                 cargando.postValue(false)
             }catch (io: IOException){
