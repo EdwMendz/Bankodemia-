@@ -1,4 +1,5 @@
 package mx.kodemia.bankodemiaapp.modules.home.view.adapter
+
 import android.app.Activity
 import android.content.Intent
 import android.view.LayoutInflater
@@ -8,12 +9,12 @@ import androidx.recyclerview.widget.RecyclerView
 import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.formatos.darFormatoActivoOPasivo
-import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.Transaccion
+import mx.kodemia.bankodemiaapp.data.model.response.listatransacciones.Transaccion
 import mx.kodemia.bankodemiaapp.databinding.ItemCardviewHomeBinding
 import mx.kodemia.bankodemiaapp.formatos.darFormatoHoraMinutos
 import mx.kodemia.bankodemiaapp.modules.home.view.HomeDetailsTransactionActivity
 
-class TransaccionesAdapter(val activity: Activity, val transacciones: MutableList<Transaccion>): RecyclerView.Adapter<TransaccionesAdapter.TransaccionHolder>() {
+class TransaccionesAdapter(val activity: Activity, private val transacciones: MutableList<Transaccion>): RecyclerView.Adapter<TransaccionesAdapter.TransaccionHolder>() {
 
     //SharedPreferences
     lateinit var shared : SharedPreferencesInstance
@@ -32,7 +33,7 @@ class TransaccionesAdapter(val activity: Activity, val transacciones: MutableLis
         val posiccionInversa = (transacciones.size-1)-position
 
         //Se declara una variable para obtener los datos de un solo elemento y trabajar sobre él
-        val transaccion = transacciones.get(posiccionInversa)
+        val transaccion = transacciones[posiccionInversa]
 
         //Acciones a realizar con el Holder, es decir, cambios a realizar en las vistas del Item del CardView
         with(holder){

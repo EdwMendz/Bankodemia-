@@ -19,7 +19,7 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
 
     //Internet Monitor
-    val networkChangeListener: NetworkChangeListener = NetworkChangeListener()
+    private val networkChangeListener: NetworkChangeListener = NetworkChangeListener()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

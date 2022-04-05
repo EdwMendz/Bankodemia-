@@ -1,11 +1,9 @@
 package mx.kodemia.bankodemiaapp.modules.transaction.view
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import mx.kodemia.bankodemiaapp.R
+import androidx.appcompat.app.AppCompatActivity
 import mx.kodemia.bankodemiaapp.databinding.ActivityConfirmacionTransferenciaBinding
-import mx.kodemia.bankodemiaapp.databinding.ActivityHomeBinding
 import mx.kodemia.bankodemiaapp.modules.home.view.HomeActivity
 
 class ConfirmacionTransferencia : AppCompatActivity() {

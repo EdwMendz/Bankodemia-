@@ -6,28 +6,25 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
-import mx.kodemia.bankodemiaapp.data.model.request.LogInRequest
-import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.ListaTransaccionesResponse
-import mx.kodemia.bankodemiaapp.data.model.response.logIn.LoginResponse
+import mx.kodemia.bankodemiaapp.data.model.response.listatransacciones.ListaTransaccionesResponse
 import mx.kodemia.bankodemiaapp.data.model.response.user.GetUserFullResponse
 import mx.kodemia.bankodemiaapp.network.service.GetUserInformationService
 import mx.kodemia.bankodemiaapp.network.service.ListTransactionService
-import mx.kodemia.bankodemiaapp.network.service.LogInService
 import java.io.IOException
 
 class InicioFragmentViewModel : ViewModel() {
 
     //Service
-    lateinit var serviceListTransaction: ListTransactionService
-    lateinit var serviceGetUserInformation: GetUserInformationService
+    private lateinit var serviceListTransaction: ListTransactionService
+    private lateinit var serviceGetUserInformation: GetUserInformationService
 
     //LiveDatas
     val listTransactionResponse = MutableLiveData<ListaTransaccionesResponse>()
     val getUserInformationResponse = MutableLiveData<GetUserFullResponse>()
     val errorTrans = MutableLiveData<String>()
     val cargandoTrans = MutableLiveData<Boolean>()
-    val errorUser = MutableLiveData<String>()
-    val cargandoUser = MutableLiveData<Boolean>()
+    private val errorUser = MutableLiveData<String>()
+    private val cargandoUser = MutableLiveData<Boolean>()
 
     //Se lanza el servicio a la vista del Activity o Fragment
     fun onCreate(context: Context){
@@ -42,15 +39,19 @@ class InicioFragmentViewModel : ViewModel() {
     fun listTransacciones(){
         viewModelScope.launch {
             cargandoTrans.postValue(true)
-            val response = serviceListTransaction.ListTransaction()
+            val response = serviceListTransaction.listTransaction()
             try{
-                if (response.isSuccessful){
-                    listTransactionResponse.postValue(response.body())
-                    errorTrans.postValue("")
-                }else if(response.code() == 401) {
-                    errorTrans.postValue("Usuario no autorizado")
-                }else {
-                    errorTrans.postValue("Ha ocurrido un error")
+                when {
+                    response.isSuccessful -> {
+                        listTransactionResponse.postValue(response.body())
+                        errorTrans.postValue("")
+                    }
+                    response.code() == 401 -> {
+                        errorTrans.postValue("Usuario no autorizado")
+                    }
+                    else -> {
+                        errorTrans.postValue("Ha ocurrido un error")
+                    }
                 }
                 cargandoTrans.postValue(false)
             }catch (io: IOException){
@@ -65,12 +66,16 @@ class InicioFragmentViewModel : ViewModel() {
             cargandoUser.postValue(true)
             val response = serviceGetUserInformation.getUserFull()
             try {
-                if(response.isSuccessful){
-                    getUserInformationResponse.postValue(response.body())
-                }else if (response.code() == 401){
-                    Log.e("UserError",response.code().toString())
-                } else{
-                    errorUser.postValue(response.message())
+                when {
+                    response.isSuccessful -> {
+                        getUserInformationResponse.postValue(response.body())
+                    }
+                    response.code() == 401 -> {
+                        Log.e("UserError",response.code().toString())
+                    }
+                    else -> {
+                        errorUser.postValue(response.message())
+                    }
                 }
                 cargandoUser.postValue(false)
             }catch (io: IOException){

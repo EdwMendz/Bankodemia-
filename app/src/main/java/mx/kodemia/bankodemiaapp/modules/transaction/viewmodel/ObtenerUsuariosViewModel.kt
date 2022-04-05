@@ -1,7 +1,6 @@
 package mx.kodemia.bankodemiaapp.modules.transaction.viewmodel
 
 import android.content.Context
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -13,7 +12,7 @@ import java.io.IOException
 class ObtenerUsuariosViewModel: ViewModel() {
 
     //Service
-    lateinit var serviceGetUsers : ListUsersService
+    private lateinit var serviceGetUsers : ListUsersService
 
     val getUsersResponse = MutableLiveData<ListUsersResponse>()
     val cargando = MutableLiveData<Boolean>()
@@ -26,16 +25,21 @@ class ObtenerUsuariosViewModel: ViewModel() {
     fun getUsers(){
         viewModelScope.launch {
             cargando.postValue(true)
-            val response = serviceGetUsers.ListUser()
+            val response = serviceGetUsers.listUser()
             try {
-                if(response.isSuccessful){
-                    getUsersResponse.postValue(response.body())
-                }else if(response.code() == 400) {
-                    error.postValue("Se mandaron datos incorrectos")
-                }else if(response.code() == 401){
-                    error.postValue("No se tiene permiso para hacer la transaccion")
-                }else{
-                    error.postValue("Ha ocurrido un error por parte del servidor")
+                when {
+                    response.isSuccessful -> {
+                        getUsersResponse.postValue(response.body())
+                    }
+                    response.code() == 400 -> {
+                        error.postValue("Se mandaron datos incorrectos")
+                    }
+                    response.code() == 401 -> {
+                        error.postValue("No se tiene permiso para hacer la transaccion")
+                    }
+                    else -> {
+                        error.postValue("Ha ocurrido un error por parte del servidor")
+                    }
                 }
                 cargando.postValue(false)
             }catch (io: IOException){

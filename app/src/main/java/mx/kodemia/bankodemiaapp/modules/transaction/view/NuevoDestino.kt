@@ -3,8 +3,6 @@ package mx.kodemia.bankodemiaapp.modules.transaction.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Button
 import androidx.activity.viewModels
 import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.core.Alerts
@@ -14,22 +12,14 @@ import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.core.internet.CheckInternet
 import mx.kodemia.bankodemiaapp.data.model.request.SaveContactRequest
 import mx.kodemia.bankodemiaapp.data.model.response.contacts.SaveContactResponse
-import mx.kodemia.bankodemiaapp.data.model.response.makeTransaction.MakeTransactionResponse
-import mx.kodemia.bankodemiaapp.databinding.ActivityEnviarTransferenciaBinding
 import mx.kodemia.bankodemiaapp.databinding.ActivityNuevoDestinoBinding
-import mx.kodemia.bankodemiaapp.modules.transaction.view.fragments.CargandoTransaccionFragment
 import mx.kodemia.bankodemiaapp.modules.transaction.viewmodel.AgregarContactoViewModel
-import mx.kodemia.bankodemiaapp.modules.transaction.viewmodel.EnviarDineroViewModel
-import java.text.SimpleDateFormat
-import java.util.*
 
 class NuevoDestino : AppCompatActivity() {
 
     val viewModel: AgregarContactoViewModel by viewModels()
     lateinit var binding: ActivityNuevoDestinoBinding
     private lateinit var shared: SharedPreferencesInstance
-    private val alert = Alerts
-    private val checkInternet = CheckInternet
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,7 +53,7 @@ class NuevoDestino : AppCompatActivity() {
                         DialogExpiredToken.showDialogExpiredToken(this@NuevoDestino)
                     }
                 }else{
-                    alert.showToast(getString(R.string.internet_para_guardar_contacto), this@NuevoDestino)
+                    Alerts.showToast(getString(R.string.internet_para_guardar_contacto), this@NuevoDestino)
                 }
             }
 
@@ -102,9 +92,9 @@ class NuevoDestino : AppCompatActivity() {
         viewModel.saveContact(saveContactRequest)
     }
 
-    fun validacionCampo(): Boolean{
+    private fun validacionCampo(): Boolean{
         return if(binding.TVNombreIngresar.text.toString().isEmpty()){
-            alert.showToast(getString(R.string.agregar_un_nombre_para_contacto),this)
+            Alerts.showToast(getString(R.string.agregar_un_nombre_para_contacto),this)
             false
         }else{
             true

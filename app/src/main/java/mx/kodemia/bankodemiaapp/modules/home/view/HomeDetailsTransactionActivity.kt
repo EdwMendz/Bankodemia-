@@ -18,7 +18,7 @@ class HomeDetailsTransactionActivity : AppCompatActivity() {
     lateinit var shared : SharedPreferencesInstance
 
     //Internet Monitor
-    val networkChangeListener: NetworkChangeListener = NetworkChangeListener()
+    private val networkChangeListener: NetworkChangeListener = NetworkChangeListener()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

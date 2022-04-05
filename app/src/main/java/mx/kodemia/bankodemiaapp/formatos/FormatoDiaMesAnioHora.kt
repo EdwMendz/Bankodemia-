@@ -21,14 +21,14 @@ fun darFormatoDiaMesAnioHora(fecha: String, context: Context): String{
         horaEnEntero = 1
     }
 
-    if(horaEnEntero > 12){
+    hora = if(horaEnEntero > 12){
         val reformato = horaEnEntero - 12
-        hora = "$reformato$minutos p.m."
+        "$reformato$minutos p.m."
     }else{
         if(horaEnEntero > 9){
-            hora = horaEnEntero.toString() + fecha.substring(13,16) + " a.m."
+            horaEnEntero.toString() + fecha.substring(13,16) + " a.m."
         }else{
-            hora = horaEnEntero.toString() + fecha.substring(13,16) + " a.m."
+            horaEnEntero.toString() + fecha.substring(13,16) + " a.m."
         }
     }
 

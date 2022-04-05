@@ -1,4 +1,4 @@
-package mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones
+package mx.kodemia.bankodemiaapp.data.model.response.listatransacciones
 
 
 data class Transaccion(

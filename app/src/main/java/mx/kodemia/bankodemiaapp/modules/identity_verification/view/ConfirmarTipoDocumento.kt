@@ -27,8 +27,8 @@ import java.util.*
 class ConfirmarTipoDocumento : AppCompatActivity() {
 
     lateinit var  binding: ActivityConfirmacionTipoDocumentoBinding
-    var archivoFoto: File? = null
-    lateinit var absolutePathImagen: String
+    private var archivoFoto: File? = null
+    private lateinit var absolutePathImagen: String
 
     private val startForResult =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult())
@@ -77,7 +77,7 @@ class ConfirmarTipoDocumento : AppCompatActivity() {
     }
 
     private fun checarPermisos() {
-        val REQUEST_CODE_CAMERA = 100
+        val requestCodeCamera = 100
         val permisoCamara = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
         if (permisoCamara == PackageManager.PERMISSION_GRANTED) {
 
@@ -87,7 +87,7 @@ class ConfirmarTipoDocumento : AppCompatActivity() {
             ActivityCompat.requestPermissions(
                 this,
                 arrayOf(Manifest.permission.CAMERA),
-                REQUEST_CODE_CAMERA
+                requestCodeCamera
             )
 
         }

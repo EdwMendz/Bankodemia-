@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:ignore="contentDescription"
     tools:context=".modules.identity_verification.view.VerificacionIdentidadActivity">
 
     <ScrollView
@@ -30,11 +31,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="19dp"
-                android:text="@string/identidad"
                 android:fontFamily="@font/poppins_500"
+                android:text="@string/identidad"
                 android:textColor="@color/gris"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageViewIdentidad1" />
+                app:layout_constraintTop_toBottomOf="@+id/imageViewIdentidad1"
+                tools:ignore="TextContrastCheck" />
 
             <TextView
                 android:id="@+id/textViewVerificarIdentidad"
@@ -59,13 +61,14 @@
                 android:layout_marginStart="21dp"
                 android:layout_marginTop="27dp"
                 android:layout_marginEnd="20dp"
+                android:fontFamily="@font/poppins_400"
                 android:lineSpacingExtra="5sp"
                 android:text="@string/textViewIdentidad2"
-                android:fontFamily="@font/poppins_400"
                 android:textColor="@color/gris"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewVerificarIdentidad" />
+                app:layout_constraintTop_toBottomOf="@+id/textViewVerificarIdentidad"
+                tools:ignore="TextContrastCheck" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnIdentidad"
@@ -80,7 +83,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewInstrucciones" />
+                app:layout_constraintTop_toBottomOf="@+id/textViewInstrucciones"
+                tools:ignore="TextContrastCheck" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

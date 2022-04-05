@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:ignore="contentDescription"
     tools:context=".modules.transaction.view.NuevoDestino">
 
     <ScrollView
@@ -31,11 +32,10 @@
                 app:layout_constraintTop_toBottomOf="@+id/TV_No_tarjeta" />
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/imageViewAvionsitoConfirmacion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:contentDescription="TODO"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -73,7 +73,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="18 dígitos"
+                android:text="@string/_18_d_gitos"
                 android:textColor="@color/negro"
                 android:fontFamily="@font/poppins_400"
                 app:layout_constraintEnd_toEndOf="@+id/textView"
@@ -95,7 +95,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
-                    tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
+                    tools:ignore="TextContrastCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -113,8 +113,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="45dp"
+                    android:hint="@string/campo_no_requerido"
                     android:inputType="text"
-                    tools:ignore="TextContrastCheck" />
+                    tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -145,7 +146,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="45dp"
                     android:inputType="text"
-                    tools:ignore="TextContrastCheck" />
+                    tools:ignore="TextContrastCheck,SpeakableTextPresentCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -154,7 +155,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Correo de notificación"
+                android:text="@string/correo_de_notificaci_n"
                 android:textColor="@color/negro"
                 android:fontFamily="@font/poppins_400"
                 app:layout_constraintEnd_toEndOf="@+id/tvNombre"
@@ -176,6 +177,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="45dp"
+                    android:hint="@string/campo_no_requerido"
                     android:inputType="text"
                     tools:ignore="TextContrastCheck" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -187,7 +189,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="96dp"
                 android:layout_marginBottom="32dp"
-                android:text="@string/btnContrasena"
+                android:text="@string/agregar_contacto_boton"
                 app:cornerRadius="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/TV_CorreoN"
@@ -203,10 +205,10 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="32dp"
                 android:fontFamily="@font/poppins_400"
-                android:text="CONTACTOS"
+                android:text="@string/contactos"
                 android:textSize="16sp"
                 app:layout_constraintStart_toEndOf="@+id/imageView6"
-                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                app:layout_constraintTop_toBottomOf="@+id/imageViewAvionsitoConfirmacion" />
 
             <ImageView
                 android:id="@+id/imageView9"
@@ -224,7 +226,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_500"
-                android:text="Tarjeta"
+                android:text="@string/tarjeta_contactos"
                 android:textColor="@color/negro"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"

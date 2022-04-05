@@ -1,4 +1,4 @@
-package mx.kodemia.bankodemiaapp.data.model.response.makeTransaction
+package mx.kodemia.bankodemiaapp.data.model.response.maketransaction
 
 data class MakeTransactionResponse(
     val success: Boolean,

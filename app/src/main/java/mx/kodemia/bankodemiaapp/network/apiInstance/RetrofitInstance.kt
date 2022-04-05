@@ -35,7 +35,7 @@ object RetrofitInstance {
         override fun intercept(chain: Interceptor.Chain): Response {
             val requestBuilder = chain.request().newBuilder()
 
-            shared.obtenerSesion()?.let {
+            shared.obtenerSesion().let {
                 requestBuilder.addHeader("Authorization", "Bearer ${it.token}")
             }
 

@@ -2,15 +2,11 @@ package mx.kodemia.bankodemiaapp.modules.transaction.view.fragments
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.viewModels
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.runBlocking
 import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.core.Alerts
 import mx.kodemia.bankodemiaapp.core.CheckToken
@@ -20,16 +16,10 @@ import mx.kodemia.bankodemiaapp.core.internet.CheckInternet
 import mx.kodemia.bankodemiaapp.data.model.request.MakeTransactionRequest
 import mx.kodemia.bankodemiaapp.data.model.request.enummodels.TransactionType
 import mx.kodemia.bankodemiaapp.data.model.response.contacts.GetSingleContactResponse
-import mx.kodemia.bankodemiaapp.databinding.FragmentCrearContrasenaBinding
 import mx.kodemia.bankodemiaapp.databinding.FragmentHacerTransaccionBinding
-import mx.kodemia.bankodemiaapp.modules.identity_verification.view.Contrasena
 import mx.kodemia.bankodemiaapp.modules.transaction.view.EnviarDinero
-import mx.kodemia.bankodemiaapp.modules.transaction.view.EnviarTransferencia
 import mx.kodemia.bankodemiaapp.modules.transaction.view.dialogs.Dialogs
-import mx.kodemia.bankodemiaapp.modules.transaction.viewmodel.EnviarDineroViewModel
 import mx.kodemia.bankodemiaapp.modules.transaction.viewmodel.ObtenerContactoUnicoViewModel
-import java.text.SimpleDateFormat
-import java.util.*
 
 class HacerTransaccionFragment : Fragment() {
 
@@ -46,7 +36,7 @@ class HacerTransaccionFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentHacerTransaccionBinding.inflate(inflater, container, false)
 
         init()
@@ -116,7 +106,7 @@ class HacerTransaccionFragment : Fragment() {
     }
 
     private fun obtenerContactoUnico(contacto: GetSingleContactResponse){
-        shared.guardarContactoUnico(contacto.data.contact.user._id)
+        shared.guardarContactoUnico(contacto.data.contact.user._id!!)
         binding?.btnTransferencia?.isEnabled = true
     }
 
@@ -140,7 +130,7 @@ class HacerTransaccionFragment : Fragment() {
         return false
     }
 
-    fun mandarDatosTransaccionPago(){
+    private fun mandarDatosTransaccionPago(){
         binding?.apply {
             if(checkInternet.isNetworkAvailable(requireActivity())){
                 if (validarCampos()){
@@ -162,7 +152,7 @@ class HacerTransaccionFragment : Fragment() {
         }
     }
 
-    fun mandarDatosTransaccionDeposito(){
+    private fun mandarDatosTransaccionDeposito(){
         binding?.apply {
             if(checkInternet.isNetworkAvailable(requireActivity())){
                 if (validarCampos()){
@@ -183,7 +173,7 @@ class HacerTransaccionFragment : Fragment() {
         }
     }
 
-    fun preparacionDatosPago(){
+    private fun preparacionDatosPago(){
         binding?.apply {
             val nombreContacto = shared.obtenerContacto().shortName
             val idContacto = shared.obtenerContacto()._id
@@ -197,7 +187,7 @@ class HacerTransaccionFragment : Fragment() {
         }
     }
 
-    fun preparacionDatosDeposito(){
+    private fun preparacionDatosDeposito(){
         binding?.apply {
             textViewNombreHacerTransaccion.text = requireActivity().getString(R.string.deposito_cuenta_propia)
             textViewIdHacerTransaccion.text = shared.obtenerIdPropio()

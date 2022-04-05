@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.activity.addCallback
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
@@ -20,21 +19,16 @@ import mx.kodemia.bankodemiaapp.core.DialogExpiredToken
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.core.internet.CheckInternet
 import mx.kodemia.bankodemiaapp.formatos.darFormatoDinero
-import mx.kodemia.bankodemiaapp.data.model.request.LogInRequest
-import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.ListaTransaccionesResponse
-import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.Transaccion
-import mx.kodemia.bankodemiaapp.data.model.response.logIn.LoginResponse
+import mx.kodemia.bankodemiaapp.data.model.response.listatransacciones.ListaTransaccionesResponse
+import mx.kodemia.bankodemiaapp.data.model.response.listatransacciones.Transaccion
 import mx.kodemia.bankodemiaapp.data.model.response.user.GetUserFullResponse
 import mx.kodemia.bankodemiaapp.databinding.FragmentInicioBinding
 import mx.kodemia.bankodemiaapp.formatos.darFormatoFechaActual
 import mx.kodemia.bankodemiaapp.modules.home.view.adapter.TransaccionesAdapter
 import mx.kodemia.bankodemiaapp.modules.home.viewmodel.InicioFragmentViewModel
-import mx.kodemia.bankodemiaapp.modules.identity_verification.view.VerificacionIdentidadActivity
 import mx.kodemia.bankodemiaapp.modules.transaction.view.EnviarDinero
 import mx.kodemia.bankodemiaapp.modules.transaction.view.EnviarTransferencia
 import mx.kodemia.bankodemiaapp.modules.user.UserActivity
-import java.text.SimpleDateFormat
-import java.util.*
 
 class InicioFragment : Fragment() {
 
@@ -148,7 +142,8 @@ class InicioFragment : Fragment() {
     }
 
     private fun mostrarInfoUsuario(userFull: GetUserFullResponse){
-        shared.guardarIdPropio(userFull.data.user._id)
+        shared.guardarIdPropio(userFull.data.user._id!!)
+        shared.guardarInformacionCompletaUsuario(userFull.data.user)
         binding?.apply {
             buttonEnviarHome.isEnabled = true
             buttonRecibirHome.isEnabled = true

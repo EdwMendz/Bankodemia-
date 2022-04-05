@@ -11,23 +11,22 @@ import java.io.FileNotFoundException
 
 object ImageConverter {
 
-    fun PathToBase64(foto: String): String{
+    fun pathToBase64(foto: String): String {
         val imageFile = File(foto)
         var fis: FileInputStream? = null
 
         try {
             fis = FileInputStream(imageFile)
-        }catch (e: FileNotFoundException){
+        } catch (e: FileNotFoundException) {
             Log.e("NOCONVERSOR", e.printStackTrace().toString())
         }
 
         val bm: Bitmap = BitmapFactory.decodeStream(fis)
         val baos = ByteArrayOutputStream()
-        bm.compress(Bitmap.CompressFormat.JPEG,100,baos)
-        val b:ByteArray = baos.toByteArray()
-        val encodeImage = Base64.encodeToString(b,0,64, Base64.NO_WRAP)
+        bm.compress(Bitmap.CompressFormat.JPEG, 100, baos)
+        val b: ByteArray = baos.toByteArray()
 
-        return encodeImage
+        return Base64.encodeToString(b, 0, 64, Base64.NO_WRAP)
     }
 
 }

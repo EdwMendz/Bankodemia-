@@ -40,7 +40,7 @@ class Contrasena : AppCompatActivity() {
         viewModel.onCreate(context = this)
     }
 
-    fun observers() {
+    private fun observers() {
 
         viewModel.error.observe(this, ::error)
         viewModel.cargando.observe(this, ::cargando)

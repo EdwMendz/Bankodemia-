@@ -1,4 +1,4 @@
-package mx.kodemia.bankodemiaapp.data.model.sharedPreferencesModels
+package mx.kodemia.bankodemiaapp.data.model.sharedpreferencesmodels
 
 data class DatosRegistro(
     val nombre:String?,

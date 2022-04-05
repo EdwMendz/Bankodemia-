@@ -1,28 +1,23 @@
 package mx.kodemia.bankodemiaapp.modules.transaction.view.adapter
 
 import android.app.Activity
-import android.app.AlertDialog
-import android.content.Context
 import android.content.Intent
-import android.util.Log
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
 import mx.kodemia.bankodemiaapp.R
+import mx.kodemia.bankodemiaapp.core.Alerts
+import mx.kodemia.bankodemiaapp.core.CheckToken
+import mx.kodemia.bankodemiaapp.core.DialogExpiredToken
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
+import mx.kodemia.bankodemiaapp.core.internet.CheckInternet
 import mx.kodemia.bankodemiaapp.data.model.response.contacts.Contacto
-import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.Transaccion
-import mx.kodemia.bankodemiaapp.databinding.ItemCardviewHomeBinding
 import mx.kodemia.bankodemiaapp.databinding.ItemContactosBinding
-import mx.kodemia.bankodemiaapp.modules.home.view.adapter.TransaccionesAdapter
-import mx.kodemia.bankodemiaapp.modules.transaction.view.EnviarDinero
 import mx.kodemia.bankodemiaapp.modules.transaction.view.EnviarTransferencia
 import mx.kodemia.bankodemiaapp.modules.transaction.view.dialogs.Dialogs
 
-class ContactosAdapter(val activity: Activity, val contactos: MutableList<Contacto>): RecyclerView.Adapter<ContactosAdapter.ContactosHolder>() {
+class ContactosAdapter(val activity: Activity, private val contactos: MutableList<Contacto>): RecyclerView.Adapter<ContactosAdapter.ContactosHolder>() {
 
     //SharedPreferences
     lateinit var shared : SharedPreferencesInstance
@@ -30,13 +25,13 @@ class ContactosAdapter(val activity: Activity, val contactos: MutableList<Contac
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): ContactosAdapter.ContactosHolder {
+    ): ContactosHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_contactos,parent,false)
-        return ContactosAdapter.ContactosHolder(view)
+        return ContactosHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ContactosAdapter.ContactosHolder, position: Int) {
-        val contacto = contactos.get(position)
+    override fun onBindViewHolder(holder: ContactosHolder, position: Int) {
+        val contacto = contactos[position]
 
         with(holder){
 
@@ -51,8 +46,16 @@ class ContactosAdapter(val activity: Activity, val contactos: MutableList<Contac
                     activity.startActivity(Intent(activity,EnviarTransferencia::class.java))
                 }
                 cardViewItemContacto.setOnLongClickListener {
-                    val dialog = Dialogs
-                    dialog.showDialogActionsContacts(activity,contacto._id!!)
+                    if(CheckInternet.isNetworkAvailable(activity)){
+                        if(CheckToken.monitorToken(activity, CheckToken.obtenerHoraActual())){
+                            val dialog = Dialogs
+                            dialog.showDialogActionsContacts(activity,contacto._id!!)
+                        }else{
+                            DialogExpiredToken.showDialogExpiredToken(activity)
+                        }
+                    }else{
+                        Alerts.showToast(activity.getString(R.string.no_acceso_internet),activity)
+                    }
                     true
                 }
 

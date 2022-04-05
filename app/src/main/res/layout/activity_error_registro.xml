@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:ignore="contentDescription"
     tools:context=".modules.identity_verification.view.ErrorRegistroActivity">
 
     <ScrollView
@@ -32,13 +33,14 @@
                 android:id="@+id/buttonVolverARegistro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="72dp"
+                android:layout_marginTop="32dp"
                 android:layout_marginBottom="32dp"
-                android:text="Volver a Registro"
+                android:text="@string/txt_boton_volver_a_inicio"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/tv_Error"
                 app:layout_constraintStart_toStartOf="@+id/tv_Error"
-                app:layout_constraintTop_toBottomOf="@+id/tv_Error" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_Error"
+                tools:ignore="TextContrastCheck" />
 
             <ImageView
                 android:id="@+id/imageViewError"

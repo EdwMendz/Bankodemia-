@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:ignore="contentDescription"
     tools:context=".modules.transaction.view.fragments.HacerTransaccionFragment">
 
     <ScrollView
@@ -45,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="32dp"
-                android:text="CONTACTOS"
+                android:text="@string/contactos"
                 android:textSize="20sp"
                 app:layout_constraintStart_toEndOf="@+id/Img_regreso"
                 app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -68,7 +69,7 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="48dp"
                 android:fontFamily="@font/poppins_400"
-                android:text="ENVIAR A"
+                android:text="@string/enviar_a"
                 android:textColor="@color/negro"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -79,7 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="CARLOS CONTRERAS CHAVEZ"
+                android:text="@string/carlos_contreras_chavez"
                 android:textColor="@color/negro"
                 android:textSize="16sp"
                 android:fontFamily="@font/poppins_500"
@@ -92,7 +93,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_400"
-                android:text="2345 5678 5645 7800"
+                android:text="@string/_2345_5678_5645_7800"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="@+id/textViewNombre_Hacer_Transaccion"
                 app:layout_constraintTop_toBottomOf="@+id/textViewNombre_Hacer_Transaccion" />
@@ -102,7 +103,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_400"
-                android:text="/"
+                android:text="@string/diagonal"
                 android:textSize="16sp"
                 app:layout_constraintStart_toEndOf="@+id/textViewId_Hacer_Transaccion"
                 app:layout_constraintTop_toTopOf="@+id/textViewId_Hacer_Transaccion" />
@@ -111,7 +112,7 @@
                 android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="BANORTE"
+                android:text="@string/banorte_contacto"
                 android:textSize="16sp"
                 android:fontFamily="@font/poppins_400"
                 app:layout_constraintStart_toEndOf="@+id/textView8"
@@ -123,7 +124,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:fontFamily="@font/poppins_400"
-                android:text="CANTIDAD"
+                android:text="@string/cantidad"
                 android:textColor="@color/negro"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="@+id/textViewId_Hacer_Transaccion"
@@ -134,22 +135,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:background="?attr/colorOnBackground"
                 android:ems="10"
+                android:hint="@string/monto"
                 android:inputType="numberSigned"
                 android:minHeight="48dp"
-                android:hint="Monto"
-                android:background="?attr/colorOnBackground"
                 android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_necesitasAyuda" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_necesitasAyuda"
+                tools:ignore="TextContrastCheck"
+                android:importantForAutofill="no" />
 
             <TextView
                 android:id="@+id/TV_textopago"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:text="CONCEPTO DE PAGO "
+                android:text="@string/concepto_de_pago"
                 android:textSize="18sp"
                 android:fontFamily="@font/poppins_400"
                 android:textColor="@color/negro"
@@ -161,12 +164,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="SPEI sin costo"
+                android:text="@string/spei_sin_costo"
                 android:textColor="?attr/colorPrimary"
-                android:textSize="12dp"
+                android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="@+id/et_MontoPago"
                 app:layout_constraintStart_toStartOf="@+id/et_MontoPago"
-                app:layout_constraintTop_toBottomOf="@+id/et_MontoPago" />
+                app:layout_constraintTop_toBottomOf="@+id/et_MontoPago"
+                tools:ignore="TextContrastCheck" />
 
             <EditText
                 android:id="@+id/et_ConceptoPago"
@@ -174,25 +178,31 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="32dp"
-                android:paddingHorizontal="8dp"
                 android:background="@color/gris_muy_claro"
                 android:fontFamily="@font/poppins_400"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:paddingHorizontal="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/TV_textopago"
-                app:layout_constraintTop_toBottomOf="@+id/TV_textopago" />
+                app:layout_constraintTop_toBottomOf="@+id/TV_textopago"
+                tools:ignore="SpeakableTextPresentCheck"
+                android:importantForAutofill="no" />
 
             <Button
                 android:id="@+id/btnTransferencia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="128dp"
+                android:layout_marginTop="92dp"
                 android:layout_marginBottom="32dp"
-                android:text="Hacer Transferencia"
+                android:text="@string/hacer_transferencia"
                 android:textColorHighlight="#8E6E6E"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/et_ConceptoPago" />
+                app:layout_constraintTop_toBottomOf="@+id/et_ConceptoPago"
+                tools:ignore="TextContrastCheck" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

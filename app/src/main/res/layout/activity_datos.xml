@@ -61,7 +61,7 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="24dp"
                 android:fontFamily="@font/poppins_500"
-                android:text="Escribe tal como aparece en tu\nidentificacion oficial sin abreviaturas"
+                android:text="@string/indicacion_llenar_datos_registro"
                 android:textColor="@color/negro"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -116,14 +116,14 @@
 
             <ImageView
                 android:id="@+id/iv_iniciarSesion_Regresar"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="24dp"
                 android:contentDescription="@string/flechaatras"
                 app:layout_constraintEnd_toStartOf="@+id/constraintLayout3"
                 app:layout_constraintStart_toStartOf="@+id/textView9"
                 app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
-                app:srcCompat="@drawable/regresar" />
+                app:srcCompat="@drawable/ic_flecha_return" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/til_datos_nombre"
@@ -142,7 +142,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/nombre_s"
-                    android:inputType="text" />
+                    android:inputType="text"
+                    tools:ignore="TextContrastCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -162,7 +163,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/apellido_s"
-                    android:inputType="text" />
+                    android:inputType="text"
+                    tools:ignore="TextContrastCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -184,7 +186,8 @@
                     android:hint="@string/ocupacion"
 
 
-                    android:inputType="text" />
+                    android:inputType="text"
+                    tools:ignore="TextContrastCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -204,7 +207,8 @@
                     android:id="@+id/tiet_datos_FechaNaci"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/fecha_de_nacimiento" />
+                    android:hint="@string/fecha_de_nacimiento"
+                    tools:ignore="TextContrastCheck" />
 
             </com.google.android.material.textfield.TextInputLayout>
 

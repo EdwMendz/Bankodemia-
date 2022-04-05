@@ -1,14 +1,12 @@
 package mx.kodemia.bankodemiaapp.network.service
 
 import android.content.Context
-import android.util.Log
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import mx.kodemia.bankodemiaapp.data.model.response.contacts.ActionsContactResponse
 import mx.kodemia.bankodemiaapp.network.api.DeleteContact
 import mx.kodemia.bankodemiaapp.network.apiInstance.RetrofitInstance
 import retrofit2.Response
-import java.lang.Exception
 
 class DeleteContactService(context: Context) {
 

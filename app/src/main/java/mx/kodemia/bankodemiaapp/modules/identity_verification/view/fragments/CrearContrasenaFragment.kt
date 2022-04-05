@@ -41,7 +41,7 @@ class CrearContrasenaFragment : Fragment() {
                 if (CheckInternet.isNetworkAvailable(requireActivity())) {
                     if (validarContrasena() && validarContrasenaDos() && validarSimilutud() && validarLongitud() && validarConsecutivos()) {
                         val pathFoto = shared.obtenerFotoArchivo()
-                        val archivoFotoBase64 = imageConverter.PathToBase64(pathFoto!!)
+                        val archivoFotoBase64 = imageConverter.pathToBase64(pathFoto!!)
 
                         val correo = shared.obtenerCorreo()
                         val telefono = shared.obtenerTelefono()
@@ -166,11 +166,11 @@ class CrearContrasenaFragment : Fragment() {
                     contador++
                 }
             }
-            if(coincidencias>=2){
+            return if(coincidencias>=2){
                 alert.showToast(requireActivity().getString(R.string.caracteres_repetido), requireContext())
-                return false
+                false
             }else{
-                return true
+                true
             }
         }
         return false
@@ -180,16 +180,15 @@ class CrearContrasenaFragment : Fragment() {
         (context as Contrasena).viewModel.signUp(signUpResquest)
     }
 
-    private fun formatearFecha(fecha: String): String{
+    private fun formatearFecha(fecha: String): String {
 
         val longitud = fecha.length
-        val dia = fecha.substring(0,2)
-        val mesLetra = fecha.substring(3,longitud-5)
-        val mes = cambiarMesANumero(mesLetra,requireActivity())
-        val anio = fecha.substring(longitud-4,longitud)
-        val formato = "$anio-$mes-$dia"
+        val dia = fecha.substring(0, 2)
+        val mesLetra = fecha.substring(3, longitud - 5)
+        val mes = cambiarMesANumero(mesLetra, requireActivity())
+        val anio = fecha.substring(longitud - 4, longitud)
 
-        return formato
+        return "$anio-$mes-$dia"
     }
 
     override fun onDestroyView() {

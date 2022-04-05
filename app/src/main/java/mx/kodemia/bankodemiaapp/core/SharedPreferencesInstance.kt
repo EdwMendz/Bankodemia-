@@ -3,29 +3,26 @@ package mx.kodemia.bankodemiaapp.core
 import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
-import android.util.Log
 import android.widget.TextView
 import mx.kodemia.bankodemiaapp.data.model.response.contacts.Contacto
+import mx.kodemia.bankodemiaapp.data.model.response.contacts.UserInfo
+import mx.kodemia.bankodemiaapp.data.model.response.listatransacciones.Transaccion
+import mx.kodemia.bankodemiaapp.data.model.response.logIn.LoginResponse
+import mx.kodemia.bankodemiaapp.data.model.response.user.EspecificUserInfo
+import mx.kodemia.bankodemiaapp.data.model.sharedpreferencesmodels.DatosRegistro
 import mx.kodemia.bankodemiaapp.formatos.darFormatoDiaMesAnioHora
 import mx.kodemia.bankodemiaapp.formatos.darFormatoDinero
-import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.Transaccion
-import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.User
-import mx.kodemia.bankodemiaapp.data.model.response.logIn.LoginResponse
-import mx.kodemia.bankodemiaapp.data.model.response.makeTransaction.MakeTransactionResponse
-import mx.kodemia.bankodemiaapp.data.model.response.signUp.SignUpResponse
-import mx.kodemia.bankodemiaapp.data.model.sharedPreferencesModels.DatosRegistro
-import mx.kodemia.bankodemiaapp.formatos.darFormatoHoraMinutos
 
 object SharedPreferencesInstance {
 
     //Se crea la instancia
-    val sharedPref = SharedPreferencesInstance
+    private val sharedPref = SharedPreferencesInstance
 
     //Se crea la variable para obtener las preferencias
     lateinit var sharedPreferences: SharedPreferences
 
     //Se crea el editor
-    lateinit var editor: SharedPreferences.Editor
+    private lateinit var editor: SharedPreferences.Editor
 
     //Obtenemos la instancia de nuestro objeto
     fun obtenerInstancia(context: Context): SharedPreferencesInstance {
@@ -89,23 +86,6 @@ object SharedPreferencesInstance {
         with(editor) {
             putString("token", sesion.token)
             putString("expira", sesion.expiresIn)
-            apply()
-        }
-    }
-
-    //Se guarda la respuesta "Boolean" para saber si se realizo el registro
-    fun guardarRespuestaSigUp(sesion: SignUpResponse) {
-        with(editor) {
-            putString("successSignUp", sesion.success.toString())
-            apply()
-        }
-    }
-
-    //Se guarda el estatus de la transaccion
-    fun guardarConceptoDeTransaccion(transaccion: MakeTransactionResponse) {
-        with(editor) {
-            putString("concepto", transaccion.data.transaction.concept)
-            putString("exitoso", transaccion.success.toString())
             apply()
         }
     }
@@ -236,4 +216,23 @@ object SharedPreferencesInstance {
     }
 
     fun obtenerHoraDeInicioDeSesion(): String? = sharedPreferences.getString("horaDeSesion",null)
+
+    fun guardarInformacionCompletaUsuario(userInfo: UserInfo){
+        with(editor){
+            putString("idUsuarioActual",userInfo._id)
+            putString("apellido",userInfo.lastName)
+            putString("nombreUsuario",userInfo.name)
+            putString("emailUsuario",userInfo.email)
+            apply()
+        }
+    }
+
+    fun obtenerInformacionCompletaUsuario(): UserInfo{
+        return UserInfo(
+            sharedPreferences.getString("idUsuarioActual",null),
+            sharedPreferences.getString("apellido",null),
+            sharedPreferences.getString("nombreUsuario",null),
+            sharedPreferences.getString("emailUsuario",null)
+        )
+    }
 }

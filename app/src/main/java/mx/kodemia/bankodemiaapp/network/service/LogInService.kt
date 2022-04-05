@@ -16,7 +16,7 @@ class LogInService(context: Context) {
 
     //Se crea la funcion para mandar la peticion con los parametros necesarios para realizarla
     //Con un tipo de retorno del modelo de la respuesta
-    suspend fun LogIn(expires_in: String, logInRequest: LogInRequest): Response<LoginResponse> {
+    suspend fun logIn(expires_in: String, logInRequest: LogInRequest): Response<LoginResponse> {
         //Se regresa por corrutina se abre un hilo distinto
         return withContext(Dispatchers.IO){
             val response = retrofit.logIn(expires_in, logInRequest)

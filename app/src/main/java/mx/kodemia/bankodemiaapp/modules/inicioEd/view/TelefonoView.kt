@@ -15,8 +15,6 @@ import mx.kodemia.bankodemiaapp.modules.identity_verification.view.VerificacionI
 class TelefonoView : AppCompatActivity() {
     private lateinit var shared : SharedPreferencesInstance
 
-    val alert = Alerts
-
     private lateinit var binding: ActivityTelefonoBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,14 +49,14 @@ class TelefonoView : AppCompatActivity() {
         binding.apply {
             val numeros: List<String> = listOf("+55", "+52", "+31", "+56", "+54")
             val listAdapter =
-                ArrayAdapter<String>(this@TelefonoView, android.R.layout.select_dialog_item, numeros)
+                ArrayAdapter(this@TelefonoView, android.R.layout.select_dialog_item, numeros)
             with(actvTelefono) {
                 setAdapter(listAdapter)
                 setOnItemClickListener { parent, view, position, id ->
                     val selectedItem = parent.getItemAtPosition(position).toString()
                     Toast.makeText(
                         this@TelefonoView,
-                        "Seleccionaste" + selectedItem,
+                        "Seleccionaste$selectedItem",
                         Toast.LENGTH_LONG
                     )
                         .show()
@@ -79,7 +77,7 @@ class TelefonoView : AppCompatActivity() {
             return true
 
         }
-        alert.showToast(getString(R.string.numero_telefo_invalido),this)
+        Alerts.showToast(getString(R.string.numero_telefo_invalido),this)
         return false
     }
     private fun lanzarActivityVerificacion1(){
