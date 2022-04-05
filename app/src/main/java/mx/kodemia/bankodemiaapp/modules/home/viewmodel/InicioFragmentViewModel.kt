@@ -15,16 +15,16 @@ import java.io.IOException
 class InicioFragmentViewModel : ViewModel() {
 
     //Service
-    lateinit var serviceListTransaction: ListTransactionService
-    lateinit var serviceGetUserInformation: GetUserInformationService
+    private lateinit var serviceListTransaction: ListTransactionService
+    private lateinit var serviceGetUserInformation: GetUserInformationService
 
     //LiveDatas
     val listTransactionResponse = MutableLiveData<ListaTransaccionesResponse>()
     val getUserInformationResponse = MutableLiveData<GetUserFullResponse>()
     val errorTrans = MutableLiveData<String>()
     val cargandoTrans = MutableLiveData<Boolean>()
-    val errorUser = MutableLiveData<String>()
-    val cargandoUser = MutableLiveData<Boolean>()
+    private val errorUser = MutableLiveData<String>()
+    private val cargandoUser = MutableLiveData<Boolean>()
 
     //Se lanza el servicio a la vista del Activity o Fragment
     fun onCreate(context: Context){
@@ -41,13 +41,17 @@ class InicioFragmentViewModel : ViewModel() {
             cargandoTrans.postValue(true)
             val response = serviceListTransaction.listTransaction()
             try{
-                if (response.isSuccessful){
-                    listTransactionResponse.postValue(response.body())
-                    errorTrans.postValue("")
-                }else if(response.code() == 401) {
-                    errorTrans.postValue("Usuario no autorizado")
-                }else {
-                    errorTrans.postValue("Ha ocurrido un error")
+                when {
+                    response.isSuccessful -> {
+                        listTransactionResponse.postValue(response.body())
+                        errorTrans.postValue("")
+                    }
+                    response.code() == 401 -> {
+                        errorTrans.postValue("Usuario no autorizado")
+                    }
+                    else -> {
+                        errorTrans.postValue("Ha ocurrido un error")
+                    }
                 }
                 cargandoTrans.postValue(false)
             }catch (io: IOException){
@@ -62,12 +66,16 @@ class InicioFragmentViewModel : ViewModel() {
             cargandoUser.postValue(true)
             val response = serviceGetUserInformation.getUserFull()
             try {
-                if(response.isSuccessful){
-                    getUserInformationResponse.postValue(response.body())
-                }else if (response.code() == 401){
-                    Log.e("UserError",response.code().toString())
-                } else{
-                    errorUser.postValue(response.message())
+                when {
+                    response.isSuccessful -> {
+                        getUserInformationResponse.postValue(response.body())
+                    }
+                    response.code() == 401 -> {
+                        Log.e("UserError",response.code().toString())
+                    }
+                    else -> {
+                        errorUser.postValue(response.message())
+                    }
                 }
                 cargandoUser.postValue(false)
             }catch (io: IOException){
