@@ -14,8 +14,8 @@ import java.io.IOException
 class AccionesContactoViewModel: ViewModel() {
 
     //Service
-    lateinit var serviceDeleteContact : DeleteContactService
-    lateinit var serviceUpdateContact : UpdateContactService
+    private lateinit var serviceDeleteContact : DeleteContactService
+    private lateinit var serviceUpdateContact : UpdateContactService
 
     val deleteContactResponse = MutableLiveData<ActionsContactResponse>()
     val updateContactResponse = MutableLiveData<ActionsContactResponse>()
@@ -34,14 +34,19 @@ class AccionesContactoViewModel: ViewModel() {
             cargandoDelete.postValue(true)
             val response = serviceDeleteContact.deleteContact(id)
             try {
-                if(response.isSuccessful){
-                    deleteContactResponse.postValue(response.body())
-                }else if(response.code() == 400) {
-                    errorDelete.postValue("Se mandaron datos incorrectos")
-                }else if(response.code() == 401){
-                    errorDelete.postValue("No se tiene permiso para hacer la transaccion")
-                }else{
-                    errorDelete.postValue("Ha ocurrido un error por parte del servidor")
+                when {
+                    response.isSuccessful -> {
+                        deleteContactResponse.postValue(response.body())
+                    }
+                    response.code() == 400 -> {
+                        errorDelete.postValue("Se mandaron datos incorrectos")
+                    }
+                    response.code() == 401 -> {
+                        errorDelete.postValue("No se tiene permiso para hacer la transaccion")
+                    }
+                    else -> {
+                        errorDelete.postValue("Ha ocurrido un error por parte del servidor")
+                    }
                 }
                 cargandoDelete.postValue(false)
             }catch (io: IOException){
@@ -56,14 +61,19 @@ class AccionesContactoViewModel: ViewModel() {
             cargandoDelete.postValue(true)
             val response = serviceUpdateContact.updateContact(id,updateContactRequest)
             try {
-                if(response.isSuccessful){
-                    updateContactResponse.postValue(response.body())
-                }else if(response.code() == 400) {
-                    errorUpdate.postValue("Se mandaron datos incorrectos")
-                }else if(response.code() == 401){
-                    errorUpdate.postValue("No se tiene permiso para hacer la transaccion")
-                }else{
-                    errorUpdate.postValue("Ha ocurrido un error por parte del servidor")
+                when {
+                    response.isSuccessful -> {
+                        updateContactResponse.postValue(response.body())
+                    }
+                    response.code() == 400 -> {
+                        errorUpdate.postValue("Se mandaron datos incorrectos")
+                    }
+                    response.code() == 401 -> {
+                        errorUpdate.postValue("No se tiene permiso para hacer la transaccion")
+                    }
+                    else -> {
+                        errorUpdate.postValue("Ha ocurrido un error por parte del servidor")
+                    }
                 }
                 cargandoUpdate.postValue(false)
             }catch (io: IOException){

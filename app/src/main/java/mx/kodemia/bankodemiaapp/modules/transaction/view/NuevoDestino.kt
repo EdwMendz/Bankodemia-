@@ -20,8 +20,6 @@ class NuevoDestino : AppCompatActivity() {
     val viewModel: AgregarContactoViewModel by viewModels()
     lateinit var binding: ActivityNuevoDestinoBinding
     private lateinit var shared: SharedPreferencesInstance
-    private val alert = Alerts
-    private val checkInternet = CheckInternet
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,7 +53,7 @@ class NuevoDestino : AppCompatActivity() {
                         DialogExpiredToken.showDialogExpiredToken(this@NuevoDestino)
                     }
                 }else{
-                    alert.showToast(getString(R.string.internet_para_guardar_contacto), this@NuevoDestino)
+                    Alerts.showToast(getString(R.string.internet_para_guardar_contacto), this@NuevoDestino)
                 }
             }
 
@@ -94,9 +92,9 @@ class NuevoDestino : AppCompatActivity() {
         viewModel.saveContact(saveContactRequest)
     }
 
-    fun validacionCampo(): Boolean{
+    private fun validacionCampo(): Boolean{
         return if(binding.TVNombreIngresar.text.toString().isEmpty()){
-            alert.showToast(getString(R.string.agregar_un_nombre_para_contacto),this)
+            Alerts.showToast(getString(R.string.agregar_un_nombre_para_contacto),this)
             false
         }else{
             true

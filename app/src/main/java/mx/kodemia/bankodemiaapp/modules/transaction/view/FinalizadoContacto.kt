@@ -1,11 +1,9 @@
 package mx.kodemia.bankodemiaapp.modules.transaction.view
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import mx.kodemia.bankodemiaapp.R
+import androidx.appcompat.app.AppCompatActivity
 import mx.kodemia.bankodemiaapp.databinding.ActivityFinalizadoContactoBinding
-import mx.kodemia.bankodemiaapp.databinding.ActivityNuevoDestinoBinding
 
 class FinalizadoContacto : AppCompatActivity() {
 

@@ -12,7 +12,7 @@ import java.io.IOException
 class ObtenerContactosViewModel: ViewModel() {
 
     //Service
-    lateinit var serviceGetContacts : GetContactsService
+    private lateinit var serviceGetContacts : GetContactsService
 
     //Lives Data
     val getContactsResponse = MutableLiveData<AllContacts>()
@@ -28,14 +28,19 @@ class ObtenerContactosViewModel: ViewModel() {
             cargando.postValue(true)
             val response = serviceGetContacts.getContacts()
             try {
-                if(response.isSuccessful){
-                    getContactsResponse.postValue(response.body())
-                }else if(response.code() == 400) {
-                    error.postValue("Se mandaron datos incorrectos")
-                }else if(response.code() == 401){
-                    error.postValue("No se tiene permiso para hacer la transaccion")
-                }else{
-                    error.postValue("Ha ocurrido un error por parte del servidor")
+                when {
+                    response.isSuccessful -> {
+                        getContactsResponse.postValue(response.body())
+                    }
+                    response.code() == 400 -> {
+                        error.postValue("Se mandaron datos incorrectos")
+                    }
+                    response.code() == 401 -> {
+                        error.postValue("No se tiene permiso para hacer la transaccion")
+                    }
+                    else -> {
+                        error.postValue("Ha ocurrido un error por parte del servidor")
+                    }
                 }
                 cargando.postValue(false)
             }catch (io: IOException){

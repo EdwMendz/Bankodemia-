@@ -13,7 +13,7 @@ import java.io.IOException
 class EnviarDineroViewModel: ViewModel() {
 
     //Service
-    lateinit var serviceMakeTransaction: MakeTransactionService
+    private lateinit var serviceMakeTransaction: MakeTransactionService
 
     val makeTransactionResponse = MutableLiveData<MakeTransactionResponse>()
     val cargando = MutableLiveData<Boolean>()
@@ -28,18 +28,25 @@ class EnviarDineroViewModel: ViewModel() {
             cargando.postValue(true)
             val response = serviceMakeTransaction.makeTransaction(makeTransactionRequest)
             try {
-                if(response.isSuccessful){
-                    makeTransactionResponse.postValue(response.body())
-                }else if(response.code() == 400) {
-                    error.postValue("Se mandaron datos incorrectos")
-                }else if(response.code() == 401){
-                    error.postValue("No se tiene permiso para hacer la transaccion")
-                }else if(response.code() == 402){
-                    error.postValue("Aun no hay dinero en esta cuenta")
-                }else if(response.code() == 412){
-                    error.postValue("Saldo insuficiente")
-                }else{
-                    error.postValue("Ha ocurrido un error por parte del servidor")
+                when {
+                    response.isSuccessful -> {
+                        makeTransactionResponse.postValue(response.body())
+                    }
+                    response.code() == 400 -> {
+                        error.postValue("Se mandaron datos incorrectos")
+                    }
+                    response.code() == 401 -> {
+                        error.postValue("No se tiene permiso para hacer la transaccion")
+                    }
+                    response.code() == 402 -> {
+                        error.postValue("Aun no hay dinero en esta cuenta")
+                    }
+                    response.code() == 412 -> {
+                        error.postValue("Saldo insuficiente")
+                    }
+                    else -> {
+                        error.postValue("Ha ocurrido un error por parte del servidor")
+                    }
                 }
                 cargando.postValue(false)
             }catch (io: IOException){

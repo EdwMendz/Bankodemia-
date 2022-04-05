@@ -13,7 +13,7 @@ import mx.kodemia.bankodemiaapp.databinding.ItemContactosBinding
 import mx.kodemia.bankodemiaapp.modules.transaction.view.EnviarTransferencia
 import mx.kodemia.bankodemiaapp.modules.transaction.view.dialogs.Dialogs
 
-class ContactosAdapter(val activity: Activity, val contactos: MutableList<Contacto>): RecyclerView.Adapter<ContactosAdapter.ContactosHolder>() {
+class ContactosAdapter(val activity: Activity, private val contactos: MutableList<Contacto>): RecyclerView.Adapter<ContactosAdapter.ContactosHolder>() {
 
     //SharedPreferences
     lateinit var shared : SharedPreferencesInstance
@@ -21,13 +21,13 @@ class ContactosAdapter(val activity: Activity, val contactos: MutableList<Contac
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): ContactosAdapter.ContactosHolder {
+    ): ContactosHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_contactos,parent,false)
-        return ContactosAdapter.ContactosHolder(view)
+        return ContactosHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ContactosAdapter.ContactosHolder, position: Int) {
-        val contacto = contactos.get(position)
+    override fun onBindViewHolder(holder: ContactosHolder, position: Int) {
+        val contacto = contactos[position]
 
         with(holder){
 

@@ -1,10 +1,9 @@
 package mx.kodemia.bankodemiaapp.modules.user
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
-import mx.kodemia.bankodemiaapp.databinding.ActivityMainBinding
 import mx.kodemia.bankodemiaapp.databinding.ActivityUserBinding
 import mx.kodemia.bankodemiaapp.modules.inicioEd.view.InicioActivityView
 
@@ -28,7 +27,7 @@ class UserActivity : AppCompatActivity() {
 
     }
 
-    fun lanzarInicio(){
+    private fun lanzarInicio(){
         startActivity(Intent(this,InicioActivityView::class.java))
     }
 

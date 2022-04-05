@@ -13,7 +13,7 @@ import java.io.IOException
 class AgregarContactoViewModel: ViewModel() {
 
     //Service
-    lateinit var serviceSaveContact : SaveContactService
+    private lateinit var serviceSaveContact : SaveContactService
 
     val saveContactResponse = MutableLiveData<SaveContactResponse>()
     val cargando = MutableLiveData<Boolean>()
@@ -28,14 +28,19 @@ class AgregarContactoViewModel: ViewModel() {
             cargando.postValue(true)
             val response = serviceSaveContact.saveContact(saveContactRequest)
             try {
-                if(response.isSuccessful){
-                    saveContactResponse.postValue(response.body())
-                }else if(response.code() == 400) {
-                    error.postValue("Se mandaron datos incorrectos")
-                }else if(response.code() == 401){
-                    error.postValue("No se tiene permiso para hacer la transaccion")
-                }else{
-                    error.postValue("Ha ocurrido un error por parte del servidor")
+                when {
+                    response.isSuccessful -> {
+                        saveContactResponse.postValue(response.body())
+                    }
+                    response.code() == 400 -> {
+                        error.postValue("Se mandaron datos incorrectos")
+                    }
+                    response.code() == 401 -> {
+                        error.postValue("No se tiene permiso para hacer la transaccion")
+                    }
+                    else -> {
+                        error.postValue("Ha ocurrido un error por parte del servidor")
+                    }
                 }
                 cargando.postValue(false)
             }catch (io: IOException){

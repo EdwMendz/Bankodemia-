@@ -1,10 +1,10 @@
 package mx.kodemia.bankodemiaapp.modules.transaction.view
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.addCallback
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -14,7 +14,6 @@ import mx.kodemia.bankodemiaapp.core.CheckToken
 import mx.kodemia.bankodemiaapp.core.DialogExpiredToken
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.core.internet.CheckInternet
-import mx.kodemia.bankodemiaapp.core.internet.NetworkChangeListener
 import mx.kodemia.bankodemiaapp.data.model.response.contacts.ActionsContactResponse
 import mx.kodemia.bankodemiaapp.data.model.response.contacts.AllContacts
 import mx.kodemia.bankodemiaapp.data.model.response.contacts.Contacto
@@ -38,8 +37,6 @@ class EnviarDinero : AppCompatActivity() {
 
     //Internet
     val checkInternet = CheckInternet
-
-    val networkChangeListener: NetworkChangeListener = NetworkChangeListener()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -141,7 +138,7 @@ class EnviarDinero : AppCompatActivity() {
         viewModel.getContacts()
     }
 
-    fun solicitarContactos(){
+    private fun solicitarContactos(){
         viewModel.getContacts()
     }
 
