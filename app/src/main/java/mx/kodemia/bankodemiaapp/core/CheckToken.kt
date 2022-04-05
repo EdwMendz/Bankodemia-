@@ -1,7 +1,6 @@
 package mx.kodemia.bankodemiaapp.core
 
 import android.content.Context
-import android.util.Log
 import java.text.SimpleDateFormat
 import java.util.*
 
