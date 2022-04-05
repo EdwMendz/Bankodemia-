@@ -26,7 +26,7 @@ class EnviarDineroViewModel: ViewModel() {
     fun makeTransaction(makeTransactionRequest: MakeTransactionRequest){
         viewModelScope.launch {
             cargando.postValue(true)
-            val response = serviceMakeTransaction.MakeTransaction(makeTransactionRequest)
+            val response = serviceMakeTransaction.makeTransaction(makeTransactionRequest)
             try {
                 if(response.isSuccessful){
                     makeTransactionResponse.postValue(response.body())

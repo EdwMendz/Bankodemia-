@@ -12,7 +12,7 @@ class ListTransactionService(context: Context) {
 
     private val retrofit = RetrofitInstance.getRetrofit(context).create(ListTransaction::class.java)
 
-    suspend fun ListTransaction(): Response<ListaTransaccionesResponse> {
+    suspend fun listTransaction(): Response<ListaTransaccionesResponse> {
         return withContext(Dispatchers.IO){
             val response = retrofit.listTransaction()
             response

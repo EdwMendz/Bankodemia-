@@ -39,7 +39,7 @@ class InicioFragmentViewModel : ViewModel() {
     fun listTransacciones(){
         viewModelScope.launch {
             cargandoTrans.postValue(true)
-            val response = serviceListTransaction.ListTransaction()
+            val response = serviceListTransaction.listTransaction()
             try{
                 if (response.isSuccessful){
                     listTransactionResponse.postValue(response.body())

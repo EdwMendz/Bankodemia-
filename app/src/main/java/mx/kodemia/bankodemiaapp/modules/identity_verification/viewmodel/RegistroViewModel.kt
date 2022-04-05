@@ -1,16 +1,12 @@
 package mx.kodemia.bankodemiaapp.modules.identity_verification.viewmodel
 
 import android.content.Context
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import mx.kodemia.bankodemiaapp.data.model.request.SignUpResquest
 import mx.kodemia.bankodemiaapp.data.model.response.signUp.SignUpResponse
-import mx.kodemia.bankodemiaapp.network.service.ListTransactionService
-import mx.kodemia.bankodemiaapp.network.service.LogInService
-import mx.kodemia.bankodemiaapp.network.service.MakeTransactionService
 import mx.kodemia.bankodemiaapp.network.service.SignUpService
 import java.io.IOException
 
@@ -32,7 +28,7 @@ class RegistroViewModel: ViewModel() {
     fun signUp(signUpResquest: SignUpResquest){
         viewModelScope.launch {
             cargando.postValue(true)
-            val response = serviceSignUp.SigUp(signUpResquest)
+            val response = serviceSignUp.sigUp(signUpResquest)
             try {
                 if (response.isSuccessful){
                     signUpResponse.postValue(response.body())

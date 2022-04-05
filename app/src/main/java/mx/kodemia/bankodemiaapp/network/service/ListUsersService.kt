@@ -14,7 +14,7 @@ class ListUsersService(context: Context) {
 
     //Se crea la funcion para mandar la peticion con los parametros necesarios para realizarla
     //Con un tipo de retorno del modelo de la respuesta
-    suspend fun ListUser(): Response<ListUsersResponse> {
+    suspend fun listUser(): Response<ListUsersResponse> {
         return withContext(Dispatchers.IO){
             val response = retrofit.listUsers()
             response

@@ -13,7 +13,7 @@ class SignUpService (context: Context){
 
     private val retrofit = RetrofitInstance.getRetrofit(context).create(SignUp::class.java)
 
-    suspend fun SigUp(signUpResquest: SignUpResquest): Response<SignUpResponse>{
+    suspend fun sigUp(signUpResquest: SignUpResquest): Response<SignUpResponse>{
         return withContext(Dispatchers.IO){
             val response = retrofit.signUp(signUpResquest)
             response

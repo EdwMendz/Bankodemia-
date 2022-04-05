@@ -1,11 +1,6 @@
 package mx.kodemia.bankodemiaapp.modules.inicioEd.viewModel
 
-import android.app.Activity
 import android.content.Context
-import android.content.Intent
-import android.util.Log
-import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -13,7 +8,6 @@ import kotlinx.coroutines.launch
 import mx.kodemia.bankodemiaapp.core.Alerts
 import mx.kodemia.bankodemiaapp.data.model.request.LogInRequest
 import mx.kodemia.bankodemiaapp.data.model.response.logIn.LoginResponse
-import mx.kodemia.bankodemiaapp.modules.home.view.HomeActivity
 import mx.kodemia.bankodemiaapp.network.service.LogInService
 
 class IniciarSesionViewModel() : ViewModel() {
@@ -48,7 +42,7 @@ class IniciarSesionViewModel() : ViewModel() {
             //Se lanza una carga
             cargando.postValue(true)
             //Se obtiene la respuesta
-            val respuestaLogin = serviceLogin.LogIn(expires_in, logInRequest)
+            val respuestaLogin = serviceLogin.logIn(expires_in, logInRequest)
             //Se lanza una doble validacion
             try {
                 //Si la respuesta es satisfactoria

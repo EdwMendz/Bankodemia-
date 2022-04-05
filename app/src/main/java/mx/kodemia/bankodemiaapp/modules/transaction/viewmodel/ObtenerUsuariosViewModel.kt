@@ -1,7 +1,6 @@
 package mx.kodemia.bankodemiaapp.modules.transaction.viewmodel
 
 import android.content.Context
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -26,7 +25,7 @@ class ObtenerUsuariosViewModel: ViewModel() {
     fun getUsers(){
         viewModelScope.launch {
             cargando.postValue(true)
-            val response = serviceGetUsers.ListUser()
+            val response = serviceGetUsers.listUser()
             try {
                 if(response.isSuccessful){
                     getUsersResponse.postValue(response.body())
