@@ -3,7 +3,6 @@ package mx.kodemia.bankodemiaapp.network.service
 import android.content.Context
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import mx.kodemia.bankodemiaapp.data.model.response.signUp.ListUserResponse
 import mx.kodemia.bankodemiaapp.data.model.response.user.ListUsersResponse
 import mx.kodemia.bankodemiaapp.network.api.ListUsers
 import mx.kodemia.bankodemiaapp.network.apiInstance.RetrofitInstance

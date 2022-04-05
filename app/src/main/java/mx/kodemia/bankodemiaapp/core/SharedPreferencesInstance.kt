@@ -5,9 +5,9 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.widget.TextView
 import mx.kodemia.bankodemiaapp.data.model.response.contacts.Contacto
-import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.Transaccion
+import mx.kodemia.bankodemiaapp.data.model.response.listatransacciones.Transaccion
 import mx.kodemia.bankodemiaapp.data.model.response.logIn.LoginResponse
-import mx.kodemia.bankodemiaapp.data.model.sharedPreferencesModels.DatosRegistro
+import mx.kodemia.bankodemiaapp.data.model.sharedpreferencesmodels.DatosRegistro
 import mx.kodemia.bankodemiaapp.formatos.darFormatoDiaMesAnioHora
 import mx.kodemia.bankodemiaapp.formatos.darFormatoDinero
 

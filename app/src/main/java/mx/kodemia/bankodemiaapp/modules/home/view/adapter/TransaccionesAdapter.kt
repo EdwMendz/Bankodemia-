@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.formatos.darFormatoActivoOPasivo
-import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.Transaccion
+import mx.kodemia.bankodemiaapp.data.model.response.listatransacciones.Transaccion
 import mx.kodemia.bankodemiaapp.databinding.ItemCardviewHomeBinding
 import mx.kodemia.bankodemiaapp.formatos.darFormatoHoraMinutos
 import mx.kodemia.bankodemiaapp.modules.home.view.HomeDetailsTransactionActivity

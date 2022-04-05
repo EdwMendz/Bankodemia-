@@ -5,7 +5,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import mx.kodemia.bankodemiaapp.network.apiInstance.RetrofitInstance
 import mx.kodemia.bankodemiaapp.data.model.request.MakeTransactionRequest
-import mx.kodemia.bankodemiaapp.data.model.response.makeTransaction.MakeTransactionResponse
+import mx.kodemia.bankodemiaapp.data.model.response.maketransaction.MakeTransactionResponse
 import mx.kodemia.bankodemiaapp.network.api.MakeTransaction
 import retrofit2.Response
 

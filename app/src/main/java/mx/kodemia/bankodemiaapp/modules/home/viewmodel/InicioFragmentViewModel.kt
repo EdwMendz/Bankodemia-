@@ -6,13 +6,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
-import mx.kodemia.bankodemiaapp.data.model.request.LogInRequest
-import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.ListaTransaccionesResponse
-import mx.kodemia.bankodemiaapp.data.model.response.logIn.LoginResponse
+import mx.kodemia.bankodemiaapp.data.model.response.listatransacciones.ListaTransaccionesResponse
 import mx.kodemia.bankodemiaapp.data.model.response.user.GetUserFullResponse
 import mx.kodemia.bankodemiaapp.network.service.GetUserInformationService
 import mx.kodemia.bankodemiaapp.network.service.ListTransactionService
-import mx.kodemia.bankodemiaapp.network.service.LogInService
 import java.io.IOException
 
 class InicioFragmentViewModel : ViewModel() {

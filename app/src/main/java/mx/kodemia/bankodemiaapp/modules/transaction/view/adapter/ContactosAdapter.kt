@@ -1,24 +1,15 @@
 package mx.kodemia.bankodemiaapp.modules.transaction.view.adapter
 
 import android.app.Activity
-import android.app.AlertDialog
-import android.content.Context
 import android.content.Intent
-import android.util.Log
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
 import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.data.model.response.contacts.Contacto
-import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.Transaccion
-import mx.kodemia.bankodemiaapp.databinding.ItemCardviewHomeBinding
 import mx.kodemia.bankodemiaapp.databinding.ItemContactosBinding
-import mx.kodemia.bankodemiaapp.modules.home.view.adapter.TransaccionesAdapter
-import mx.kodemia.bankodemiaapp.modules.transaction.view.EnviarDinero
 import mx.kodemia.bankodemiaapp.modules.transaction.view.EnviarTransferencia
 import mx.kodemia.bankodemiaapp.modules.transaction.view.dialogs.Dialogs
 

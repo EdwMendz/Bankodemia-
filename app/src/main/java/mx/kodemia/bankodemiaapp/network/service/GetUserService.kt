@@ -4,9 +4,7 @@ import android.content.Context
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import mx.kodemia.bankodemiaapp.data.model.response.signUp.GetUsersResponse
-import mx.kodemia.bankodemiaapp.data.model.response.signUp.ListUserResponse
 import mx.kodemia.bankodemiaapp.network.api.GetUser
-import mx.kodemia.bankodemiaapp.network.api.ListUsers
 import mx.kodemia.bankodemiaapp.network.apiInstance.RetrofitInstance
 import retrofit2.Response
 

@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import mx.kodemia.bankodemiaapp.data.model.request.MakeTransactionRequest
-import mx.kodemia.bankodemiaapp.data.model.response.makeTransaction.MakeTransactionResponse
+import mx.kodemia.bankodemiaapp.data.model.response.maketransaction.MakeTransactionResponse
 import mx.kodemia.bankodemiaapp.network.service.MakeTransactionService
 import java.io.IOException
 

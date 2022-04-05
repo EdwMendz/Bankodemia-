@@ -8,7 +8,7 @@ import android.view.View
 import android.widget.Toast
 import mx.kodemia.bankodemiaapp.R
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
-import mx.kodemia.bankodemiaapp.data.model.sharedPreferencesModels.DatosRegistro
+import mx.kodemia.bankodemiaapp.data.model.sharedpreferencesmodels.DatosRegistro
 import mx.kodemia.bankodemiaapp.databinding.ActivityDatosBinding
 import java.text.SimpleDateFormat
 import java.util.*

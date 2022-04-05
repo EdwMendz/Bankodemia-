@@ -1,16 +1,11 @@
 package mx.kodemia.bankodemiaapp.modules.transaction.view
 
 import android.content.Intent
-import android.content.IntentFilter
-import android.net.ConnectivityManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageButton
 import androidx.activity.addCallback
 import androidx.activity.viewModels
 import androidx.core.view.isVisible
-import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import mx.kodemia.bankodemiaapp.R
@@ -20,25 +15,14 @@ import mx.kodemia.bankodemiaapp.core.DialogExpiredToken
 import mx.kodemia.bankodemiaapp.core.SharedPreferencesInstance
 import mx.kodemia.bankodemiaapp.core.internet.CheckInternet
 import mx.kodemia.bankodemiaapp.core.internet.NetworkChangeListener
-import mx.kodemia.bankodemiaapp.data.model.request.UpdateContactRequest
 import mx.kodemia.bankodemiaapp.data.model.response.contacts.ActionsContactResponse
 import mx.kodemia.bankodemiaapp.data.model.response.contacts.AllContacts
 import mx.kodemia.bankodemiaapp.data.model.response.contacts.Contacto
-import mx.kodemia.bankodemiaapp.data.model.response.contacts.GetSingleContactResponse
-import mx.kodemia.bankodemiaapp.data.model.response.listaTransacciones.Transaccion
 import mx.kodemia.bankodemiaapp.databinding.ActivityEnviarDineroBinding
-import mx.kodemia.bankodemiaapp.databinding.ActivityHomeBinding
-import mx.kodemia.bankodemiaapp.databinding.ActivityListaUsuariosBinding
 import mx.kodemia.bankodemiaapp.modules.home.view.HomeActivity
-import mx.kodemia.bankodemiaapp.modules.home.view.adapter.TransaccionesAdapter
-import mx.kodemia.bankodemiaapp.modules.home.viewmodel.InicioFragmentViewModel
-import mx.kodemia.bankodemiaapp.modules.inicioEd.view.InicioActivityView
 import mx.kodemia.bankodemiaapp.modules.transaction.view.adapter.ContactosAdapter
 import mx.kodemia.bankodemiaapp.modules.transaction.viewmodel.AccionesContactoViewModel
-import mx.kodemia.bankodemiaapp.modules.transaction.viewmodel.ObtenerContactoUnicoViewModel
 import mx.kodemia.bankodemiaapp.modules.transaction.viewmodel.ObtenerContactosViewModel
-import java.text.SimpleDateFormat
-import java.util.*
 
 class EnviarDinero : AppCompatActivity() {
 
