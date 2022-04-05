@@ -1,9 +1,7 @@
 package mx.kodemia.bankodemiaapp.formatos
 
-import android.util.Log
-
 fun darFormatoHoraMinutos(horaApi: String): String{
-    var formatoFinal = ""
+    val formatoFinal: String
     var hora = horaApi.substring(11,13).toInt()
     if(hora <= 4){
         hora = 23-(5-(hora+1))
